@@ -1,0 +1,261 @@
+{ name: "Acid-base extraction" }
+{ name: "Affinity electrophoresis" }
+{ name: "Affinity magnetic separation" }
+{ name: "Air-free name" }
+{ name: "Allele-specific oligonucleotide" }
+{ name: "Ames test" }
+{ name: "Digital polymerase chain reaction" }
+{ name: "Ammonium sulfate precipitation" }
+{ name: "Amplicon" }
+{ name: "Animal testing" }
+{ name: "Annexin A5 affinity assay" }
+{ name: "Anterograde tracing" }
+{ name: "Assay" }
+
+{ name: "Baby Gender Mentor" }
+{ name: "Blot (biology)" }
+{ name: "Boom method" }
+
+{ name: "Cannula transfer" }
+{ name: "Capillary electrochromatography" }
+{ name: "Carnoy's solution" }
+{ name: "Cathepsin zymography" }
+{ name: "Cell counting" }
+{ name: "Cell fractionation" }
+{ name: "Chemotaxis assay" }
+{ name: "Chromosome jumping" }
+{ name: "Clearing factor" }
+{ name: "COLD-PCR" }
+{ name: "Column chromatography" }
+{ name: "Conditioned place preference" }
+{ name: "Cooling bath" }
+{ name: "Cot analysis" }
+{ name: "Cot filtration" }
+{ name: "Crystallization" }
+{ name: "Cycle of quantification/qualification" }
+{ name: "Cycling probe technology" }
+{ name: "Cytometry" }
+
+{ name: "Decantation" }
+{ name: "Degasification" }
+{ name: "Denaturation mapping" }
+{ name: "Designated Member Review" }
+{ name: "Digital holographic microscopy" }
+{ name: "Digital polymerase chain reaction" }
+{ name: "Direct fluorescent antibody" }
+{ name: "Dispersion stability" }
+{ name: "Distillation" }
+{ name: "DNA extraction" }
+{ name: "DNA footprinting" }
+{ name: "DNA laddering" }
+{ name: "DNase footprinting assay" }
+
+{ name: "Electric cell-substrate impedance sensing" }
+{ name: "Electrochromatography" }
+{ name: "Electromembrane extraction" }
+{ name: "Electropherogram" }
+{ name: "Electrophoresis (disambiguation)" }
+{ name: "Electrophoretic mobility shift assay" }
+{ name: "Electrophoretogram" }
+{ name: "Electroporation" }
+{ name: "End-sequence profiling" }
+{ name: "Ethanol precipitation" }
+{ name: "Ethidium homodimer assay" }
+
+{ name: "Far-Eastern blotting" }
+{ name: "Feulgen stain" }
+{ name: "Field flow fractionation" }
+{ name: "Filtration" }
+{ name: "Fizzy extraction" }
+{ name: "FLAG-tag" }
+{ name: "Flow cytometry" }
+{ name: "Fluorescence in situ hybridization" }
+{ name: "Förster resonance energy transfer" }
+{ name: "Fosmid" }
+{ name: "Fractional distillation" }
+{ name: "Fractionation" }
+{ name: "Function-spacer-lipid construct" }
+
+{ name: "Gas chromatography" }
+{ name: "Gas chromatography–mass spectrometry" }
+{ name: "Gas phase electrophoretic molecular mobility analysis" }
+{ name: "Gel electrophoresis" }
+{ name: "Gel electrophoresis of proteins" }
+{ name: "Gel extraction" }
+{ name: "Gene gun" }
+{ name: "Gene knockin" }
+{ name: "Gene knockout" }
+
+{ name: "Helicase-dependent amplification" }
+{ name: "Hofmeister series" }
+{ name: "Homogenization (biology)" }
+{ name: "Homogenization (chemistry)" }
+{ name: "Host-Cell Reactivation" }
+{ name: "Hot plate test" }
+{ name: "Hydrophilic interaction chromatography" }
+
+{ name: "Immunocytochemistry" }
+{ name: "Immunoelectrophoresis" }
+{ name: "Immunohistochemistry" }
+{ name: "Immunomagnetic separation" }
+{ name: "Immunoperoxidase" }
+{ name: "Impalefection" }
+{ name: "In situ hybridization" }
+{ name: "Indirect immunoperoxidase assay" }
+{ name: "Insect euthanasia" }
+{ name: "Intravital microscopy" }
+{ name: "Inverse polymerase chain reaction" }
+{ name: "Ion-mobility spectrometry–mass spectrometry" }
+{ name: "Ion-exchange membranes" }
+{ name: "Isotope dilution" }
+{ name: "Isotopic labeling" }
+
+{ name: "Jumping library" }
+
+{ name: "K-Casein" }
+{ name: "Kodecyte" }
+{ name: "Kodevirion" }
+{ name: "Kugelrohr" }
+
+{ name: "Laboratory automation" }
+{ name: "Laboratory diagnosis of viral infections" }
+{ name: "Lamm equation" }
+{ name: "LIESST" }
+{ name: "Liquefaction" }
+{ name: "Liquefied gas" }
+{ name: "Liquid–liquid extraction" }
+{ name: "Thin layer extraction" }
+{ name: "List of purification methods in chemistry" }
+{ name: "Live cell imaging" }
+{ name: "Low copy number" }
+{ name: "Lysis buffer" }
+
+{ name: "Macrograph" }
+{ name: "Magnet-assisted transfection" }
+{ name: "Magnetofection" }
+{ name: "Mason–Weaver equation" }
+{ name: "Mass cytometry" }
+{ name: "MassTag-PCR" }
+{ name: "Metallurgical assay" }
+{ name: "Micro-arrays for mass spectrometry" }
+{ name: "Microelectrode" }
+{ name: "Microscale thermophoresis" }
+{ name: "Microscopy" }
+{ name: "Molecular distillation" }
+{ name: "Most probable number" }
+{ name: "MS2 tagging" }
+{ name: "Multielectrode array" }
+{ name: "Multiplex (assay)" }
+{ name: "Multiplex ligation-dependent probe amplification" }
+{ name: "Multiplex polymerase chain reaction" }
+{ name: "Murashige and Skoog medium" }
+
+{ name: "Nano differential scanning fluorimetry" }
+{ name: "Nanopore sequencing" }
+{ name: "Nanovid microscopy" }
+{ name: "Nested polymerase chain reaction" }
+{ name: "Nick translation" }
+{ name: "Nucleic acid templated chemistry" }
+
+{ name: "Oligomer restriction" }
+{ name: "Oligonucleotide synthesis" }
+{ name: "Organ culture" }
+{ name: "Overlap extension polymerase chain reaction" }
+{ name: "Overlay assay" }
+
+{ name: "Paired-end tag" }
+{ name: "Particle size analysis" }
+{ name: "Patch clamp" }
+{ name: "Peptide mass fingerprinting" }
+{ name: "Phage-ligand technology" }
+{ name: "Plaque reduction neutralization test" }
+{ name: "Polymerase chain reaction" }
+{ name: "Polymerase cycling assembly" }
+{ name: "Pressure reactor" }
+{ name: "Primer dimer" }
+{ name: "Protein footprinting" }
+{ name: "Protein Misfolding Cyclic Amplification" }
+{ name: "Protein tag" }
+{ name: "Protein-fragment complementation assay" }
+{ name: "Protomap (proteomics)" }
+
+{ name: "QPNC-PAGE" }
+{ name: "Quantitative phase-contrast microscopy" }
+
+{ name: "Radioimmunoprecipitation assay buffer" }
+{ name: "Randall–Selitto test" }
+{ name: "Real-time polymerase chain reaction" }
+{ name: "Recombinase Polymerase Amplification" }
+{ name: "Recrystallization (chemistry)" }
+{ name: "Reflux" }
+{ name: "Relative fluorescence units" }
+{ name: "Restriction landmark genomic scanning" }
+{ name: "Reverse transcription polymerase chain reaction" }
+{ name: "Ribosomal Intergenic Spacer analysis" }
+
+{ name: "Salting out" }
+{ name: "Sarfus" }
+{ name: "Sedimentation" }
+{ name: "Sedimentation coefficient" }
+{ name: "Selection and amplification binding assay" }
+{ name: "Separatory funnel" }
+{ name: "Sequencing by hybridization" }
+{ name: "Serial dilution" }
+{ name: "Short path distillation" }
+{ name: "Single particle tracking" }
+{ name: "Single-cell analysis" }
+{ name: "Size-exclusion chromatography" }
+{ name: "Slice preparation" }
+{ name: "Solid-phase microextraction" }
+{ name: "Solvent impregnated resin" }
+{ name: "Solvent suppression" }
+{ name: "Sonication" }
+{ name: "Southwestern blot" }
+{ name: "Soxhlet extractor" }
+{ name: "Sparging (chemistry)" }
+{ name: "Spin trapping" }
+{ name: "Standard addition" }
+{ name: "Starch indicator" }
+{ name: "Strep-tag" }
+{ name: "Streptamer" }
+{ name: "Sublimation (phase transition)" }
+{ name: "Suction filtration" }
+{ name: "Surround Optical Fiber Immunoassay" }
+{ name: "Swelling capacity" }
+{ name: "Synchronous coefficient of drag alteration" }
+
+{ name: "Tablet hardness testing" }
+{ name: "Tail flick test" }
+{ name: "Terminal restriction fragment length polymorphism" }
+{ name: "Thin-layer chromatography" }
+{ name: "The Three Rs (animals)" }
+{ name: "Time stretch quantitative phase imaging" }
+{ name: "Time-lapse microscopy" }
+{ name: "Time-resolved mass spectrometry" }
+{ name: "Tissue culture" }
+{ name: "Toeprinting assay" }
+{ name: "Toluidine blue stain" }
+{ name: "Touchdown polymerase chain reaction" }
+{ name: "Transmission electron microscopy DNA sequencing" }
+{ name: "TUNEL assay" }
+{ name: "Two-dimensional gel electrophoresis" }
+{ name: "User:Tzachi Bar/sandbox" }
+
+{ name: "Urine specific gravity" }
+
+{ name: "Vacuum distillation" }
+{ name: "Vargulin" }
+{ name: "ViroCap" }
+{ name: "Virus quantification" }
+{ name: "Vivisection" }
+
+{ name: "Wastewater quality indicators" }
+{ name: "Weisz-Prater Criterion" }
+{ name: "Western blot" }
+{ name: "Wet laboratory" }
+{ name: "Winogradsky column" }
+{ name: "Wound healing assay" }
+
+{ name: "Zoo blot" }
+{ name: "Zymoblot" }
+{ name: "Zymography" }

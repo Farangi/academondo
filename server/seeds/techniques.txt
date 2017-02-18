@@ -1,0 +1,261 @@
+Acid-base extraction
+Affinity electrophoresis
+Affinity magnetic separation
+Air-free technique
+Allele-specific oligonucleotide
+Ames test
+Digital polymerase chain reaction
+Ammonium sulfate precipitation
+Amplicon
+Animal testing
+Annexin A5 affinity assay
+Anterograde tracing
+Assay
+
+Baby Gender Mentor
+Blot (biology)
+Boom method
+
+Cannula transfer
+Capillary electrochromatography
+Carnoy's solution
+Cathepsin zymography
+Cell counting
+Cell fractionation
+Chemotaxis assay
+Chromosome jumping
+Clearing factor
+COLD-PCR
+Column chromatography
+Conditioned place preference
+Cooling bath
+Cot analysis
+Cot filtration
+Crystallization
+Cycle of quantification/qualification
+Cycling probe technology
+Cytometry
+
+Decantation
+Degasification
+Denaturation mapping
+Designated Member Review
+Digital holographic microscopy
+Digital polymerase chain reaction
+Direct fluorescent antibody
+Dispersion stability
+Distillation
+DNA extraction
+DNA footprinting
+DNA laddering
+DNase footprinting assay
+
+Electric cell-substrate impedance sensing
+Electrochromatography
+Electromembrane extraction
+Electropherogram
+Electrophoresis (disambiguation)
+Electrophoretic mobility shift assay
+Electrophoretogram
+Electroporation
+End-sequence profiling
+Ethanol precipitation
+Ethidium homodimer assay
+
+Far-Eastern blotting
+Feulgen stain
+Field flow fractionation
+Filtration
+Fizzy extraction
+FLAG-tag
+Flow cytometry
+Fluorescence in situ hybridization
+Förster resonance energy transfer
+Fosmid
+Fractional distillation
+Fractionation
+Function-spacer-lipid construct
+
+Gas chromatography
+Gas chromatography–mass spectrometry
+Gas phase electrophoretic molecular mobility analysis
+Gel electrophoresis
+Gel electrophoresis of proteins
+Gel extraction
+Gene gun
+Gene knockin
+Gene knockout
+
+Helicase-dependent amplification
+Hofmeister series
+Homogenization (biology)
+Homogenization (chemistry)
+Host-Cell Reactivation
+Hot plate test
+Hydrophilic interaction chromatography
+
+Immunocytochemistry
+Immunoelectrophoresis
+Immunohistochemistry
+Immunomagnetic separation
+Immunoperoxidase
+Impalefection
+In situ hybridization
+Indirect immunoperoxidase assay
+Insect euthanasia
+Intravital microscopy
+Inverse polymerase chain reaction
+Ion-mobility spectrometry–mass spectrometry
+Ion-exchange membranes
+Isotope dilution
+Isotopic labeling
+
+Jumping library
+
+K-Casein
+Kodecyte
+Kodevirion
+Kugelrohr
+
+Laboratory automation
+Laboratory diagnosis of viral infections
+Lamm equation
+LIESST
+Liquefaction
+Liquefied gas
+Liquid–liquid extraction
+Thin layer extraction
+List of purification methods in chemistry
+Live cell imaging
+Low copy number
+Lysis buffer
+
+Macrograph
+Magnet-assisted transfection
+Magnetofection
+Mason–Weaver equation
+Mass cytometry
+MassTag-PCR
+Metallurgical assay
+Micro-arrays for mass spectrometry
+Microelectrode
+Microscale thermophoresis
+Microscopy
+Molecular distillation
+Most probable number
+MS2 tagging
+Multielectrode array
+Multiplex (assay)
+Multiplex ligation-dependent probe amplification
+Multiplex polymerase chain reaction
+Murashige and Skoog medium
+
+Nano differential scanning fluorimetry
+Nanopore sequencing
+Nanovid microscopy
+Nested polymerase chain reaction
+Nick translation
+Nucleic acid templated chemistry
+
+Oligomer restriction
+Oligonucleotide synthesis
+Organ culture
+Overlap extension polymerase chain reaction
+Overlay assay
+
+Paired-end tag
+Particle size analysis
+Patch clamp
+Peptide mass fingerprinting
+Phage-ligand technology
+Plaque reduction neutralization test
+Polymerase chain reaction
+Polymerase cycling assembly
+Pressure reactor
+Primer dimer
+Protein footprinting
+Protein Misfolding Cyclic Amplification
+Protein tag
+Protein-fragment complementation assay
+Protomap (proteomics)
+
+QPNC-PAGE
+Quantitative phase-contrast microscopy
+
+Radioimmunoprecipitation assay buffer
+Randall–Selitto test
+Real-time polymerase chain reaction
+Recombinase Polymerase Amplification
+Recrystallization (chemistry)
+Reflux
+Relative fluorescence units
+Restriction landmark genomic scanning
+Reverse transcription polymerase chain reaction
+Ribosomal Intergenic Spacer analysis
+
+Salting out
+Sarfus
+Sedimentation
+Sedimentation coefficient
+Selection and amplification binding assay
+Separatory funnel
+Sequencing by hybridization
+Serial dilution
+Short path distillation
+Single particle tracking
+Single-cell analysis
+Size-exclusion chromatography
+Slice preparation
+Solid-phase microextraction
+Solvent impregnated resin
+Solvent suppression
+Sonication
+Southwestern blot
+Soxhlet extractor
+Sparging (chemistry)
+Spin trapping
+Standard addition
+Starch indicator
+Strep-tag
+Streptamer
+Sublimation (phase transition)
+Suction filtration
+Surround Optical Fiber Immunoassay
+Swelling capacity
+Synchronous coefficient of drag alteration
+
+Tablet hardness testing
+Tail flick test
+Terminal restriction fragment length polymorphism
+Thin-layer chromatography
+The Three Rs (animals)
+Time stretch quantitative phase imaging
+Time-lapse microscopy
+Time-resolved mass spectrometry
+Tissue culture
+Toeprinting assay
+Toluidine blue stain
+Touchdown polymerase chain reaction
+Transmission electron microscopy DNA sequencing
+TUNEL assay
+Two-dimensional gel electrophoresis
+User:Tzachi Bar/sandbox
+
+Urine specific gravity
+
+Vacuum distillation
+Vargulin
+ViroCap
+Virus quantification
+Vivisection
+
+Wastewater quality indicators
+Weisz-Prater Criterion
+Western blot
+Wet laboratory
+Winogradsky column
+Wound healing assay
+
+Zoo blot
+Zymoblot
+Zymography

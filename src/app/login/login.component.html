@@ -1,0 +1,24 @@
+<div class="col-md-6 col-md-offset-3 padding-top">
+    <h2>Login</h2>
+    <form name="form" (ngSubmit)="formRef.form.valid && login()" #formRef="ngForm" novalidate>
+        <div class="form-group" [ngClass]="{ 'has-error': formRef.submitted && !username.valid }">
+            <label for="username">Username</label>
+            <input type="text" class="form-control" name="username" [(ngModel)]="model.username" #username="ngModel" required />
+            <div *ngIf="formRef.submitted && !username.valid" class="help-block">Username is required</div>
+        </div>
+        <div class="form-group" [ngClass]="{ 'has-error': formRef.submitted && !password.valid }">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" name="password" [(ngModel)]="model.password" #password="ngModel" required />
+            <div *ngIf="formRef.submitted && !password.valid" class="help-block">Password is required</div>
+        </div>
+        <div class="form-group">
+            <button [disabled]="loading" style="margin-bottom: 15px;" class="btn btn-primary">Login</button>                       
+            <embed  *ngIf="loading" src="../assets/default-green.svg" width="30" height="30" 
+            type="image/svg+xml"
+            pluginspage="http://www.adobe.com/svg/viewer/install/" /> 
+            <a style="margin-bottom: 15px;" routerLink="/register">Register now </a>            
+        </div>
+        <div *ngIf="error" class="alert alert-danger">{{error}}</div>
+    </form>
+    
+</div>

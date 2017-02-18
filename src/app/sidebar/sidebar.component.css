@@ -1,0 +1,16 @@
+.altru-menu {
+    position: fixed;
+    right: 20px;
+    top: 175px;
+    max-height: calc(100vh - 40px);
+    background-color: #ffffff;
+    width: 250px;
+    border-radius: 6px;
+    box-shadow: 2px 2px 2px #808080;
+    overflow: auto;
+    z-index: 5;
+}
+
+div.list-group {
+    margin-bottom: 0;
+}

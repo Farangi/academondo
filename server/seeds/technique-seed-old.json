@@ -1,0 +1,261 @@
+{ technique: "Acid-base extraction" }
+{ technique: "Affinity electrophoresis" }
+{ technique: "Affinity magnetic separation" }
+{ technique: "Air-free technique" }
+{ technique: "Allele-specific oligonucleotide" }
+{ technique: "Ames test" }
+{ technique: "Digital polymerase chain reaction" }
+{ technique: "Ammonium sulfate precipitation" }
+{ technique: "Amplicon" }
+{ technique: "Animal testing" }
+{ technique: "Annexin A5 affinity assay" }
+{ technique: "Anterograde tracing" }
+{ technique: "Assay" }
+
+{ technique: "Baby Gender Mentor" }
+{ technique: "Blot (biology)" }
+{ technique: "Boom method" }
+
+{ technique: "Cannula transfer" }
+{ technique: "Capillary electrochromatography" }
+{ technique: "Carnoy's solution" }
+{ technique: "Cathepsin zymography" }
+{ technique: "Cell counting" }
+{ technique: "Cell fractionation" }
+{ technique: "Chemotaxis assay" }
+{ technique: "Chromosome jumping" }
+{ technique: "Clearing factor" }
+{ technique: "COLD-PCR" }
+{ technique: "Column chromatography" }
+{ technique: "Conditioned place preference" }
+{ technique: "Cooling bath" }
+{ technique: "Cot analysis" }
+{ technique: "Cot filtration" }
+{ technique: "Crystallization" }
+{ technique: "Cycle of quantification/qualification" }
+{ technique: "Cycling probe technology" }
+{ technique: "Cytometry" }
+
+{ technique: "Decantation" }
+{ technique: "Degasification" }
+{ technique: "Denaturation mapping" }
+{ technique: "Designated Member Review" }
+{ technique: "Digital holographic microscopy" }
+{ technique: "Digital polymerase chain reaction" }
+{ technique: "Direct fluorescent antibody" }
+{ technique: "Dispersion stability" }
+{ technique: "Distillation" }
+{ technique: "DNA extraction" }
+{ technique: "DNA footprinting" }
+{ technique: "DNA laddering" }
+{ technique: "DNase footprinting assay" }
+
+{ technique: "Electric cell-substrate impedance sensing" }
+{ technique: "Electrochromatography" }
+{ technique: "Electromembrane extraction" }
+{ technique: "Electropherogram" }
+{ technique: "Electrophoresis (disambiguation)" }
+{ technique: "Electrophoretic mobility shift assay" }
+{ technique: "Electrophoretogram" }
+{ technique: "Electroporation" }
+{ technique: "End-sequence profiling" }
+{ technique: "Ethanol precipitation" }
+{ technique: "Ethidium homodimer assay" }
+
+{ technique: "Far-Eastern blotting" }
+{ technique: "Feulgen stain" }
+{ technique: "Field flow fractionation" }
+{ technique: "Filtration" }
+{ technique: "Fizzy extraction" }
+{ technique: "FLAG-tag" }
+{ technique: "Flow cytometry" }
+{ technique: "Fluorescence in situ hybridization" }
+{ technique: "Förster resonance energy transfer" }
+{ technique: "Fosmid" }
+{ technique: "Fractional distillation" }
+{ technique: "Fractionation" }
+{ technique: "Function-spacer-lipid construct" }
+
+{ technique: "Gas chromatography" }
+{ technique: "Gas chromatography–mass spectrometry" }
+{ technique: "Gas phase electrophoretic molecular mobility analysis" }
+{ technique: "Gel electrophoresis" }
+{ technique: "Gel electrophoresis of proteins" }
+{ technique: "Gel extraction" }
+{ technique: "Gene gun" }
+{ technique: "Gene knockin" }
+{ technique: "Gene knockout" }
+
+{ technique: "Helicase-dependent amplification" }
+{ technique: "Hofmeister series" }
+{ technique: "Homogenization (biology)" }
+{ technique: "Homogenization (chemistry)" }
+{ technique: "Host-Cell Reactivation" }
+{ technique: "Hot plate test" }
+{ technique: "Hydrophilic interaction chromatography" }
+
+{ technique: "Immunocytochemistry" }
+{ technique: "Immunoelectrophoresis" }
+{ technique: "Immunohistochemistry" }
+{ technique: "Immunomagnetic separation" }
+{ technique: "Immunoperoxidase" }
+{ technique: "Impalefection" }
+{ technique: "In situ hybridization" }
+{ technique: "Indirect immunoperoxidase assay" }
+{ technique: "Insect euthanasia" }
+{ technique: "Intravital microscopy" }
+{ technique: "Inverse polymerase chain reaction" }
+{ technique: "Ion-mobility spectrometry–mass spectrometry" }
+{ technique: "Ion-exchange membranes" }
+{ technique: "Isotope dilution" }
+{ technique: "Isotopic labeling" }
+
+{ technique: "Jumping library" }
+
+{ technique: "K-Casein" }
+{ technique: "Kodecyte" }
+{ technique: "Kodevirion" }
+{ technique: "Kugelrohr" }
+
+{ technique: "Laboratory automation" }
+{ technique: "Laboratory diagnosis of viral infections" }
+{ technique: "Lamm equation" }
+{ technique: "LIESST" }
+{ technique: "Liquefaction" }
+{ technique: "Liquefied gas" }
+{ technique: "Liquid–liquid extraction" }
+{ technique: "Thin layer extraction" }
+{ technique: "List of purification methods in chemistry" }
+{ technique: "Live cell imaging" }
+{ technique: "Low copy number" }
+{ technique: "Lysis buffer" }
+
+{ technique: "Macrograph" }
+{ technique: "Magnet-assisted transfection" }
+{ technique: "Magnetofection" }
+{ technique: "Mason–Weaver equation" }
+{ technique: "Mass cytometry" }
+{ technique: "MassTag-PCR" }
+{ technique: "Metallurgical assay" }
+{ technique: "Micro-arrays for mass spectrometry" }
+{ technique: "Microelectrode" }
+{ technique: "Microscale thermophoresis" }
+{ technique: "Microscopy" }
+{ technique: "Molecular distillation" }
+{ technique: "Most probable number" }
+{ technique: "MS2 tagging" }
+{ technique: "Multielectrode array" }
+{ technique: "Multiplex (assay)" }
+{ technique: "Multiplex ligation-dependent probe amplification" }
+{ technique: "Multiplex polymerase chain reaction" }
+{ technique: "Murashige and Skoog medium" }
+
+{ technique: "Nano differential scanning fluorimetry" }
+{ technique: "Nanopore sequencing" }
+{ technique: "Nanovid microscopy" }
+{ technique: "Nested polymerase chain reaction" }
+{ technique: "Nick translation" }
+{ technique: "Nucleic acid templated chemistry" }
+
+{ technique: "Oligomer restriction" }
+{ technique: "Oligonucleotide synthesis" }
+{ technique: "Organ culture" }
+{ technique: "Overlap extension polymerase chain reaction" }
+{ technique: "Overlay assay" }
+
+{ technique: "Paired-end tag" }
+{ technique: "Particle size analysis" }
+{ technique: "Patch clamp" }
+{ technique: "Peptide mass fingerprinting" }
+{ technique: "Phage-ligand technology" }
+{ technique: "Plaque reduction neutralization test" }
+{ technique: "Polymerase chain reaction" }
+{ technique: "Polymerase cycling assembly" }
+{ technique: "Pressure reactor" }
+{ technique: "Primer dimer" }
+{ technique: "Protein footprinting" }
+{ technique: "Protein Misfolding Cyclic Amplification" }
+{ technique: "Protein tag" }
+{ technique: "Protein-fragment complementation assay" }
+{ technique: "Protomap (proteomics)" }
+
+{ technique: "QPNC-PAGE" }
+{ technique: "Quantitative phase-contrast microscopy" }
+
+{ technique: "Radioimmunoprecipitation assay buffer" }
+{ technique: "Randall–Selitto test" }
+{ technique: "Real-time polymerase chain reaction" }
+{ technique: "Recombinase Polymerase Amplification" }
+{ technique: "Recrystallization (chemistry)" }
+{ technique: "Reflux" }
+{ technique: "Relative fluorescence units" }
+{ technique: "Restriction landmark genomic scanning" }
+{ technique: "Reverse transcription polymerase chain reaction" }
+{ technique: "Ribosomal Intergenic Spacer analysis" }
+
+{ technique: "Salting out" }
+{ technique: "Sarfus" }
+{ technique: "Sedimentation" }
+{ technique: "Sedimentation coefficient" }
+{ technique: "Selection and amplification binding assay" }
+{ technique: "Separatory funnel" }
+{ technique: "Sequencing by hybridization" }
+{ technique: "Serial dilution" }
+{ technique: "Short path distillation" }
+{ technique: "Single particle tracking" }
+{ technique: "Single-cell analysis" }
+{ technique: "Size-exclusion chromatography" }
+{ technique: "Slice preparation" }
+{ technique: "Solid-phase microextraction" }
+{ technique: "Solvent impregnated resin" }
+{ technique: "Solvent suppression" }
+{ technique: "Sonication" }
+{ technique: "Southwestern blot" }
+{ technique: "Soxhlet extractor" }
+{ technique: "Sparging (chemistry)" }
+{ technique: "Spin trapping" }
+{ technique: "Standard addition" }
+{ technique: "Starch indicator" }
+{ technique: "Strep-tag" }
+{ technique: "Streptamer" }
+{ technique: "Sublimation (phase transition)" }
+{ technique: "Suction filtration" }
+{ technique: "Surround Optical Fiber Immunoassay" }
+{ technique: "Swelling capacity" }
+{ technique: "Synchronous coefficient of drag alteration" }
+
+{ technique: "Tablet hardness testing" }
+{ technique: "Tail flick test" }
+{ technique: "Terminal restriction fragment length polymorphism" }
+{ technique: "Thin-layer chromatography" }
+{ technique: "The Three Rs (animals)" }
+{ technique: "Time stretch quantitative phase imaging" }
+{ technique: "Time-lapse microscopy" }
+{ technique: "Time-resolved mass spectrometry" }
+{ technique: "Tissue culture" }
+{ technique: "Toeprinting assay" }
+{ technique: "Toluidine blue stain" }
+{ technique: "Touchdown polymerase chain reaction" }
+{ technique: "Transmission electron microscopy DNA sequencing" }
+{ technique: "TUNEL assay" }
+{ technique: "Two-dimensional gel electrophoresis" }
+{ technique: "User:Tzachi Bar/sandbox" }
+
+{ technique: "Urine specific gravity" }
+
+{ technique: "Vacuum distillation" }
+{ technique: "Vargulin" }
+{ technique: "ViroCap" }
+{ technique: "Virus quantification" }
+{ technique: "Vivisection" }
+
+{ technique: "Wastewater quality indicators" }
+{ technique: "Weisz-Prater Criterion" }
+{ technique: "Western blot" }
+{ technique: "Wet laboratory" }
+{ technique: "Winogradsky column" }
+{ technique: "Wound healing assay" }
+
+{ technique: "Zoo blot" }
+{ technique: "Zymoblot" }
+{ technique: "Zymography" }

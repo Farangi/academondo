@@ -1,0 +1,85 @@
+<div class="col-sm-8 padding-top">
+	<!--<div class="pane-container center-content">-->
+	<!--<div class="pane fixed-size">-->
+	<!--<div class="container">
+        <h1>Lab form</h1>
+      <div class="row">-->
+	<!--<div style="background-color: lightgrey; padding: 20px 20px 20px 20px;">-->
+	<!--<div class="col-xs-6" style="background-color: lightgrey; padding: 20px 20px 20px 20px;">-->
+	<form [formGroup]="labForm" novalidate>
+		<!--<pre> {{labForm.value.lab | json}}</pre>                                    -->
+		<div formGroupName="lab">
+			<div class="form-group">
+				<label for="name">Lab name</label>
+				<input type="text" class="form-control" formControlName="name" placeholder="Name" required>
+        <!--<div *ngIf="formRef.submitted && !nameRef.valid" class="help-block">Lab name is required</div>-->
+			</div>
+			<div class="form-group">
+				<label for="address">Lab Address</label>
+				<input type="text" class="form-control" formControlName="address" placeholder="Address" required>
+			</div>
+      <div class="form-group">
+				<label for="zip">Zip Code</label>
+				<input type="text" class="form-control" formControlName="zip" placeholder="Zip" required>
+      </div>
+      <div class="form-group">
+				<label for="country">Country</label>
+        <input type="text" class="form-control" formControlName="country" placeholder="Country" required>
+        <!--<div>
+          <ss-multiselect-dropdown [options]="countryOptions" [texts]="countryTextSettings" [settings]="countrySelectSettings" formControlName="country"></ss-multiselect-dropdown>
+			  </div>-->
+			</div>            
+			<div class="form-group">
+				<label for="email">Email</label>
+				<input type="text" class="form-control" formControlName="email" placeholder="Email" required>
+			</div>
+			<div class="form-group">
+				<label for="groupLeader">Lab Group Leader</label>
+				<input type="text" class="form-control" formControlName="groupLeader" placeholder="Group Leader">
+			</div>
+			<div class="form-group">
+				<label for="about">About the lab</label>
+				<textarea type="text" class="form-control" formControlName="about" placeholder="Write about your lab"></textarea>
+			</div>     
+			<div class="form-group">
+        <label>Search PubMed for publications</label>
+        <div class="input-group">
+            <input class="form-control" name=term placeholder="search for articles on pubmed by author or title" #searchTerm>
+            <span class="input-group-btn">
+             <button [disabled]="pubmedLoading"  class="btn btn-primary" (click)="performSearch(searchTerm.value)">PubMed Search</button>
+             <button class=" btn btn-default" (click)="clearPubmedOptions()">Clear Results</button>
+            </span>
+              
+          
+	        
+			</div>
+			</div>
+      <div class="form-group">
+        <label for="publications">Select your publications from the search above</label>
+        <div>
+				  <ss-multiselect-dropdown [options]="pubmedOptions" [texts]="pubmedTextSettings" [settings]="pubmedSelectSettings" formControlName="publications"></ss-multiselect-dropdown>
+          <span *ngIf="pubmedLoading" class="fa fa-spinner fa-pulse fa-2x fa-fw"></span><span class="sr-only">Loading...</span>          
+        </div>
+			</div>
+
+			<div class="form-group">
+				<label for="techniques">Lab techniques</label>
+        <div>
+				  <ss-multiselect-dropdown [options]="techniqueOptions" [texts]="techniqueTextSettings" [settings]="selectSettings" formControlName="techniques"></ss-multiselect-dropdown>
+			</div>
+			</div>
+			<div class="form-group">
+				<label for="fieldOfInterests">Field of Interest</label>
+        <div>
+				      <ss-multiselect-dropdown [options]="fieldOfInterestOptions" [texts]="foiTextSettings" [settings]="selectSettings" formControlName="fieldOfInterests"></ss-multiselect-dropdown>
+			</div>
+			</div>
+			<button (click)="labSubmit()" class="btn btn-primary" [disabled]="labForm.invalid">Submit</button>
+			<i *ngIf="loading" class="fa fa-spinner fa-pulse fa-1x fa-fw"></i>
+			<span class="sr-only">Loading...</span>
+		</div>
+    <div *ngIf="error" class="alert alert-danger">{{error}}</div>
+	</form>
+	<!--</div>-->
+	<!--</div>-->
+</div>

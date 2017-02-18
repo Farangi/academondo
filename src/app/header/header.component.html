@@ -1,0 +1,103 @@
+<!--<header class="headz altru-header">
+    <div class="kolbe">
+        <img class="kolbe" src="../assets/kolbe-trans.png">
+        <span class="altru-welcome">
+            Welcome to AltruVation - Jobs in Academia!
+        </span>
+    </div>
+</header>   
+<nav class="altru-nav"> 
+    <div class="altru-nav-list">
+        <div>    
+            <a class="altru-link-text" routerLink="/dashboard">Dashboard</a>            
+        
+            <a class="altru-link-text" routerLink="/cv">CV</a>            
+        
+            <a class="altru-link-text" routerLink="/scienceGroup">Science group</a>            
+        </div>        
+    </div>
+</nav>-->
+<!--<div class="container-fluid navbar-static-top">
+    <div class="row">
+        <div class="navbar header-color">    
+            
+                <span [routerLinkActive]="['active']">
+                    <img class="kolbe" src="../assets/kolbe-trans.png">            
+                </span>
+                <span class=" altru-welcome">
+                    
+                    Welcome to AltruVation - Jobs in Academia!
+                </span>            
+                <button (click)="easterEgg()">EasterEgg</button>
+        </div>
+    </div>
+    <div class="row">
+        <nav class="collapse navbar-collapse"> 
+            <ul class="nav navbar-nav" style="float:none">
+                <li>    
+                    <a [routerLinkActive]="['active']" [routerLinkActive]="['active']" routerLink="/dashboard">Dashboard</a>
+                </li>
+                <li>
+                    <a [routerLinkActive]="['active']" routerLink="/lab">Lab signup 1</a>            
+                </li>
+                <li>
+                    <a [routerLinkActive]="['active']" routerLink="/labsignup">Lab signup 2</a>
+                </li>
+                <li>
+                    <a [routerLinkActive]="['active']" routerLink="/labs">Labs</a>
+                </li>
+                <li>
+                    <a [routerLinkActive]="['active']" routerLink="/PubMed">PubMed Tester</a>
+                </li>
+                <li *ngIf="currentUser" style="float:right">
+                    <a [routerLinkActive]="['active']" (click)="easterEgg('See you soon! have a nice day and enjoy yourself')" routerLink="/login">Logout, {{currentUser}} </a>
+                </li>                                                                 
+
+                                                                              
+            </ul>
+        </nav>
+    </div>
+</div>-->
+
+<!--<app-mist>-->
+
+
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar6">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+			<a class="navbar-brand">
+				<img src="../assets/kolbe-trans.png"> Welcome to Academondo
+			</a>      
+		</div>
+    
+		<div id="navbar6" class="navbar-collapse collapse">
+			<ul class="nav navbar-nav navbar-right">
+				<li>
+					<a [routerLinkActive]="['active']" routerLink="/dashboard">Dashboard</a>
+				</li>
+				<li>
+					<a [routerLinkActive]="['active']" routerLink="/labsignup">Lab signup</a>
+				</li>
+				<li>
+					<a [routerLinkActive]="['active']" routerLink="/labs">Labs</a>
+				</li>
+				<li>
+					<a [routerLinkActive]="['active']" routerLink="/cv">CV</a>
+				</li>
+				<li>
+					<a [routerLinkActive]="['active']" routerLink="/admin">Admin</a>
+				</li>                
+				<li *ngIf="currentUser()" style="float:right">
+					<a [routerLinkActive]="['active']" (click)="logout()" routerLink="/login">Logout</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</nav>

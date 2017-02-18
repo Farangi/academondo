@@ -1,0 +1,7 @@
+.fixed-horizontal-centering-popup {
+    position: fixed;
+    z-index: 1;
+    top: 90px;
+    margin-left: -200px;
+    left: 50%;
+}

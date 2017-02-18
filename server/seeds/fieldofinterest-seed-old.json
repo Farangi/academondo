@@ -1,0 +1,261 @@
+
+    {
+        field: "Acoustics",
+        desc: "The study of sound."
+    }
+    {
+        field: "Anatomy",
+        desc: "The study of organisms and their parts."
+    }
+    {
+        field: "Anthropology", 
+        desc: "The study of the origin, behavior, and the physical, social, and cultural development of humans."
+    }
+    {
+        field: "Archaeology",
+        desc: "The study of past human lives by examining remaining material evidence."
+    }
+    {
+        field: "Astronomy",
+        desc: "The study of outer space."
+    }
+    {
+        field: "Astrophysics",
+        desc: "The branch of astronomy that deals with the physics of stellar phenomena."
+	}
+    {
+        field: "Bacteriology",
+        desc: "The study of bacteria, especially in relation to medicine and agriculture."
+	}
+    {
+        field: "Biochemistry",
+        desc: "The study of the chemical substances and processes in living organisms."
+	}
+    {
+        field: "Biology",
+        desc: "The science of life and living organisms"
+	}
+    {
+        field: "Botany",
+        desc: "The study of plants."
+    }
+    {
+        field: "Cardiology",
+        desc: "The medical study of the heart."
+    }
+    {
+        field: "Cartography",
+        desc: "The art or technique of making maps or charts."
+    }
+    {
+        field: "Chemistry",
+        desc: "The science of the composition, structure, properties, and reactions of matter, especially of atomic and molecular systems."
+    }
+    {
+        field: "Cosmology",
+        desc: "The study of the physical universe considered as a totality of phenomena in time and space."
+    }
+    {
+        field: "Crystallography",
+        desc: "The science of crystal structure and phenomena."
+    }
+    {
+        field: "Ecology",
+        desc: "The study of organisms and their environment."
+    }
+    {
+        field: "Embryology",
+        desc: "The study of the formation, early growth, and development of living organisms."
+    }
+    {
+        field: "Endocrinology",
+        desc: "The study of the glands and hormones of the body."
+    }
+    {
+        field: "Entomology",
+        desc: "The scientific study of insects."
+    }
+    {
+        field: "Enzymology",
+        desc: "The study of the biochemical nature and activity of enzymes."
+    }
+    {
+        field: "Forestry",
+        desc: "The science and art of cultivating, maintaining, and developing forests."
+    }
+    {
+        field: "Gelotology",
+        desc: "The study of laughter."
+    }
+    {
+        field: "Genetics",
+        desc: "The study of heredity and inherited traits."
+    }
+    {
+        field: "Geochemistry",
+        desc: "The chemistry of the composition and alterations of the solid matter of the earth or a celestial body."
+    }
+    {
+        field: "Geodesy",
+        desc: "The geologic science of the size and shape of the earth."
+    }
+    {
+        field: "Geography",
+        desc: "The study of the earth and its features."
+    }
+    {
+        field: "Geology",
+        desc: "The scientific study of the origin, history, and structure of the earth."
+    }
+    {
+        field: "Geophysics",
+        desc: "The physics of the earth and its environment, including the physics of fields such as meteorology, oceanography, and seismology"
+    }
+    {
+        field: "Hematology",
+        desc: "The study of the blood and blood-producing organs."
+    }
+    {
+        field: "Histology",
+        desc: "The study of the microscopic structure of animal and plant tissues."
+    }
+    {
+        field: "Horology",
+        desc: "The science of measuring time and making time pieces"
+    }
+    {
+        field: "Hydrology",
+        desc: "The study of the properties and effects of water on earth."
+    }
+    {
+        field: "Ichthyology",
+        desc: "The study of fish."
+    }
+    {
+        field: "Immunology",
+        desc: "The study of the immune system of the body."
+    }
+    {
+        field: "Linguistics",
+        desc: "The study of language and phonetics."
+    }
+    {
+        field: "Mechanics",
+        desc: "Design, construction, and use of machinery or mechanical structures."
+    }
+    {
+        field: "Medicine",
+        desc: "The science of diagnosing and treating disease and damage to the body."
+    }
+    {
+        field: "Meteorology",
+        desc: "The study of weather and atmospheric conditions."
+    }
+    {
+        field: "Metrology",
+        desc: "The science of measurement."
+    }
+    {
+        field: "Microbiology",
+        desc: "The study of microorganisms and their effects on other living organisms."
+    }
+    {
+        field: "Mineralogy",
+        desc: "The study of minerals, including their distribution, identification, and properties."
+    }
+    {
+        field: "Mycology",
+        desc: "The branch of botany that deals with fungi."
+    }
+    {
+        field: "Neurology",
+        desc: "The study of the nervous system and disorders affecting it."
+    }
+    {
+        field: "Nucleonics",
+        desc: "The study of the behavior and characteristics of nucleons or atomic nuclei."
+    }
+    {
+        field: "Nutrition",
+        desc: "The study of food and nourishment."
+    }
+    {
+        field: "Oceanography",
+        desc: "The exploration and study of the ocean."
+    }
+    {
+        field: "Oncology",
+        desc: "The study of the development, diagnosis, treatment, and prevention of tumors."
+    }
+    {
+        field: "Optics",
+        desc: "The study of light and vision."
+    }
+    {
+        field: "Paleontology",
+        desc: "The study of prehistoric life through fossils."
+    }
+    {
+        field: "Pathology",
+        desc: "The study of disease and its causes, processes, development, and consequences."
+    }
+    {
+        field: "Petrology",
+        desc: "The study of the origin, composition, structure, and alteration of rocks."
+    }
+    {
+        field: "Pharmacology",
+        desc: "The science of the composition, use, and effects of drugs."
+    }
+    {
+        field: "Physics",
+        desc: "The science of matter and energy and interactions between the two."
+    }
+    {
+        field: "Physiology",
+        desc: "The study of the functions of living organisms."
+    }
+    {
+        field: "Psychology",
+        desc: "The study of the mental process and behavior."
+    }
+    {
+        field: "Radiology",
+        desc: "The use of radioactive substances in diagnosis and treatment of disease."
+    }
+    {
+        field: "Robotics",
+        desc: "The science of technology to design, fabrication, and application of robots."
+    }
+    {
+        field: "Seismology",
+        desc: "The study of earthquakes."
+    }
+    {
+        field: "Spectroscopy",
+        desc: "The study of radiant light."
+    }
+    {
+        field: "Systematics",
+        desc: "The science of systematic classification."
+    }
+    {
+        field: "Thermodynamics",
+        desc: "The study of relationships and conversions between heat and other forms of energy."
+    }
+    {
+        field: "Toxicology",
+        desc: "The study of poisons and the treatment of poisoning."
+    }
+    {
+        field: "Virology",
+        desc: "The study of viruses and viral diseases."
+    }
+    {
+        field: "Volcanology",
+        desc: "The study of volcanoes and volcanic phenomena."
+    }
+    {
+        field: "Zoology",
+        desc: "the study of the structure, physiology, development, and classification of animals."
+    }

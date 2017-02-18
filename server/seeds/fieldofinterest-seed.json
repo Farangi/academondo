@@ -1,0 +1,261 @@
+
+    {
+        name: "Acoustics",
+        desc: "The study of sound."
+    }
+    {
+        name: "Anatomy",
+        desc: "The study of organisms and their parts."
+    }
+    {
+        name: "Anthropology", 
+        desc: "The study of the origin, behavior, and the physical, social, and cultural development of humans."
+    }
+    {
+        name: "Archaeology",
+        desc: "The study of past human lives by examining remaining material evidence."
+    }
+    {
+        name: "Astronomy",
+        desc: "The study of outer space."
+    }
+    {
+        name: "Astrophysics",
+        desc: "The branch of astronomy that deals with the physics of stellar phenomena."
+	}
+    {
+        name: "Bacteriology",
+        desc: "The study of bacteria, especially in relation to medicine and agriculture."
+	}
+    {
+        name: "Biochemistry",
+        desc: "The study of the chemical substances and processes in living organisms."
+	}
+    {
+        name: "Biology",
+        desc: "The science of life and living organisms"
+	}
+    {
+        name: "Botany",
+        desc: "The study of plants."
+    }
+    {
+        name: "Cardiology",
+        desc: "The medical study of the heart."
+    }
+    {
+        name: "Cartography",
+        desc: "The art or technique of making maps or charts."
+    }
+    {
+        name: "Chemistry",
+        desc: "The science of the composition, structure, properties, and reactions of matter, especially of atomic and molecular systems."
+    }
+    {
+        name: "Cosmology",
+        desc: "The study of the physical universe considered as a totality of phenomena in time and space."
+    }
+    {
+        name: "Crystallography",
+        desc: "The science of crystal structure and phenomena."
+    }
+    {
+        name: "Ecology",
+        desc: "The study of organisms and their environment."
+    }
+    {
+        name: "Embryology",
+        desc: "The study of the formation, early growth, and development of living organisms."
+    }
+    {
+        name: "Endocrinology",
+        desc: "The study of the glands and hormones of the body."
+    }
+    {
+        name: "Entomology",
+        desc: "The scientific study of insects."
+    }
+    {
+        name: "Enzymology",
+        desc: "The study of the biochemical nature and activity of enzymes."
+    }
+    {
+        name: "Forestry",
+        desc: "The science and art of cultivating, maintaining, and developing forests."
+    }
+    {
+        name: "Gelotology",
+        desc: "The study of laughter."
+    }
+    {
+        name: "Genetics",
+        desc: "The study of heredity and inherited traits."
+    }
+    {
+        name: "Geochemistry",
+        desc: "The chemistry of the composition and alterations of the solid matter of the earth or a celestial body."
+    }
+    {
+        name: "Geodesy",
+        desc: "The geologic science of the size and shape of the earth."
+    }
+    {
+        name: "Geography",
+        desc: "The study of the earth and its features."
+    }
+    {
+        name: "Geology",
+        desc: "The scientific study of the origin, history, and structure of the earth."
+    }
+    {
+        name: "Geophysics",
+        desc: "The physics of the earth and its environment, including the physics of fields such as meteorology, oceanography, and seismology"
+    }
+    {
+        name: "Hematology",
+        desc: "The study of the blood and blood-producing organs."
+    }
+    {
+        name: "Histology",
+        desc: "The study of the microscopic structure of animal and plant tissues."
+    }
+    {
+        name: "Horology",
+        desc: "The science of measuring time and making time pieces"
+    }
+    {
+        name: "Hydrology",
+        desc: "The study of the properties and effects of water on earth."
+    }
+    {
+        name: "Ichthyology",
+        desc: "The study of fish."
+    }
+    {
+        name: "Immunology",
+        desc: "The study of the immune system of the body."
+    }
+    {
+        name: "Linguistics",
+        desc: "The study of language and phonetics."
+    }
+    {
+        name: "Mechanics",
+        desc: "Design, construction, and use of machinery or mechanical structures."
+    }
+    {
+        name: "Medicine",
+        desc: "The science of diagnosing and treating disease and damage to the body."
+    }
+    {
+        name: "Meteorology",
+        desc: "The study of weather and atmospheric conditions."
+    }
+    {
+        name: "Metrology",
+        desc: "The science of measurement."
+    }
+    {
+        name: "Microbiology",
+        desc: "The study of microorganisms and their effects on other living organisms."
+    }
+    {
+        name: "Mineralogy",
+        desc: "The study of minerals, including their distribution, identification, and properties."
+    }
+    {
+        name: "Mycology",
+        desc: "The branch of botany that deals with fungi."
+    }
+    {
+        name: "Neurology",
+        desc: "The study of the nervous system and disorders affecting it."
+    }
+    {
+        name: "Nucleonics",
+        desc: "The study of the behavior and characteristics of nucleons or atomic nuclei."
+    }
+    {
+        name: "Nutrition",
+        desc: "The study of food and nourishment."
+    }
+    {
+        name: "Oceanography",
+        desc: "The exploration and study of the ocean."
+    }
+    {
+        name: "Oncology",
+        desc: "The study of the development, diagnosis, treatment, and prevention of tumors."
+    }
+    {
+        name: "Optics",
+        desc: "The study of light and vision."
+    }
+    {
+        name: "Paleontology",
+        desc: "The study of prehistoric life through fossils."
+    }
+    {
+        name: "Pathology",
+        desc: "The study of disease and its causes, processes, development, and consequences."
+    }
+    {
+        name: "Petrology",
+        desc: "The study of the origin, composition, structure, and alteration of rocks."
+    }
+    {
+        name: "Pharmacology",
+        desc: "The science of the composition, use, and effects of drugs."
+    }
+    {
+        name: "Physics",
+        desc: "The science of matter and energy and interactions between the two."
+    }
+    {
+        name: "Physiology",
+        desc: "The study of the functions of living organisms."
+    }
+    {
+        name: "Psychology",
+        desc: "The study of the mental process and behavior."
+    }
+    {
+        name: "Radiology",
+        desc: "The use of radioactive substances in diagnosis and treatment of disease."
+    }
+    {
+        name: "Robotics",
+        desc: "The science of technology to design, fabrication, and application of robots."
+    }
+    {
+        name: "Seismology",
+        desc: "The study of earthquakes."
+    }
+    {
+        name: "Spectroscopy",
+        desc: "The study of radiant light."
+    }
+    {
+        name: "Systematics",
+        desc: "The science of systematic classification."
+    }
+    {
+        name: "Thermodynamics",
+        desc: "The study of relationships and conversions between heat and other forms of energy."
+    }
+    {
+        name: "Toxicology",
+        desc: "The study of poisons and the treatment of poisoning."
+    }
+    {
+        name: "Virology",
+        desc: "The study of viruses and viral diseases."
+    }
+    {
+        name: "Volcanology",
+        desc: "The study of volcanoes and volcanic phenomena."
+    }
+    {
+        name: "Zoology",
+        desc: "the study of the structure, physiology, development, and classification of animals."
+    }

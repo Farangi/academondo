@@ -1,0 +1,11 @@
+<aside class="altru-menu">
+  <div class="">
+    <div class="list-group">
+      <a class="list-group-item"
+      *ngFor="let newsUpdate of newsUpdates | slice:-3">        
+        <h4 class="">{{newsUpdate.title}}</h4>		
+        <p class="">{{newsUpdate.desc}}</p>
+      </a>      
+    </div>
+  </div>
+</aside>
