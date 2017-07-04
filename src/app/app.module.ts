@@ -37,13 +37,14 @@ import { LabDetailsComponent } from './lab-details/lab-details.component';
 
 import {MultiselectDropdownModule} from 'angular-2-dropdown-multiselect/src/multiselect-dropdown';
 import { AdminPageComponent } from './admin-page/admin-page.component';
+import { AdvertComponent } from './advert/advert.component';
 
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent,
    SidebarComponent, DashboardComponent, LabsignupComponent,
     AutocompleteComponent, LoginComponent, AlertComponent, RegisterComponent,
-     LabComponent, MistComponent, PubmedComponent, LablistComponent, UrlSizeLimiterPipe, LabDetailsComponent, AdminPageComponent],
+     LabComponent, MistComponent, PubmedComponent, LablistComponent, UrlSizeLimiterPipe, LabDetailsComponent, AdminPageComponent, AdvertComponent],
   imports: [BrowserModule, FormsModule, ReactiveFormsModule, HttpModule, routing, MultiselectDropdownModule],
   providers: [FieldOfInterestService, ValidationService, NewsService,
    AlertService, AuthenticationService, AuthGuard, UserService, LabService,

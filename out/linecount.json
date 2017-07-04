@@ -1,0 +1,1268 @@
+{
+    "extension": "linecount",
+    "version": "0.1.7",
+    "workspace": "c:\\Users\\Simon-win10\\Desktop\\Dropbox\\g\\AcadeMondo",
+    "linecount": [
+        {
+            "version": "0.1.7",
+            "counttime": "2017-07-02 22:03:00",
+            "filesum": 202,
+            "codesum": 5413,
+            "commentsum": 1473,
+            "blanksum": 561,
+            "filelist": [
+                {
+                    "blank": 2,
+                    "code": 11,
+                    "comment": 1,
+                    "filename": ".editorconfig"
+                },
+                {
+                    "blank": 4,
+                    "code": 16,
+                    "comment": 23,
+                    "filename": ".gitignore"
+                },
+                {
+                    "blank": 2,
+                    "code": 66,
+                    "comment": 0,
+                    "filename": "angular-cli.json"
+                },
+                {
+                    "blank": 3,
+                    "code": 11,
+                    "comment": 0,
+                    "filename": "e2e\\app.e2e-spec.ts"
+                },
+                {
+                    "blank": 2,
+                    "code": 9,
+                    "comment": 0,
+                    "filename": "e2e\\app.po.ts"
+                },
+                {
+                    "blank": 2,
+                    "code": 17,
+                    "comment": 0,
+                    "filename": "e2e\\tsconfig.json"
+                },
+                {
+                    "blank": 1,
+                    "code": 38,
+                    "comment": 2,
+                    "filename": "karma.conf.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 60,
+                    "comment": 0,
+                    "filename": "package.json"
+                },
+                {
+                    "blank": 3,
+                    "code": 26,
+                    "comment": 3,
+                    "filename": "protractor.conf.js"
+                },
+                {
+                    "blank": 12,
+                    "code": 15,
+                    "comment": 5,
+                    "filename": "README.md"
+                },
+                {
+                    "blank": 2,
+                    "code": 6,
+                    "comment": 0,
+                    "filename": "server\\app\\models\\country.js"
+                },
+                {
+                    "blank": 2,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "server\\app\\models\\fieldOfInterest.js"
+                },
+                {
+                    "blank": 6,
+                    "code": 30,
+                    "comment": 1,
+                    "filename": "server\\app\\models\\lab.js"
+                },
+                {
+                    "blank": 4,
+                    "code": 15,
+                    "comment": 1,
+                    "filename": "server\\app\\models\\news.js"
+                },
+                {
+                    "blank": 2,
+                    "code": 6,
+                    "comment": 0,
+                    "filename": "server\\app\\models\\technique.js"
+                },
+                {
+                    "blank": 14,
+                    "code": 54,
+                    "comment": 18,
+                    "filename": "server\\app\\models\\user.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 5,
+                    "comment": 0,
+                    "filename": "server\\config\\database.js"
+                },
+                {
+                    "blank": 2,
+                    "code": 19,
+                    "comment": 2,
+                    "filename": "server\\config\\passport.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "server\\dist\\assets\\.npmignore"
+                },
+                {
+                    "blank": 2,
+                    "code": 2,
+                    "comment": 7,
+                    "filename": "server\\dist\\assets\\animate.min.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 6,
+                    "filename": "server\\dist\\assets\\bootstrap.min.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "server\\dist\\assets\\default-green.svg"
+                },
+                {
+                    "filename": "server\\dist\\assets\\default.gif",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "server\\dist\\assets\\default.svg"
+                },
+                {
+                    "filename": "server\\dist\\assets\\kolbe-trans.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "server\\dist\\assets\\m2.mp3",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 0,
+                    "code": 3,
+                    "comment": 15,
+                    "filename": "server\\dist\\assets\\materialize.min.css"
+                },
+                {
+                    "filename": "server\\dist\\assets\\mist.mp3",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "server\\dist\\assets\\parallax\\parallax0.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "server\\dist\\assets\\parallax\\parallax1.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "server\\dist\\assets\\parallax\\parallax2-1.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "server\\dist\\assets\\parallax\\parallax2-old.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "server\\dist\\assets\\parallax\\parallax2.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "server\\dist\\assets\\parallax\\parallax3.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "server\\dist\\assets\\parallax\\parallax4.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "server\\dist\\assets\\parallax\\parallax5.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "server\\dist\\assets\\parallax\\parallax6.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "server\\dist\\assets\\parallax\\parallax7.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "server\\dist\\assets\\parallax\\parallax8.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "server\\dist\\assets\\ring-loading.gif",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "server\\dist\\assets\\ring-loading.svg"
+                },
+                {
+                    "filename": "server\\dist\\assets\\steam.mp4",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 4,
+                    "code": 134,
+                    "comment": 23,
+                    "filename": "server\\dist\\assets\\xml2json.js"
+                },
+                {
+                    "filename": "server\\dist\\favicon.ico",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 1,
+                    "code": 18,
+                    "comment": 3,
+                    "filename": "server\\dist\\index.html"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "server\\dist\\inline.ae3cbf49302f6e85e14f.bundle.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 9,
+                    "comment": 0,
+                    "filename": "server\\dist\\main.3d616f6b486e3db72870.bundle.js"
+                },
+                {
+                    "filename": "server\\dist\\main.3d616f6b486e3db72870.bundle.js.gz",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 0,
+                    "code": 6,
+                    "comment": 30,
+                    "filename": "server\\dist\\polyfills.b445ff6c2ede33aea3a5.bundle.js"
+                },
+                {
+                    "filename": "server\\dist\\polyfills.b445ff6c2ede33aea3a5.bundle.js.gz",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "server\\dist\\styles.578f8005def3e5d79cbc.bundle.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 161,
+                    "comment": 963,
+                    "filename": "server\\dist\\vendor.558a8b54466670450963.bundle.js"
+                },
+                {
+                    "filename": "server\\dist\\vendor.558a8b54466670450963.bundle.js.gz",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 0,
+                    "code": 23,
+                    "comment": 0,
+                    "filename": "server\\package.json"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "server\\routes\\api.js"
+                },
+                {
+                    "blank": 2,
+                    "code": 6,
+                    "comment": 1,
+                    "filename": "server\\routes\\index.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 996,
+                    "comment": 0,
+                    "filename": "server\\seeds\\countries-seed.json"
+                },
+                {
+                    "blank": 1,
+                    "code": 260,
+                    "comment": 0,
+                    "filename": "server\\seeds\\fieldofinterest-seed-old.json"
+                },
+                {
+                    "blank": 1,
+                    "code": 260,
+                    "comment": 0,
+                    "filename": "server\\seeds\\fieldofinterest-seed.json"
+                },
+                {
+                    "blank": 5,
+                    "code": 4,
+                    "comment": 0,
+                    "filename": "server\\seeds\\readme.txt"
+                },
+                {
+                    "blank": 23,
+                    "code": 238,
+                    "comment": 0,
+                    "filename": "server\\seeds\\technique-seed-old.json"
+                },
+                {
+                    "blank": 23,
+                    "code": 238,
+                    "comment": 0,
+                    "filename": "server\\seeds\\technique-seed.json"
+                },
+                {
+                    "blank": 2,
+                    "code": 19,
+                    "comment": 0,
+                    "filename": "server\\seeds\\techniques.txt"
+                },
+                {
+                    "blank": 2,
+                    "code": 19,
+                    "comment": 0,
+                    "filename": "server\\seeds\\techniques1.txt"
+                },
+                {
+                    "blank": 38,
+                    "code": 222,
+                    "comment": 60,
+                    "filename": "server\\server.js"
+                },
+                {
+                    "blank": 6,
+                    "code": 97,
+                    "comment": 0,
+                    "filename": "src\\app\\admin-page\\admin-page.component.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 15,
+                    "comment": 0,
+                    "filename": "src\\app\\admin-page\\admin-page.component.html"
+                },
+                {
+                    "blank": 2,
+                    "code": 8,
+                    "comment": 1,
+                    "filename": "src\\app\\admin-page\\admin-page.component.spec.ts"
+                },
+                {
+                    "blank": 7,
+                    "code": 23,
+                    "comment": 0,
+                    "filename": "src\\app\\admin-page\\admin-page.component.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 3,
+                    "comment": 0,
+                    "filename": "src\\app\\advert\\advert.component.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 3,
+                    "comment": 0,
+                    "filename": "src\\app\\advert\\advert.component.html"
+                },
+                {
+                    "blank": 5,
+                    "code": 22,
+                    "comment": 1,
+                    "filename": "src\\app\\advert\\advert.component.spec.ts"
+                },
+                {
+                    "blank": 4,
+                    "code": 11,
+                    "comment": 0,
+                    "filename": "src\\app\\advert\\advert.component.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "src\\app\\alert\\alert.component.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 5,
+                    "comment": 0,
+                    "filename": "src\\app\\alert\\alert.component.html"
+                },
+                {
+                    "blank": 2,
+                    "code": 8,
+                    "comment": 1,
+                    "filename": "src\\app\\alert\\alert.component.spec.ts"
+                },
+                {
+                    "blank": 5,
+                    "code": 14,
+                    "comment": 0,
+                    "filename": "src\\app\\alert\\alert.component.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 3,
+                    "comment": 0,
+                    "filename": "src\\app\\app.component.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 9,
+                    "comment": 0,
+                    "filename": "src\\app\\app.component.html"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "src\\app\\app.component.spec.ts"
+                },
+                {
+                    "blank": 1,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "src\\app\\app.component.ts"
+                },
+                {
+                    "blank": 5,
+                    "code": 49,
+                    "comment": 0,
+                    "filename": "src\\app\\app.module.ts"
+                },
+                {
+                    "blank": 7,
+                    "code": 69,
+                    "comment": 0,
+                    "filename": "src\\app\\app.routing.ts"
+                },
+                {
+                    "blank": 8,
+                    "code": 43,
+                    "comment": 0,
+                    "filename": "src\\app\\autocomplete\\autocomplete.component.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 26,
+                    "comment": 0,
+                    "filename": "src\\app\\autocomplete\\autocomplete.component.html"
+                },
+                {
+                    "blank": 2,
+                    "code": 8,
+                    "comment": 1,
+                    "filename": "src\\app\\autocomplete\\autocomplete.component.spec.ts"
+                },
+                {
+                    "blank": 17,
+                    "code": 71,
+                    "comment": 24,
+                    "filename": "src\\app\\autocomplete\\autocomplete.component.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "src\\app\\autocomplete\\index.ts"
+                },
+                {
+                    "blank": 1,
+                    "code": 7,
+                    "comment": 1,
+                    "filename": "src\\app\\dashboard\\dashboard.component.css"
+                },
+                {
+                    "blank": 1,
+                    "code": 5,
+                    "comment": 0,
+                    "filename": "src\\app\\dashboard\\dashboard.component.html"
+                },
+                {
+                    "blank": 2,
+                    "code": 8,
+                    "comment": 1,
+                    "filename": "src\\app\\dashboard\\dashboard.component.spec.ts"
+                },
+                {
+                    "blank": 4,
+                    "code": 18,
+                    "comment": 0,
+                    "filename": "src\\app\\dashboard\\dashboard.component.ts"
+                },
+                {
+                    "blank": 10,
+                    "code": 38,
+                    "comment": 18,
+                    "filename": "src\\app\\header\\header.component.css"
+                },
+                {
+                    "blank": 5,
+                    "code": 37,
+                    "comment": 64,
+                    "filename": "src\\app\\header\\header.component.html"
+                },
+                {
+                    "blank": 2,
+                    "code": 8,
+                    "comment": 1,
+                    "filename": "src\\app\\header\\header.component.spec.ts"
+                },
+                {
+                    "blank": 9,
+                    "code": 30,
+                    "comment": 0,
+                    "filename": "src\\app\\header\\header.component.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 2,
+                    "comment": 0,
+                    "filename": "src\\app\\index.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "src\\app\\lab-details\\lab-details.component.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 3,
+                    "comment": 0,
+                    "filename": "src\\app\\lab-details\\lab-details.component.html"
+                },
+                {
+                    "blank": 2,
+                    "code": 8,
+                    "comment": 1,
+                    "filename": "src\\app\\lab-details\\lab-details.component.spec.ts"
+                },
+                {
+                    "blank": 4,
+                    "code": 11,
+                    "comment": 0,
+                    "filename": "src\\app\\lab-details\\lab-details.component.ts"
+                },
+                {
+                    "blank": 1,
+                    "code": 6,
+                    "comment": 0,
+                    "filename": "src\\app\\lab\\lab.component.css"
+                },
+                {
+                    "blank": 7,
+                    "code": 31,
+                    "comment": 0,
+                    "filename": "src\\app\\lab\\lab.component.html"
+                },
+                {
+                    "blank": 2,
+                    "code": 8,
+                    "comment": 1,
+                    "filename": "src\\app\\lab\\lab.component.spec.ts"
+                },
+                {
+                    "blank": 7,
+                    "code": 23,
+                    "comment": 1,
+                    "filename": "src\\app\\lab\\lab.component.ts"
+                },
+                {
+                    "blank": 1,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "src\\app\\lablist\\lablist.component.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 50,
+                    "comment": 3,
+                    "filename": "src\\app\\lablist\\lablist.component.html"
+                },
+                {
+                    "blank": 2,
+                    "code": 8,
+                    "comment": 1,
+                    "filename": "src\\app\\lablist\\lablist.component.spec.ts"
+                },
+                {
+                    "blank": 9,
+                    "code": 23,
+                    "comment": 1,
+                    "filename": "src\\app\\lablist\\lablist.component.ts"
+                },
+                {
+                    "blank": 2,
+                    "code": 9,
+                    "comment": 0,
+                    "filename": "src\\app\\labsignup\\labsignup.component.css"
+                },
+                {
+                    "blank": 4,
+                    "code": 67,
+                    "comment": 14,
+                    "filename": "src\\app\\labsignup\\labsignup.component.html"
+                },
+                {
+                    "blank": 2,
+                    "code": 8,
+                    "comment": 1,
+                    "filename": "src\\app\\labsignup\\labsignup.component.spec.ts"
+                },
+                {
+                    "blank": 19,
+                    "code": 149,
+                    "comment": 0,
+                    "filename": "src\\app\\labsignup\\labsignup.component.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 3,
+                    "comment": 0,
+                    "filename": "src\\app\\login\\login.component.css"
+                },
+                {
+                    "blank": 1,
+                    "code": 23,
+                    "comment": 0,
+                    "filename": "src\\app\\login\\login.component.html"
+                },
+                {
+                    "blank": 2,
+                    "code": 8,
+                    "comment": 1,
+                    "filename": "src\\app\\login\\login.component.spec.ts"
+                },
+                {
+                    "blank": 7,
+                    "code": 37,
+                    "comment": 0,
+                    "filename": "src\\app\\login\\login.component.ts"
+                },
+                {
+                    "blank": 1,
+                    "code": 23,
+                    "comment": 0,
+                    "filename": "src\\app\\mist\\mist.component.css"
+                },
+                {
+                    "blank": 2,
+                    "code": 8,
+                    "comment": 0,
+                    "filename": "src\\app\\mist\\mist.component.html"
+                },
+                {
+                    "blank": 2,
+                    "code": 8,
+                    "comment": 1,
+                    "filename": "src\\app\\mist\\mist.component.spec.ts"
+                },
+                {
+                    "blank": 6,
+                    "code": 34,
+                    "comment": 3,
+                    "filename": "src\\app\\mist\\mist.component.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 3,
+                    "comment": 0,
+                    "filename": "src\\app\\pubmed\\pubmed.component.css"
+                },
+                {
+                    "blank": 3,
+                    "code": 13,
+                    "comment": 1,
+                    "filename": "src\\app\\pubmed\\pubmed.component.html"
+                },
+                {
+                    "blank": 2,
+                    "code": 8,
+                    "comment": 1,
+                    "filename": "src\\app\\pubmed\\pubmed.component.spec.ts"
+                },
+                {
+                    "blank": 8,
+                    "code": 31,
+                    "comment": 0,
+                    "filename": "src\\app\\pubmed\\pubmed.component.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "src\\app\\register\\register.component.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 21,
+                    "comment": 0,
+                    "filename": "src\\app\\register\\register.component.html"
+                },
+                {
+                    "blank": 2,
+                    "code": 8,
+                    "comment": 1,
+                    "filename": "src\\app\\register\\register.component.spec.ts"
+                },
+                {
+                    "blank": 5,
+                    "code": 34,
+                    "comment": 0,
+                    "filename": "src\\app\\register\\register.component.ts"
+                },
+                {
+                    "blank": 4,
+                    "code": 21,
+                    "comment": 1,
+                    "filename": "src\\app\\shared\\admin.guard.ts"
+                },
+                {
+                    "blank": 3,
+                    "code": 12,
+                    "comment": 1,
+                    "filename": "src\\app\\shared\\alert.service.spec.ts"
+                },
+                {
+                    "blank": 9,
+                    "code": 56,
+                    "comment": 2,
+                    "filename": "src\\app\\shared\\alert.service.ts"
+                },
+                {
+                    "blank": 4,
+                    "code": 22,
+                    "comment": 0,
+                    "filename": "src\\app\\shared\\auth.guard.ts"
+                },
+                {
+                    "blank": 3,
+                    "code": 12,
+                    "comment": 1,
+                    "filename": "src\\app\\shared\\authentication.service.spec.ts"
+                },
+                {
+                    "blank": 12,
+                    "code": 76,
+                    "comment": 5,
+                    "filename": "src\\app\\shared\\authentication.service.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 3,
+                    "comment": 0,
+                    "filename": "src\\app\\shared\\consts\\apiEndPoint.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 3,
+                    "comment": 0,
+                    "filename": "src\\app\\shared\\consts\\welcome.ts"
+                },
+                {
+                    "blank": 3,
+                    "code": 12,
+                    "comment": 1,
+                    "filename": "src\\app\\shared\\country.service.spec.ts"
+                },
+                {
+                    "blank": 6,
+                    "code": 23,
+                    "comment": 0,
+                    "filename": "src\\app\\shared\\country.service.ts"
+                },
+                {
+                    "blank": 3,
+                    "code": 12,
+                    "comment": 1,
+                    "filename": "src\\app\\shared\\field-of-interest.service.spec.ts"
+                },
+                {
+                    "blank": 5,
+                    "code": 28,
+                    "comment": 0,
+                    "filename": "src\\app\\shared\\field-of-interest.service.ts"
+                },
+                {
+                    "blank": 2,
+                    "code": 21,
+                    "comment": 0,
+                    "filename": "src\\app\\shared\\index.ts"
+                },
+                {
+                    "blank": 3,
+                    "code": 12,
+                    "comment": 1,
+                    "filename": "src\\app\\shared\\lab.service.spec.ts"
+                },
+                {
+                    "blank": 5,
+                    "code": 34,
+                    "comment": 0,
+                    "filename": "src\\app\\shared\\lab.service.ts"
+                },
+                {
+                    "blank": 3,
+                    "code": 12,
+                    "comment": 1,
+                    "filename": "src\\app\\shared\\laboratory-technique.service.spec.ts"
+                },
+                {
+                    "blank": 9,
+                    "code": 23,
+                    "comment": 0,
+                    "filename": "src\\app\\shared\\laboratory-technique.service.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 3,
+                    "comment": 0,
+                    "filename": "src\\app\\shared\\models\\country.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 4,
+                    "comment": 0,
+                    "filename": "src\\app\\shared\\models\\fieldOfInterest.ts"
+                },
+                {
+                    "blank": 2,
+                    "code": 18,
+                    "comment": 0,
+                    "filename": "src\\app\\shared\\models\\lab.ts"
+                },
+                {
+                    "blank": 7,
+                    "code": 45,
+                    "comment": 0,
+                    "filename": "src\\app\\shared\\models\\pubmed.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 3,
+                    "comment": 0,
+                    "filename": "src\\app\\shared\\models\\technique.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 4,
+                    "comment": 0,
+                    "filename": "src\\app\\shared\\models\\update.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 5,
+                    "comment": 0,
+                    "filename": "src\\app\\shared\\models\\user.ts"
+                },
+                {
+                    "blank": 3,
+                    "code": 12,
+                    "comment": 1,
+                    "filename": "src\\app\\shared\\news.service.spec.ts"
+                },
+                {
+                    "blank": 5,
+                    "code": 31,
+                    "comment": 0,
+                    "filename": "src\\app\\shared\\news.service.ts"
+                },
+                {
+                    "blank": 2,
+                    "code": 8,
+                    "comment": 1,
+                    "filename": "src\\app\\shared\\pipes\\url-size-limiter.pipe.spec.ts"
+                },
+                {
+                    "blank": 3,
+                    "code": 12,
+                    "comment": 0,
+                    "filename": "src\\app\\shared\\pipes\\url-size-limiter.pipe.ts"
+                },
+                {
+                    "blank": 3,
+                    "code": 12,
+                    "comment": 1,
+                    "filename": "src\\app\\shared\\pubmed.service.spec.ts"
+                },
+                {
+                    "blank": 13,
+                    "code": 44,
+                    "comment": 2,
+                    "filename": "src\\app\\shared\\pubmed.service.ts"
+                },
+                {
+                    "blank": 3,
+                    "code": 12,
+                    "comment": 1,
+                    "filename": "src\\app\\shared\\user.service.spec.ts"
+                },
+                {
+                    "blank": 9,
+                    "code": 22,
+                    "comment": 14,
+                    "filename": "src\\app\\shared\\user.service.ts"
+                },
+                {
+                    "blank": 5,
+                    "code": 35,
+                    "comment": 4,
+                    "filename": "src\\app\\shared\\validation.service.ts"
+                },
+                {
+                    "blank": 1,
+                    "code": 15,
+                    "comment": 0,
+                    "filename": "src\\app\\sidebar\\sidebar.component.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 11,
+                    "comment": 0,
+                    "filename": "src\\app\\sidebar\\sidebar.component.html"
+                },
+                {
+                    "blank": 2,
+                    "code": 8,
+                    "comment": 1,
+                    "filename": "src\\app\\sidebar\\sidebar.component.spec.ts"
+                },
+                {
+                    "blank": 9,
+                    "code": 28,
+                    "comment": 5,
+                    "filename": "src\\app\\sidebar\\sidebar.component.ts"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "src\\assets\\.gitkeep"
+                },
+                {
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0,
+                    "filename": "src\\assets\\.npmignore"
+                },
+                {
+                    "blank": 2,
+                    "code": 2,
+                    "comment": 7,
+                    "filename": "src\\assets\\animate.min.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 6,
+                    "filename": "src\\assets\\bootstrap.min.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "src\\assets\\default-green.svg"
+                },
+                {
+                    "filename": "src\\assets\\default.gif",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "src\\assets\\default.svg"
+                },
+                {
+                    "filename": "src\\assets\\kolbe-trans.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "src\\assets\\m2.mp3",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 0,
+                    "code": 3,
+                    "comment": 15,
+                    "filename": "src\\assets\\materialize.min.css"
+                },
+                {
+                    "filename": "src\\assets\\mist.mp3",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "src\\assets\\parallax\\parallax0.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "src\\assets\\parallax\\parallax1.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "src\\assets\\parallax\\parallax2-1.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "src\\assets\\parallax\\parallax2-old.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "src\\assets\\parallax\\parallax2.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "src\\assets\\parallax\\parallax3.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "src\\assets\\parallax\\parallax4.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "src\\assets\\parallax\\parallax5.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "src\\assets\\parallax\\parallax6.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "src\\assets\\parallax\\parallax7.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "src\\assets\\parallax\\parallax8.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "src\\assets\\ring-loading.gif",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "src\\assets\\ring-loading.svg"
+                },
+                {
+                    "filename": "src\\assets\\steam.mp4",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 4,
+                    "code": 134,
+                    "comment": 23,
+                    "filename": "src\\assets\\xml2json.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 3,
+                    "comment": 0,
+                    "filename": "src\\environments\\environment.prod.ts"
+                },
+                {
+                    "blank": 1,
+                    "code": 3,
+                    "comment": 4,
+                    "filename": "src\\environments\\environment.ts"
+                },
+                {
+                    "filename": "src\\favicon.ico",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 1,
+                    "code": 17,
+                    "comment": 6,
+                    "filename": "src\\index.html"
+                },
+                {
+                    "blank": 2,
+                    "code": 8,
+                    "comment": 0,
+                    "filename": "src\\main.ts"
+                },
+                {
+                    "blank": 15,
+                    "code": 3,
+                    "comment": 51,
+                    "filename": "src\\polyfills.ts"
+                },
+                {
+                    "blank": 3,
+                    "code": 14,
+                    "comment": 2,
+                    "filename": "src\\styles.css"
+                },
+                {
+                    "blank": 4,
+                    "code": 21,
+                    "comment": 7,
+                    "filename": "src\\test.ts"
+                },
+                {
+                    "blank": 2,
+                    "code": 19,
+                    "comment": 0,
+                    "filename": "src\\tsconfig.json"
+                },
+                {
+                    "blank": 11,
+                    "code": 105,
+                    "comment": 0,
+                    "filename": "tslint.json"
+                }
+            ]
+        }
+    ]
+}

@@ -94,6 +94,9 @@
 				<li>
 					<a [routerLinkActive]="['active']" routerLink="/admin">Admin</a>
 				</li>                
+				<li>
+					<a [routerLinkActive]="['active']" routerLink="/adverts">Job adverts</a>
+				</li>                       
 				<li *ngIf="currentUser()" style="float:right">
 					<a [routerLinkActive]="['active']" (click)="logout()" routerLink="/login">Logout</a>
 				</li>

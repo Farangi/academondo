@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http, Headers, RequestOptions, Response, URLSearchParams } from '@angular/http';
+import { Http, Headers, RequestOptions, Response, URLSearchParams, RequestOptionsArgs } from '@angular/http';
 import { Lab, apiEndPoint } from '../shared';
 
 import { Observable } from 'rxjs/Observable';
@@ -25,8 +25,11 @@ export class LabService {
   }
 
   saveLab(lab: Lab) {
-    let headers = new Headers({'Content-Type': 'application/json'});  
-    return this.http.post(this.url, lab, headers)
+    let headers = ""
+    let arg =({
+      headers: new Headers({'Content-Type': 'application/json'})  
+    });
+    return this.http.post(this.url, lab, arg)
       .map((response: Response) => response.json());
   }
 

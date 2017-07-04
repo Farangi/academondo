@@ -68,26 +68,26 @@ app.use(passport.initialize());
 app.use(cors());
 
 //CORS handling
-app.use(function(req, res, next) {
-  // var allowedOrigins = [CORSURLLocal, CORSURLFreeDNS, CORSURLFreeDNSHero];
-  // var origin = req.headers.origin;
-  // console.log('trying to hanlde CORS', origin);
-  // if(allowedOrigins.indexOf(origin) > -1){
-  //      res.setHeader('Access-Control-Allow-Origin', origin);
-  // }
-  // else if(origin) {    
-  //   res.setHeader('Access-Control-Allow-Origin', origin);
-  //   console.log('Illegal! ', origin);
-  // }
+// app.use(function(req, res, next) {
+//   // var allowedOrigins = [CORSURLLocal, CORSURLFreeDNS, CORSURLFreeDNSHero];
+//   // var origin = req.headers.origin;
+//   // console.log('trying to hanlde CORS', origin);
+//   // if(allowedOrigins.indexOf(origin) > -1){
+//   //      res.setHeader('Access-Control-Allow-Origin', origin);
+//   // }
+//   // else if(origin) {    
+//   //   res.setHeader('Access-Control-Allow-Origin', origin);
+//   //   console.log('Illegal! ', origin);
+//   // }
   
-  // res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
-  // res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-  // res.header('Access-Control-Allow-Credentials', true);
-  res.header("Access-Control-Allow-Origin", "*");
+//   // res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+//   // res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+//   // res.header('Access-Control-Allow-Credentials', true);
+//   res.header("Access-Control-Allow-Origin", "*");
 
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  return next();
-});
+//   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+//   return next();
+// });
 
 // access to dist folder
 app.use(express.static(path.join(__dirname, '../dist'))); 
