@@ -29,7 +29,7 @@ export interface History {
 export interface Article {
   Abstract: any,
   ArticleTitle: string,
-  AuthorList: Author,
+    AuthorList: { Author: Author[] },
   Language: string
 }
 

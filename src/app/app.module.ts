@@ -30,7 +30,7 @@ import { LoginComponent } from './login/login.component';
 import { AlertComponent } from './alert/alert.component';
 import { RegisterComponent } from './register/register.component';
 import { LabComponent } from './lab/lab.component';
-import { MistComponent } from './mist/mist.component';
+
 import { PubmedComponent } from './pubmed/pubmed.component';
 import { LablistComponent } from './lablist/lablist.component';
 import { LabDetailsComponent } from './lab-details/lab-details.component';
@@ -39,16 +39,69 @@ import {MultiselectDropdownModule} from 'angular-2-dropdown-multiselect/src/mult
 import { AdminPageComponent } from './admin-page/admin-page.component';
 import { AdvertComponent } from './advert/advert.component';
 
+import { environment } from '../environments/environment';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
+import { MdButtonModule, MdCardModule, MdMenuModule, MdToolbarModule, MdIconModule } from "@angular/material";
+
+import { PageNotFoundComponent } from './page-not-found.component';
+
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent,
-   SidebarComponent, DashboardComponent, LabsignupComponent,
-    AutocompleteComponent, LoginComponent, AlertComponent, RegisterComponent,
-     LabComponent, MistComponent, PubmedComponent, LablistComponent, UrlSizeLimiterPipe, LabDetailsComponent, AdminPageComponent, AdvertComponent],
-  imports: [BrowserModule, FormsModule, ReactiveFormsModule, HttpModule, routing, MultiselectDropdownModule],
-  providers: [FieldOfInterestService, ValidationService, NewsService,
-   AlertService, AuthenticationService, AuthGuard, UserService, LabService,
-    PubmedService, LaboratoryTechniqueService, CountryService, AdminGuard],
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    SidebarComponent,
+    DashboardComponent,
+    LabsignupComponent,
+    AutocompleteComponent,
+    LoginComponent,
+    AlertComponent,
+    RegisterComponent,
+    LabComponent,
+    PubmedComponent,
+    LablistComponent,
+    UrlSizeLimiterPipe,
+    LabDetailsComponent,
+    AdminPageComponent,
+    AdvertComponent,
+    PageNotFoundComponent
+  ],
+  imports: [
+    BrowserModule, 
+    FormsModule, 
+    ReactiveFormsModule, 
+    HttpModule,
+    routing,
+    MultiselectDropdownModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule,
+    BrowserAnimationsModule,
+    MdButtonModule,
+    MdCardModule,
+    MdMenuModule,
+    MdToolbarModule,
+    MdIconModule
+  ],
+  providers: [
+    FieldOfInterestService, 
+    ValidationService, 
+    NewsService,
+    AlertService, 
+    AuthenticationService, 
+    AuthGuard, 
+    UserService, 
+    LabService,
+    PubmedService,
+    LaboratoryTechniqueService,
+    CountryService,
+    AdminGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

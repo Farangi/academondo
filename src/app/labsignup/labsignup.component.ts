@@ -22,38 +22,38 @@ export class LabsignupComponent implements OnInit {
   labForm: FormGroup;
   public lab: Lab = { name: 'google Labs', address: 'Streets of the valley', zip: 2000, email: 'jobs@apple.com' };
   public fieldOfInterestOptions: FieldOfInterest[];
-  private techniqueOptions: Technique[];
-  private pubmedOptions: any[] = [{ name: 'no results' }];
-  private countryOptions: Country[];
+  public techniqueOptions: Technique[];
+  public pubmedOptions: any[] = [{ name: 'no results' }];
+  public countryOptions: Country[];
 
-  private selectSettings: IMultiSelectSettings = {
+  public selectSettings: IMultiSelectSettings = {
     enableSearch: true,
   };
 
-  private countrySelectSettings: IMultiSelectSettings = {
+  public countrySelectSettings: IMultiSelectSettings = {
     enableSearch: true,
     selectionLimit: 1,
     closeOnSelect: true
   };
 
-  private pubmedSelectSettings: IMultiSelectSettings = {
+  public pubmedSelectSettings: IMultiSelectSettings = {
     enableSearch: true,
     dynamicTitleMaxItems: 0
   };
 
-  private pubmedTextSettings: IMultiSelectTexts = {
+  public pubmedTextSettings: IMultiSelectTexts = {
     defaultTitle: 'Select publications'
   }
 
-  private techniqueTextSettings: IMultiSelectTexts = {
+  public techniqueTextSettings: IMultiSelectTexts = {
     defaultTitle: 'Select techniques'
   }
 
-  private foiTextSettings: IMultiSelectTexts = {
+  public foiTextSettings: IMultiSelectTexts = {
     defaultTitle: 'Select field of interests'
   }
 
-  private countryTextSettings: IMultiSelectTexts = {
+  public countryTextSettings: IMultiSelectTexts = {
     defaultTitle: 'Select country'
   }
   constructor(

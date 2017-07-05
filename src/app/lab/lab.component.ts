@@ -11,7 +11,7 @@ import { Lab } from '../shared/models/lab';
 })
 export class LabComponent implements OnInit {
 
-  model = {}; //= new Lab('Google Labs', 'street of science 10110', 'valid@email.com',);
+  model: Lab; //= new Lab('Google Labs', 'street of science 10110', 'valid@email.com',);
   loading = false;
   public fieldOfInterests: FieldOfInterest[];
 

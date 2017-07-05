@@ -1,4 +1,4 @@
-<div class="col-md-6 col-md-offset-3 padding-top">
+<div class="col-md-6 col-md-offset-3">
     <h2>Login</h2>
     <form name="form" (ngSubmit)="formRef.form.valid && login()" #formRef="ngForm" novalidate>
         <div class="form-group" [ngClass]="{ 'has-error': formRef.submitted && !username.valid }">
@@ -18,7 +18,7 @@
             pluginspage="http://www.adobe.com/svg/viewer/install/" /> 
             <a style="margin-bottom: 15px;" routerLink="/register">Register now </a>            
         </div>
-        <div *ngIf="error" class="alert alert-danger">{{error}}</div>
+        <!--<div *ngIf="error" class="alert alert-danger">{{error}}</div>-->
     </form>
     
 </div>

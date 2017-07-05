@@ -4,7 +4,6 @@ import { LabsignupComponent } from './labsignup/labsignup.component';
 import { LabComponent } from './lab/lab.component';
 import { LablistComponent } from './lablist/lablist.component';
 import { LabDetailsComponent } from './lab-details/lab-details.component';
-import { MistComponent } from './mist/mist.component';
 import { PubmedComponent } from './pubmed/pubmed.component';
 import { AdminPageComponent } from './admin-page/admin-page.component';
 import { AdvertComponent } from "./advert/advert.component";
@@ -13,6 +12,8 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { AuthGuard } from './shared';
 import { AdminGuard } from './shared';
+
+import { PageNotFoundComponent } from './page-not-found.component';
 
 const routes: Routes = [         
     {
@@ -67,10 +68,7 @@ const routes: Routes = [
         path: 'register',
         component: RegisterComponent
     },     
-    {
-        path: '**',
-        redirectTo: 'login'
-    }
+    { path: '**', pathMatch: 'full', component: PageNotFoundComponent }
 ]
 
 export const routing = RouterModule.forRoot(routes);

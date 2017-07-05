@@ -1,19 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
 
-* {
-    font-size: 14px;
-    line-height: 1.42857143;
-    color: #333;
-    font-family: Arial, Helvetica, sans-serif;
-}
 
-nav .navbar-nav>li>a {
-    font-weight: 500;
-    color: rgb(0,150,136);
-}
 
-.altru-header-space {
-    margin-top: 150px;
-    margin-left: 25px;
-    /*width: 75%;*/
+/*@import '~@angular/material/prebuilt-themes/indigo-pink.css';*/
+/*@import '~@angular/material/prebuilt-themes/pink-bluegrey.css';*/
+/*@import '~@angular/material/prebuilt-themes/purple-green.css';*/
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+body {
+    /*padding: 2em 23em;*/
+    background:lightgray;
 }

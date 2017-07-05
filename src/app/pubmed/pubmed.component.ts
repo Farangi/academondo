@@ -11,10 +11,10 @@ import { PubmedArticle } from '../shared/models/pubmed';
 export class PubmedComponent implements OnInit {
 
   private ids: string[];
-  private articles: PubmedArticle[];
-  private term: string = 'Simon Lykkemark'  
+  public articles: PubmedArticle[];
+  public term: string = 'Simon Lykkemark'  
 
-  private loading = false;
+  public loading = false;
 
   makeArticleUrl(article: PubmedArticle) {
     return this.pubmedService.getArticleUrl(article);
@@ -25,7 +25,7 @@ export class PubmedComponent implements OnInit {
   ngOnInit() {  
   }
 
-  performSearch(searchTerm: string, retmax?: number, retstart?: number, sort?: string): void {    
+  performSearch(searchTerm: string, retmax?: number, retstart?: number, sort?: string): void {  
     this.loading = true;
     this.pubmedService.getArticleIdsFromTerm(searchTerm, retmax, retstart, sort)
       .subscribe((ids) => {

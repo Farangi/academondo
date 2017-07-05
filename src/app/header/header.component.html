@@ -1,106 +1,30 @@
-<!--<header class="headz altru-header">
-    <div class="kolbe">
-        <img class="kolbe" src="../assets/kolbe-trans.png">
-        <span class="altru-welcome">
-            Welcome to AltruVation - Jobs in Academia!
-        </span>
-    </div>
-</header>   
-<nav class="altru-nav"> 
-    <div class="altru-nav-list">
-        <div>    
-            <a class="altru-link-text" routerLink="/dashboard">Dashboard</a>            
-        
-            <a class="altru-link-text" routerLink="/cv">CV</a>            
-        
-            <a class="altru-link-text" routerLink="/scienceGroup">Science group</a>            
-        </div>        
-    </div>
-</nav>-->
-<!--<div class="container-fluid navbar-static-top">
-    <div class="row">
-        <div class="navbar header-color">    
-            
-                <span [routerLinkActive]="['active']">
-                    <img class="kolbe" src="../assets/kolbe-trans.png">            
-                </span>
-                <span class=" altru-welcome">
-                    
-                    Welcome to AltruVation - Jobs in Academia!
-                </span>            
-                <button (click)="easterEgg()">EasterEgg</button>
-        </div>
-    </div>
-    <div class="row">
-        <nav class="collapse navbar-collapse"> 
-            <ul class="nav navbar-nav" style="float:none">
-                <li>    
-                    <a [routerLinkActive]="['active']" [routerLinkActive]="['active']" routerLink="/dashboard">Dashboard</a>
-                </li>
-                <li>
-                    <a [routerLinkActive]="['active']" routerLink="/lab">Lab signup 1</a>            
-                </li>
-                <li>
-                    <a [routerLinkActive]="['active']" routerLink="/labsignup">Lab signup 2</a>
-                </li>
-                <li>
-                    <a [routerLinkActive]="['active']" routerLink="/labs">Labs</a>
-                </li>
-                <li>
-                    <a [routerLinkActive]="['active']" routerLink="/PubMed">PubMed Tester</a>
-                </li>
-                <li *ngIf="currentUser" style="float:right">
-                    <a [routerLinkActive]="['active']" (click)="easterEgg('See you soon! have a nice day and enjoy yourself')" routerLink="/login">Logout, {{currentUser}} </a>
-                </li>                                                                 
+<md-toolbar color="primary" class="dark">
+  <div class="md-toolbar-tools" fxLayout="row nowrap" fxFlex fxLayoutAlign="end center">
+    <!--<a class="ng-title-icon" href="http://angular.io" target="_blank"><i></i></a>
+    <a class="azfunc-title-icon" href="http://azure.com/functions" target="_blank"><i></i></a>-->
 
-                                                                              
-            </ul>
-        </nav>
-    </div>
-</div>-->
+    <span fxFlex class="title">Academondo</span>
 
-<!--<app-mist>-->
+    <span fxFlex="grow"></span>
+    <a fxFlex md-button [routerLink]="['/dashboard']"
+      routerLinkActive="router-link-active"><span>Dashboard</span></a>
+    <a fxFlex md-button [routerLink]="['/labsignup']"
+      routerLinkActive="router-link-active"><span>Lab signup</span></a>
+    <a fxFlex md-button [routerLink]="['/labs']"
+      routerLinkActive="router-link-active"><span>Labs</span></a>
+    <a fxFlex md-button [routerLink]="['/cv']"
+      routerLinkActive="router-link-active"><span>CV</span></a>
+    <a fxFlex md-button [routerLink]="['/admin']"
+      routerLinkActive="router-link-active"><span>Admin</span></a>
+    <a fxFlex md-button [routerLink]="['/adverts']"
+      routerLinkActive="router-link-active"><span>Job adverts</span></a>
+    <!--<a fxFlex md-button [routerLink]="['/planets']"
+      routerLinkActive="router-link-active"><span>Planets</span></a>-->
 
-
-
-<nav class="navbar navbar-inverse navbar-fixed-top">
-	<div class="container">
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar6">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-			<a class="navbar-brand">
-				<img src="../assets/kolbe-trans.png"> Welcome to Academondo
-			</a>      
-		</div>
+    <!--<li *ngIf="currentUser()" style="float:right">-->
+      <!--<a fxFlex md-button [routerLink]="['/login']"
+      routerLinkActive="router-link-active" (click)="logout()"><span>Login</span></a>-->
+      
     
-		<div id="navbar6" class="navbar-collapse collapse">
-			<ul class="nav navbar-nav navbar-right">
-				<li>
-					<a [routerLinkActive]="['active']" routerLink="/dashboard">Dashboard</a>
-				</li>
-				<li>
-					<a [routerLinkActive]="['active']" routerLink="/labsignup">Lab signup</a>
-				</li>
-				<li>
-					<a [routerLinkActive]="['active']" routerLink="/labs">Labs</a>
-				</li>
-				<!--<li>
-					<a [routerLinkActive]="['active']" routerLink="/cv">CV</a>
-				</li>-->
-				<li>
-					<a [routerLinkActive]="['active']" routerLink="/admin">Admin</a>
-				</li>                
-				<li>
-					<a [routerLinkActive]="['active']" routerLink="/adverts">Job adverts</a>
-				</li>                       
-				<li *ngIf="currentUser()" style="float:right">
-					<a [routerLinkActive]="['active']" (click)="logout()" routerLink="/login">Logout</a>
-				</li>
-			</ul>
-		</div>
-	</div>
-</nav>
+  </div>
+</md-toolbar>

@@ -1,6 +1,5 @@
 import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
 import { User, AuthenticationService, AlertService } from '../shared';
-import { MistComponent } from '../mist/mist.component';
 
 @Component({
   selector: 'app-header',
@@ -8,9 +7,6 @@ import { MistComponent } from '../mist/mist.component';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements AfterViewInit {
-
-  @ViewChild(MistComponent)
-  private mist: MistComponent;
      
     constructor(private authenticationService: AuthenticationService, private alertService: AlertService) {}
 
@@ -31,9 +27,6 @@ export class HeaderComponent implements AfterViewInit {
     }
     this.authenticationService.logout();
     
-  }
-  easterEgg(msg:string) {    
-    this.mist.enterTheAbyss(msg);
   }
 
 }
