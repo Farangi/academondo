@@ -1,29 +1,33 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostBinding } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { Observable } from 'rxjs/Observable';
 
 import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
-import { AlertService, AuthenticationService } from '../shared';
+import { AlertService, AuthenticationService, AuthService } from '../shared';
+
+import { routerTransition } from 'router.animations';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
+  animations: [routerTransition()],
+  host: {'[@routerTransition]': ''}
 })
 export class LoginComponent implements OnInit {
 
-  model: any = {};
-  loading = false;
 
   isAuthenticated = false;  
   user: any = {};
+  error: any;
 
   constructor(
     private router: Router,
     private authenticationService: AuthenticationService,
     private alertService: AlertService,
+    private authService: AuthService,
     private af: AngularFireAuth) {
       this.af.authState.subscribe(user => this.userState(user),
       error => console.trace(error)
@@ -77,26 +81,4 @@ export class LoginComponent implements OnInit {
 //       case 'google': return new firebase.auth.GoogleAuthProvider();
 //     }
 //   }
-
-
-  // loginold() {
-  //   this.loading = true;
-  //   this.authenticationService.login(this.model.username, this.model.password)
-  //     .subscribe(
-  //     data => {
-  //       if (data) {
-  //         if (data.success) {
-  //           this.router.navigate(['dashboard']);
-  //         } else {
-  //           this.alertService.error(data.msg);
-  //           this.loading = false;
-  //         }
-  //       }
-
-  //     },
-  //     error => {
-  //       this.alertService.error(error);
-  //       this.loading = false;
-  //     });
-  // }
 }

@@ -20,4 +20,5 @@ export { UrlSizeLimiterPipe } from './pipes/url-size-limiter.pipe'
 export { LaboratoryTechniqueService } from './laboratory-technique.service';
 export { CountryService } from './country.service';
 export { AdminGuard } from './admin.guard';
+export { AuthService } from './auth.service';
 

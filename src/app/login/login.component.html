@@ -34,7 +34,7 @@
         <md-card-subtitle>{{ user.email || '(no email)' }}</md-card-subtitle>
      </md-card-header>     
      <md-card-content>
-        <p>You are logged in using <strong>{{ user.provider }}</strong></p>
+        <p>Welcome to Academondo, <strong>{{ user.name }}</strong></p>
      </md-card-content>
      <md-card>
        <button md-raised-button (click)="signOut()">

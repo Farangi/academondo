@@ -54,7 +54,7 @@ import {
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { MdButtonModule, MdCardModule, MdMenuModule, MdToolbarModule, MdIconModule } from "@angular/material";
+import { MdButtonModule, MdCardModule, MdMenuModule, MdToolbarModule, MdIconModule, MdSidenavModule } from "@angular/material";
 
 import { PageNotFoundComponent } from './page-not-found.component';
 import { AuthService } from './shared/auth.service';
@@ -127,7 +127,8 @@ const firebaseUiAuthConfig: FirebaseUIAuthConfig = {
     MdCardModule,
     MdMenuModule,
     MdToolbarModule,
-    MdIconModule
+    MdIconModule,
+    MdSidenavModule
   ],
   providers: [
     FieldOfInterestService, 
