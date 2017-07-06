@@ -35,20 +35,60 @@ import { PubmedComponent } from './pubmed/pubmed.component';
 import { LablistComponent } from './lablist/lablist.component';
 import { LabDetailsComponent } from './lab-details/lab-details.component';
 
-import {MultiselectDropdownModule} from 'angular-2-dropdown-multiselect/src/multiselect-dropdown';
+import { MultiselectDropdownModule } from 'angular-2-dropdown-multiselect/src/multiselect-dropdown';
 import { AdminPageComponent } from './admin-page/admin-page.component';
 import { AdvertComponent } from './advert/advert.component';
 
 import { environment } from '../environments/environment';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
-import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFireAuthModule, AngularFireAuthProvider } from 'angularfire2/auth';
 
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { 
+  AuthMethods, 
+  AuthProvider, 
+  FirebaseUIAuthConfig,
+  FirebaseUIModule,
+  AuthProviderWithCustomConfig
+} from 'firebaseui-angular';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MdButtonModule, MdCardModule, MdMenuModule, MdToolbarModule, MdIconModule } from "@angular/material";
 
 import { PageNotFoundComponent } from './page-not-found.component';
+import { AuthService } from './shared/auth.service';
+
+
+// const facebookCustomConfig: AuthProviderWithCustomConfig = {
+//   provider: AuthProvider.Facebook,
+//   customConfig: {
+//     scopes: [
+//       'public_profile',
+//       'email',
+//       'user_likes',
+//       'user_friends'
+//     ],
+//     customParameters: {
+//       // Forces password re-entry.
+//       auth_type: 'reauthenticate'
+//     }
+//   }
+// };
+
+const firebaseUiAuthConfig: FirebaseUIAuthConfig = {
+  providers: [
+    AuthProvider.Google,
+    // facebookCustomConfig,
+    AuthProvider.Facebook,
+    AuthProvider.Twitter,
+    AuthProvider.Github,
+    AuthProvider.Password,
+    AuthProvider.Phone
+  ],
+  method: AuthMethods.Popup,
+  tos: '<your-tos-link>' //TODO Terms of service
+};
 
 
 @NgModule({
@@ -82,6 +122,7 @@ import { PageNotFoundComponent } from './page-not-found.component';
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     BrowserAnimationsModule,
+    FirebaseUIModule.forRoot(firebaseUiAuthConfig),
     MdButtonModule,
     MdCardModule,
     MdMenuModule,
@@ -100,7 +141,8 @@ import { PageNotFoundComponent } from './page-not-found.component';
     PubmedService,
     LaboratoryTechniqueService,
     CountryService,
-    AdminGuard
+    AdminGuard,
+    AuthService
   ],
   bootstrap: [AppComponent]
 })

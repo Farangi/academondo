@@ -7,6 +7,6 @@ export const environment = {
    projectId: 'academondo',
    storageBucket: 'academondo.appspot.com',
    messagingSenderId: '342464929735'
- }
+ },
 };
 
