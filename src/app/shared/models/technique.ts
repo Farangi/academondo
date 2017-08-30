@@ -1,3 +1,4 @@
 export interface Technique {
-    name:string
+    name:string,
+    id:string
 }

@@ -1,0 +1,110 @@
+<div class="wideComponent">
+  <div class="col-xs-6">
+    <form  [formGroup]="profileForm" novalidate>
+      <h1>Create your Profile</h1>
+      <div>
+        <md-input-container class="">   
+          <input  formControlName="name" mdInput placeholder="Name" [ngClass]="{ 'is-success' :  profileForm.get('name').valid && profileForm.get('name').dirty, 'is-danger'  :  !profileForm.get('name').valid }">
+        </md-input-container>  
+      </div>
+      <div>
+        <md-input-container class="">   
+          <input  formControlName="country" mdInput placeholder="Country" [ngClass]="{ 'is-success' :  profileForm.get('country').valid && profileForm.get('country').dirty, 'is-danger'  :  !profileForm.get('country').valid }">
+        </md-input-container>
+      </div>
+      <div>
+        <md-input-container class="">   
+          <input  formControlName="about" mdInput #message maxlength="aboutLength" placeholder="About" [ngClass]="{ 'is-success' :  profileForm.get('about').valid && profileForm.get('about').dirty, 'is-danger'  :  !profileForm.get('about').valid }">
+          <md-hint align="start"><strong></strong> </md-hint>
+          <md-hint align="end">{{message.value.length}} / {{aboutLength}}</md-hint>
+        </md-input-container>
+      </div>
+      <div>
+        <md-input-container class="">   
+          <input  formControlName="groupLeader" mdInput placeholder="Group leader" [ngClass]="{ 'is-success' :  profileForm.get('groupLeader').valid && profileForm.get('groupLeader').dirty, 'is-danger'  :  !profileForm.get('groupLeader').valid }">
+        </md-input-container>
+      </div> 
+    </form> 
+  </div>
+
+  
+  
+
+
+
+
+
+  <div class="col-xs-6">
+    <h1>Profile Preview</h1>
+
+    <div>  
+      <div>{{profile | async | json}}</div>
+      <div>{{(profile | async)?.name}}</div> 
+      <div>{{(profile | async)?.country}}</div>
+      <div>{{(profile | async)?.groupLeader}}</div>
+      <div>{{(profile | async)?.about}}</div>
+      <div>{{(profile | async)?.publications}}</div>
+      <div>{{(profile | async)?.techniques}}</div>
+      <div>{{(profile | async)?.fieldOfInterests}}</div> 
+    </div>
+
+    <div>
+      <h3> Form Values</h3>
+
+      Form value : {{profileForm.value | json }}
+      <br>
+      Form status: {{profileForm.status | json }}
+    </div> 
+  </div>
+
+
+
+
+
+  <!-- <form  [formGroup]="profileForm" novalidate>
+      <h1>Create your Profile</h1>
+
+    <md-input-container class="example-full-width">   
+      <input  formControlName="name" mdInput placeholder="name" [ngClass]="{
+                                  'is-success' :  profileForm.get('name').valid &&  profileForm.get('name').dirty,
+                                  'is-danger'  :  !profileForm.get('name').valid
+                                }">
+      
+      
+    </md-input-container>  
+      <div class="field is-horizontal">
+        <div class="field-label is-normal">
+          <label class="label">country</label>
+        </div>
+        <div class="field-body">
+          <div class="field">
+            <div class="control">
+              <input class="input" type="text"
+                    formControlName="country"
+                    
+                    [ngClass]="{
+                                  'is-success' :  profileForm.get('country').valid &&  profileForm.get('country').dirty,
+                                  'is-danger'  :  !profileForm.get('country').valid
+                                }">
+            </div>
+            <p class="error is-danger" [hidden]="profileForm.get('country').valid">
+              country is required
+            </p>
+          </div>
+        </div>
+      </div> 
+
+      
+    <md-input-container class="example-full-width">   
+      <input  formControlName="about" mdInput #message maxlength="256" placeholder="About" [ngClass]="{
+                                  'is-success' :  profileForm.get('about').valid &&  profileForm.get('about').dirty,
+                                  'is-danger'  :  !profileForm.get('about').valid
+                                }">
+      <md-hint align="start"><strong></strong> </md-hint>
+      <md-hint align="end">{{message.value.length}} / 256</md-hint>
+    </md-input-container>
+
+      </form>  -->
+
+  <!-- <button class="button is-success" (click)="startNewResearchProfile()" *ngIf="!profile" >Create Profile</button>     -->
+</div>

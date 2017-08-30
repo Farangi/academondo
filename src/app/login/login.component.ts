@@ -3,40 +3,42 @@ import { Router } from '@angular/router';
 
 import { Observable } from 'rxjs/Observable';
 
-import { AngularFireAuth } from 'angularfire2/auth';
-import * as firebase from 'firebase/app';
-import { AlertService, AuthenticationService, AuthService } from '../shared';
+import 'rxjs/add/operator/switchMap';
 
-import { routerTransition } from 'router.animations';
+import { AngularFireAuth } from 'angularfire2/auth';
+import { AngularFireDatabase } from 'angularfire2/database';
+import * as firebase from 'firebase/app';
+import { AlertService } from '../shared';
+
+// import { routerTransition } from 'router.animations';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
-  animations: [routerTransition()],
-  host: {'[@routerTransition]': ''}
+  // animations: [routerTransition()],
+  // host: {'[@routerTransition]': ''}
 })
 export class LoginComponent implements OnInit {
 
 
-  isAuthenticated = false;  
+  isAuthenticated = false;
+
   user: any = {};
   error: any;
 
   constructor(
-    private router: Router,
-    private authenticationService: AuthenticationService,
-    private alertService: AlertService,
-    private authService: AuthService,
-    private af: AngularFireAuth) {
-      this.af.authState.subscribe(user => this.userState(user),
+    private router: Router,    
+    private alertService: AlertService,    
+    private afAuth: AngularFireAuth,
+    private db: AngularFireDatabase) {
+      this.afAuth.authState.subscribe(user => this.userState(user),
       error => console.trace(error)
       );
       
      }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 // using firebase ui instead.
   // login(from: string) {
   //   this.af.auth
@@ -45,7 +47,7 @@ export class LoginComponent implements OnInit {
   // }
 
   signOut() {
-    this.af.auth.signOut();
+    this.afAuth.auth.signOut();
   }
 
   private userState(user: any = null) {
@@ -63,8 +65,7 @@ export class LoginComponent implements OnInit {
     if(!user) {
       return {};
     }
-    let data = user.providerData[0];
-    console.log(data);
+    let data = user.providerData[0];    
     return {
       name: data.displayName,
       avatar: data.photoURL,

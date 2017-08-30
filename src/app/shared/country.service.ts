@@ -6,24 +6,19 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw';
 import 'rxjs/add/operator/publishLast';
 
-import {apiEndPoint} from '../shared';
-
 @Injectable()
 export class CountryService {
 
   public getCountry$() {
-    let url = apiEndPoint + '/api/country';
+    let url = 'https://restcountries.eu/rest/v2/all?fields=name';
     return this.http.get(url)    
     .map((response) => {      
-     const responseAsJson= response.json();
+     const responseAsJson= response.json();     
      return responseAsJson;    
    })
-   .catch(() => Observable.throw('Unable to fetch lab techniques!'))
+   .catch(() => Observable.throw('Unable to fetch countries!'))
    .publishLast()
    .refCount()   
-  }  
-  
-
+  }      
   constructor(private http: Http) {}
-
 }

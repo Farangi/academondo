@@ -1,5 +1,5 @@
 import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
-import { User, AuthenticationService, AlertService } from '../shared';
+import { User, AuthService, AlertService } from '../shared';
 
 @Component({
   selector: 'app-header',
@@ -8,25 +8,26 @@ import { User, AuthenticationService, AlertService } from '../shared';
 })
 export class HeaderComponent implements AfterViewInit {
      
-    constructor(private authenticationService: AuthenticationService, private alertService: AlertService) {}
+  isAdmin:any = this.authService.isAdmin$;
+  isUniversity:any = this.authService.isUniversity$;  
+
+  constructor(private authService: AuthService, private alertService: AlertService) {}
 
   ngAfterViewInit() {}
 
-  currentUser() {
-    return this.authenticationService.currentUser();
-  }
+  // currentUser() {
+  //   return this.authenticationService.currentUser();
+  // }
 
-  isAdmin() {
-    return this.authenticationService.isAdmin();
-  } 
 
-  logout() {
-    let currentUser = this.currentUser();
-     if (currentUser) {
-      this.alertService.success('you have successfully logged out, see you soon, ' + currentUser + '!', true);
-    }
-    this.authenticationService.logout();
+
+  // logout() {
+  //   let currentUser = this.currentUser();
+  //    if (currentUser) {
+  //     this.alertService.success('you have successfully logged out, see you soon, ' + currentUser + '!', true);
+  //   }
+  //   this.authenticationService.logout();
     
-  }
+  // }
 
 }

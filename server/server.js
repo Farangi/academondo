@@ -4,6 +4,7 @@ var path        = require('path');
 var bodyParser  = require('body-parser');
 var morgan      = require('morgan');
 var mongoose    = require('mongoose');
+mongoose.plugin(require('meanie-mongoose-to-json')); // _id to id
 var passport	  = require('passport');
 var config      = require('./config/database'); // get db config file
 
@@ -91,7 +92,7 @@ app.use(cors());
 
 // access to dist folder
 app.use(express.static(path.join(__dirname, '../dist'))); 
-app.get('/', index);
+app.get('/', np);
 
 // connect to database
 mongoose.connect(config.database);

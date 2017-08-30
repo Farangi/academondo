@@ -8,23 +8,25 @@
     <span fxFlex="grow"></span>
     <a fxFlex md-button [routerLink]="['/dashboard']"
       routerLinkActive="router-link-active"><span>Dashboard</span></a>
+    <a fxFlex md-button [routerLink]="['/profile']"
+      routerLinkActive="router-link-active"><span>Profile</span></a>      
     <a fxFlex md-button [routerLink]="['/labsignup']"
       routerLinkActive="router-link-active"><span>Lab signup</span></a>
     <a fxFlex md-button [routerLink]="['/labs']"
       routerLinkActive="router-link-active"><span>Labs</span></a>
     <a fxFlex md-button [routerLink]="['/cv']"
       routerLinkActive="router-link-active"><span>CV</span></a>
-    <a fxFlex md-button [routerLink]="['/admin']"
+    <a *ngIf="(isAdmin | async)?.admin" fxFlex md-button [routerLink]="['/admin']"
       routerLinkActive="router-link-active"><span>Admin</span></a>
+    <a *ngIf="(isUniversity | async)?.university" fxFlex md-button [routerLink]="['/university']"
+      routerLinkActive="router-link-active"><span>University</span></a>      
     <a fxFlex md-button [routerLink]="['/adverts']"
       routerLinkActive="router-link-active"><span>Job adverts</span></a>
     <!--<a fxFlex md-button [routerLink]="['/planets']"
       routerLinkActive="router-link-active"><span>Planets</span></a>-->
 
     <!--<li *ngIf="currentUser()" style="float:right">-->
-      <!--<a fxFlex md-button [routerLink]="['/login']"
-      routerLinkActive="router-link-active" (click)="logout()"><span>Login</span></a>-->
-      
-    
+      <a fxFlex md-button [routerLink]="['/login']"
+      routerLinkActive="router-link-active"><span>Account</span></a>      
   </div>
 </md-toolbar>

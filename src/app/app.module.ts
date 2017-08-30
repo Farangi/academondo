@@ -4,12 +4,8 @@ import { HttpModule } from '@angular/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-
 import { routing } from './app.routing';
-import { SidebarComponent } from './sidebar/sidebar.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { LabsignupComponent } from './labsignup/labsignup.component';
+
 import {
   FieldOfInterestService,
   ValidationService,
@@ -23,30 +19,44 @@ import {
   LaboratoryTechniqueService,
   UrlSizeLimiterPipe,
   CountryService,
-  AdminGuard
+  AdminGuard,
+  AuthService,
+  ResearcherProfileService,
+  QuestionControlService,
+  QuestionService,
+  ResearcherQService
 } from './shared';
+
+import { HeaderComponent } from './header/header.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { LabsignupComponent } from './labsignup/labsignup.component';
 import { AutocompleteComponent } from './autocomplete/autocomplete.component';
 import { LoginComponent } from './login/login.component';
 import { AlertComponent } from './alert/alert.component';
 import { RegisterComponent } from './register/register.component';
 import { LabComponent } from './lab/lab.component';
+import { PageNotFoundComponent } from './page-not-found.component';
+import { CvComponent } from './cv/cv.component';
+import { ResearcherProfileComponent } from './researcher-profile/researcher-profile.component';
 
 import { PubmedComponent } from './pubmed/pubmed.component';
 import { LablistComponent } from './lablist/lablist.component';
 import { LabDetailsComponent } from './lab-details/lab-details.component';
-
-import { MultiselectDropdownModule } from 'angular-2-dropdown-multiselect/src/multiselect-dropdown';
 import { AdminPageComponent } from './admin-page/admin-page.component';
 import { AdvertComponent } from './advert/advert.component';
+import { DynamicFormComponent } from './shared/dynamic-form/dynamic-form.component';
 
 import { environment } from '../environments/environment';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule, AngularFireAuthProvider } from 'angularfire2/auth';
 
-import { 
-  AuthMethods, 
-  AuthProvider, 
+import { MultiselectDropdownModule } from 'angular-2-dropdown-multiselect';
+
+import {
+  AuthMethods,
+  AuthProvider,
   FirebaseUIAuthConfig,
   FirebaseUIModule,
   AuthProviderWithCustomConfig
@@ -54,10 +64,13 @@ import {
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { MdButtonModule, MdCardModule, MdMenuModule, MdToolbarModule, MdIconModule, MdSidenavModule } from "@angular/material";
+import { MaterialModule } from '@angular/material';
 
-import { PageNotFoundComponent } from './page-not-found.component';
-import { AuthService } from './shared/auth.service';
+import 'hammerjs';
+
+// import {SuiModule} from 'ng2-semantic-ui';
+
+import { DynamicFormQuestionComponent } from './shared/dynamic-form-question/dynamic-form-question.component';
 
 
 // const facebookCustomConfig: AuthProviderWithCustomConfig = {
@@ -70,7 +83,7 @@ import { AuthService } from './shared/auth.service';
 //       'user_friends'
 //     ],
 //     customParameters: {
-//       // Forces password re-entry.
+//       // Forces password re-entry
 //       auth_type: 'reauthenticate'
 //     }
 //   }
@@ -87,9 +100,8 @@ const firebaseUiAuthConfig: FirebaseUIAuthConfig = {
     AuthProvider.Phone
   ],
   method: AuthMethods.Popup,
-  tos: '<your-tos-link>' //TODO Terms of service
+  tos: '<your-tos-link>' // TODO Terms of service
 };
-
 
 @NgModule({
   declarations: [
@@ -109,12 +121,16 @@ const firebaseUiAuthConfig: FirebaseUIAuthConfig = {
     LabDetailsComponent,
     AdminPageComponent,
     AdvertComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    CvComponent,
+    ResearcherProfileComponent,
+    DynamicFormComponent,
+    DynamicFormQuestionComponent
   ],
   imports: [
-    BrowserModule, 
-    FormsModule, 
-    ReactiveFormsModule, 
+    BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
     HttpModule,
     routing,
     MultiselectDropdownModule,
@@ -123,27 +139,23 @@ const firebaseUiAuthConfig: FirebaseUIAuthConfig = {
     AngularFireAuthModule,
     BrowserAnimationsModule,
     FirebaseUIModule.forRoot(firebaseUiAuthConfig),
-    MdButtonModule,
-    MdCardModule,
-    MdMenuModule,
-    MdToolbarModule,
-    MdIconModule,
-    MdSidenavModule
+    MaterialModule
   ],
   providers: [
-    FieldOfInterestService, 
-    ValidationService, 
+    FieldOfInterestService,
+    ValidationService,
     NewsService,
-    AlertService, 
-    AuthenticationService, 
-    AuthGuard, 
-    UserService, 
+    AlertService,
+    AuthenticationService,
+    AuthGuard,
+    UserService,
     LabService,
     PubmedService,
     LaboratoryTechniqueService,
     CountryService,
     AdminGuard,
-    AuthService
+    AuthService,
+    ResearcherProfileService,
   ],
   bootstrap: [AppComponent]
 })

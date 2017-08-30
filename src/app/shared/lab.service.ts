@@ -10,10 +10,11 @@ import 'rxjs/add/operator/publishLast';
 
 @Injectable()
 export class LabService {
+  
   private url = apiEndPoint +'/api/lab';
   private requestStream: Observable<any>;
 
-  constructor(private http: Http) {    
+  constructor(private http: Http) {        
     this.requestStream = http.get(this.url)    
     .map((response) => {      
      const responseAsJson= response.json();
@@ -22,6 +23,8 @@ export class LabService {
    .catch(() => Observable.throw('Unable to fetch labs!'))
    .publishLast()
    .refCount()  
+
+   
   }
 
   saveLab(lab: Lab) {

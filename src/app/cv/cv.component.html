@@ -1,0 +1,50 @@
+<p>
+  cv works!
+</p>
+   <ul>
+    <li *ngFor="let item of items | async">
+      {{ item.name | json }}
+    </li>
+  </ul> 
+
+  <h1>{{ item | async | json }}</h1>
+  <input type="text" #newname placeholder="Name" />
+  <input type="text" #newsize placeholder="Size" />
+  <br />
+  <button (click)="save(newname.value)">Set Name</button>
+  <button (click)="update(newsize.value)">Update Size</button>
+  <button (click)="delete()">Delete</button>
+
+
+  <br/>
+  <ul>
+    <li *ngFor="let item of messages | async">
+      <input type="text" #updatetext [value]="item.text" />
+      <button (click)="updateMessage(item.$key, updatetext.value)">Update</button>
+      <button (click)="deleteMessage(item.$key)">Delete</button>
+    </li>
+  </ul>
+  <input type="text" #newitem />
+  <button (click)="addMessage(newitem.value)">Add</button>
+  <button (click)="deleteEverything()">Delete All</button>  
+
+
+  <br/>
+
+  <div>
+    here we go!
+    <ul>
+      <li *ngFor="let cv of cv$ | async">
+        <div>  
+          <div>{{cv | json }}</div>
+          <div>{{(cv )?.name}}</div> 
+          <div>{{(cv )?.country}}</div>
+          <div>{{(cv )?.groupLeader}}</div>
+          <div>{{(cv )?.about}}</div>
+          <div>{{(cv )?.publications}}</div>
+          <div>{{(cv )?.techniques}}</div>
+          <div>{{(cv )?.fieldOfInterests}}</div> 
+        </div>
+      </li>
+    </ul>
+  </div>

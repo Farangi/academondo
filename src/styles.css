@@ -11,3 +11,14 @@ body {
     /*padding: 2em 23em;*/
     background:lightgray;
 }
+
+.baseComponent {    
+    margin: 0px auto;
+    padding: 15px;
+    max-width: 1152px;
+}
+
+.wideComponent {    
+    margin: 0px auto;
+    padding: 15px;    
+}

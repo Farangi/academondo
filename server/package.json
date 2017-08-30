@@ -12,11 +12,14 @@
   "dependencies": {
     "bcrypt": "^0.8.5",
     "body-parser": "~1.9.2",
+    "compression": "^1.6.2",
     "cors": "^2.8.1",
     "express": "^4.14.0",
     "jwt-simple": "^0.3.1",
+    "meanie-mongoose-to-json": "^1.2.1",
     "mongoose": "^4.6.3",
     "morgan": "~1.5.0",
+    "nodemailer": "^4.0.1",
     "passport": "^0.3.0",
     "passport-jwt": "^1.2.1"
   }

@@ -7,7 +7,7 @@ import {
 } from '../shared';
 import { PubmedArticle } from '../shared/models/pubmed';
 import { AutocompleteComponent } from '../autocomplete';
-import { IMultiSelectOption, IMultiSelectSettings, IMultiSelectTexts } from 'angular-2-dropdown-multiselect/src/multiselect-dropdown'
+import { IMultiSelectOption, IMultiSelectSettings, IMultiSelectTexts } from 'angular-2-dropdown-multiselect'
 
 @Component({
   selector: 'app-labsignup',
@@ -21,8 +21,8 @@ export class LabsignupComponent implements OnInit {
 
   labForm: FormGroup;
   public lab: Lab = { name: 'google Labs', address: 'Streets of the valley', zip: 2000, email: 'jobs@apple.com' };
-  public fieldOfInterestOptions: FieldOfInterest[];
-  public techniqueOptions: Technique[];
+  public fieldOfInterestOptions = [];
+  public techniqueOptions = [];  
   public pubmedOptions: any[] = [{ name: 'no results' }];
   public countryOptions: Country[];
 
@@ -67,11 +67,18 @@ export class LabsignupComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.fieldOfInterestService.getFieldOfInterest$()
-      .subscribe(fieldOfInterests => this.fieldOfInterestOptions = fieldOfInterests);
+    this.fieldOfInterestService.getFieldOfInterest$()      
+      .flatMap(list => list)
+      .subscribe((fieldOfInterest: any) => {        
+        this.fieldOfInterestOptions.push({id: fieldOfInterest.name, name: fieldOfInterest.name});
+      })
 
     this.laboratoryTechniqueService.getlabTechnique$()
-      .subscribe(techniques => this.techniqueOptions = techniques);
+      .flatMap(list => list)
+      .subscribe((technique: any) => {        
+        this.techniqueOptions.push({id: technique.name, name: technique.name});
+      })
+      
     this.countryService.getCountry$()
       .subscribe(countries => this.countryOptions = countries);
 

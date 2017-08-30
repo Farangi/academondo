@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { User } from '../shared';
-import { UserService, welcomeMsg, initMsg, AuthenticationService } from '../shared';
+import { UserService, welcomeMsg, initMsg, AuthService } from '../shared';
 
 @Component({
     selector: 'app-dashboard',
@@ -13,8 +13,8 @@ export class DashboardComponent implements OnInit {
     init = initMsg;
     currentUser;
 
-    constructor(private userService: UserService, private authenticationService: AuthenticationService) {
-        this.currentUser = this.authenticationService.currentUser();
+    constructor(private userService: UserService, private authService: AuthService) {
+        this.currentUser = this.authService.getCurrentUserUid();
     }
 
     ngOnInit() {
