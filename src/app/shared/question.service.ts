@@ -3,7 +3,7 @@ import { Injectable }       from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map'
 
-import { DropdownQuestion, QuestionBase, TextboxQuestion, TextareaQuestion, MultiselectQuestion, CountryService, Country, LaboratoryTechniqueService }  from './';
+import { DropdownQuestion, QuestionBase, TextboxQuestion, TextareaQuestion, MultiselectQuestion, CountryService, Country, LaboratoryTechniqueService, AutocompleteQuestion }  from './';
 
 @Injectable()
 export class QuestionService {  
@@ -84,7 +84,15 @@ export class QuestionService {
         required: true,
         options: this.techniqueOptions,
         order: 6
-      })
+      }),
+
+      new AutocompleteQuestion({
+        key: 'techiques2',        
+        label: 'Lab Techniques auto complete',
+        required: true,
+        options: this.techniqueOptions,
+        order: 7
+      })      
     ];
 
     return questions.sort((a, b) => a.order - b.order);

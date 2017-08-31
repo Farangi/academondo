@@ -50,6 +50,20 @@ import { QuestionBase }     from '../';
         
       </md-autocomplete>      
     </div>
+
+    <div *ngSwitchCase="'autocomplete'">          
+    <md-input-container>
+      <input mdInput placeholder="{{question.label}}" [mdAutocomplete]="auto" [formControlName]="question.key">
+    </md-input-container>          
+    {{question.options}}
+    <md-autocomplete #auto="mdAutocomplete">
+      <md-option *ngFor="let opt of question.options " [value]="opt.name">
+        {{ opt.name }}
+      </md-option>        
+      
+    </md-autocomplete>      
+  </div>    
+
   </div> 
   <div class="errorMessage" *ngIf="showErrorMsg">{{question.label}} is required</div>  
 </div>

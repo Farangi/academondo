@@ -9,6 +9,7 @@ export * from './models/question-textbox';
 export * from './models/question-textarea';
 export * from './models/question-dropdown';
 export * from './models/question-multiselect';
+export * from './models/question-autocomplete';
 export * from './consts/welcome';
 export * from './consts/apiEndPoint';
 
