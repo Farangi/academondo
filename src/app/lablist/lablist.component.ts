@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { Lab, LabService, AlertService, PubmedService } from '../shared';
+import { LabService, AlertService, PubmedService } from '../shared';
+import { Lab } from "../shared/models";
 
 @Component({
   selector: 'app-lablist',

@@ -6,7 +6,8 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw';
 import 'rxjs/add/operator/publishLast';
 
-import { newsUpdate, NewsService } from '../shared';
+import { NewsService } from '../shared';
+import { newsUpdate } from '../shared/models';
 
 import { Subscription } from 'rxjs/Subscription';
 

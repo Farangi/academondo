@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers, RequestOptions, Response, URLSearchParams } from '@angular/http';
 
-import { apiEndPoint } from '../shared';
+import { apiEndPoint } from './consts/apiEndPoint';
  
 @Injectable()
 export class UserService {

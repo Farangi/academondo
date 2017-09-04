@@ -10,7 +10,8 @@ import 'rxjs/add/operator/publishLast';
 import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/operator/publishReplay';
 
-import { newsUpdate, apiEndPoint } from '../shared';
+import { apiEndPoint } from './consts/apiEndPoint';
+import { newsUpdate } from './models/update';
 
 @Injectable()
 export class NewsService {

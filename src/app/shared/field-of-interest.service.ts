@@ -7,7 +7,8 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw';
 import 'rxjs/add/operator/publishLast';
 
-import { FieldOfInterest, apiEndPoint } from '../shared';
+import { apiEndPoint } from './consts';
+import { FieldOfInterest } from './models';
 
 @Injectable()
 export class FieldOfInterestService {

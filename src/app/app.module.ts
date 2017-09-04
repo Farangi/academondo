@@ -70,6 +70,13 @@ import 'hammerjs';
 
 // import {SuiModule} from 'ng2-semantic-ui';
 
+// import { CovalentLayoutModule, CovalentStepsModule /*, any other modules */ } from '@covalent/core';
+// // (optional) Additional Covalent Modules imports
+// import { CovalentHttpModule } from '@covalent/http';
+// import { CovalentHighlightModule } from '@covalent/highlight';
+// import { CovalentMarkdownModule } from '@covalent/markdown';
+// import { CovalentDynamicFormsModule } from '@covalent/dynamic-forms';
+
 import { DynamicFormQuestionComponent } from './shared/dynamic-form-question/dynamic-form-question.component';
 
 
@@ -139,7 +146,14 @@ const firebaseUiAuthConfig: FirebaseUIAuthConfig = {
     AngularFireAuthModule,
     BrowserAnimationsModule,
     FirebaseUIModule.forRoot(firebaseUiAuthConfig),
-    MaterialModule
+    MaterialModule,
+    // CovalentLayoutModule,
+    // CovalentStepsModule,
+    // // (optional) Additional Covalent Modules imports
+    // CovalentHttpModule.forRoot(),
+    // CovalentHighlightModule,
+    // CovalentMarkdownModule,
+    // CovalentDynamicFormsModule
   ],
   providers: [
     FieldOfInterestService,

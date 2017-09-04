@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers, RequestOptions, Response, URLSearchParams, RequestOptionsArgs } from '@angular/http';
-import { Lab, apiEndPoint } from '../shared';
+import { Lab, } from '../shared/models';
+import { apiEndPoint } from '../shared/consts';
 
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';

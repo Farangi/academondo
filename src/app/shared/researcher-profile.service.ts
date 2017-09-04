@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {AngularFireDatabase, FirebaseObjectObservable, FirebaseListObservable } from 'angularfire2/database';
-import { AuthService } from "../shared";
+import { AuthService } from "./auth.service";
 import { Observable } from 'rxjs/Observable';
 
 export class ResearcherProfile {

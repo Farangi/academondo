@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import {
-  Lab, FieldOfInterestService, FieldOfInterest, ValidationService,
-  LabService, AlertService, LaboratoryTechniqueService, Technique,
-  CountryService, Country, PubmedService
+  FieldOfInterestService, ValidationService,
+  LabService, AlertService, LaboratoryTechniqueService,
+  CountryService, PubmedService
 } from '../shared';
+
+import { Country, Lab, FieldOfInterest, Technique } from "../shared/models";
 import { PubmedArticle } from '../shared/models/pubmed';
 import { AutocompleteComponent } from '../autocomplete';
 import { IMultiSelectOption, IMultiSelectSettings, IMultiSelectTexts } from 'angular-2-dropdown-multiselect'

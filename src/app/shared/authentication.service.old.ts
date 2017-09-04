@@ -3,7 +3,9 @@ import { Http, Headers, Response, URLSearchParams } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map'
 
-import {apiEndPoint} from '../shared';
+
+import { apiEndPoint } from './consts';
+// import { apiEndPoint } from '../shared/consts';
  
 @Injectable()
 export class AuthenticationService {

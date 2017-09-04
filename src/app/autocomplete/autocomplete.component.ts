@@ -1,6 +1,6 @@
 import { Component, OnInit, ElementRef, Input, Output, EventEmitter, forwardRef } from '@angular/core';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
-import { FieldOfInterest } from '../shared';
+import { FieldOfInterest } from '../shared/models';
 
 
 export const AUTOCOMPLETE_VALUE_ACCESSOR: any = {

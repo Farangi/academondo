@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { FieldOfInterestService, FieldOfInterest } from '../shared';
-import { Lab } from '../shared/models/lab';
+import { FieldOfInterestService } from '../shared';
+import { Lab, FieldOfInterest } from '../shared/models/';
 
 
 @Component({

@@ -1,5 +1,6 @@
 import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
-import { User, AuthService, AlertService } from '../shared';
+import { AuthService, AlertService } from '../shared';
+import { User } from "../shared/models";
 
 @Component({
   selector: 'app-header',

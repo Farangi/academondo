@@ -1,18 +1,3 @@
-export * from './models/update';
-export * from './models/lab';
-export * from './models/fieldOfInterest';
-export * from './models/user';
-export * from './models/country';
-export * from './models/technique';
-export * from './models/question-base';
-export * from './models/question-textbox';
-export * from './models/question-textarea';
-export * from './models/question-dropdown';
-export * from './models/question-multiselect';
-export * from './models/question-autocomplete';
-export * from './consts/welcome';
-export * from './consts/apiEndPoint';
-
 export { NewsService } from './news.service';
 export { AlertService } from './alert.service';
 export { AuthenticationService } from './authentication.service';

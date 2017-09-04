@@ -3,7 +3,9 @@ import { Injectable }       from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map'
 
-import { DropdownQuestion, QuestionBase, TextboxQuestion, TextareaQuestion, MultiselectQuestion, CountryService, Country, LaboratoryTechniqueService, AutocompleteQuestion }  from './';
+import { CountryService }  from './country.service';
+import { LaboratoryTechniqueService }  from './laboratory-technique.service';
+import { DropdownQuestion, QuestionBase, TextboxQuestion, TextareaQuestion, MultiselectQuestion, Country, AutocompleteQuestion }  from './models';
 
 @Injectable()
 export class QuestionService {  
