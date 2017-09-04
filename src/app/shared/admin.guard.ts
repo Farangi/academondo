@@ -8,6 +8,6 @@ export class AdminGuard implements CanActivate {
   constructor(private router: Router, private authService: AuthService) { }
 
   canActivate() {
-    return this.authService.isAdmin$.map(isAdmin => isAdmin.admin)
+    return this.authService.isAdmin$.map((isAdmin: any) => isAdmin.admin)
   }
 }
