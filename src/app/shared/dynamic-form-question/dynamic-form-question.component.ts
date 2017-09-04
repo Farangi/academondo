@@ -54,8 +54,7 @@ import { QuestionBase }     from '../models';
     <div *ngSwitchCase="'autocomplete'">          
     <md-input-container>
       <input mdInput placeholder="{{question.label}}" [mdAutocomplete]="auto" [formControlName]="question.key">
-    </md-input-container>          
-    {{question.options}}
+    </md-input-container>              
     <md-autocomplete #auto="mdAutocomplete">
       <md-option *ngFor="let opt of question.options " [value]="opt.name">
         {{ opt.name }}
