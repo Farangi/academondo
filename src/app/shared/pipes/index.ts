@@ -1,0 +1,1 @@
+export { UrlSizeLimiterPipe } from './url-size-limiter.pipe'
