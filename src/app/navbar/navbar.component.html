@@ -1,0 +1,16 @@
+<div class="pos-f-t fixed-top header">
+  <nav class="navbar navbar-inverse navbar-expand-lg bg-inverse">
+    <a class="navbar-brand" href="javascript:void(0)">AcadeMondo</a>      
+          <ul class="navbar-nav ml-auto mt-2 mt-md-0">
+              <li *ngIf="user?.name" class="nav-item dropdown" ngbDropdown>              
+                  <a href="javascript:void(0)" class="nav-link" ngbDropdownToggle>
+                      <i class="fa fa-user"></i> {{user?.name}} <b class="caret"></b>
+                  </a>
+                  <div ngbDropdownMenu  class="dropdown-menu dropdown-menu-right">
+                      <a class="dropdown-item" [routerLink]="['/login']"><i class="fa fa-fw fa-user"></i> Account</a>                                            
+                      <a class="dropdown-item" [routerLink]="['/login']" (click)="signOut()"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+                  </div>
+              </li>
+          </ul>      
+  </nav>
+</div>

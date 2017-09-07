@@ -8,6 +8,7 @@ import { PubmedComponent } from './pubmed/pubmed.component';
 import { AdminPageComponent } from './admin-page/admin-page.component';
 import { AdvertComponent } from './advert/advert.component';
 import { ResearcherProfileComponent } from './researcher-profile/researcher-profile.component';
+import { BootstrapTestComponent } from "./bootstrap-test/bootstrap-test.component";
 
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
@@ -67,6 +68,11 @@ const routes: Routes = [
         component: ResearcherProfileComponent,
         canActivate: [AuthGuard]
     },
+    {
+        path: 'bs',
+        component: BootstrapTestComponent,
+        canActivate: [AuthGuard]
+    },    
     {
         path: 'admin',
         component: AdminPageComponent,

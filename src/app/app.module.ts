@@ -54,6 +54,8 @@ import { AngularFireAuthModule, AngularFireAuthProvider } from 'angularfire2/aut
 
 import { MultiselectDropdownModule } from 'angular-2-dropdown-multiselect';
 
+import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
+
 import {
   AuthMethods,
   AuthProvider,
@@ -78,6 +80,9 @@ import 'hammerjs';
 // import { CovalentDynamicFormsModule } from '@covalent/dynamic-forms';
 
 import { DynamicFormQuestionComponent } from './shared/dynamic-form-question/dynamic-form-question.component';
+import { BootstrapTestComponent } from './bootstrap-test/bootstrap-test.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { SidenavComponent } from './sidenav/sidenav.component';
 
 
 // const facebookCustomConfig: AuthProviderWithCustomConfig = {
@@ -132,7 +137,10 @@ const firebaseUiAuthConfig: FirebaseUIAuthConfig = {
     CvComponent,
     ResearcherProfileComponent,
     DynamicFormComponent,
-    DynamicFormQuestionComponent
+    DynamicFormQuestionComponent,
+    BootstrapTestComponent,
+    NavbarComponent,
+    SidenavComponent
   ],
   imports: [
     BrowserModule,
@@ -146,6 +154,7 @@ const firebaseUiAuthConfig: FirebaseUIAuthConfig = {
     AngularFireAuthModule,
     BrowserAnimationsModule,
     FirebaseUIModule.forRoot(firebaseUiAuthConfig),
+    NgbModule.forRoot(),
     MaterialModule,
     // CovalentLayoutModule,
     // CovalentStepsModule,

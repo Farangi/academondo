@@ -15,6 +15,7 @@ export class FieldOfInterestService {
 
   public getFieldOfInterest$() {
     return this.db.list('/fieldOfInterests')
+      .catch(() => Observable.throw('Unable to fetch Field Of Interests!'))
   }
 
   // public getFieldOfInterest$Old() {

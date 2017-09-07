@@ -12,7 +12,7 @@ export class PubmedComponent implements OnInit {
 
   private ids: string[];
   public articles: PubmedArticle[];
-  public term: string = 'Simon Lykkemark'  
+  public term: string = '';
 
   public loading = false;
 

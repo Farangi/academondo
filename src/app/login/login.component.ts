@@ -1,3 +1,4 @@
+import { AuthenticationService } from '../shared/authentication.service';
 import { Component, OnInit, HostBinding } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -29,7 +30,8 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private router: Router,    
-    private alertService: AlertService,    
+    private alertService: AlertService,
+    private authService: AuthenticationService,    
     private afAuth: AngularFireAuth,
     private db: AngularFireDatabase) {
       this.afAuth.authState.subscribe(user => this.userState(user),
@@ -47,7 +49,7 @@ export class LoginComponent implements OnInit {
   // }
 
   signOut() {
-    this.afAuth.auth.signOut();
+    this.authService.signOut();
   }
 
   private userState(user: any = null) {

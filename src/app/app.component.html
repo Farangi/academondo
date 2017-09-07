@@ -1,10 +1,14 @@
-<div>
+<!-- <div>
 	<app-header></app-header>
 	<app-alert></app-alert>
 	<div class="content">
     <router-outlet></router-outlet>
   </div>
-	<!--<div class="hidden-xs">
-		<app-sidebar class=""></app-sidebar>
-	</div>-->
-</div>
+</div> -->
+
+<app-navbar></app-navbar>
+<app-sidenav></app-sidenav>
+
+<section class="main-container">
+    <router-outlet></router-outlet>
+</section>
