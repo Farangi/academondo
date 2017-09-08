@@ -83,6 +83,7 @@ import { DynamicFormQuestionComponent } from './shared/dynamic-form-question/dyn
 import { BootstrapTestComponent } from './bootstrap-test/bootstrap-test.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
+import { MyAcademondoComponent } from './my-academondo/my-academondo.component';
 
 
 // const facebookCustomConfig: AuthProviderWithCustomConfig = {
@@ -140,7 +141,8 @@ const firebaseUiAuthConfig: FirebaseUIAuthConfig = {
     DynamicFormQuestionComponent,
     BootstrapTestComponent,
     NavbarComponent,
-    SidenavComponent
+    SidenavComponent,
+    MyAcademondoComponent
   ],
   imports: [
     BrowserModule,

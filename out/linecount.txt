@@ -212,3 +212,247 @@ src\test.ts, code is 21, comment is 7, blank is 4.
 src\tsconfig.json, code is 19, comment is 0, blank is 2.
 tslint.json, code is 105, comment is 0, blank is 11.
 ===============================================================================
+===============================================================================
+EXTENSION NAME : linecount
+EXTENSION VERSION : 0.1.7
+-------------------------------------------------------------------------------
+count time : 2017-09-07 21:52:33
+count workspace : c:\Users\Simon-win10\Desktop\Dropbox\g\AcadeMondo
+total files : 232
+total code lines : 7167
+total comment lines : 1391
+total blank lines : 800
+
+.editorconfig, code is 11, comment is 1, blank is 2.
+.firebaserc, code is 5, comment is 0, blank is 0.
+.gitignore, code is 16, comment is 23, blank is 4.
+agerskov.github.io\assets\.npmignore, code is 0, comment is 0, blank is 0.
+agerskov.github.io\assets\animate.min.css, code is 2, comment is 7, blank is 2.
+agerskov.github.io\assets\bootstrap.min.css, code is 1, comment is 6, blank is 0.
+agerskov.github.io\assets\default-green.svg, code is 1, comment is 0, blank is 0.
+agerskov.github.io\assets\default.gif, it is a binary file.
+agerskov.github.io\assets\default.svg, code is 1, comment is 0, blank is 0.
+agerskov.github.io\assets\kolbe-trans.png, it is a binary file.
+agerskov.github.io\assets\m2.mp3, it is a binary file.
+agerskov.github.io\assets\materialize.min.css, code is 3, comment is 15, blank is 0.
+agerskov.github.io\assets\mist.mp3, it is a binary file.
+agerskov.github.io\assets\parallax\parallax0.png, it is a binary file.
+agerskov.github.io\assets\parallax\parallax1.png, it is a binary file.
+agerskov.github.io\assets\parallax\parallax2-1.png, it is a binary file.
+agerskov.github.io\assets\parallax\parallax2-old.png, it is a binary file.
+agerskov.github.io\assets\parallax\parallax2.png, it is a binary file.
+agerskov.github.io\assets\parallax\parallax3.png, it is a binary file.
+agerskov.github.io\assets\parallax\parallax4.png, it is a binary file.
+agerskov.github.io\assets\parallax\parallax5.png, it is a binary file.
+agerskov.github.io\assets\parallax\parallax6.png, it is a binary file.
+agerskov.github.io\assets\parallax\parallax7.png, it is a binary file.
+agerskov.github.io\assets\parallax\parallax8.png, it is a binary file.
+agerskov.github.io\assets\ring-loading.gif, it is a binary file.
+agerskov.github.io\assets\ring-loading.svg, code is 1, comment is 0, blank is 0.
+agerskov.github.io\assets\steam.mp4, it is a binary file.
+agerskov.github.io\assets\xml2json.js, code is 134, comment is 23, blank is 4.
+agerskov.github.io\favicon.ico, it is a binary file.
+agerskov.github.io\index.html, code is 17, comment is 6, blank is 1.
+agerskov.github.io\inline.90700ebaa1a565e44f8e.bundle.js, code is 1, comment is 0, blank is 0.
+agerskov.github.io\main.ab2ee08073e58caf1e92.bundle.js, code is 4, comment is 0, blank is 0.
+agerskov.github.io\main.ab2ee08073e58caf1e92.bundle.js.gz, it is a binary file.
+agerskov.github.io\polyfills.d51d4dc8fb9ba48773bd.bundle.js, code is 11, comment is 60, blank is 0.
+agerskov.github.io\polyfills.d51d4dc8fb9ba48773bd.bundle.js.gz, it is a binary file.
+agerskov.github.io\styles.578f8005def3e5d79cbc.bundle.css, code is 1, comment is 0, blank is 0.
+agerskov.github.io\vendor.1b5955eac745d5e9d853.bundle.js, code is 92, comment is 542, blank is 0.
+agerskov.github.io\vendor.1b5955eac745d5e9d853.bundle.js.gz, it is a binary file.
+angular-cli.json, code is 72, comment is 0, blank is 3.
+e2e\app.e2e-spec.ts, code is 11, comment is 0, blank is 3.
+e2e\app.po.ts, code is 9, comment is 0, blank is 2.
+e2e\tsconfig.json, code is 17, comment is 0, blank is 2.
+firebase.json, code is 11, comment is 0, blank is 0.
+karma.conf.js, code is 38, comment is 2, blank is 1.
+package.json, code is 76, comment is 0, blank is 0.
+protractor.conf.js, code is 26, comment is 3, blank is 3.
+README.md, code is 15, comment is 5, blank is 12.
+server\app\models\country.js, code is 6, comment is 0, blank is 2.
+server\app\models\fieldOfInterest.js, code is 7, comment is 0, blank is 2.
+server\app\models\lab.js, code is 30, comment is 1, blank is 6.
+server\app\models\news.js, code is 15, comment is 1, blank is 4.
+server\app\models\technique.js, code is 6, comment is 0, blank is 2.
+server\app\models\user.js, code is 54, comment is 18, blank is 14.
+server\config\database.js, code is 5, comment is 0, blank is 0.
+server\config\passport.js, code is 19, comment is 2, blank is 2.
+server\package.json, code is 26, comment is 0, blank is 0.
+server\routes\api.js, code is 0, comment is 0, blank is 0.
+server\routes\index.js, code is 6, comment is 1, blank is 2.
+server\seeds\countries-seed.json, code is 996, comment is 0, blank is 0.
+server\seeds\fieldofinterest-seed-old.json, code is 260, comment is 0, blank is 1.
+server\seeds\fieldofinterest-seed.json, code is 260, comment is 0, blank is 1.
+server\seeds\firebase seeds\countries.json, code is 754, comment is 0, blank is 0.
+server\seeds\readme.txt, code is 4, comment is 0, blank is 5.
+server\seeds\technique-seed-old.json, code is 238, comment is 0, blank is 23.
+server\seeds\technique-seed.json, code is 238, comment is 0, blank is 23.
+server\seeds\techniques.txt, code is 19, comment is 0, blank is 2.
+server\seeds\techniques1.txt, code is 19, comment is 0, blank is 2.
+server\server.js, code is 218, comment is 66, blank is 38.
+src\app\admin-page\admin-page.component.css, code is 0, comment is 0, blank is 0.
+src\app\admin-page\admin-page.component.html, code is 3, comment is 0, blank is 0.
+src\app\admin-page\admin-page.component.spec.ts, code is 8, comment is 1, blank is 2.
+src\app\admin-page\admin-page.component.ts, code is 10, comment is 0, blank is 3.
+src\app\advert\advert.component.css, code is 0, comment is 0, blank is 0.
+src\app\advert\advert.component.ts, code is 22, comment is 0, blank is 5.
+src\app\alert\alert.component.css, code is 7, comment is 0, blank is 0.
+src\app\alert\alert.component.html, code is 5, comment is 0, blank is 0.
+src\app\alert\alert.component.spec.ts, code is 0, comment is 9, blank is 2.
+src\app\alert\alert.component.ts, code is 14, comment is 0, blank is 5.
+src\app\app.component.css, code is 0, comment is 0, blank is 1.
+src\app\app.component.html, code is 5, comment is 7, blank is 2.
+src\app\app.component.spec.ts, code is 0, comment is 0, blank is 0.
+src\app\app.component.ts, code is 7, comment is 0, blank is 1.
+src\app\app.module.ts, code is 137, comment is 31, blank is 18.
+src\app\app.routing.ts, code is 82, comment is 1, blank is 5.
+src\app\autocomplete\autocomplete.component.css, code is 43, comment is 0, blank is 8.
+src\app\autocomplete\autocomplete.component.html, code is 26, comment is 0, blank is 0.
+src\app\autocomplete\autocomplete.component.spec.ts, code is 0, comment is 9, blank is 2.
+src\app\autocomplete\autocomplete.component.ts, code is 71, comment is 24, blank is 17.
+src\app\autocomplete\index.ts, code is 1, comment is 0, blank is 0.
+src\app\bootstrap-test\bootstrap-test.component.css, code is 0, comment is 0, blank is 0.
+src\app\bootstrap-test\bootstrap-test.component.html, code is 16, comment is 0, blank is 3.
+src\app\bootstrap-test\bootstrap-test.component.spec.ts, code is 20, comment is 0, blank is 5.
+src\app\bootstrap-test\bootstrap-test.component.ts, code is 11, comment is 0, blank is 4.
+src\app\cv\cv.component.css, code is 0, comment is 0, blank is 0.
+src\app\cv\cv.component.html, code is 44, comment is 0, blank is 6.
+src\app\cv\cv.component.spec.ts, code is 20, comment is 0, blank is 5.
+src\app\cv\cv.component.ts, code is 50, comment is 1, blank is 8.
+src\app\dashboard\dashboard.component.css, code is 0, comment is 0, blank is 0.
+src\app\dashboard\dashboard.component.html, code is 4, comment is 0, blank is 1.
+src\app\dashboard\dashboard.component.spec.ts, code is 0, comment is 9, blank is 2.
+src\app\dashboard\dashboard.component.ts, code is 19, comment is 0, blank is 4.
+src\app\header\header.component.css, code is 0, comment is 0, blank is 0.
+src\app\header\header.component.html, code is 26, comment is 5, blank is 3.
+src\app\header\header.component.spec.ts, code is 0, comment is 9, blank is 2.
+src\app\header\header.component.ts, code is 14, comment is 10, blank is 10.
+src\app\index.ts, code is 2, comment is 0, blank is 0.
+src\app\lab-details\lab-details.component.css, code is 0, comment is 0, blank is 0.
+src\app\lab-details\lab-details.component.html, code is 3, comment is 0, blank is 0.
+src\app\lab-details\lab-details.component.spec.ts, code is 8, comment is 1, blank is 2.
+src\app\lab-details\lab-details.component.ts, code is 11, comment is 0, blank is 4.
+src\app\lab\lab.component.css, code is 6, comment is 0, blank is 1.
+src\app\lab\lab.component.html, code is 30, comment is 1, blank is 7.
+src\app\lab\lab.component.spec.ts, code is 0, comment is 9, blank is 2.
+src\app\lab\lab.component.ts, code is 23, comment is 1, blank is 7.
+src\app\lablist\lablist.component.css, code is 4, comment is 0, blank is 0.
+src\app\lablist\lablist.component.html, code is 50, comment is 3, blank is 0.
+src\app\lablist\lablist.component.spec.ts, code is 0, comment is 9, blank is 2.
+src\app\lablist\lablist.component.ts, code is 24, comment is 1, blank is 9.
+src\app\labsignup\labsignup.component.css, code is 6, comment is 0, blank is 1.
+src\app\labsignup\labsignup.component.html, code is 66, comment is 15, blank is 4.
+src\app\labsignup\labsignup.component.spec.ts, code is 0, comment is 9, blank is 2.
+src\app\labsignup\labsignup.component.ts, code is 156, comment is 0, blank is 21.
+src\app\login\login.component.css, code is 3, comment is 0, blank is 0.
+src\app\login\login.component.html, code is 13, comment is 27, blank is 2.
+src\app\login\login.component.spec.ts, code is 0, comment is 9, blank is 2.
+src\app\login\login.component.ts, code is 55, comment is 17, blank is 15.
+src\app\navbar\navbar.component.html, code is 16, comment is 0, blank is 0.
+src\app\navbar\navbar.component.scss, code is 72, comment is 0, blank is 0.
+src\app\navbar\navbar.component.spec.ts, code is 20, comment is 0, blank is 5.
+src\app\navbar\navbar.component.ts, code is 21, comment is 0, blank is 7.
+src\app\page-not-found.component.ts, code is 11, comment is 0, blank is 1.
+src\app\pubmed\pubmed.component.css, code is 0, comment is 0, blank is 0.
+src\app\pubmed\pubmed.component.html, code is 13, comment is 1, blank is 3.
+src\app\pubmed\pubmed.component.spec.ts, code is 0, comment is 9, blank is 2.
+src\app\pubmed\pubmed.component.ts, code is 31, comment is 0, blank is 8.
+src\app\register\register.component.css, code is 0, comment is 0, blank is 0.
+src\app\register\register.component.html, code is 21, comment is 0, blank is 0.
+src\app\register\register.component.spec.ts, code is 0, comment is 9, blank is 2.
+src\app\register\register.component.ts, code is 34, comment is 0, blank is 5.
+src\app\researcher-profile\researcher-profile.component.css, code is 0, comment is 0, blank is 0.
+src\app\researcher-profile\researcher-profile.component.html, code is 29, comment is 67, blank is 14.
+src\app\researcher-profile\researcher-profile.component.spec.ts, code is 20, comment is 0, blank is 5.
+src\app\researcher-profile\researcher-profile.component.ts, code is 44, comment is 19, blank is 13.
+src\app\shared\admin.guard.ts, code is 10, comment is 0, blank is 3.
+src\app\shared\alert.service.spec.ts, code is 12, comment is 1, blank is 3.
+src\app\shared\alert.service.ts, code is 56, comment is 2, blank is 9.
+src\app\shared\auth.guard.ts, code is 20, comment is 0, blank is 4.
+src\app\shared\auth.service.spec.ts, code is 12, comment is 0, blank is 3.
+src\app\shared\auth.service.ts, code is 60, comment is 38, blank is 19.
+src\app\shared\authentication.service.old.ts, code is 76, comment is 6, blank is 13.
+src\app\shared\authentication.service.spec.ts, code is 12, comment is 0, blank is 3.
+src\app\shared\authentication.service.ts, code is 63, comment is 0, blank is 13.
+src\app\shared\component-with-can-deactivate.ts, code is 3, comment is 0, blank is 0.
+src\app\shared\consts\apiEndPoint.ts, code is 4, comment is 0, blank is 0.
+src\app\shared\consts\index.ts, code is 2, comment is 0, blank is 0.
+src\app\shared\consts\welcome.ts, code is 2, comment is 0, blank is 0.
+src\app\shared\country.service.spec.ts, code is 12, comment is 1, blank is 3.
+src\app\shared\country.service.ts, code is 22, comment is 0, blank is 2.
+src\app\shared\dynamic-form-question\dynamic-form-question.component.ts, code is 25, comment is 0, blank is 6.
+src\app\shared\dynamic-form-question\md-template.html, code is 38, comment is 1, blank is 9.
+src\app\shared\dynamic-form\dynamic-form.component.ts, code is 35, comment is 0, blank is 7.
+src\app\shared\field-of-interest.service.spec.ts, code is 12, comment is 1, blank is 3.
+src\app\shared\field-of-interest.service.ts, code is 19, comment is 17, blank is 7.
+src\app\shared\index.ts, code is 20, comment is 0, blank is 3.
+src\app\shared\lab.service.spec.ts, code is 12, comment is 1, blank is 3.
+src\app\shared\lab.service.ts, code is 35, comment is 0, blank is 8.
+src\app\shared\laboratory-technique.service.spec.ts, code is 12, comment is 1, blank is 3.
+src\app\shared\laboratory-technique.service.ts, code is 17, comment is 16, blank is 12.
+src\app\shared\leave-component.guard.ts, code is 18, comment is 0, blank is 5.
+src\app\shared\models\country.ts, code is 3, comment is 0, blank is 0.
+src\app\shared\models\fieldOfInterest.ts, code is 4, comment is 0, blank is 0.
+src\app\shared\models\index.ts, code is 12, comment is 0, blank is 0.
+src\app\shared\models\lab.ts, code is 18, comment is 0, blank is 2.
+src\app\shared\models\pubmed.ts, code is 45, comment is 0, blank is 7.
+src\app\shared\models\question-autocomplete.ts, code is 9, comment is 0, blank is 2.
+src\app\shared\models\question-base.ts, code is 23, comment is 0, blank is 1.
+src\app\shared\models\question-dropdown.ts, code is 9, comment is 0, blank is 2.
+src\app\shared\models\question-multiselect.ts, code is 9, comment is 0, blank is 2.
+src\app\shared\models\question-textarea.ts, code is 13, comment is 0, blank is 2.
+src\app\shared\models\question-textbox.ts, code is 13, comment is 0, blank is 2.
+src\app\shared\models\technique.ts, code is 4, comment is 0, blank is 0.
+src\app\shared\models\update.ts, code is 4, comment is 0, blank is 0.
+src\app\shared\models\user.ts, code is 5, comment is 0, blank is 0.
+src\app\shared\news.service.spec.ts, code is 12, comment is 1, blank is 3.
+src\app\shared\news.service.ts, code is 32, comment is 0, blank is 5.
+src\app\shared\pipes\index.ts, code is 1, comment is 0, blank is 0.
+src\app\shared\pipes\url-size-limiter.pipe.spec.ts, code is 8, comment is 1, blank is 2.
+src\app\shared\pipes\url-size-limiter.pipe.ts, code is 12, comment is 0, blank is 3.
+src\app\shared\pubmed.service.spec.ts, code is 12, comment is 1, blank is 3.
+src\app\shared\pubmed.service.ts, code is 44, comment is 2, blank is 13.
+src\app\shared\question-control.service.ts, code is 15, comment is 0, blank is 4.
+src\app\shared\question.service.ts, code is 72, comment is 13, blank is 17.
+src\app\shared\researcher-profile.service.spec.ts, code is 12, comment is 0, blank is 3.
+src\app\shared\researcher-profile.service.ts, code is 69, comment is 4, blank is 12.
+src\app\shared\researcher.q.service.ts, code is 65, comment is 13, blank is 16.
+src\app\shared\user.service.spec.ts, code is 12, comment is 1, blank is 3.
+src\app\shared\user.service.ts, code is 22, comment is 14, blank is 9.
+src\app\shared\validation.service.ts, code is 35, comment is 4, blank is 5.
+src\app\sidebar\sidebar.component.css, code is 0, comment is 16, blank is 0.
+src\app\sidebar\sidebar.component.html, code is 11, comment is 0, blank is 0.
+src\app\sidebar\sidebar.component.spec.ts, code is 0, comment is 9, blank is 2.
+src\app\sidebar\sidebar.component.ts, code is 29, comment is 5, blank is 9.
+src\app\sidenav\sidenav.component.html, code is 42, comment is 9, blank is 1.
+src\app\sidenav\sidenav.component.scss, code is 125, comment is 1, blank is 0.
+src\app\sidenav\sidenav.component.spec.ts, code is 20, comment is 0, blank is 5.
+src\app\sidenav\sidenav.component.ts, code is 29, comment is 0, blank is 4.
+src\assets\.gitkeep, code is 0, comment is 0, blank is 0.
+src\assets\.npmignore, code is 0, comment is 0, blank is 0.
+src\assets\animate.min.css, code is 2, comment is 7, blank is 2.
+src\assets\bootstrap.min.css, code is 1, comment is 6, blank is 0.
+src\assets\default-green.svg, code is 1, comment is 0, blank is 0.
+src\assets\default.gif, it is a binary file.
+src\assets\default.svg, code is 1, comment is 0, blank is 0.
+src\assets\island.png, it is a binary file.
+src\assets\kolbe-trans.png, it is a binary file.
+src\assets\privacypolicy.htm, code is 49, comment is 0, blank is 3.
+src\assets\ring-loading.gif, it is a binary file.
+src\assets\ring-loading.svg, code is 1, comment is 0, blank is 0.
+src\assets\ToS.txt, code is 19, comment is 1, blank is 19.
+src\assets\xml2json.js, code is 134, comment is 23, blank is 4.
+src\environments\environment.prod.ts, code is 11, comment is 0, blank is 1.
+src\environments\environment.ts, code is 11, comment is 4, blank is 2.
+src\favicon.ico, it is a binary file.
+src\index.html, code is 17, comment is 0, blank is 2.
+src\main.ts, code is 8, comment is 0, blank is 2.
+src\polyfills.ts, code is 3, comment is 51, blank is 15.
+src\router.animations.ts, code is 60, comment is 0, blank is 5.
+src\styles.css, code is 28, comment is 7, blank is 10.
+src\test.ts, code is 21, comment is 7, blank is 4.
+src\tsconfig.json, code is 19, comment is 0, blank is 2.
+src\unicorn.scss, code is 4, comment is 1, blank is 0.
+tslint.json, code is 105, comment is 0, blank is 11.
+===============================================================================
