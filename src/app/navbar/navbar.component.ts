@@ -1,3 +1,4 @@
+import { UserSettingsService } from './../user-settings.service';
 import { AuthenticationService } from '../shared';
 
 import { Component, OnInit } from '@angular/core';
@@ -13,10 +14,14 @@ export class NavbarComponent implements OnInit {
   
   user: any;  
 
-  constructor(private authService: AuthenticationService) {    
+  constructor(private authService: AuthenticationService, private userSettings: UserSettingsService) {    
     authService.getUser$().subscribe(user => {      
       this.user = user
     });
+  }
+
+  toggleDesign() {
+    this.userSettings.toggleDesign();
   }
 
   signOut() {

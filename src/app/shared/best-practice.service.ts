@@ -19,7 +19,7 @@ export class BestPracticeService {
   get(): Observable<string[]> {
     return this.http.get('assets/data.json')
       .map((res: Response) => res.json())
-      //              .do(data => console.log('server data:', data))  // debug
+      //.do(data => console.log('server data:', data))  // debug
       .catch(this.handleError);
   }
 

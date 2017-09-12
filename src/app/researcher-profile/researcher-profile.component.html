@@ -1,118 +1,222 @@
 <div class=" container-fluid">
+    <button type="button" class="btn btn-warning" (click)="isMD =!isMD">
+      design toggler
+      </button>
   <div class="row">
-  <div class="col-sm-6">
-    <form  [formGroup]="profileForm" novalidate>
-      <h1>Your Profile</h1>
-      <div>
-        <md-input-container class="">   
-          <input  formControlName="name" mdInput placeholder="Name" 
-          [ngClass]="{ 'is-success' :  profileForm.get('name').valid && profileForm.get('name').dirty, 'is-danger'  :  !profileForm.get('name').valid }">
-        </md-input-container>  
-      </div>
-      <div>
-        <md-input-container class="">   
-          <input  formControlName="country" mdInput placeholder="Country" 
-          [ngClass]="{ 'is-success' :  profileForm.get('country').valid && profileForm.get('country').dirty, 'is-danger'  :  !profileForm.get('country').valid }">
-        </md-input-container>
-      </div>
-      <div>
-        <md-input-container class="">   
-          <input  formControlName="about" mdInput #message maxlength="aboutLength" placeholder="About" 
-          [ngClass]="{ 'is-success' :  profileForm.get('about').valid && profileForm.get('about').dirty, 'is-danger'  :  !profileForm.get('about').valid }">
-          <md-hint align="start"><strong></strong> </md-hint>
-          <md-hint align="end">{{message.value.length}} / {{aboutLength}}</md-hint>
-        </md-input-container>
-      </div>
-      <div>
-        <md-input-container class="">   
-          <input  formControlName="groupLeader" mdInput placeholder="Group leader" 
-          [ngClass]="{ 'is-success' :  profileForm.get('groupLeader').valid && profileForm.get('groupLeader').dirty, 'is-danger'  :  !profileForm.get('groupLeader').valid }">
-        </md-input-container>
-      </div> 
-    </form> 
-  </div>
 
-  
-  
-
-
-
-
-
-  <div class="col-sm-6">
-    <h1>Profile Preview</h1>
-
-    <div>  
-      
-      <!-- <div>{{profile | async | json}}</div> -->
-      <div>{{(profile | async)?.$key}}</div>
-      <div>{{(profile | async)?.name}}</div> 
-      <div>{{(profile | async)?.country}}</div>
-      <div>{{(profile | async)?.groupLeader}}</div>
-      <div>{{(profile | async)?.about}}</div>
-      <div>{{(profile | async)?.publications}}</div>
-      <div>{{(profile | async)?.techniques}}</div>
-      <div>{{(profile | async)?.fieldOfInterests}}</div> 
-    </div>
-
-    <div>
-      <h3> Form Values</h3>
-
-      Form value : {{profileForm.value | json }}
-      <br>
-      Form status: {{profileForm.status}}
-    </div> 
-  </div>
-  </div>
-
-
-
-
-
-  <!-- <form  [formGroup]="profileForm" novalidate>
-      <h1>Create your Profile</h1>
-
-    <md-input-container class="example-full-width">   
-      <input  formControlName="name" mdInput placeholder="name" [ngClass]="{
-                                  'is-success' :  profileForm.get('name').valid &&  profileForm.get('name').dirty,
-                                  'is-danger'  :  !profileForm.get('name').valid
-                                }">
-      
-      
-    </md-input-container>  
-      <div class="field is-horizontal">
-        <div class="field-label is-normal">
-          <label class="label">country</label>
+    <div class="col-sm-6">
+      <form *ngIf="isMD" [formGroup]="profileForm" novalidate>
+        <h1>Your Profile</h1>
+        <div>
+          <md-input-container class="">   
+            <input  formControlName="name" mdInput placeholder="Name" 
+            [ngClass]="{ 'is-success' :  profileForm.get('name').valid && profileForm.get('name').dirty, 'is-danger'  :  !profileForm.get('name').valid }">
+          </md-input-container>  
         </div>
-        <div class="field-body">
-          <div class="field">
-            <div class="control">
-              <input class="input" type="text"
-                    formControlName="country"
-                    
-                    [ngClass]="{
-                                  'is-success' :  profileForm.get('country').valid &&  profileForm.get('country').dirty,
-                                  'is-danger'  :  !profileForm.get('country').valid
-                                }">
-            </div>
-            <p class="error is-danger" [hidden]="profileForm.get('country').valid">
-              country is required
-            </p>
+        <div>
+          <md-input-container class="">   
+            <input  formControlName="country" mdInput placeholder="Country" 
+            [ngClass]="{ 'is-success' :  profileForm.get('country').valid && profileForm.get('country').dirty, 'is-danger'  :  !profileForm.get('country').valid }">
+          </md-input-container>
+        </div>
+        <div>
+          <md-input-container class="">   
+            <input  formControlName="about" mdInput #message maxlength="aboutLength" placeholder="About" 
+            [ngClass]="{ 'is-success' :  profileForm.get('about').valid && profileForm.get('about').dirty, 'is-danger'  :  !profileForm.get('about').valid }">
+            <md-hint align="start"><strong></strong> </md-hint>
+            <md-hint align="end">{{message.value.length}} / {{aboutLength}}</md-hint>
+          </md-input-container>
+        </div>
+        <div>
+          <md-input-container class="">   
+            <input  formControlName="groupLeader" mdInput placeholder="Group leader" 
+            [ngClass]="{ 'is-success' :  profileForm.get('groupLeader').valid && profileForm.get('groupLeader').dirty, 'is-danger'  :  !profileForm.get('groupLeader').valid }">
+          </md-input-container>
+        </div> 
+      </form> 
+
+      <div *ngIf="!isMD">
+      <form role="form">
+        <h1>Your Profile</h1>
+        <fieldset class="form-group">
+          <label>Text Input</label>
+          <input class="form-control">
+          <p class="help-block">Example block-level help text here.</p>
+        </fieldset>
+
+        <fieldset class="form-group">
+          <label>Text Input with Placeholder</label>
+          <input class="form-control" placeholder="Enter text">
+        </fieldset>
+
+        <div class="form-group">
+          <label>Static Control</label>
+          <p class="form-control-static">email@example.com</p>
+        </div>
+
+        <fieldset class="form-group">
+          <label for="exampleInputFile">File input</label>
+          <input type="file" class="form-control-file" id="exampleInputFile">
+        </fieldset>
+
+        <fieldset class="form-group">
+          <label>Text area</label>
+          <textarea class="form-control" rows="3"></textarea>
+        </fieldset>
+
+        <div class="form-group">
+          <label>Checkboxes</label>
+          <div class="checkbox">
+            <label>
+                                  <input type="checkbox" value=""> Checkbox 1
+                              </label>
+          </div>
+          <div class="checkbox">
+            <label>
+                                  <input type="checkbox" value=""> Checkbox 2
+                              </label>
+          </div>
+          <div class="checkbox">
+            <label>
+                                  <input type="checkbox" value=""> Checkbox 3
+                              </label>
           </div>
         </div>
-      </div> 
+
+        <div class="form-group">
+          <label>Inline Checkboxes</label>
+          <label class="checkbox-inline">
+                              <input type="checkbox">1
+                          </label>
+          <label class="checkbox-inline">
+                              <input type="checkbox">2
+                          </label>
+          <label class="checkbox-inline">
+                              <input type="checkbox">3
+                          </label>
+        </div>
+
+        <fieldset class="form-group">
+          <label>Radio Buttons</label>
+          <div class="radio">
+            <label>
+                                  <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked=""> Radio 1
+                              </label>
+          </div>
+          <div class="radio">
+            <label>
+                                  <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2"> Radio 2
+                              </label>
+          </div>
+          <div class="radio">
+            <label>
+                                  <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3"> Radio 3
+                              </label>
+          </div>
+        </fieldset>
+
+        <fieldset class="form-group">
+          <label>Inline Radio Buttons</label>
+          <label class="radio-inline">
+                              <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline1" value="option1" checked="">1
+                          </label>
+          <label class="radio-inline">
+                              <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline2" value="option2">2
+                          </label>
+          <label class="radio-inline">
+                              <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline3" value="option3">3
+                          </label>
+        </fieldset>
+
+        <div class="form-group">
+          <label>Selects</label>
+          <select class="form-control">
+                              <option>1</option>
+                              <option>2</option>
+                              <option>3</option>
+                              <option>4</option>
+                              <option>5</option>
+                          </select>
+        </div>
+
+        <fieldset class="form-group">
+          <label>Multiple Selects</label>
+          <select multiple="" class="form-control">
+                              <option>1</option>
+                              <option>2</option>
+                              <option>3</option>
+                              <option>4</option>
+                              <option>5</option>
+                          </select>
+        </fieldset>
+
+        <button type="submit" class="btn btn-secondary">Submit Button</button>
+        <button type="reset" class="btn btn-secondary">Reset Button</button>
+
+      </form>
+
+      <h4>Form Validation</h4>
+  <form role="form">
+
+    <div class="form-group has-success">
+      <label class="form-control-label" for="inputSuccess">Input with success</label>
+      <input type="text" class="form-control form-control-success" id="inputSuccess">
+    </div>
+
+    <div class="form-group has-warning">
+      <label class="form-control-label" for="inputWarning">Input with warning</label>
+      <input type="text" class="form-control form-control-warning" id="inputWarning">
+    </div>
+
+    <div class="form-group has-danger">
+      <label class="form-control-label" for="inputError">Input with danger</label>
+      <input type="text" class="form-control form-control-danger" id="inputError">
+    </div>
+
+  </form>
+
+  <h4>Input Groups</h4>
+
+  <form role="form">
+
+    <div class="form-group input-group">
+      <span class="input-group-addon">@</span>
+      <input type="text" class="form-control" placeholder="Username">
+    </div>
+
+    <div class="form-group input-group">
+      <input type="text" class="form-control">
+      <span class="input-group-addon">.00</span>
+    </div>
+
+    <div class="form-group input-group">
+      <span class="input-group-addon"><i class="fa fa-eur"></i></span>
+      <input type="text" class="form-control" placeholder="Font Awesome Icon">
+    </div>
+
+    <div class="form-group input-group">
+      <span class="input-group-addon">$</span>
+      <input type="text" class="form-control">
+      <span class="input-group-addon">.00</span>
+    </div>
+
+    <div class="form-group input-group">
+      <input type="text" class="form-control">
+      <span class="input-group-btn"><button class="btn btn-secondary" type="button"><i class="fa fa-search"></i></button></span>
+    </div>
+
+  </form>
+
+  <p>For complete documentation, please visit <a target="_blank" href="http://v4-alpha.getbootstrap.com/components/forms/">Bootstrap's Form Documentation</a>.</p>
+</div>
+
+
 
       
-    <md-input-container class="example-full-width">   
-      <input  formControlName="about" mdInput #message maxlength="256" placeholder="About" [ngClass]="{
-                                  'is-success' :  profileForm.get('about').valid &&  profileForm.get('about').dirty,
-                                  'is-danger'  :  !profileForm.get('about').valid
-                                }">
-      <md-hint align="start"><strong></strong> </md-hint>
-      <md-hint align="end">{{message.value.length}} / 256</md-hint>
-    </md-input-container>
-
-      </form>  -->
-
-  <button class="button is-success" (click)="startNewResearchProfile()" *ngIf="!profile" >Create Profile</button>    
+      <!-- {{profileForm.status === 'VALID' ? 'Your profile has been saved': 'form is not valid'}} -->
+    </div>    
+    <div class="col-sm-6">    
+      <app-view-researcher-profile></app-view-researcher-profile>
+    </div>
+  </div>
 </div>

@@ -3,63 +3,52 @@ import {AngularFireDatabase, FirebaseObjectObservable, FirebaseListObservable } 
 import { AuthService } from "./auth.service";
 import { Observable } from 'rxjs/Observable';
 
-export class ResearcherProfile {
-  private uid:string;
-
-  constructor(uid:string) {
-    this.uid = uid
-  }
-}
-
 @Injectable()
 export class ResearcherProfileService {
   private uid: string;
-  private profile;
-  private profiles;
+  private entity;
+  private firebaseList;
 
   constructor(private db: AngularFireDatabase, private authService: AuthService) {    
     this.uid = this.authService.getCurrentUserUid();
-    this.profiles = this.db.list('/profiles');
-  }
-
-  private findProfileByUid(uid:string)  {
-    return this.db.list('/profiles', {
-      query: {
-        orderByChild: 'uid',
-        equalTo: uid,
-        limitToFirst: 1
-      }
-    })
-      .map((profiles) => {
-        let [profile] = profiles;
-        this.profile = profile;          
-        return profile;
-      });
+    this.firebaseList = this.db.list('/profiles');
   }
 
   getOwnProfile() {
-    return this.findProfileByUid(this.uid);
+    return this.db.list('/profiles', {
+      query: {
+        orderByChild: 'uid',
+        equalTo: this.uid,
+      }
+    })    
+    .map((entities) => {
+      let [entity] = entities;
+      this.entity = entity;
+      return entity;
+    })
+    //.do(data => console.log('server data:', data))  // debug - fixme why do i get so many responses?
   }
 
-  private createProfile(profile) {    
-    profile.uid = this.uid;
-    this.profiles.push(profile);    
+  // getOwnProfile() {
+  //   const uid = this.uid;
+  //   // return this.db.object('/profiles/uid/' + uid);    
+  //   // return this.db.object(`/profiles/uid/${this.uid}`);    
+  // }
+
+  private create(data) {    
+    data.uid = this.uid;
+    this.firebaseList.push(data);    
   }
 
-  private updateProfile(key, profile) {
-    this.profiles.update(key, profile);
+  private update(key, data) {
+    this.firebaseList.update(key, data);
   }
 
-  public upsert(profile) {
-    let key;
-    if(this.profile) {
-      key = this.profile.$key;
-    }
-
-    if (key) {
-      this.updateProfile(key, profile);
+  public upsert(data) {
+    if (this.entity) {
+      this.update(this.entity.$key, data);
     } else {
-      this.createProfile(profile);
+      this.create(data);
     }
   }
 }

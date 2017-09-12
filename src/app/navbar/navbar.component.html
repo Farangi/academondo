@@ -7,8 +7,9 @@
                       <i class="fa fa-user"></i> {{user?.name}} <b class="caret"></b>
                   </a>
                   <div ngbDropdownMenu  class="dropdown-menu dropdown-menu-right">
-                      <a class="dropdown-item" [routerLink]="['/login']"><i class="fa fa-fw fa-user"></i> Account</a>                                            
-                      <a class="dropdown-item" [routerLink]="['/login']" (click)="signOut()"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+                    <a class="dropdown-item" [routerLink]="['/login']"><i class="fa fa-fw fa-user"></i> Account</a>                                            
+                    <a class="dropdown-item" (click)="toggleDesign()"><i class="fa fa-fw fa-power-off"></i> toggle design</a>
+                    <a class="dropdown-item" [routerLink]="['/login']" (click)="signOut()"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
                   </div>
               </li>
           </ul>      

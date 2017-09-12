@@ -87,6 +87,8 @@ import { BootstrapTestComponent } from './bootstrap-test/bootstrap-test.componen
 import { NavbarComponent } from './navbar/navbar.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { MyAcademondoComponent } from './my-academondo/my-academondo.component';
+import { ViewResearcherProfileComponent } from './view-researcher-profile/view-researcher-profile.component';
+import { UserSettingsService } from './user-settings.service';
 
 
 // const facebookCustomConfig: AuthProviderWithCustomConfig = {
@@ -146,6 +148,7 @@ const firebaseUiAuthConfig: FirebaseUIAuthConfig = {
     NavbarComponent,
     SidenavComponent,
     MyAcademondoComponent,
+    ViewResearcherProfileComponent,
     
   ],
   imports: [
@@ -186,6 +189,7 @@ const firebaseUiAuthConfig: FirebaseUIAuthConfig = {
     AdminGuard,
     AuthService,
     ResearcherProfileService,
+    UserSettingsService,
   ],
   bootstrap: [AppComponent]
 })
