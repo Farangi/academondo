@@ -10,6 +10,7 @@ import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 export class ResearcherProfileComponent implements OnInit {
 
   profile: any;
+  ownProfile: any;
   profileForm: FormGroup;
   aboutLength = 500;
   questions: any[];
@@ -22,8 +23,9 @@ export class ResearcherProfileComponent implements OnInit {
   getProfile() {
     this.profile = this.profileService.getOwnProfile()
     // .subscribe((profile) => {
-    //   debugger;
-    //   this.profile = profile;
+    //   // debugger;
+    //   console.log(profile)
+    //   this.ownProfile = profile;
     // });
     // debugger;
     this.buildForm()
@@ -44,27 +46,30 @@ export class ResearcherProfileComponent implements OnInit {
       name:     ['', Validators.required],
       country:  [''],      
       groupLeader: [''],
-      about: ['', Validators.compose([Validators.minLength(10), Validators.maxLength(this.aboutLength)])],
+      about: ['', Validators.compose([Validators.minLength(10), Validators.maxLength(this.aboutLength), Validators.required])],
       // publications: ['', Validators.required],
       // techniques: ['', Validators.required],
       // fieldOfInterests: ['', Validators.required],
     });
 
     // data fra firebase
-    this.profile.subscribe(profile => {              
-      this.profileForm.patchValue(profile);
+    this.profile.subscribe(profile => {   
+      console.log('getting new data from fb:', profile)
+      if (profile) {
+        this.profileForm.patchValue(profile);  
+      }                 
     });
 
     // data ud til firebase
     this.profileForm.valueChanges
-    .debounceTime(500)
+    .debounceTime(1000)
     .subscribe(value => {
       if (this.profileForm.status !== 'VALID') {
         console.log('form not valid, cant save to db');
         return;
       }
-      console.log('form valid, new value: ', value);
-      this.profileService.updateProfile(value);
+      console.log('form valid, new value sent to fb: ', value);
+      this.profileService.upsert(value);
     });
   }
 

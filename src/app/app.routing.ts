@@ -1,3 +1,4 @@
+import { MyAcademondoComponent } from './my-academondo/my-academondo.component';
 import { Routes, RouterModule } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LabsignupComponent } from './labsignup/labsignup.component';
@@ -28,6 +29,11 @@ const routes: Routes = [
         canActivate: [AuthGuard],
         // canDeactivate: [LeaveComponentGuard]
     },
+    {
+        path: 'my-academondo',
+        component: MyAcademondoComponent,
+        canActivate: [AuthGuard]
+    },    
     {
         path: 'labsignup',
         component: LabsignupComponent,

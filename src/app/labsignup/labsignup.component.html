@@ -80,6 +80,10 @@
 		</div>
     <!--<div *ngIf="error" class="alert alert-danger">{{error}}</div>-->
 	</form>
+
+<!-- <div>{{fieldOfInterestOptions |json}}</div> -->
+<div>{{techniqueOptions |json | slice:0:150}}</div>
+<div>{{pubmedOptions |json}}</div>
 	<!--</div>-->
 	<!--</div>-->
 </div>

@@ -70,6 +70,9 @@ import { MaterialModule } from '@angular/material';
 
 import 'hammerjs';
 
+import { LeafletModule } from '@asymmetrik/ngx-leaflet';
+
+
 // import {SuiModule} from 'ng2-semantic-ui';
 
 // import { CovalentLayoutModule, CovalentStepsModule /*, any other modules */ } from '@covalent/core';
@@ -110,10 +113,10 @@ const firebaseUiAuthConfig: FirebaseUIAuthConfig = {
     AuthProvider.Twitter,
     AuthProvider.Github,
     AuthProvider.Password,
-    AuthProvider.Phone
+    // AuthProvider.Phone
   ],
   method: AuthMethods.Popup,
-  tos: '<your-tos-link>' // TODO Terms of service
+  tos: '../assets/ToS.txt' // TODO Terms of service
 };
 
 @NgModule({
@@ -142,7 +145,8 @@ const firebaseUiAuthConfig: FirebaseUIAuthConfig = {
     BootstrapTestComponent,
     NavbarComponent,
     SidenavComponent,
-    MyAcademondoComponent
+    MyAcademondoComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -157,6 +161,7 @@ const firebaseUiAuthConfig: FirebaseUIAuthConfig = {
     BrowserAnimationsModule,
     FirebaseUIModule.forRoot(firebaseUiAuthConfig),
     NgbModule.forRoot(),
+    LeafletModule.forRoot(),
     MaterialModule,
     // CovalentLayoutModule,
     // CovalentStepsModule,

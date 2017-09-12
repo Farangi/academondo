@@ -72,13 +72,14 @@ export class LabsignupComponent implements OnInit {
     this.fieldOfInterestService.getFieldOfInterest$()      
       .flatMap(list => list)
       .subscribe((fieldOfInterest: any) => {        
+        console.log(fieldOfInterest);
         this.fieldOfInterestOptions.push({id: fieldOfInterest.name, name: fieldOfInterest.name});
       })
 
     this.laboratoryTechniqueService.getlabTechnique$()
       .flatMap(list => list)
       .subscribe((technique: any) => {        
-        this.techniqueOptions.push({id: technique.name, name: technique.name});
+        this.techniqueOptions.push({id: this.getRandomInt(1,10000), name: technique.name});
       })
       
     this.countryService.getCountry$()
@@ -173,5 +174,9 @@ export class LabsignupComponent implements OnInit {
 
   clearPubmedOptions() {
     this.pubmedOptions = [{ name: 'no results' }];
+  }
+
+  private getRandomInt(min:number = 1, max:number = 100) {  
+    return Math.floor(Math.random() * (max - min)) + min;
   }
 }

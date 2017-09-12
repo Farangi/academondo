@@ -13,72 +13,53 @@ export class ResearcherProfile {
 
 @Injectable()
 export class ResearcherProfileService {
-  profile
-  uid: string;
-  private profileRef: FirebaseListObservable<any>;
+  private uid: string;
+  private profile;
+  private profiles;
 
-  constructor(private db: AngularFireDatabase, private authService: AuthService) {
-    // this.getOrCreateProfile()
+  constructor(private db: AngularFireDatabase, private authService: AuthService) {    
     this.uid = this.authService.getCurrentUserUid();
-    this.profileRef = this.db.list('/profiles', { 
-      query: {
-        orderByChild: 'uid',
-        equalTo: this.uid
-      }
-    });
-   }
-
-   private tryCreateProfile(uid, profileData) {
-    // this.profileRef.
-   }
-
-   private createProfile(uid): FirebaseObjectObservable<any> {
-     const profileDefault = new ResearcherProfile(uid);
-     const profileKey = this.db.list('/profiles').push(profileDefault);
-     return this.db.object('/profile/' + profileKey);
-   }
-
-   private profileExists(uid:string): boolean {
-    let res
-    const profileRef = this.db.list('/profiles', { 
-      query: {
-        orderByChild: 'uid',
-        equalTo: uid
-      }
-    });
-
-    profileRef.take(1).subscribe(
-      (profiles: ResearcherProfile[]) => {        
-        if (profiles.length === 0) {
-          res = false
-        }
-        res = true
-
-      }
-    );
-    return res;    
-  }
-    private findProfileById(uid:string): Observable<ResearcherProfile> {
-        return this.db.list('/profiles', { 
-          query: {
-            orderByChild: 'uid',
-            equalTo: uid
-          }
-        })
-        .map((profiles) => {
-          this.profile = profiles[0] // fixme          
-          return this.profile
-        });
-    }   
-
-  getOwnProfile(): Observable<ResearcherProfile> {
-    let uid: string = this.authService.getCurrentUserUid();
-    // let fakeuid: string = 'this.authService.getCurrentUserUid()';
-    return this.findProfileById(uid);
-  }   
-
-  updateProfile(data: any) {    
-    this.profileRef.update(this.profile, data);
+    this.profiles = this.db.list('/profiles');
   }
 
+  private findProfileByUid(uid:string)  {
+    return this.db.list('/profiles', {
+      query: {
+        orderByChild: 'uid',
+        equalTo: uid,
+        limitToFirst: 1
+      }
+    })
+      .map((profiles) => {
+        let [profile] = profiles;
+        this.profile = profile;          
+        return profile;
+      });
+  }
+
+  getOwnProfile() {
+    return this.findProfileByUid(this.uid);
+  }
+
+  private createProfile(profile) {    
+    profile.uid = this.uid;
+    this.profiles.push(profile);    
+  }
+
+  private updateProfile(key, profile) {
+    this.profiles.update(key, profile);
+  }
+
+  public upsert(profile) {
+    let key;
+    if(this.profile) {
+      key = this.profile.$key;
+    }
+
+    if (key) {
+      this.updateProfile(key, profile);
+    } else {
+      this.createProfile(profile);
+    }
+  }
 }

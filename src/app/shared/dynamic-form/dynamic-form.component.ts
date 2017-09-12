@@ -14,13 +14,14 @@ import { QuestionBase } from '../models';
     </div>
  
     <div class="">
-      <button type="submit" [disabled]="!form.valid">Save</button>
+    <button type="submit" [disabled]="!form.valid" class="btn btn-primary">Save</button>
+      
     </div>
   </form>
  
-  <div *ngIf="payLoad" class="">
+  <!--div *ngIf="payLoad" class="">
     <strong>Saved the following values</strong><br>{{payLoad}}
-  </div>
+  </div-->
 </div>    
 `,
   providers: [ QuestionControlService ]
