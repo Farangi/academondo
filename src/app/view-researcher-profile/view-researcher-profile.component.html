@@ -2,8 +2,8 @@
   <h1 >Preview</h1>
 
   <!-- <div>{{profile | async | json}}</div> -->
-  <div>{{(profile | async)?.$key}}</div>
-  <div>{{(profile | async)?.name}}</div>
+  <!-- <div>{{(profile | async)?.$key}}</div> -->
+  <div>name: {{( profile | async)?.name}}</div>
   <div>{{(profile | async)?.country}}</div>
   <div>{{(profile | async)?.groupLeader}}</div>
   <div>{{(profile | async)?.about}}</div>

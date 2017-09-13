@@ -1,3 +1,5 @@
+import { Observable } from 'rxjs';
+import { FirebaseListObservable } from 'angularfire2/database';
 import { UserSettingsService } from '../user-settings.service';
 import { Component, OnInit } from '@angular/core';
 import { ResearcherProfileService } from '../shared';
@@ -8,9 +10,9 @@ import { FormGroup, FormBuilder, Validators } from "@angular/forms";
   templateUrl: './researcher-profile.component.html',
   styleUrls: ['./researcher-profile.component.css']
 })
-export class ResearcherProfileComponent {
+export class ResearcherProfileComponent implements OnInit {
 
-  profile: any;
+  profile;
   profileForm: FormGroup;
   aboutLength = 500;
   questions: any[];
@@ -18,9 +20,12 @@ export class ResearcherProfileComponent {
   isMD = true
 
   constructor( private profileService: ResearcherProfileService, private fb: FormBuilder) {
-
     this.profile = this.profileService.getOwnProfile();
     this.buildForm();
+   }
+
+   ngOnInit() {
+  
    }
    
   private buildForm() {
@@ -29,9 +34,9 @@ export class ResearcherProfileComponent {
       country:  [''],      
       groupLeader: [''],
       about: ['', Validators.compose([Validators.minLength(10), Validators.maxLength(this.aboutLength), Validators.required])],
-      // publications: ['', Validators.required],
-      // techniques: ['', Validators.required],
-      // fieldOfInterests: ['', Validators.required],
+      publications: ['', Validators.required],
+      techniques: ['', Validators.required],
+      fieldOfInterests: ['', Validators.required],
     });
 
     this.profile.subscribe(profile => {         
@@ -43,9 +48,10 @@ export class ResearcherProfileComponent {
     this.profileForm.valueChanges
     .debounceTime(500)
     .subscribe(value => {
-      if (this.profileForm.status !== 'VALID') {        
-        return;
-      }      
+      // if (this.profileForm.status !== 'VALID') {        
+      //   return;
+      // }      
+      debugger;
       this.profileService.upsert(value);
     });
   }

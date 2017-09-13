@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./view-researcher-profile.component.css']
 })
 export class ViewResearcherProfileComponent implements OnInit {
-  private profile;
+  profile;
 
   constructor(private profileService: ResearcherProfileService) {
     this.profile = this.profileService.getOwnProfile();

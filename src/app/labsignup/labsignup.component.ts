@@ -79,7 +79,7 @@ export class LabsignupComponent implements OnInit {
     this.laboratoryTechniqueService.getlabTechnique$()
       .flatMap(list => list)
       .subscribe((technique: any) => {        
-        this.techniqueOptions.push({id: this.getRandomInt(1,10000), name: technique.name});
+        this.techniqueOptions.push({ id: technique.name, name: technique.name }); //this.getRandomInt(1,10000)
       })
       
     this.countryService.getCountry$()

@@ -1,42 +1,49 @@
 import { Injectable } from '@angular/core';
-import {AngularFireDatabase, FirebaseObjectObservable, FirebaseListObservable } from 'angularfire2/database';
+import { AngularFireDatabase, FirebaseObjectObservable, FirebaseListObservable } from 'angularfire2/database';
 import { AuthService } from "./auth.service";
 import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class ResearcherProfileService {
-  private uid: string;
+  private userId: string;
   private entity;
   private firebaseList;
 
-  constructor(private db: AngularFireDatabase, private authService: AuthService) {    
-    this.uid = this.authService.getCurrentUserUid();
-    this.firebaseList = this.db.list('/profiles');
-  }
+  private path = '/profiles';
+
+  constructor(private db: AngularFireDatabase, private auth: AuthService) {    
+    this.userId = this.auth.getCurrentUserUid();
+
+    this.firebaseList = this.db.list(this.path);
+  } 
 
   getOwnProfile() {
-    return this.db.list('/profiles', {
-      query: {
-        orderByChild: 'uid',
-        equalTo: this.uid,
-      }
-    })    
+    return this.getEntities({
+      orderByChild: 'userId',
+      equalTo: this.userId,
+    })
     .map((entities) => {
       let [entity] = entities;
       this.entity = entity;
       return entity;
     })
-    //.do(data => console.log('server data:', data))  // debug - fixme why do i get so many responses?
+    // .do(data => console.log('server data:', data))  // debug - fixme why do i get so many responses?
   }
 
-  // getOwnProfile() {
+  // getOwnProfile() {       // future impl. TODO
   //   const uid = this.uid;
   //   // return this.db.object('/profiles/uid/' + uid);    
   //   // return this.db.object(`/profiles/uid/${this.uid}`);    
   // }
 
+  getEntities(query={}): FirebaseListObservable<any> {    
+    return this.db.list(this.path, {
+      query: query
+    });
+  }
+
   private create(data) {    
-    data.uid = this.uid;
+    data.userId = this.userId;
     this.firebaseList.push(data);    
   }
 
