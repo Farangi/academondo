@@ -4,10 +4,9 @@
   <!-- <div>{{profile | async | json}}</div> -->
   <!-- <div>{{(profile | async)?.$key}}</div> -->
   <div>name: {{( profile | async)?.name}}</div>
-  <div>{{(profile | async)?.country}}</div>
-  <div>{{(profile | async)?.groupLeader}}</div>
-  <div>{{(profile | async)?.about}}</div>
-  <div>{{(profile | async)?.publications}}</div>
-  <div>{{(profile | async)?.techniques}}</div>
-  <div>{{(profile | async)?.fieldOfInterests}}</div>
+  <div>country: {{(profile | async)?.country?.name}}</div>
+  <div>about: {{(profile | async)?.about}}</div>
+  <div>publications: {{(profile | async)?.publications}}</div>
+  <div>techniques: {{(profile | async)?.techniques?.name}}</div>
+  <div>fieldOfInterests: {{(profile | async)?.fieldOfInterests?.name}}</div>
 </div>

@@ -19,6 +19,7 @@ export class CountryService {
    .catch(() => Observable.throw('Unable to fetch countries!'))
    .publishLast()
    .refCount()   
-  }      
+  }
+  
   constructor(private http: Http) {}
 }

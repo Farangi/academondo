@@ -9,8 +9,7 @@
         <h1>Your Profile</h1>
         <div>
           <md-input-container class="">
-            <input formControlName="name" mdInput placeholder="Name" 
-            [ngClass]="{
+            <input formControlName="name" mdInput placeholder="Name" [ngClass]="{
                'is-success' :  profileForm.get('name').valid && profileForm.get('name').dirty, 
                'is-danger'  :  !profileForm.get('name').valid }">
             <md-hint [hidden]="profileForm.get('name').valid">
@@ -18,27 +17,75 @@
             </md-hint>
           </md-input-container>
         </div>
-        <div>
+        <!-- <div>
           <md-input-container class="">
-            <input formControlName="country" mdInput placeholder="Country" 
-            [ngClass]="{
+            <input formControlName="country" mdInput placeholder="Country" [ngClass]="{
               'is-success' :  profileForm.get('country').valid && profileForm.get('country').dirty,
               'is-danger'  :  !profileForm.get('country').valid }">
           </md-input-container>
-        </div>
+        </div> -->
+
         <div>
           <md-input-container class="">
-            <input formControlName="about" mdInput #message maxlength="aboutLength" placeholder="About" 
-            [ngClass]="{ 
+            <input mdInput placeholder="Country" [mdAutocomplete]="reactiveAutoCountry" formControlName="country" [formControl]="countryCtrl">
+            <md-autocomplete #reactiveAutoCountry="mdAutocomplete" [displayWith]="displayFn">
+              <md-option *ngFor="let country of reactiveCountries | async" [value]="country">
+                <span>{{ country.name }}</span>                
+              </md-option>
+            </md-autocomplete>
+          </md-input-container>
+        </div>
+    
+        <div>
+          <md-input-container class="">
+            <input formControlName="about" mdInput #message maxlength="aboutLength" placeholder="About" [ngClass]="{ 
               'is-success' :  profileForm.get('about').valid && profileForm.get('about').dirty,
               'is-danger'  :  !profileForm.get('about').valid }">
-            <md-hint align="start"  
-            [hidden]="profileForm.get('about').valid">
+            <md-hint align="start" [hidden]="profileForm.get('about').valid">
               <strong>least 10 characters</strong>
             </md-hint>
             <md-hint align="end">{{message.value.length}} / {{aboutLength}}</md-hint>
           </md-input-container>
         </div>
+
+        <div>
+          <md-input-container class="">
+            <input mdInput placeholder="Techniques" [mdAutocomplete]="reactiveAutoTechnique" formControlName="techniques" [formControl]="techniqueCtrl">
+            <md-autocomplete #reactiveAutoTechnique="mdAutocomplete" [displayWith]="displayFn">
+              <md-option *ngFor="let technique of reactiveTechniques | async" [value]="technique">
+                <span>{{ technique.name}}</span>
+              </md-option>
+            </md-autocomplete>
+          </md-input-container>
+        </div>
+
+        <div>
+          <md-input-container class="">
+            <input mdInput placeholder="Field Of Interests" [mdAutocomplete]="reactiveAutoFieldOfInterest" formControlName="fieldOfInterests" [formControl]="fieldOfInterestCtrl">
+            <md-autocomplete #reactiveAutoFieldOfInterest="mdAutocomplete" [displayWith]="displayFn">
+              <md-option *ngFor="let fieldOfInterest of reactiveFieldOfInterests | async" [value]="fieldOfInterest">
+                <span>{{ fieldOfInterest.name}}</span>
+              </md-option>
+            </md-autocomplete>
+          </md-input-container>
+        </div>
+
+        <!-- <div>
+          <md-chip-list #chipList2>
+            <md-chip *ngFor="let person of selectedCountries" [color]="color" [selectable]="selectable" [removable]="removable" (remove)="remove(person)">
+              {{person.name}}
+              <md-icon mdChipRemove *ngIf="removable">cancel</md-icon>
+            </md-chip>
+          </md-chip-list>
+          <md-form-field>
+            <input mdInput formControlName="country" placeholder="New Contributor..." [mdChipInputFor]="chipList2" [mdChipInputSeparatorKeyCodes]="separatorKeysCodes"
+              [mdChipInputAddOnBlur]="addOnBlur" (mdChipInputTokenEnd)="add($event)" />
+          </md-form-field>
+        </div> -->
+
+
+
+
         <!-- <div>
           <md-input-container class="">
             <input formControlName="groupLeader" mdInput placeholder="Group leader" 
@@ -47,11 +94,12 @@
               'is-danger'  :  !profileForm.get('groupLeader').valid }">
           </md-input-container>
         </div> -->
+<!-- {{profileForm.status === 'VALID' ? 'Your profile has been saved': 'form is not valid'}} -->
       </form>
     </div>
 
 
-    
+
     <div *ngIf="!isMD" class="col-sm-6">
       <div>
         <form role="form">
@@ -231,10 +279,13 @@
 
 
 
-      <!-- {{profileForm.status === 'VALID' ? 'Your profile has been saved': 'form is not valid'}} -->
+      
     </div>
+     
+     
+    
     <div class="col-sm-6">
-      <app-view-researcher-profile></app-view-researcher-profile>
+      <app-view-researcher-profile></app-view-researcher-profile>       
     </div>
   </div>
 </div>
