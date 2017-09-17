@@ -1,12 +1,30 @@
 <div>
-  <h1 >Preview</h1>
+  <h1>Preview</h1>
 
-  <!-- <div>{{profile | async | json}}</div> -->
-  <!-- <div>{{(profile | async)?.$key}}</div> -->
-  <div>name: {{( profile | async)?.name}}</div>
-  <div>country: {{(profile | async)?.country?.name}}</div>
-  <div>about: {{(profile | async)?.about}}</div>
-  <div>publications: {{(profile | async)?.publications}}</div>
-  <div>techniques: {{(profile | async)?.techniques?.name}}</div>
-  <div>fieldOfInterests: {{(profile | async)?.fieldOfInterests?.name}}</div>
+
+  <div>{{profile | json}}</div>
+  <div>name: {{ profile.name}}</div>
+  <div>country: {{profile.country?.name}}</div>
+  <div>about: {{profile.about}}</div>
+  <div>publications: {{profile.publications}}</div>
+  <div>
+
+    <md-chip-list>
+      <!-- *ngFor="let technique of profile.techniques"> -->
+      techniques:
+      <md-chip selected>
+        {{profile.techniques?.name}}
+      </md-chip>
+    </md-chip-list>
+
+  </div>
+  <div>
+    <md-chip-list
+      *ngFor="let fieldOfInterest of profile.fieldOfInterests">      
+      <md-chip selected>
+        {{fieldOfInterest}}
+      </md-chip>
+    </md-chip-list>
+  </div>
+
 </div>

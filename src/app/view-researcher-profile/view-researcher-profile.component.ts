@@ -1,3 +1,4 @@
+import { ResearcherProfile } from './../shared/models/researcher-profile';
 import { ResearcherProfileService } from './../shared/researcher-profile.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -7,13 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./view-researcher-profile.component.css']
 })
 export class ViewResearcherProfileComponent implements OnInit {
-  profile;
+  profile: ResearcherProfile = new ResearcherProfile;
 
   constructor(private profileService: ResearcherProfileService) {
-    this.profile = this.profileService.getOwnProfile();
+  
    }
 
   ngOnInit() {
+    this.profileService.getOwnProfile()
+      .subscribe(data => this.profile = data);
   }
 
 }

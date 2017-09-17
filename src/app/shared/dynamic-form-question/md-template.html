@@ -3,25 +3,25 @@
 
     <div [ngSwitch]="question.controlType">
 
-        <md-input-container *ngSwitchCase="'textbox'">
+        <md-form-field *ngSwitchCase="'textbox'">
             <input mdInput [formControlName]="question.key" [id]="question.key" [type]="question.type" placeholder="{{question.label}}">
-        </md-input-container>
+        </md-form-field>
 
-        <md-input-container *ngSwitchCase="'textarea'">
+        <md-form-field *ngSwitchCase="'textarea'">
             <textarea #message mdInput md-autosize [formControlName]="question.key" [id]="question.key" [type]="question.type" placeholder="{{question.label}}">
       </textarea>
             <md-hint align="start"><strong> {{ question.hint }} </strong> </md-hint>
             <md-hint *ngIf="question.maxLength" align="end">{{message.value?.length}} / {{question.maxLength}}</md-hint>
-        </md-input-container>
+        </md-form-field>
 
-        <select [id]="question.key" *ngSwitchCase="'dropdown'" [formControlName]="question.key">
+        <!-- <select [id]="question.key" *ngSwitchCase="'dropdown'" [formControlName]="question.key">
       <option *ngFor="let opt of question.options" [value]="opt.name">{{opt.name}}</option>
-    </select>
+    </select> -->
 
-        <div *ngSwitchCase="'multi'">
-            <md-input-container>
+        <div *ngSwitchCase="'multiold'">
+            <md-form-field>
                 <input mdInput placeholder="{{question.label}}" [mdAutocomplete]="auto" [formControlName]="question.key">
-            </md-input-container>
+            </md-form-field>
             {{question.options}}
             <md-autocomplete #auto="mdAutocomplete">
                 <md-option *ngFor="let opt of question.options " [value]="opt.name">
@@ -31,16 +31,37 @@
             </md-autocomplete>
         </div>
 
-        <div *ngSwitchCase="'autocomplete'">
-            <md-input-container>
+        <div *ngSwitchCase="'autocompleteold'">
+            <md-form-field>
                 <input mdInput placeholder="{{question.label}}" [mdAutocomplete]="auto" [formControlName]="question.key">
-            </md-input-container>
+            </md-form-field>
             <md-autocomplete #auto="mdAutocomplete">
-                <md-option *ngFor="let opt of question.options " [value]="opt.name">
+                <md-option *ngFor="let opt of question.options" [value]="opt.name">
                     {{ opt.name }}
                 </md-option>
 
             </md-autocomplete>
+        </div>
+
+        <!-- check for updates, since you cant save the object([value]="foi")  only [value]="foi.name" works -->
+        <div *ngSwitchCase="'dropdown'" style="width: 180px">
+            <md-select style="width: 12.5rem; padding: 1rem 0;" placeholder="{{question.label}}" [formControlName]="question.key">
+                <md-option *ngFor="let opt of question.options" [value]="opt.name">
+                    <span>{{ opt.name }}</span>
+                    <small>{{opt.desc}}</small>
+                </md-option>
+            </md-select>
+        </div>
+
+
+        <!-- check for updates, since you cant save the object([value]="foi")  only [value]="foi.name" works -->
+        <div *ngSwitchCase="'multi-select'" style="width: 180px">
+            <md-select style="width: 12.5rem; padding: 1rem 0;" multiple placeholder="{{question.label}}" [formControlName]="question.key">
+                <md-option *ngFor="let opt of question.options" [value]="opt.name">
+                    <span>{{ opt.name }}</span>
+                    <small>{{opt.desc}}</small>
+                </md-option>
+            </md-select>
         </div>
 
     </div>

@@ -11,6 +11,9 @@ import { ResearcherProfileService } from '../shared';
 import { FormControl, FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { MdChipInputEvent, ENTER } from '@angular/material';
 
+
+const COMMA = 188;
+const SEMICOLON = 186;
 @Component({
   selector: 'app-researcher-profile',
   templateUrl: './researcher-profile.component.html',
@@ -23,7 +26,10 @@ export class ResearcherProfileComponent implements OnInit {
   aboutLength = 500;
   
   
-  selectedTechniques = [];
+  // selectedTechniques = [];
+  selectedFieldOfInterests = [];
+
+
 
   techniqueCtrl: FormControl;
   techniques = [];
@@ -44,6 +50,7 @@ export class ResearcherProfileComponent implements OnInit {
   addOnBlur: boolean = true;
   message: string = '';
   
+  separatorKeysCodes = [ENTER, COMMA, SEMICOLON];
 
 
   
@@ -59,7 +66,7 @@ export class ResearcherProfileComponent implements OnInit {
 
     // Add our person
     if ((value || '').trim()) {
-      this.countries.push({ name: value.trim() });
+      this.selectedFieldOfInterests.push({ name: value.trim() });
     }
 
     // Reset the input value
@@ -67,11 +74,11 @@ export class ResearcherProfileComponent implements OnInit {
       input.value = '';
     }
   }
-  remove(person: any): void {
-    let index = this.countries.indexOf(person);
+  remove(data: any): void {
+    let index = this.selectedFieldOfInterests.indexOf(data);
 
     if (index >= 0) {
-      this.countries.splice(index, 1);
+      this.selectedFieldOfInterests.splice(index, 1);
     }
   }
 
@@ -107,7 +114,6 @@ export class ResearcherProfileComponent implements OnInit {
     this.fieldOfInterestService.getFieldOfInterest$()
       .flatMap(list => list)
       .subscribe((data: any) => {        
-        console.log(data)
         this.fieldOfInterests.push(data)
       })
     this.fieldOfInterestCtrl = new FormControl('');
@@ -155,7 +161,7 @@ export class ResearcherProfileComponent implements OnInit {
     .subscribe(value => {
       if (this.profileForm.status !== 'VALID') {        
         return;
-      }
+      }      
       this.profileService.upsert(value);
     });
   }
