@@ -67,6 +67,7 @@ import {
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MaterialModule } from '@angular/material';
+// import { MdStepperModule } from '@angular/material';
 
 import 'hammerjs';
 
@@ -89,6 +90,7 @@ import { SidenavComponent } from './sidenav/sidenav.component';
 import { MyAcademondoComponent } from './my-academondo/my-academondo.component';
 import { ViewResearcherProfileComponent } from './view-researcher-profile/view-researcher-profile.component';
 import { UserSettingsService } from './user-settings.service';
+import { PubmedViewerComponent } from './pubmed-viewer/pubmed-viewer.component';
 
 
 // const facebookCustomConfig: AuthProviderWithCustomConfig = {
@@ -149,6 +151,7 @@ const firebaseUiAuthConfig: FirebaseUIAuthConfig = {
     SidenavComponent,
     MyAcademondoComponent,
     ViewResearcherProfileComponent,
+    PubmedViewerComponent,
     
   ],
   imports: [

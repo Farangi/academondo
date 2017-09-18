@@ -55,5 +55,13 @@ export class PubmedService {
     return 'https://www.ncbi.nlm.nih.gov/pubmed/' + article.MedlineCitation.PMID['#text'];
   }
 
+  public arrayObjectHack(val) { // pubmed.AuthorList returns {} instead of array if only one Author
+    let result = Array.from(val);
+    if (result.length == 0) {
+      result.push(val);
+    }
+    return result;
+  }
+
   constructor(private http: Http) { }
 }

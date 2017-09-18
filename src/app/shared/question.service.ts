@@ -22,7 +22,7 @@ export class QuestionService {
   private entity;
   private firebaseList;
 
-  private path = '/profiles';
+  private path = '/adverts';
 
   
   
@@ -116,10 +116,9 @@ getEntities(query = {}): FirebaseListObservable<any> {
       }),      
 
       new TextareaQuestion({
-        key: 'about',
-        maxLength: '500',        
-        label: 'About',        
-        required: true,
+        key: 'jobDesc',
+        maxLength: '1500',        
+        label: 'Job description',                
         order: 4
       }),      
 
@@ -141,7 +140,7 @@ getEntities(query = {}): FirebaseListObservable<any> {
         key: 'fieldOfInterests',        
         label: 'Field of interests',
         options: this.fieldOfInterestOptions,
-        order: 2
+        order: 6
       }),      
     ];
 

@@ -71,8 +71,7 @@ export class LabsignupComponent implements OnInit {
   ngOnInit() {
     this.fieldOfInterestService.getFieldOfInterest$()      
       .flatMap(list => list)
-      .subscribe((fieldOfInterest: any) => {        
-        console.log(fieldOfInterest);
+      .subscribe((fieldOfInterest: any) => {                
         this.fieldOfInterestOptions.push({id: fieldOfInterest.name, name: fieldOfInterest.name});
       })
 
@@ -85,6 +84,7 @@ export class LabsignupComponent implements OnInit {
     this.countryService.getCountry$()
       .subscribe(countries => this.countryOptions = countries);
 
+      
     this.labForm = this.formBuilder.group({
       lab: this.formBuilder.group({
         name: [this.lab ? this.lab.name : '', Validators.required],
@@ -128,24 +128,17 @@ export class LabsignupComponent implements OnInit {
       .subscribe((ids) => {
         this.pubmedService.getArticlesFromIds(ids)
           .subscribe((articles: PubmedArticle[]) => {
-            if (articles.length > 0) {
-              articles.map((article: PubmedArticle) => {
-                searchResults.push({ name: article.MedlineCitation.Article.ArticleTitle + " date: " + this.pubmedArticleDate(article), id: article.MedlineCitation.PMID['#text']})
-              })
-            }
-            this.pubmedOptions = this.removeDefault(this.removeDuplicates(this.pubmedOptions.concat(searchResults)));
+            this.handleArticlesUpdated(articles);
           })
         this.pubmedLoading = false;
       })
   }
 
   private pubmedArticleDate(article: PubmedArticle): String {
-    let pubmedPubDate = article.PubmedData.History.PubMedPubDate[1];
+    let [somethingelse, pubmedPubDate] = article.PubmedData.History.PubMedPubDate;
+    debugger;
     if (pubmedPubDate) {
-      let day = pubmedPubDate.Day;
-      let month = pubmedPubDate.Month;
-      let year = pubmedPubDate.Year;
-      return day + "/" + month + "-" + year;
+      return pubmedPubDate.Day + "/" + pubmedPubDate.Month + "-" + pubmedPubDate.Year;
     } else {
       return "";
     }
@@ -172,11 +165,17 @@ export class LabsignupComponent implements OnInit {
     return distinct;
   }
 
-  clearPubmedOptions() {
-    this.pubmedOptions = [{ name: 'no results' }];
-  }
-
-  private getRandomInt(min:number = 1, max:number = 100) {  
-    return Math.floor(Math.random() * (max - min)) + min;
+  handleArticlesUpdated(articles) {
+    //handle  empty search
+    let searchResults = [];
+    debugger;
+    if (articles.length == 0) {
+      this.pubmedOptions = [];
+    } else {
+      articles.map((article: PubmedArticle) => {
+        searchResults.push({ name: article.MedlineCitation.Article.ArticleTitle + " date: " + this.pubmedArticleDate(article), id: article.MedlineCitation.PMID['#text'] })
+      })
+    }
+    this.pubmedOptions = this.removeDefault(this.removeDuplicates(this.pubmedOptions.concat(searchResults)));
   }
 }

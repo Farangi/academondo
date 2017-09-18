@@ -41,23 +41,15 @@
 				<label for="about">About the lab</label>
 				<textarea type="text" class="form-control" formControlName="about" placeholder="Write about your lab"></textarea>
 			</div>     
-			<div class="form-group">
-        <label>Search PubMed for publications</label>
-        <div class="input-group">
-            <input class="form-control" name=term placeholder="search for articles on pubmed by author or title" #searchTerm>
-            <span class="input-group-btn">
-             <button [disabled]="pubmedLoading"  class="btn btn-primary" (click)="performSearch(searchTerm.value)">PubMed Search</button>
-             <button class=" btn btn-default" (click)="clearPubmedOptions()">Clear Results</button>
-            </span>
-              
-          
-	        
-			</div>
+			<div class="form-group">        
+				<app-pubmed (articlesUpdated)="handleArticlesUpdated($event)"></app-pubmed>
 			</div>
       <div class="form-group">
         <label for="publications">Select your publications from the search above</label>
         <div>
-				  <ss-multiselect-dropdown [options]="pubmedOptions" [texts]="pubmedTextSettings" [settings]="pubmedSelectSettings" formControlName="publications"></ss-multiselect-dropdown>
+					<ss-multiselect-dropdown
+					[options]="pubmedOptions" [texts]="pubmedTextSettings" [settings]="pubmedSelectSettings" formControlName="publications">
+				</ss-multiselect-dropdown>
           <span *ngIf="pubmedLoading" class="fa fa-spinner fa-pulse fa-2x fa-fw"></span><span class="sr-only">Loading...</span>          
         </div>
 			</div>			

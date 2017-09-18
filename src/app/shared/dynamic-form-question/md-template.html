@@ -1,22 +1,19 @@
 <div [formGroup]="form">
     <!--label [attr.for]="question.key">{{question.label}}</label-->
 
-    <div [ngSwitch]="question.controlType">
+    <md-horizontal-stepper [ngSwitch]="question.controlType">
 
         <md-form-field *ngSwitchCase="'textbox'">
             <input mdInput [formControlName]="question.key" [id]="question.key" [type]="question.type" placeholder="{{question.label}}">
         </md-form-field>
 
         <md-form-field *ngSwitchCase="'textarea'">
-            <textarea #message mdInput md-autosize [formControlName]="question.key" [id]="question.key" [type]="question.type" placeholder="{{question.label}}">
-      </textarea>
+            <textarea #message mdInput md-autosize 
+                [formControlName]="question.key" [id]="question.key" [type]="question.type" placeholder="{{question.label}}">
+            </textarea>
             <md-hint align="start"><strong> {{ question.hint }} </strong> </md-hint>
             <md-hint *ngIf="question.maxLength" align="end">{{message.value?.length}} / {{question.maxLength}}</md-hint>
         </md-form-field>
-
-        <!-- <select [id]="question.key" *ngSwitchCase="'dropdown'" [formControlName]="question.key">
-      <option *ngFor="let opt of question.options" [value]="opt.name">{{opt.name}}</option>
-    </select> -->
 
         <div *ngSwitchCase="'multiold'">
             <md-form-field>
@@ -64,6 +61,31 @@
             </md-select>
         </div>
 
-    </div>
+        <div *ngSwitchCase="'pubmed'">
+            <div class="form-group">
+                <label>Search PubMed for publications</label>
+                <div class="input-group">
+                    <input class="form-control" name=term placeholder="search for articles on pubmed by author or title" #searchTerm>
+                    <span class="input-group-btn">
+             <button [disabled]="pubmedLoading"  class="btn btn-primary" (click)="performSearch(searchTerm.value)">PubMed Search</button>
+             <button class=" btn btn-default" (click)="clearPubmedOptions()">Clear Results</button>
+            </span>
+
+
+
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="publications">Select your publications from the search above</label>
+                <div>
+                    <ss-multiselect-dropdown 
+                    [options]="pubmedOptions" [texts]="pubmedTextSettings" 
+                    [settings]="pubmedSelectSettings" formControlName="publications"></ss-multiselect-dropdown>
+                    <span *ngIf="pubmedLoading" class="fa fa-spinner fa-pulse fa-2x fa-fw"></span><span class="sr-only">Loading...</span>
+                </div>
+            </div>
+        </div>
+
+    </md-horizontal-stepper>
     <div class="errorMessage" *ngIf="showErrorMsg">{{question.label}} is required</div>
 </div>

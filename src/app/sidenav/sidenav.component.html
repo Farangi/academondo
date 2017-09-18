@@ -12,7 +12,12 @@
     <a [routerLink]="['/tables']" [routerLinkActive]="['router-link-active']" class="list-group-item">
         <i class="fa fa-fw fa-table"></i>&nbsp;{{ 'tables'  }}
     </a> -->
-        <a [routerLink]="['/profile']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+    
+    <a [routerLink]="['/adverts']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+        <i class="fa fa-file-o"></i>&nbsp;{{ 'job adverts'  }}
+    </a>
+    
+    <a [routerLink]="['/profile']" [routerLinkActive]="['router-link-active']" class="list-group-item">
         <i class="fa fa-fw fa-edit"></i>&nbsp;{{ 'profile'  }}
     </a>
 
@@ -43,11 +48,6 @@
                     </li>
                     <li>
                         <a [routerLink]="['/cv']" [routerLinkActive]="['router-link-active']"><span>{{ 'cv'  }}</span></a>
-                    </li>
-                    <li>
-                        <a [routerLink]="['/adverts']" [routerLinkActive]="['router-link-active']" class="list-group-item">
-                        <i class="fa fa-file-o"></i>&nbsp;{{ 'job adverts'  }}
-                    </a>
                     </li>
                 </ul>
             </li>

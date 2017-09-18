@@ -1,0 +1,8 @@
+<div *ngFor="let article of articles">
+  <!--| slice:-3">    -->
+  <a [href]="makeArticleUrl(article)" target="_blank">{{article.MedlineCitation.Article.ArticleTitle | urlSizeLimiter:'50'}}</a><br>
+  <b>Authors</b>  
+  <ul *ngFor="let author of hack(article.MedlineCitation.Article.AuthorList.Author)">
+    <li>{{author.LastName}}, {{author.ForeName}}</li>
+  </ul><br>
+</div>

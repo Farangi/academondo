@@ -13,9 +13,14 @@ export class DashboardComponent implements OnInit {
     welcome = welcomeMsg;
     init = initMsg;
     currentUser;
+    articles;
 
     constructor(private userService: UserService, private authService: AuthService) {
         this.currentUser = this.authService.getCurrentUserUid();
+    }
+
+    handleArticlesUpdated(articles) {
+        this.articles = articles;
     }
 
     ngOnInit() {
