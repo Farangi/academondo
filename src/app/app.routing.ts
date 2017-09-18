@@ -24,6 +24,10 @@ import { LeaveComponentGuard } from './shared/leave-component.guard';
 
 const routes: Routes = [
     {
+        path: '',
+        component: LoginComponent
+    },    
+    {
         path: 'dashboard',
         component: DashboardComponent,
         canActivate: [AuthGuard],

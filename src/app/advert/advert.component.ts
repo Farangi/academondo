@@ -18,13 +18,12 @@ export class AdvertComponent implements OnInit {
   path: string;
   profile;
   
-   constructor(service: QuestionService) {
-     this.questions = service.getQuestions();    
-     this.path = '/profiles';
-     this.profile = service.getOwnProfile();     
-   }
+   constructor(private service: QuestionService) { }
 
   ngOnInit() {
+    this.questions = this.service.getQuestions();
+    this.path = this.service.getPath();
+    this.profile = this.service.getOwnProfile();         
   }
 
 }

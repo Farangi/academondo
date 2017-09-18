@@ -28,6 +28,7 @@ export class QuestionService {
   
 
   constructor(private countryService: CountryService, private laboratoryTechniqueService: LaboratoryTechniqueService, private fieldOfInterestService: FieldOfInterestService, private db: AngularFireDatabase, private auth: AuthService) {
+    this.userId = this.auth.getCurrentUserUid();
     
 
     
