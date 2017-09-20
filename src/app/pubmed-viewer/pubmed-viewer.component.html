@@ -1,8 +1,20 @@
-<div *ngFor="let article of articles">
-  <!--| slice:-3">    -->
-  <a [href]="makeArticleUrl(article)" target="_blank">{{article.MedlineCitation.Article.ArticleTitle | urlSizeLimiter:'50'}}</a><br>
-  <b>Authors</b>  
-  <ul *ngFor="let author of hack(article.MedlineCitation.Article.AuthorList.Author)">
-    <li>{{author.LastName}}, {{author.ForeName}}</li>
-  </ul><br>
-</div>
+<md-card *ngFor="let article of hack(articles)">
+  <md-card-title>
+      {{article.MedlineCitation.Article.ArticleTitle}}
+    <md-card-subtitle>
+      <!-- <a [href]="makeArticleUrl(article)" target="_blank">{{article.MedlineCitation.Article.ArticleTitle | urlSizeLimiter:'50'}}</a> -->
+      <a [href]="makeArticleUrl(article)" target="_blank">pubmed</a>
+    </md-card-subtitle>    
+  </md-card-title>
+  <md-card-content>
+    <p>Authors</p>
+    <md-chip-list>
+      <md-chip *ngFor="let author of hack(article.MedlineCitation.Article.AuthorList.Author)" selected>
+          {{author.ForeName}} {{author.LastName}}
+      </md-chip>
+    </md-chip-list>
+  </md-card-content>
+  <md-card-footer>
+    <md-progress-bar mode="determinate"></md-progress-bar>
+  </md-card-footer>
+</md-card>

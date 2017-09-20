@@ -1,13 +1,10 @@
 <div class=" container-fluid">
   <div class="row">
-    <div class="col-sm-6">
+    <div class="col-sm-6 col-md-6 col-lg-5">
       <h2>Profile form</h2>
-      <dynamic-form 
-        [questions]="questions" [path]="path" [entity]="profile">
-      </dynamic-form>
+      <dynamic-form [questions]="questions" [path]="path" [entity]="profile"></dynamic-form>
     </div>
-
-    <div class="col-sm-6">
+    <div class="col-sm-6 col-md-6 col-lg-7">
       <app-view-researcher-profile></app-view-researcher-profile>       
     </div>
   </div>

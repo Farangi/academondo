@@ -16,7 +16,9 @@ export class ViewResearcherProfileComponent implements OnInit {
 
   ngOnInit() {
     this.profileService.getOwnProfile()
-      .subscribe(data => this.profile = data);
+      .subscribe(data => {
+        this.profile = data
+      });
   }
 
 }

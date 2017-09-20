@@ -89,17 +89,15 @@ getEntities(query = {}): FirebaseListObservable<any> {
 
       new TextboxQuestion({
         key: 'firstName',              
-        label: 'First name',
-        required: true,
+        label: 'First name',        
         order: 1
       }),
 
       new TextboxQuestion({
         key: 'lastName',
-        label: 'Last name',
-        required: true,
+        label: 'Last name',        
         order: 1
-      }),
+      }),   
 
       new TextboxQuestion({
         key: 'emailAddress',        

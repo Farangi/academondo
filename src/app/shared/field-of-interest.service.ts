@@ -14,7 +14,7 @@ import { FieldOfInterest } from './models';
 export class FieldOfInterestService {
 
   public getFieldOfInterest$() {
-    return this.db.list('/fieldOfInterests')
+    return this.db.list('/fieldOfInterests', { query: { orderByChild: 'name' }})
       .catch(() => Observable.throw('Unable to fetch Field Of Interests!'))
   }
 

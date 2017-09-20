@@ -66,8 +66,38 @@ import {
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { MaterialModule } from '@angular/material';
-// import { MdStepperModule } from '@angular/material';
+import {
+  MdAutocompleteModule,
+  MdButtonModule,
+  MdButtonToggleModule,
+  MdCardModule,
+  MdCheckboxModule,
+  MdChipsModule,
+  MdDatepickerModule,
+  MdDialogModule,
+  MdExpansionModule,
+  MdFormFieldModule,
+  MdGridListModule,
+  MdIconModule,
+  MdInputModule,
+  MdListModule,
+  MdMenuModule,
+  MdPaginatorModule,
+  MdProgressBarModule,
+  MdProgressSpinnerModule,
+  MdRadioModule,
+  MdSelectModule,
+  MdSidenavModule,
+  MdSliderModule,
+  MdSlideToggleModule,
+  MdSnackBarModule,
+  MdSortModule,
+  MdTableModule,
+  MdTabsModule,
+  MdToolbarModule,
+  MdTooltipModule,
+  MdStepperModule, } from '@angular/material';
+  //MaterialModule
 
 import 'hammerjs';
 
@@ -91,6 +121,13 @@ import { MyAcademondoComponent } from './my-academondo/my-academondo.component';
 import { ViewResearcherProfileComponent } from './view-researcher-profile/view-researcher-profile.component';
 import { UserSettingsService } from './user-settings.service';
 import { PubmedViewerComponent } from './pubmed-viewer/pubmed-viewer.component';
+import { SearchAlgoliaService } from './shared/search-algolia.service';
+import { SearchComponent } from './search/search/search.component';
+import { SearchboxComponent } from './search/searchbox/searchbox.component';
+import { PagerComponent } from './search/pager/pager.component';
+import { ResultsComponent } from './search/results/results.component';
+import { RefinementListComponent } from './search/refinement-list/refinement-list.component';
+import { ProfilesComponent } from './profiles/profiles.component';
 
 
 // const facebookCustomConfig: AuthProviderWithCustomConfig = {
@@ -152,6 +189,12 @@ const firebaseUiAuthConfig: FirebaseUIAuthConfig = {
     MyAcademondoComponent,
     ViewResearcherProfileComponent,
     PubmedViewerComponent,
+    SearchComponent,
+    SearchboxComponent,
+    PagerComponent,
+    ResultsComponent,
+    RefinementListComponent,
+    ProfilesComponent,
     
   ],
   imports: [
@@ -168,7 +211,40 @@ const firebaseUiAuthConfig: FirebaseUIAuthConfig = {
     FirebaseUIModule.forRoot(firebaseUiAuthConfig),
     NgbModule.forRoot(),
     LeafletModule.forRoot(),
-    MaterialModule,
+
+    MdAutocompleteModule,
+    MdButtonModule,
+    MdButtonToggleModule,
+    MdCardModule,
+    MdCheckboxModule,
+    MdChipsModule,
+    MdDatepickerModule,
+    MdDialogModule,
+    MdExpansionModule,
+    MdFormFieldModule,
+    MdGridListModule,
+    MdIconModule,
+    MdInputModule,
+    MdListModule,
+    MdMenuModule,
+    MdPaginatorModule,
+    MdProgressBarModule,
+    MdProgressSpinnerModule,
+    MdRadioModule,
+    MdSelectModule,
+    MdSidenavModule,
+    MdSliderModule,
+    MdSlideToggleModule,
+    MdSnackBarModule,
+    MdSortModule,
+    MdTableModule,
+    MdTabsModule,
+    MdToolbarModule,
+    MdTooltipModule,
+    MdStepperModule, 
+    
+    //MaterialModule,
+
     // CovalentLayoutModule,
     // CovalentStepsModule,
     // // (optional) Additional Covalent Modules imports
@@ -193,6 +269,7 @@ const firebaseUiAuthConfig: FirebaseUIAuthConfig = {
     AuthService,
     ResearcherProfileService,
     UserSettingsService,
+    SearchAlgoliaService,
   ],
   bootstrap: [AppComponent]
 })

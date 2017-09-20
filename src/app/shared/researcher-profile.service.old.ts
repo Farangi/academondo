@@ -4,7 +4,7 @@ import { AuthService } from "./auth.service";
 import { Observable } from 'rxjs/Observable';
 
 @Injectable()
-export class ResearcherProfileService {
+export class ResearcherProfileServiceold {
   private userId: string;
   private entity;
   private firebaseList;

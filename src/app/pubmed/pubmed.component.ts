@@ -1,3 +1,4 @@
+import { Subscription } from 'rxjs/Subscription';
 import { Component, Output, EventEmitter } from '@angular/core';
 
 import { PubmedService } from '../shared';
@@ -12,11 +13,12 @@ export class PubmedComponent {
   @Output() articlesUpdated = new EventEmitter();
 
   public loading = false;
+  private sub: Subscription;
 
   performSearch(searchTerm: string, retmax?: number, retstart?: number, sort?: string): void {  
     if(searchTerm.trim() === '') return;
     this.loading = true;
-    this.pubmedService.getArticleIdsFromTerm(searchTerm, retmax, retstart, sort)
+    this.sub = this.pubmedService.getArticleIdsFromTerm(searchTerm, retmax, retstart, sort)
       .subscribe((ids) => {
         this.pubmedService.getArticlesFromIds(ids)
           .subscribe((articles) => {            
@@ -27,11 +29,9 @@ export class PubmedComponent {
   }
 
   clearPubmedOptions() {
-    this.articlesUpdated.emit([]);
-  }  
-
-  checkInputEmpty(event1) {
-    console.log(event1);
+    this.loading = false;
+    this.sub.unsubscribe();
+    this.articlesUpdated.emit();    
   }
 
   constructor(private pubmedService: PubmedService) { }

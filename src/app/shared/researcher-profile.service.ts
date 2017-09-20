@@ -5,7 +5,7 @@ import { FieldOfInterestService } from './field-of-interest.service';
 import { Injectable } from '@angular/core';
 
 import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/map'
+import 'rxjs/add/operator/map';
 
 import { CountryService } from './country.service';
 import { LaboratoryTechniqueService } from './laboratory-technique.service';
@@ -53,7 +53,7 @@ export class ResearcherProfileService {
             orderByChild: 'userId',
             equalTo: this.userId,
         })
-            .map((entities) => {
+            .map((entities) => {                
                 let [entity] = entities;
                 return entity;
             })
@@ -70,47 +70,58 @@ export class ResearcherProfileService {
 
         let questions: QuestionBase<any>[] = [
 
-            // new TextboxQuestion({
-            //     key: 'firstName',
-            //     label: 'First name',
-            //     required: true,
-            //     order: 1
-            // }),
+            new TextboxQuestion({
+                key: 'firstName',
+                label: 'First name',
+                required: true,                
+                order: 1
+            }),
 
-            // new TextboxQuestion({
-            //     key: 'lastName',
-            //     label: 'Last name',
-            //     required: true,
-            //     order: 1
-            // }),
+            new TextboxQuestion({
+                key: 'lastName',
+                label: 'Last name',
+                order: 2
+            }),
+
+            new TextboxQuestion({
+                key: 'title',
+                label: 'Title',                
+                order: 3
+            }),            
 
             // new TextboxQuestion({
             //     key: 'emailAddress',
             //     label: 'Email',
             //     type: 'email',
-            //     order: 2
+            //     order: 3
             // }),
 
-            new AutocompleteQuestion({
+            // new AutocompleteQuestion({
+            //     key: 'country',
+            //     label: 'Country',
+            //     options: this.countryOptions,
+            //     order: 4
+            // }),
+
+            new DropdownQuestion({
                 key: 'country',
                 label: 'Country',
                 options: this.countryOptions,
-                order: 3
-            }),
+                order: 4
+            }),            
 
             new TextareaQuestion({
                 key: 'about',
                 maxLength: '500',
                 label: 'About',
-                required: true,
-                order: 4
+                order: 5
             }),
 
             new MultiselectQuestion({
                 key: 'techniques',
                 label: 'Techniques',
                 options: this.techniquesOptions,
-                order: 5
+                order: 6
             }),
 
             // new DropdownQuestion({
@@ -124,7 +135,7 @@ export class ResearcherProfileService {
                 key: 'fieldOfInterests',
                 label: 'Field of interests',
                 options: this.fieldOfInterestOptions,
-                order: 2
+                order: 7
             }),
         ];
 

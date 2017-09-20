@@ -68,8 +68,7 @@ export class ResearcherQService {
         key: 'about',
         maxLength: '500',        
         label: 'About',
-        value: '',
-        required: true,
+        value: '',        
         order: 5
       }),      
 
@@ -82,8 +81,7 @@ export class ResearcherQService {
 
       new MultiselectQuestion({
         key: 'techiques',        
-        label: 'Lab Techniques',
-        required: true,
+        label: 'Lab Techniques',        
         options: this.techniqueOptions,
         order: 6
       })

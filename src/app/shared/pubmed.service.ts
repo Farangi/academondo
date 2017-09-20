@@ -56,6 +56,7 @@ export class PubmedService {
   }
 
   public arrayObjectHack(val) { // pubmed.AuthorList returns {} instead of array if only one Author
+  if (!val) return [];
     let result = Array.from(val);
     if (result.length == 0) {
       result.push(val);

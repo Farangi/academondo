@@ -14,8 +14,10 @@ export class QuestionControlService {
    }
 
   private create(path, data) {
-    data.userId = this.userId;
-    this.db.list(path).push(data);
+    if (this.userId){
+      data.userId = this.userId;
+      this.db.list(path).push(data);
+    }
   }
 
   private update(path, key, data) {    

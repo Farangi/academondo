@@ -1,3 +1,5 @@
+import { ProfilesComponent } from './profiles/profiles.component';
+import { SearchComponent } from './search/search/search.component';
 import { MyAcademondoComponent } from './my-academondo/my-academondo.component';
 import { Routes, RouterModule } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -25,7 +27,8 @@ import { LeaveComponentGuard } from './shared/leave-component.guard';
 const routes: Routes = [
     {
         path: '',
-        component: LoginComponent
+        redirectTo: '/dashboard',
+        pathMatch: 'full'
     },    
     {
         path: 'dashboard',
@@ -64,6 +67,11 @@ const routes: Routes = [
         canActivate: [AuthGuard]
     },
     {
+        path: 'search',
+        component: SearchComponent,
+        canActivate: [AuthGuard]
+    },    
+    {
         path: 'adverts',
         component:  AdvertComponent,
         canActivate: [AuthGuard]
@@ -78,6 +86,11 @@ const routes: Routes = [
         component: ResearcherProfileComponent,
         canActivate: [AuthGuard]
     },
+    {
+        path: 'profiles',
+        component: ProfilesComponent,
+        canActivate: [AuthGuard]
+    },    
     {
         path: 'bs',
         component: BootstrapTestComponent,

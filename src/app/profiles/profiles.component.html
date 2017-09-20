@@ -1,0 +1,40 @@
+<div class="example-container mat-elevation-z8">
+  <div class="example-header">
+    <md-form-field floatPlaceholder="never">
+      <input mdInput #filter placeholder="Filter users">
+    </md-form-field>
+  </div>
+
+  <md-table #table [dataSource]="dataSource" mdSort>
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- ID Column -->
+    <ng-container mdColumnDef="firstName">
+      <md-header-cell *mdHeaderCellDef> firstName </md-header-cell>
+      <md-cell *mdCellDef="let row"> {{row.firstName}} </md-cell>
+    </ng-container>
+
+    <!-- Progress Column -->
+    <ng-container mdColumnDef="lastName">
+      <md-header-cell *mdHeaderCellDef> lastName </md-header-cell>
+      <md-cell *mdCellDef="let row"> {{row.lastName}} </md-cell>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container mdColumnDef="about">
+      <md-header-cell *mdHeaderCellDef> about </md-header-cell>
+      <md-cell *mdCellDef="let row"> {{row.about}} </md-cell>
+    </ng-container>
+
+    <!-- Color Column -->
+    <ng-container mdColumnDef="country">
+      <md-header-cell *mdHeaderCellDef> country </md-header-cell>
+      <md-cell *mdCellDef="let row"> {{row.country}} </md-cell>
+    </ng-container>
+
+    <md-header-row *mdHeaderRowDef="displayedColumns"></md-header-row>
+    <md-row *mdRowDef="let row; columns: displayedColumns;"></md-row>
+  </md-table>
+</div>

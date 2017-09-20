@@ -1,3 +1,4 @@
+import { query } from '@angular/core/src/animation/dsl';
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
@@ -27,7 +28,7 @@ export class LaboratoryTechniqueService {
   // }  
 
   public getlabTechnique$() {    
-    return  this.db.list('/techniques')
+    return  this.db.list('/techniques',{query: {orderByChild: 'name'} })
   }   
   
 
