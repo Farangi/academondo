@@ -1,5 +1,5 @@
 import { AuthService, AuthenticationService } from './../shared';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-sidenav',
@@ -7,13 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sidenav.component.scss']
 })
 export class SidenavComponent implements OnInit {
-  isActive = false;
+  
+  @Input() isActive:boolean = true;
   showMenu = '';
   user;
 
   isAdmin: any = this.authService.isAdmin$;
   isUniversity: any = this.authService.isUniversity$;    
-  eventCalled() {
+  
+  
+  eventCalled() {      
       this.isActive = !this.isActive;
   }
   addExpandClass(element: any) {
