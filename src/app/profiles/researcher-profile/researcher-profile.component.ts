@@ -1,4 +1,4 @@
-import { ResearcherProfileService } from './../shared/researcher-profile.service';
+import { ResearcherProfileService } from '../../shared/researcher-profile.service';
 import { Observable } from 'rxjs/Rx';
 import { Component, OnInit } from '@angular/core';
 
