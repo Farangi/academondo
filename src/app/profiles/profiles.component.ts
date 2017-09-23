@@ -1,4 +1,4 @@
-import { ResearcherProfileService } from '../../shared/researcher-profile.service';
+import { ResearcherProfileService } from './researcher-profile.service';
 import { Component, OnInit } from '@angular/core';
 
 import { ElementRef, ViewChild } from '@angular/core';

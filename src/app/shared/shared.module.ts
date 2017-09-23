@@ -23,7 +23,6 @@ import { SearchboxComponent } from '../search/searchbox/searchbox.component';
 import { PagerComponent } from '../search/pager/pager.component';
 import { ResultsComponent } from '../search/results/results.component';
 import { RefinementListComponent } from '../search/refinement-list/refinement-list.component';
-import { ProfilesComponent } from '../profiles/profileList/profiles.component';
 import { HeaderComponent } from '../header/header.component';
 import { SidebarComponent } from '../sidebar/sidebar.component';
 import { DashboardComponent } from '../dashboard/dashboard.component';
@@ -56,10 +55,8 @@ import {
   CountryService,
   AdminGuard,
   AuthService,
-  ResearcherProfileService,
   QuestionControlService,
   QuestionService,
-  ResearcherQService
 } from '.';
 
 import { AngularFireModule } from 'angularfire2';
@@ -313,7 +310,6 @@ const firebaseUiAuthConfig: FirebaseUIAuthConfig = {
     CountryService,
     AdminGuard,
     AuthService,
-    ResearcherProfileService,
     UserSettingsService,
     SearchAlgoliaService,
   ],

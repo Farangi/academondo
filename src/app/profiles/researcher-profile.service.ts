@@ -1,15 +1,16 @@
-import { AuthService } from './auth.service';
+import { AuthService } from '../shared/auth.service';
 import { FirebaseListObservable, AngularFireDatabase } from 'angularfire2/database';
 import { AutocompleteComponent } from './../autocomplete/autocomplete.component';
-import { FieldOfInterestService } from './field-of-interest.service';
+import { FieldOfInterestService } from '../shared/field-of-interest.service';
 import { Injectable } from '@angular/core';
 
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
-import { CountryService } from './country.service';
-import { LaboratoryTechniqueService } from './laboratory-technique.service';
-import { DropdownQuestion, QuestionBase, TextboxQuestion, TextareaQuestion, MultiselectQuestion, Country, AutocompleteQuestion } from './models';
+import { CountryService } from '../shared/country.service';
+import { LaboratoryTechniqueService } from '../shared/laboratory-technique.service';
+import { DropdownQuestion, QuestionBase, TextboxQuestion,
+    TextareaQuestion, MultiselectQuestion, Country, AutocompleteQuestion } from '../shared/models';
 
 @Injectable()
 export class ResearcherProfileService {

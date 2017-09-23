@@ -1,5 +1,5 @@
-import { ResearcherProfile } from '../../shared/models/researcher-profile';
-import { ResearcherProfileService } from '../../shared/researcher-profile.service';
+import { ResearcherProfile } from '../shared/models/researcher-profile';
+import { ResearcherProfileService } from './researcher-profile.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({

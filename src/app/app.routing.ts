@@ -1,4 +1,4 @@
-import { ProfilesComponent } from './profiles/profileList/profiles.component';
+import { ProfilesComponent } from './profiles/profiles.component';
 import { SearchComponent } from './search/search/search.component';
 import { MyAcademondoComponent } from './my-academondo/my-academondo.component';
 import { Routes, RouterModule } from '@angular/router';
@@ -10,7 +10,7 @@ import { LabDetailsComponent } from './lab-details/lab-details.component';
 import { PubmedComponent } from './pubmed/pubmed.component';
 import { AdminPageComponent } from './admin-page/admin-page.component';
 import { AdvertComponent } from './advert/advert.component';
-import { ResearcherProfileComponent } from './profiles/researcher-profile/researcher-profile.component';
+import { ResearcherProfileComponent } from './profiles/researcher-profile.component';
 import { BootstrapTestComponent } from "./bootstrap-test/bootstrap-test.component";
 
 import { LoginComponent } from './login/login.component';
