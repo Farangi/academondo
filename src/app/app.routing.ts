@@ -76,17 +76,7 @@ const routes: Routes = [
         path: 'cv',
         component: CvComponent,
         canActivate: [AuthGuard]
-    },
-    {
-        path: 'profile',
-        component: ResearcherProfileComponent,
-        canActivate: [AuthGuard]
-    },
-    {
-        path: 'profiles',
-        component: ProfilesComponent,
-        canActivate: [AuthGuard]
-    },    
+    },   
     {
         path: 'bs',
         component: BootstrapTestComponent,
