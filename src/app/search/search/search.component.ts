@@ -1,7 +1,7 @@
 import { environment } from './../../../environments/environment';
 import { Component, OnInit } from '@angular/core';
 import instantsearch from 'instantsearch.js/es'
-import { searchBox, hits  } from 'instantsearch.js/es/widgets'
+import { searchBox, hits, pagination, stats, analytics  } from 'instantsearch.js/es/widgets'
 // declare var instantsearch: any;
 
 @Component({
@@ -66,6 +66,30 @@ export class SearchComponent implements OnInit {
         escapeHits: true        
       })
     );
+
+    this.search.addWidget(
+      stats({
+        container: '#stats'
+      })
+    );
+
+
+    this.search.addWidget(
+      pagination({
+        container: '#pagination',
+        maxPages: 20,
+      })
+    );
+
+    this.search.addWidget(
+      analytics({
+        pushFunction: (query, state, results) => {
+          console.log(query)
+          console.log(state)
+          console.log(results)
+        }
+      })
+    );    
 
     this.search.start();
   }
