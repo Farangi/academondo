@@ -3,7 +3,7 @@ import { Observable } from 'rxjs/Rx';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-advert',
+  selector: 'app-researcher-profile',
   templateUrl: './researcher-profile.component.html',  
 })
 export class ResearcherProfileComponent implements OnInit {

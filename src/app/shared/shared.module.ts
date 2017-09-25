@@ -30,7 +30,6 @@ import { LabsignupComponent } from '../labsignup/labsignup.component';
 import { AutocompleteComponent } from '../autocomplete/autocomplete.component';
 import { LoginComponent } from '../login/login.component';
 import { AlertComponent } from '../alert/alert.component';
-import { RegisterComponent } from '../register/register.component';
 import { LabComponent } from '../lab/lab.component';
 import { PageNotFoundComponent } from '../page-not-found.component';
 import { CvComponent } from '../cv/cv.component';
@@ -47,13 +46,13 @@ import {
   AlertService,
   AuthenticationService,
   AuthGuard,
-  UserService,
   LabService,
   PubmedService,
   LaboratoryTechniqueService,
   UrlSizeLimiterPipe,
   CountryService,
   AdminGuard,
+  UniversityGuard,
   AuthService,
   QuestionControlService,
   QuestionService,
@@ -111,6 +110,7 @@ import 'hammerjs';
 import { MultiselectDropdownModule } from 'angular-2-dropdown-multiselect';
 
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
+import { UniversityComponent } from './university/university.component';
 
 
 
@@ -209,7 +209,6 @@ const firebaseUiAuthConfig: FirebaseUIAuthConfig = {
     AutocompleteComponent,
     LoginComponent,
     AlertComponent,
-    RegisterComponent,
     LabComponent,
     PubmedComponent,
     LablistComponent,
@@ -273,7 +272,6 @@ const firebaseUiAuthConfig: FirebaseUIAuthConfig = {
     AutocompleteComponent,
     LoginComponent,
     AlertComponent,
-    RegisterComponent,
     LabComponent,
     PubmedComponent,
     LablistComponent,
@@ -295,6 +293,7 @@ const firebaseUiAuthConfig: FirebaseUIAuthConfig = {
     PagerComponent,
     ResultsComponent,
     RefinementListComponent,
+    UniversityComponent,
   ],
   providers: [
     FieldOfInterestService,
@@ -303,12 +302,12 @@ const firebaseUiAuthConfig: FirebaseUIAuthConfig = {
     AlertService,
     AuthenticationService,
     AuthGuard,
-    UserService,
     LabService,
     PubmedService,
     LaboratoryTechniqueService,
     CountryService,
     AdminGuard,
+    UniversityGuard,
     AuthService,
     UserSettingsService,
     SearchAlgoliaService,

@@ -1,8 +1,10 @@
+import { AuthenticationService } from './../shared/authentication.service';
 import { AuthService } from '../shared/auth.service';
 import { FirebaseListObservable, AngularFireDatabase } from 'angularfire2/database';
 import { AutocompleteComponent } from './../autocomplete/autocomplete.component';
 import { FieldOfInterestService } from '../shared/field-of-interest.service';
 import { Injectable } from '@angular/core';
+import * as _ from 'lodash'
 
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
@@ -19,12 +21,19 @@ export class ResearcherProfileService {
     techniquesOptions = [];
     fieldOfInterestOptions = [];
 
+    userRoles: Array<string>; // roles of current logged in user
+
     private userId: string;
 
     private path = '/profiles';
 
-    constructor(private countryService: CountryService, private laboratoryTechniqueService: LaboratoryTechniqueService, private fieldOfInterestService: FieldOfInterestService, private db: AngularFireDatabase, private auth: AuthService) {
-        this.userId = this.auth.getCurrentUserUid();
+    constructor(private countryService: CountryService, private laboratoryTechniqueService: LaboratoryTechniqueService, private fieldOfInterestService: FieldOfInterestService, private db: AngularFireDatabase, private auth: AuthService, private authenticationService: AuthenticationService) {
+        this.userId = this.auth.getCurrentUserUid(); 
+
+        authenticationService.user.map(user => {
+            return this.userRoles = _.keys(_.get(user, 'roles'))
+        })        
+        .subscribe()
 
         this.countryService.getCountry$()
             .flatMap(list => list)
@@ -43,6 +52,10 @@ export class ResearcherProfileService {
             .subscribe((data: any) => {
                 this.fieldOfInterestOptions.push(data)
             })
+    }
+
+    private matchingRole(allowedRoles): boolean {
+        return !_.isEmpty(_.intersection(allowedRoles, this.userRoles))
     }
 
     getPath(): string {

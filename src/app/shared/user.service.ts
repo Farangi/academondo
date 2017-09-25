@@ -1,45 +1,45 @@
-import { Injectable } from '@angular/core';
-import { Http, Headers, RequestOptions, Response, URLSearchParams } from '@angular/http';
+// import { Injectable } from '@angular/core';
+// import { Http, Headers, RequestOptions, Response, URLSearchParams } from '@angular/http';
 
-import { apiEndPoint } from './consts/apiEndPoint';
+// import { apiEndPoint } from './consts/apiEndPoint';
  
-@Injectable()
-export class UserService {
-    constructor(private http: Http) { }
+// @Injectable()
+// export class UserService {
+//     constructor(private http: Http) { }
  
-    // getAll() {
-    //     return this.http.get('/api/users', this.jwt()).map((response: Response) => response.json());
-    // }
+//     // getAll() {
+//     //     return this.http.get('/api/users', this.jwt()).map((response: Response) => response.json());
+//     // }
  
-    // getById(id) {
-    //     return this.http.get('/api/users/' + id, this.jwt()).map((response: Response) => response.json());
-    // }
+//     // getById(id) {
+//     //     return this.http.get('/api/users/' + id, this.jwt()).map((response: Response) => response.json());
+//     // }
  
-    create(user) {
-      let url = apiEndPoint + '/api/register';
-      let body = `username=${user.username}&password=${user.password}`;
-      let headers = new Headers();
-      headers.append('Content-Type', 'application/x-www-form-urlencoded');  
-        return this.http.post(url, body, { headers: headers })
-        .map((response: Response) => response.json());
-    }
+//     create(user) {
+//       let url = apiEndPoint + '/api/register';
+//       let body = `username=${user.username}&password=${user.password}`;
+//       let headers = new Headers();
+//       headers.append('Content-Type', 'application/x-www-form-urlencoded');  
+//         return this.http.post(url, body, { headers: headers })
+//         .map((response: Response) => response.json());
+//     }
  
-    // update(user) {
-    //     return this.http.put('/api/users/' + user.id, user, this.jwt()).map((response: Response) => response.json());
-    // }
+//     // update(user) {
+//     //     return this.http.put('/api/users/' + user.id, user, this.jwt()).map((response: Response) => response.json());
+//     // }
  
-    // delete(id) {
-    //     return this.http.delete('/api/users/' + id, this.jwt()).map((response: Response) => response.json());
-    // }
+//     // delete(id) {
+//     //     return this.http.delete('/api/users/' + id, this.jwt()).map((response: Response) => response.json());
+//     // }
  
-    // private helper methods
+//     // private helper methods
  
-    private jwt() {
-        // create authorization header with jwt token
-        let currentUser = JSON.parse(localStorage.getItem('currentUser'));
-        if (currentUser && currentUser.token) {
-            let headers = new Headers({ 'Authorization': 'Bearer ' + currentUser.token });
-            return new RequestOptions({ headers: headers });
-        }
-    }
-}
+//     private jwt() {
+//         // create authorization header with jwt token
+//         let currentUser = JSON.parse(localStorage.getItem('currentUser'));
+//         if (currentUser && currentUser.token) {
+//             let headers = new Headers({ 'Authorization': 'Bearer ' + currentUser.token });
+//             return new RequestOptions({ headers: headers });
+//         }
+//     }
+// }

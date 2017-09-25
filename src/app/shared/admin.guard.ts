@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
-import { Router, CanActivate } from '@angular/router';
-import { AuthService } from './auth.service'
+import { CanActivate } from '@angular/router';
+import { AuthenticationService } from './authentication.service';
 
 @Injectable()
 export class AdminGuard implements CanActivate {
 
-  constructor(private router: Router, private authService: AuthService) { }
+  constructor(private authenticationService: AuthenticationService) { }
 
   canActivate() {
-    return this.authService.isAdmin$.map((isAdmin: any) => isAdmin.admin)
+    return this.authenticationService.getRoles.map((roles: any) => roles.admin)
   }
 }

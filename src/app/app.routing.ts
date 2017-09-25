@@ -1,3 +1,4 @@
+import { UniversityComponent } from './shared/university/university.component';
 import { ProfilesComponent } from './profiles/profiles.component';
 import { SearchComponent } from './search/search/search.component';
 import { MyAcademondoComponent } from './my-academondo/my-academondo.component';
@@ -14,10 +15,9 @@ import { ResearcherProfileComponent } from './profiles/researcher-profile.compon
 import { BootstrapTestComponent } from "./bootstrap-test/bootstrap-test.component";
 
 import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
 import { CvComponent } from './cv/cv.component';
 import { AuthGuard } from './shared';
-import { AdminGuard } from './shared';
+import { AdminGuard, UniversityGuard } from './shared';
 
 import { CanDeactivate } from '@angular/router';
 
@@ -97,6 +97,11 @@ const routes: Routes = [
         component: AdminPageComponent,
         canActivate: [AdminGuard]
     },
+    {
+        path: 'university',
+        component: UniversityComponent,
+        canActivate: [UniversityGuard]
+    },    
     {
         path: 'login',
         component: LoginComponent

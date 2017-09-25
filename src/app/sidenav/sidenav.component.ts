@@ -1,4 +1,5 @@
-import { AuthService, AuthenticationService } from './../shared';
+import { Roles } from './../shared/models/user';
+import { AuthenticationService } from './../shared';
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
@@ -12,8 +13,8 @@ export class SidenavComponent implements OnInit {
   showMenu = '';
   user;
 
-  isAdmin: any = this.authService.isAdmin$;
-  isUniversity: any = this.authService.isUniversity$;    
+  isAdmin: any = this.authenticationService.getRoles;
+  isUniversity: any = this.authenticationService.getRoles;    
   
   
   eventCalled() {      
@@ -27,7 +28,7 @@ export class SidenavComponent implements OnInit {
       }
   }
   
-  constructor(private authService: AuthService, private authenticationService: AuthenticationService) {
+  constructor(private authenticationService: AuthenticationService) {
       authenticationService.getUser$().subscribe(user => {
           this.user = user
       });

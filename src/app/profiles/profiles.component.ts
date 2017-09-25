@@ -1,3 +1,6 @@
+import { propertyType } from '@angular/language-service/src/html_info';
+import { FieldOfInterest } from './../shared/models/fieldOfInterest';
+import { Technique } from './../shared/models/technique';
 import { ResearcherProfileService } from './researcher-profile.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -12,6 +15,8 @@ import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/distinctUntilChanged';
 import 'rxjs/add/observable/fromEvent';
 
+import * as _ from 'lodash';
+
 @Component({
   selector: 'app-profiles',
   templateUrl: './profiles.component.html',
@@ -19,6 +24,50 @@ import 'rxjs/add/observable/fromEvent';
 })
 export class ProfilesComponent implements OnInit {
   allProfiles;
+
+  filteredProfiles;
+
+
+  fieldOfInterestOptions = this.profileService.fieldOfInterestOptions;
+  techniqueOptions = this.profileService.techniquesOptions;
+
+  // filter-able properties
+  country: string;
+  title: string;
+  techniques: { id, name }[];
+  fieldOfInterests: {id, name}[];
+  conicalFlask: number;
+
+  filters = {};
+
+  private applyFilters() {
+    this.filteredProfiles = _.filter(this.allProfiles, _.conforms(this.filters))
+  }
+
+  filterExact(property: string, rule: any) {
+    this.filters[property] = val => val == rule;
+    this.applyFilters();
+  }
+
+  filterGreaterThan(property: string, rule: number) {
+    this.filters[property] = val => val > rule;
+    this.applyFilters();
+  }
+
+  filterBoolean(property: string, rule: number) {
+    if (!rule) {
+      this.removeFilter(property)
+    } else {
+      this.filters[property] = val => val;
+      this.applyFilters();
+    }    
+  }  
+
+  removeFilter(property: string) {
+    delete this.filters[property]
+    this[property] = null;
+    this.applyFilters();
+  }
 
   displayedColumns = ['firstName', 'lastName', 'about', 'country'];
   
@@ -29,12 +78,17 @@ export class ProfilesComponent implements OnInit {
 
 
 
+
+
+
+
   @ViewChild('filter') filter: ElementRef;
 
   ngOnInit() {
     this.profileService.getEntities()
       .subscribe(profiles => {
         this.allProfiles = profiles;
+        this.applyFilters();
       })
 
 
@@ -49,6 +103,13 @@ export class ProfilesComponent implements OnInit {
       });
   }
 }
+
+
+
+
+
+
+
 
 
 /**

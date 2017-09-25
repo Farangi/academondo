@@ -64,7 +64,7 @@ getPath(): string {
   return this.path;
 }
 
-getOwnProfile() {
+getOwnEntity() {
   return this.getEntities({
     orderByChild: 'userId',
     equalTo: this.userId,

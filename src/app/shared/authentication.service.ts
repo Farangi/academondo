@@ -1,3 +1,5 @@
+import { Router } from '@angular/router';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { Injectable } from '@angular/core';
@@ -9,14 +11,29 @@ import 'rxjs/add/observable/throw';
 import 'rxjs/add/operator/publishLast';
 import 'rxjs/add/operator/switchMap';
 
+import { User } from "./models/user";
+
 
 @Injectable()
 export class AuthenticationService {
   private userStream: Observable<any>;
-  private adminStream: Observable<any>;
+  private adminStream: Observable<any>;  
   private universityStream: Observable<any>;
 
-  constructor(private afAuth: AngularFireAuth, private db: AngularFireDatabase) { 
+  user: BehaviorSubject<User> = new BehaviorSubject(null);
+
+  constructor(private afAuth: AngularFireAuth, private db: AngularFireDatabase, private router: Router) {
+
+    this.afAuth.authState
+    .switchMap(auth => {
+      if(auth) {
+        this.createUserInFirebase(auth);
+        return this.db.object('users/' + auth.uid);
+      } else {
+        return Observable.of(null);
+      }
+    })
+
     this.userStream = this.afAuth.authState
     .map((user) => {      
       if (!user) {
@@ -55,7 +72,21 @@ export class AuthenticationService {
     })
     .catch(() => Observable.throw('Unable to fetch university state!'))
 
+    // this.db.object('users/' + state.uid + '/roles').do(role => {
+    //   console.log(role.admin)
+    // }).subscribe()
   }
+
+  getRoles = this.afAuth.authState
+    .switchMap((user: any) => {
+      if (!user) {
+        return Observable.of(false)
+      } else {
+        return this.db.object('users/' + user.uid + '/roles')
+      }
+    })
+    .catch(() => Observable.throw('Unable to fetch admin state!'))
+
 
   getUser$() {
     return this.userStream;
@@ -73,4 +104,14 @@ export class AuthenticationService {
     this.afAuth.auth.signOut();
   }
 
+  private createUserInFirebase(authData) {
+    const userData = new User(authData);
+    const ref = this.db.object('users/' + authData.uid)
+    ref.take(1)
+      .subscribe(user => {
+        if (!user.roles) {          
+          ref.update(userData);
+        }
+      })
+  }
 }

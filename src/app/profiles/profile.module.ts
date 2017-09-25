@@ -1,5 +1,4 @@
 import { ResearcherProfileService } from './researcher-profile.service';
-import { DynamicFormComponent } from '../shared/dynamic-form/dynamic-form.component';
 import { ResearcherProfileComponent } from './researcher-profile.component';
 import { ViewResearcherProfileComponent } from './view-researcher-profile.component';
 import { ProfilesComponent } from './profiles.component';

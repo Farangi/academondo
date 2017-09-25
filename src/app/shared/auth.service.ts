@@ -38,21 +38,22 @@ export class AuthService {
   //   }
   // })
 
-  isAdmin$ = this.afAuth.authState.switchMap(state => {
-    if (!state) {
-      return Observable.of(false)
-    } else {
-      return this.db.object('/admin/' + state.uid)
-    }
-  })
+  // isAdmin$ = this.afAuth.authState
+  // .switchMap(state => {
+  //   if (!state) {
+  //     return Observable.of(false)
+  //   } else {     
+  //     return this.db.object('/admin/' + state.uid)
+  //   }
+  // })
 
-  isUniversity$ = this.afAuth.authState.switchMap(state => {
-    if (!state) {
-      return Observable.of(false)
-    } else {
-      return this.db.object('/university/' + state.uid)
-    }
-  })    
+  // isUniversity$ = this.afAuth.authState.switchMap(state => {
+  //   if (!state) {
+  //     return Observable.of(false)
+  //   } else {
+  //     return this.db.object('/university/' + state.uid)
+  //   }
+  // })    
 
   signOut() {
     this.afAuth.auth.signOut();

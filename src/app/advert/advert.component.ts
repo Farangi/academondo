@@ -23,7 +23,7 @@ export class AdvertComponent implements OnInit {
   ngOnInit() {
     this.questions = this.service.getQuestions();
     this.path = this.service.getPath();
-    this.profile = this.service.getOwnProfile();         
+    this.profile = this.service.getOwnEntity();         
   }
 
 }
