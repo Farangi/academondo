@@ -6,12 +6,12 @@
 export const environment = {
  production: false,
  firebase: {
-   apiKey: 'AIzaSyDULRAxTyaQTmwzle6agFaS4Ud8HvM8K-k',
-   authDomain: 'academondo.firebaseapp.com',
-   databaseURL: 'https://academondo.firebaseio.com',
-   projectId: 'academondo',
-   storageBucket: 'academondo.appspot.com',
-   messagingSenderId: '342464929735'
+   apiKey: "AIzaSyAzErjcnCM-YXslmx42N3rqFiEzX0P1e_g",
+   authDomain: "science-4bddf.firebaseapp.com",
+   databaseURL: "https://science-4bddf.firebaseio.com",
+   projectId: "science-4bddf",
+   storageBucket: "science-4bddf.appspot.com",
+   messagingSenderId: "308887472795"
  },
  algolia: {
    appId: 'FERMD47OFA',

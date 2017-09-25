@@ -29,8 +29,7 @@ export class AuthenticationService {
     this.afAuth.authState
     .switchMap(auth => {
       if(auth) {
-        this.userId = auth.uid;
-        console.log('ran the one it shouldnt!')
+        this.userId = auth.uid;        
         this.createUserInFirebase(auth);
         return this.db.object('users/' + auth.uid);
       } else {
@@ -54,7 +53,7 @@ export class AuthenticationService {
 
       }  
     })
-    .catch(() => Observable.throw('Unable to fetch user!'))
+    .catch(() => Observable.throw('Unable to fetch user!'))    
 
     this.adminStream = this.afAuth.authState
     .switchMap((user:any) => {

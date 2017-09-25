@@ -19,10 +19,6 @@ import { UserSettingsService } from '../user-settings.service';
 import { PubmedViewerComponent } from '../pubmed-viewer/pubmed-viewer.component';
 import { SearchAlgoliaService } from '../shared/search-algolia.service';
 import { SearchComponent } from '../search/search/search.component';
-import { SearchboxComponent } from '../search/searchbox/searchbox.component';
-import { PagerComponent } from '../search/pager/pager.component';
-import { ResultsComponent } from '../search/results/results.component';
-import { RefinementListComponent } from '../search/refinement-list/refinement-list.component';
 import { HeaderComponent } from '../header/header.component';
 import { SidebarComponent } from '../sidebar/sidebar.component';
 import { DashboardComponent } from '../dashboard/dashboard.component';
@@ -225,11 +221,6 @@ const firebaseUiAuthConfig: FirebaseUIAuthConfig = {
     MyAcademondoComponent,
     PubmedViewerComponent,
     SearchComponent,
-    SearchboxComponent,
-    PagerComponent,
-    ResultsComponent,
-    RefinementListComponent,
-
 
     MdAutocompleteModule,
     MdButtonModule,
@@ -288,10 +279,6 @@ const firebaseUiAuthConfig: FirebaseUIAuthConfig = {
     MyAcademondoComponent,
     PubmedViewerComponent,
     SearchComponent,
-    SearchboxComponent,
-    PagerComponent,
-    ResultsComponent,
-    RefinementListComponent,
     UniversityComponent,
   ],
   providers: [

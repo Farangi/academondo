@@ -42,8 +42,6 @@ export class SearchComponent implements OnInit {
     const options = environment.algolia;
     this.search = instantsearch(options);
 
-
-
     this.search.addWidget(
       searchBox({
         container: '#search-box',
@@ -93,9 +91,4 @@ export class SearchComponent implements OnInit {
 
     this.search.start();
   }
-
-
-
-
-
 }
