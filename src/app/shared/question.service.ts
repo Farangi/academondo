@@ -1,4 +1,5 @@
-import { AuthService } from './auth.service';
+import { AuthenticationService } from './authentication.service';
+// import { AuthService } from './auth.service';
 import { FirebaseListObservable, AngularFireDatabase } from 'angularfire2/database';
 import { AutocompleteComponent } from './../autocomplete/autocomplete.component';
 import { FieldOfInterestService } from './field-of-interest.service';
@@ -24,14 +25,14 @@ export class QuestionService {
 
   private path = '/adverts';
 
-  
-  
-
-  constructor(private countryService: CountryService, private laboratoryTechniqueService: LaboratoryTechniqueService, private fieldOfInterestService: FieldOfInterestService, private db: AngularFireDatabase, private auth: AuthService) {
-    this.userId = this.auth.getCurrentUserUid();
-    
-
-    
+  constructor(
+    private countryService: CountryService,
+    private laboratoryTechniqueService: LaboratoryTechniqueService,
+    private fieldOfInterestService: FieldOfInterestService,
+    private db: AngularFireDatabase,
+    private authenticationService: AuthenticationService
+  ) {
+    this.userId = this.authenticationService.getUserId();
 
     this.countryService.getCountry$()
       .flatMap(list => list)

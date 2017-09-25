@@ -17,7 +17,7 @@ export class NavbarComponent implements OnInit {
   sidebarState: boolean = true;
 
   constructor(private authService: AuthenticationService) {    
-    authService.getUser$().subscribe(user => {      
+    authService.getUser$().subscribe(user => {            
       this.user = user
     });
   }

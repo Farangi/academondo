@@ -11,7 +11,6 @@ export { LaboratoryTechniqueService } from './laboratory-technique.service';
 export { CountryService } from './country.service';
 export { AdminGuard } from './admin.guard';
 export { UniversityGuard } from './university.guard';
-export { AuthService } from './auth.service';
 export { QuestionControlService } from './question-control.service'
 export { QuestionService } from './question.service'
 

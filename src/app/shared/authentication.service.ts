@@ -20,6 +20,8 @@ export class AuthenticationService {
   private adminStream: Observable<any>;  
   private universityStream: Observable<any>;
 
+  userId;
+
   user: BehaviorSubject<User> = new BehaviorSubject(null);
 
   constructor(private afAuth: AngularFireAuth, private db: AngularFireDatabase, private router: Router) {
@@ -27,12 +29,14 @@ export class AuthenticationService {
     this.afAuth.authState
     .switchMap(auth => {
       if(auth) {
+        this.userId = auth.uid;
+        console.log('ran the one it shouldnt!')
         this.createUserInFirebase(auth);
         return this.db.object('users/' + auth.uid);
       } else {
         return Observable.of(null);
       }
-    })
+    }).subscribe();
 
     this.userStream = this.afAuth.authState
     .map((user) => {      
@@ -72,9 +76,6 @@ export class AuthenticationService {
     })
     .catch(() => Observable.throw('Unable to fetch university state!'))
 
-    // this.db.object('users/' + state.uid + '/roles').do(role => {
-    //   console.log(role.admin)
-    // }).subscribe()
   }
 
   getRoles = this.afAuth.authState
@@ -90,6 +91,9 @@ export class AuthenticationService {
 
   getUser$() {
     return this.userStream;
+  }
+  getUserId() {
+    return this.userId;
   }
 
   isAdmin$() {

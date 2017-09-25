@@ -1,6 +1,6 @@
 import { AuthenticationService } from './../shared/authentication.service';
 import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
-import { AuthService, AlertService } from '../shared';
+import { AlertService } from '../shared';
 import { User } from "../shared/models";
 
 @Component({
@@ -10,10 +10,10 @@ import { User } from "../shared/models";
 })
 export class HeaderComponent implements AfterViewInit {
      
-  isAdmin:any = this.authService.isAdmin$;
-  isUniversity:any = this.authService.isUniversity$;  
+  isAdmin: any = this.authenticationService.isAdmin$;
+  isUniversity: any = this.authenticationService.isUniversity$;  
 
-  constructor(private authService: AuthenticationService, private alertService: AlertService) {}
+  constructor(private authenticationService: AuthenticationService, private alertService: AlertService) {}
 
   ngAfterViewInit() {}
 

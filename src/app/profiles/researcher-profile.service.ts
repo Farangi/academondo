@@ -1,10 +1,9 @@
 import { AuthenticationService } from './../shared/authentication.service';
-import { AuthService } from '../shared/auth.service';
 import { FirebaseListObservable, AngularFireDatabase } from 'angularfire2/database';
 import { AutocompleteComponent } from './../autocomplete/autocomplete.component';
 import { FieldOfInterestService } from '../shared/field-of-interest.service';
-import { Injectable } from '@angular/core';
-import * as _ from 'lodash'
+import { Injectable, OnInit } from '@angular/core';
+import * as _ from 'lodash';
 
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
@@ -27,8 +26,10 @@ export class ResearcherProfileService {
 
     private path = '/profiles';
 
-    constructor(private countryService: CountryService, private laboratoryTechniqueService: LaboratoryTechniqueService, private fieldOfInterestService: FieldOfInterestService, private db: AngularFireDatabase, private auth: AuthService, private authenticationService: AuthenticationService) {
-        this.userId = this.auth.getCurrentUserUid(); 
+    constructor(private countryService: CountryService, private laboratoryTechniqueService: LaboratoryTechniqueService, private fieldOfInterestService: FieldOfInterestService, private db: AngularFireDatabase, private authenticationService: AuthenticationService) {
+        
+        // let userId = this.auth.getCurrentUserUid();        
+        this.userId = this.authenticationService.getUserId() //rework!
 
         authenticationService.user.map(user => {
             return this.userRoles = _.keys(_.get(user, 'roles'))
@@ -62,16 +63,20 @@ export class ResearcherProfileService {
         return this.path;
     }
 
-    getOwnProfile() {
-        return this.getEntities({
-            orderByChild: 'userId',
-            equalTo: this.userId,
-        })
-            .map((entities) => {                
-                let [entity] = entities;
-                return entity;
+    getOwnProfile() {        
+        if (!this.userId) {
+            return Observable.of(null)
+        } else {        
+            return this.getEntities({
+                orderByChild: 'userId',
+                equalTo: this.userId,
             })
-        // .do(data => console.log('server data:', data))  // debug - fixme why do i get so many responses?
+                .map((entities) => {                    
+                    let [entity] = entities;
+                    return entity;
+                })
+            // .do(data => console.log('server data:', data))  // debug - fixme why do i get so many responses?
+        }
     }
 
     getEntities(query = {}): FirebaseListObservable<any> {

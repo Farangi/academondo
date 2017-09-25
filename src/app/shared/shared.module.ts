@@ -53,7 +53,6 @@ import {
   CountryService,
   AdminGuard,
   UniversityGuard,
-  AuthService,
   QuestionControlService,
   QuestionService,
 } from '.';
@@ -308,7 +307,6 @@ const firebaseUiAuthConfig: FirebaseUIAuthConfig = {
     CountryService,
     AdminGuard,
     UniversityGuard,
-    AuthService,
     UserSettingsService,
     SearchAlgoliaService,
   ],

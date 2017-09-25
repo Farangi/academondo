@@ -29,6 +29,8 @@ export class LaboratoryTechniqueService {
 
   public getlabTechnique$() {    
     return  this.db.list('/techniques',{query: {orderByChild: 'name'} })
+      .take(1)
+      .catch(() => Observable.throw('Unable to fetch Techniques!'))
   }   
   
 

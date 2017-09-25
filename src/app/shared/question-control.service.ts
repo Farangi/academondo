@@ -1,16 +1,15 @@
-import { AuthService } from './auth.service';
+import { AuthenticationService } from './authentication.service';
 import { FirebaseListObservable, AngularFireDatabase } from 'angularfire2/database';
 import { Injectable }   from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-
 import { QuestionBase } from './models/question-base';
 
 @Injectable()
 export class QuestionControlService {
   private userId: string;
 
-  constructor(private db: AngularFireDatabase, private auth: AuthService) {
-    this.userId = this.auth.getCurrentUserUid();
+  constructor(private db: AngularFireDatabase, private authenticationService: AuthenticationService) {
+    this.userId = this.authenticationService.getUserId();
    }
 
   private create(path, data) {
