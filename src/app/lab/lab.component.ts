@@ -1,8 +1,5 @@
+import { LabService } from './lab.service';
 import { Component, OnInit } from '@angular/core';
-
-import { FieldOfInterestService } from '../shared';
-import { Lab, FieldOfInterest } from '../shared/models/';
-
 
 @Component({
   selector: 'app-lab',
@@ -10,21 +7,16 @@ import { Lab, FieldOfInterest } from '../shared/models/';
   styleUrls: ['./lab.component.css']
 })
 export class LabComponent implements OnInit {
+  questions: any[];
+  path: string;
+  lab;
 
-  model: Lab; //= new Lab('Google Labs', 'street of science 10110', 'valid@email.com',);
-  loading = false;
-  public fieldOfInterests: FieldOfInterest[];
+  constructor(private labService: LabService) { }
 
-constructor(private fieldOfInterestService: FieldOfInterestService) { }
-
-  ngOnInit() {    
-    this.fieldOfInterestService.getFieldOfInterest$()
-      .subscribe(fieldOfInterests => this.fieldOfInterests = fieldOfInterests);
+  ngOnInit() {
+    this.questions = this.labService.getQuestions();
+    this.path = this.labService.getPath();
+    this.lab = this.labService.getOwnEntity();
   }
 
-  labSubmit() {
-    this.loading = true;
-    console.log('make http.post call', this.model);
-    this.loading = false;
-  }
 }

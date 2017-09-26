@@ -22,16 +22,12 @@ import { SearchComponent } from '../search/search/search.component';
 import { HeaderComponent } from '../header/header.component';
 import { SidebarComponent } from '../sidebar/sidebar.component';
 import { DashboardComponent } from '../dashboard/dashboard.component';
-import { LabsignupComponent } from '../labsignup/labsignup.component';
 import { AutocompleteComponent } from '../autocomplete/autocomplete.component';
 import { LoginComponent } from '../login/login.component';
 import { AlertComponent } from '../alert/alert.component';
-import { LabComponent } from '../lab/lab.component';
 import { PageNotFoundComponent } from '../page-not-found.component';
 import { CvComponent } from '../cv/cv.component';
 import { PubmedComponent } from '../pubmed/pubmed.component';
-import { LablistComponent } from '../lablist/lablist.component';
-import { LabDetailsComponent } from '../lab-details/lab-details.component';
 import { AdminPageComponent } from '../admin-page/admin-page.component';
 import { AdvertComponent } from '../advert/advert.component';
 import { DynamicFormComponent } from '../shared/dynamic-form/dynamic-form.component';
@@ -190,25 +186,17 @@ const firebaseUiAuthConfig: FirebaseUIAuthConfig = {
     NgbModule.forRoot(),    
   ],
   exports : [
-    DynamicFormComponent,
-    DynamicFormQuestionComponent,
     CommonModule,
     FormsModule,
-
-
 
     HeaderComponent,
     SidebarComponent,
     DashboardComponent,
-    LabsignupComponent,
     AutocompleteComponent,
     LoginComponent,
     AlertComponent,
-    LabComponent,
     PubmedComponent,
-    LablistComponent,
     UrlSizeLimiterPipe,
-    LabDetailsComponent,
     AdminPageComponent,
     AdvertComponent,
     PageNotFoundComponent,
@@ -258,15 +246,11 @@ const firebaseUiAuthConfig: FirebaseUIAuthConfig = {
     HeaderComponent,
     SidebarComponent,
     DashboardComponent,
-    LabsignupComponent,
     AutocompleteComponent,
     LoginComponent,
     AlertComponent,
-    LabComponent,
-    PubmedComponent,
-    LablistComponent,
+    PubmedComponent, 
     UrlSizeLimiterPipe,
-    LabDetailsComponent,
     AdminPageComponent,
     AdvertComponent,
     PageNotFoundComponent,

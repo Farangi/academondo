@@ -9,7 +9,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class SidenavComponent implements OnInit {
   
-  @Input() isActive:boolean = true;
+  @Input() isActive:boolean;
   showMenu = '';
   user;
 
@@ -17,9 +17,9 @@ export class SidenavComponent implements OnInit {
   isUniversity: any = this.authenticationService.getRoles;    
   
   
-  eventCalled() {      
-      this.isActive = !this.isActive;
-  }
+//   eventCalled() {      
+//       this.isActive = !this.isActive;
+//   }
   addExpandClass(element: any) {
       if (element === this.showMenu) {
           this.showMenu = '0';

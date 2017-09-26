@@ -3,7 +3,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { ProfileModule } from './profiles/profile.module';
-import { routing } from './app.routing'; 
+import { routing } from './app.routing';
+import { LabModule } from './lab/lab.module';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { routing } from './app.routing';
     BrowserModule,
     SharedModule,
     ProfileModule,
-    routing,
+    LabModule,
+    routing,    
   ],
 
   bootstrap: [AppComponent]

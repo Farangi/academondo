@@ -4,10 +4,6 @@ import { SearchComponent } from './search/search/search.component';
 import { MyAcademondoComponent } from './my-academondo/my-academondo.component';
 import { Routes, RouterModule } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { LabsignupComponent } from './labsignup/labsignup.component';
-import { LabComponent } from './lab/lab.component';
-import { LablistComponent } from './lablist/lablist.component';
-import { LabDetailsComponent } from './lab-details/lab-details.component';
 import { PubmedComponent } from './pubmed/pubmed.component';
 import { AdminPageComponent } from './admin-page/admin-page.component';
 import { AdvertComponent } from './advert/advert.component';
@@ -37,26 +33,6 @@ const routes: Routes = [
         component: MyAcademondoComponent,
         canActivate: [AuthGuard]
     },    
-    {
-        path: 'labsignup',
-        component: LabsignupComponent,
-        canActivate: [AuthGuard]
-    },
-    {
-        path: 'lab',
-        component: LabComponent,
-        canActivate: [AuthGuard]
-    },
-    {
-        path: 'labs',
-        component: LablistComponent,
-        canActivate: [AuthGuard]
-    },
-    {
-        path: 'lab:id',
-        component: LabDetailsComponent,
-        canActivate: [AuthGuard]  
-    },
     {
         path: 'PubMed',
         component: PubmedComponent,

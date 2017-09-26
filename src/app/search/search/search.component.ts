@@ -10,7 +10,6 @@ import { searchBox, hits, pagination, stats, analytics  } from 'instantsearch.js
   // providers: [AlgoliaService],
   template: `
   <div>
-  yolo
     <div id="search-box">
       <!-- SearchBox widget will appear here -->
     </div>
@@ -23,12 +22,6 @@ import { searchBox, hits, pagination, stats, analytics  } from 'instantsearch.js
     <div id="pagination">
       <!-- pagination widget will appear here -->
     </div>
-
-
-    <!--app-search-box></app-search-box>
-    <app-refinement-list></app-refinement-list>
-    <app-results></app-results>
-    <app-pager></app-pager-->
   </div>
 `
 })
@@ -47,7 +40,7 @@ export class SearchComponent implements OnInit {
         container: '#search-box',
         autofocus: false,
         placeholder: 'search for actors',
-        poweredBy: true
+        poweredBy: false
       })
     );
 

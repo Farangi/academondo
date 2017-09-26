@@ -16,13 +16,49 @@
     <!-- <a [routerLink]="['/adverts']" [routerLinkActive]="['router-link-active']" class="list-group-item">
         <i class="fa fa-file-o"></i>&nbsp;{{ 'job adverts'  }}
     </a> -->
-    
-    <a [routerLink]="['/profile']" [routerLinkActive]="['router-link-active']" class="list-group-item">
-        <i class="fa fa-fw fa-edit"></i>&nbsp;{{ 'profile'  }}
-    </a>
-    <a [routerLink]="['/profiles']" [routerLinkActive]="['router-link-active']" class="list-group-item">
-        <i class="fa fa-list"></i>&nbsp;{{ 'profiles'  }}
-    </a>
+    <div class="nested-menu">
+        <a class="list-group-item" (click)="addExpandClass('laboratory')">
+                <span><i class="fa fa-plus"></i>&nbsp;{{ 'laboratory'  }}</span>
+            </a>
+        <li class="nested" [class.expand]="showMenu === 'laboratory'">
+            <ul class="submenu">
+                <li>
+                    <a [routerLink]="['/lab']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                        <i class="fa fa-fw fa-edit"></i>&nbsp;{{ 'create laboratory'  }}
+                    </a>
+                </li>
+                <li>
+                    <a [routerLink]="['/viewLab']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                        <i class="fa fa-search"></i>&nbsp;{{ 'view laboratory'  }}
+                    </a>
+                </li>
+                <li>
+                    <a [routerLink]="['/labs']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                        <i class="fa fa-list"></i>&nbsp;{{ 'laboratories'  }}
+                    </a>
+                </li>
+            </ul>
+        </li>
+    </div>
+    <div class="nested-menu">
+        <a class="list-group-item" (click)="addExpandClass('profile')">
+                <span><i class="fa fa-plus"></i>&nbsp;{{ 'profile'  }}</span>
+            </a>
+        <li class="nested" [class.expand]="showMenu === 'profile'">
+            <ul class="submenu">
+                <li>
+                    <a [routerLink]="['/profile']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                        <i class="fa fa-fw fa-edit"></i>&nbsp;{{ 'create profile'  }}
+                    </a>
+                </li>
+                <li>
+                    <a [routerLink]="['/profiles']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                        <i class="fa fa-list"></i>&nbsp;{{ 'profiles'  }}
+                    </a>
+                </li>
+            </ul>
+        </li>
+    </div>
     <a [routerLink]="['/search']" [routerLinkActive]="['router-link-active']" class="list-group-item">
         <i class="fa fa-search"></i>&nbsp;{{ 'search'  }}
     </a>
@@ -39,7 +75,7 @@
         </a>
             <li class="nested" [class.expand]="showMenu === 'pages'">
                 <ul class="submenu">
-                    <li>
+                    <!-- <li>
                         <a [routerLink]="['/labsignup']" [routerLinkActive]="['router-link-active']" class="list-group-item">
                             <i class="fa fa-fw fa-desktop"></i>&nbsp;{{ 'lab signup'  }}
                         </a>
@@ -48,7 +84,7 @@
                         <a [routerLink]="['/labs']" [routerLinkActive]="['router-link-active']" class="list-group-item">
                             <i class="fa fa-fw fa-wrench"></i>{{ 'laboratories'  }}
                         </a>
-                    </li>
+                    </li> -->
                     <li>
                         <a [routerLink]="['/adverts']" [routerLinkActive]="['router-link-active']" class="list-group-item">
                             <i class="fa fa-file-o"></i>&nbsp;{{ 'job adverts'  }}

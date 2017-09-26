@@ -1,6 +1,5 @@
 import { AuthenticationService } from './../shared/authentication.service';
 import { FirebaseListObservable, AngularFireDatabase } from 'angularfire2/database';
-import { AutocompleteComponent } from './../autocomplete/autocomplete.component';
 import { FieldOfInterestService } from '../shared/field-of-interest.service';
 import { Injectable, OnInit } from '@angular/core';
 import * as _ from 'lodash';

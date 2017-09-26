@@ -1,38 +1,15 @@
-<div class="col-md-6 col-md-offset-3">
-	<pre>{{model | json}}</pre>
-	<h2>Lab</h2>
-	<form name="form" (ngSubmit)="formRef.form.valid && labSubmit()" #formRef="ngForm" novalidate>
-		<div class="form-group" [ngClass]="{ 'has-error': formRef.submitted  }">
-			<label for="name">Lab name</label>
-			<input type="text" class="form-control" name="name" [(ngModel)]="model.name" #nameRef="ngModel" required />
-			<div *ngIf="formRef.submitted && !nameRef.valid" class="help-block">Lab name is required</div>
+<div>
+  <p>
+    This is where you as a laboratory leader can <b>create your laboratory</b>
+  </p>
+  <p>
+    so you can invite fellow researchers and make a space for internal communication
+  </p>
 
-			<label for="address">Address</label>
-			<input type="text" class="form-control" [(ngModel)]="model.address" name="address" #addressRef="ngModel" required>
-
-			<label for="email">Email</label>
-			<input type="text" class="form-control" [(ngModel)]="model.email" name="email" #emailRef="ngModel" required>
-
-			<label for="groupLeader">groupLeader</label>
-			<input type="text" class="form-control" [(ngModel)]="model.groupLeader" name="groupLeader" #groupLeaderRef="ngModel">
-
-			<label for="about">about</label>
-			<input type="text" class="form-control" [(ngModel)]="model.about" name="about" #aboutRef="ngModel">
-
-			<label for="publications">publications</label>
-			<input type="text" class="form-control" [(ngModel)]="model.publications" name="publications" #publicationsRef="ngModel">
-
-			<label for="techniques">Adress</label>
-			<input type="text" class="form-control" [(ngModel)]="model.techniques" name="techniques" #techniquesRef="ngModel">
-		</div>
-		<div class="form-group">
-			<button [disabled]="loading" style="margin-bottom: 15px;" class="btn btn-primary">Submit</button>
-			<i *ngIf="loading" class="fa fa-spinner fa-pulse fa-1x fa-fw"></i>
-			<span class="sr-only">Loading...</span>
-			<embed *ngIf="loading" src="../assets/default-green.svg" width="30" height="30" type="image/svg+xml" pluginspage="http://www.adobe.com/svg/viewer/install/"
-			/>
-		</div>
-		<!--<div *ngIf="error" class="alert alert-danger">{{error}}</div>-->
-	</form>
-
+  <!-- <button md-button md-raised-button color="primary">
+  Create Laboratory
+</button> -->
+</div>
+<div>
+  <dynamic-form [questions]="questions" [path]="path" [entity]="lab"></dynamic-form>
 </div>
