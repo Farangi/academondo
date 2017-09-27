@@ -1,6 +1,6 @@
 <nav class="sidebar" [class.hideSidebar]="!isActive">
     <ul class="list-group">
-        <md-checkbox class="list-group-item" [(ngModel)]="pinned" (click)="togglePinState()">{{(pinned) ? 'pinned' : 'unpin'}}</md-checkbox>
+        <md-checkbox class="list-group-item" [(ngModel)]="pinned" (click)="togglePinState()">{{(pinned) ? 'unpin panel' : 'pin panel'}}</md-checkbox>
         <a routerLink="/dashboard" [routerLinkActive]="['router-link-active']" class="list-group-item" (click)="hideSidenav()">
         <i class="fa fa-fw fa-dashboard"></i>&nbsp;{{ 'dashboard'  }}
     </a>

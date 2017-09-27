@@ -9,19 +9,16 @@ export class NavService {
   pinState: boolean;
   constructor() {
     this.sidenavState$ = new BehaviorSubject(true);
-    this.pinState$ = new BehaviorSubject(true);
+    this.pinState$ = new BehaviorSubject(false);
 
-    this.pinState$.subscribe(state => {
+    this.pinState$
+    .subscribe(state => {
       this.pinState = state;
-      console.log(this.pinState);
     })
    }
 
   toggleSidenav(newstate) {
-    debugger;
-    if(!this.pinState) {
-      return;
-    }
+    if (this.pinState) { return }
     this.sidenavState$.next(newstate);    
   }
 

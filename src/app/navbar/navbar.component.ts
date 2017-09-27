@@ -23,6 +23,7 @@ export class NavbarComponent implements OnInit {
       .subscribe(state => this.sidenavState = state)
   }
 
+
   toggleSideBar() {    
     this.navService.toggleSidenav(!this.sidenavState)
   }

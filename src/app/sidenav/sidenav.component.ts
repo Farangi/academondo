@@ -26,30 +26,30 @@ export class SidenavComponent implements OnInit {
       }
   }
   
-  constructor(private authenticationService: AuthenticationService, private navService: NavService) {
-      this.authenticationService.getUser$().subscribe(user => {
-          this.user = user
-      });
-
-      this.navService.sidenavState$.subscribe(state => {
-        this.isActive = state;        
-      })
-
-      this.navService.pinState$.subscribe(state => {
-          this.pinned = state;
-      })
-
-  }
+  constructor(private authenticationService: AuthenticationService, private navService: NavService) { }
 
   hideSidenav() {
       this.navService.toggleSidenav(this.pinned)
   }
 
-  togglePinState() {
-      this.navService.togglePinned(this.pinned)
+  togglePinState() {      
+      this.navService.togglePinned(!this.pinned)
   }
 
   ngOnInit() {
+    this.pinned = this.navService.pinState;
+      
+      this.authenticationService.getUser$()
+      .subscribe(user => {
+          this.user = user
+      });
+
+      this.navService.sidenavState$    
+      .subscribe(state => {
+          this.isActive = state;
+      })
+      
+      
   }
 
 }
