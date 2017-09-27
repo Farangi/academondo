@@ -1,6 +1,7 @@
+import { NavService } from './../shared/nav.service';
 import { AuthenticationService } from '../shared';
 
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { AngularFireAuth } from 'angularfire2/auth';
 
@@ -11,20 +12,19 @@ import { AngularFireAuth } from 'angularfire2/auth';
 })
 export class NavbarComponent implements OnInit {
 
-  @Output() sideBarToggled = new EventEmitter();
-  
-  user: any;  
-  sidebarState: boolean = true;
+  sidenavState: boolean;  
+  user: any;    
 
-  constructor(private authService: AuthenticationService) {    
-    authService.getUser$().subscribe(user => {            
+  constructor(private authService: AuthenticationService, private navService: NavService) {    
+    this.authService.getUser$().subscribe(user => {
       this.user = user
     });
+    this.navService.sidenavState$
+      .subscribe(state => this.sidenavState = state)
   }
 
-  toggleSideBar() {        
-    this.sidebarState = !this.sidebarState;
-    this.sideBarToggled.emit(this.sidebarState);
+  toggleSideBar() {    
+    this.navService.toggleSidenav(!this.sidenavState)
   }
   signOut() {
     this.authService.signOut();

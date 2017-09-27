@@ -1,3 +1,4 @@
+import { NavService } from './../shared/nav.service';
 import { Roles } from './../shared/models/user';
 import { AuthenticationService } from './../shared';
 import { Component, OnInit, Input } from '@angular/core';
@@ -9,17 +10,14 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class SidenavComponent implements OnInit {
   
-  @Input() isActive:boolean;
+  isActive:boolean;
   showMenu = '';
   user;
+  pinned:boolean;
 
   isAdmin: any = this.authenticationService.getRoles;
   isUniversity: any = this.authenticationService.getRoles;    
   
-  
-//   eventCalled() {      
-//       this.isActive = !this.isActive;
-//   }
   addExpandClass(element: any) {
       if (element === this.showMenu) {
           this.showMenu = '0';
@@ -28,10 +26,27 @@ export class SidenavComponent implements OnInit {
       }
   }
   
-  constructor(private authenticationService: AuthenticationService) {
-      authenticationService.getUser$().subscribe(user => {
+  constructor(private authenticationService: AuthenticationService, private navService: NavService) {
+      this.authenticationService.getUser$().subscribe(user => {
           this.user = user
       });
+
+      this.navService.sidenavState$.subscribe(state => {
+        this.isActive = state;        
+      })
+
+      this.navService.pinState$.subscribe(state => {
+          this.pinned = state;
+      })
+
+  }
+
+  hideSidenav() {
+      this.navService.toggleSidenav(this.pinned)
+  }
+
+  togglePinState() {
+      this.navService.togglePinned(this.pinned)
   }
 
   ngOnInit() {

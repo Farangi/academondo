@@ -1,9 +1,10 @@
-<nav class="sidebar" [class.hideSidebar]="isActive == false">
+<nav class="sidebar" [class.hideSidebar]="!isActive">
     <ul class="list-group">
-        <a routerLink="/dashboard" [routerLinkActive]="['router-link-active']" class="list-group-item">
+        <md-checkbox class="list-group-item" [(ngModel)]="pinned" (click)="togglePinState()">{{(pinned) ? 'pinned' : 'unpin'}}</md-checkbox>
+        <a routerLink="/dashboard" [routerLinkActive]="['router-link-active']" class="list-group-item" (click)="hideSidenav()">
         <i class="fa fa-fw fa-dashboard"></i>&nbsp;{{ 'dashboard'  }}
     </a>
-        <a [routerLink]="['/my-academondo']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+        <a [routerLink]="['/my-academondo']" [routerLinkActive]="['router-link-active']" class="list-group-item" (click)="hideSidenav()">
         <i class="fa fa-fw fa-globe"></i>&nbsp;{{ 'my academondo'  }}
     </a>
         <!-- <a [routerLink]="['/charts']" [routerLinkActive]="['router-link-active']" class="list-group-item">
@@ -23,17 +24,17 @@
         <li class="nested" [class.expand]="showMenu === 'laboratory'">
             <ul class="submenu">
                 <li>
-                    <a [routerLink]="['/lab']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                    <a [routerLink]="['/lab']" [routerLinkActive]="['router-link-active']" class="list-group-item" (click)="hideSidenav()">
                         <i class="fa fa-fw fa-edit"></i>&nbsp;{{ 'create laboratory'  }}
                     </a>
                 </li>
                 <li>
-                    <a [routerLink]="['/viewLab']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                    <a [routerLink]="['/viewLab']" [routerLinkActive]="['router-link-active']" class="list-group-item" (click)="hideSidenav()">
                         <i class="fa fa-search"></i>&nbsp;{{ 'view laboratory'  }}
                     </a>
                 </li>
                 <li>
-                    <a [routerLink]="['/labs']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                    <a [routerLink]="['/labs']" [routerLinkActive]="['router-link-active']" class="list-group-item" (click)="hideSidenav()">
                         <i class="fa fa-list"></i>&nbsp;{{ 'laboratories'  }}
                     </a>
                 </li>
@@ -47,26 +48,26 @@
         <li class="nested" [class.expand]="showMenu === 'profile'">
             <ul class="submenu">
                 <li>
-                    <a [routerLink]="['/profile']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                    <a [routerLink]="['/profile']" [routerLinkActive]="['router-link-active']" class="list-group-item" (click)="hideSidenav()">
                         <i class="fa fa-fw fa-edit"></i>&nbsp;{{ 'create profile'  }}
                     </a>
                 </li>
                 <li>
-                    <a [routerLink]="['/profiles']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                    <a [routerLink]="['/profiles']" [routerLinkActive]="['router-link-active']" class="list-group-item" (click)="hideSidenav()">
                         <i class="fa fa-list"></i>&nbsp;{{ 'profiles'  }}
                     </a>
                 </li>
             </ul>
         </li>
     </div>
-    <a [routerLink]="['/search']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+    <a [routerLink]="['/search']" [routerLinkActive]="['router-link-active']" class="list-group-item" (click)="hideSidenav()">
         <i class="fa fa-search"></i>&nbsp;{{ 'search'  }}
     </a>
 
-    <a [routerLink]="['/admin']" [routerLinkActive]="['router-link-active']" class="list-group-item" *ngIf="(isAdmin | async)?.admin">
+    <a [routerLink]="['/admin']" [routerLinkActive]="['router-link-active']" class="list-group-item" *ngIf="(isAdmin | async)?.admin" (click)="hideSidenav()">
         <i class="fa fa-th-list"></i>&nbsp;{{ 'admin'  }}
     </a>
-        <a [routerLink]="['/university']" [routerLinkActive]="['router-link-active']" class="list-group-item" *ngIf="(isUniversity | async)?.university">
+        <a [routerLink]="['/university']" [routerLinkActive]="['router-link-active']" class="list-group-item" *ngIf="(isUniversity | async)?.university" (click)="hideSidenav()">
           <i class="fa fa-th-list"></i>&nbsp;{{ 'university'  }}
     </a>
         <div class="nested-menu" *ngIf="user?.name === 'Simon Agerskov'">
@@ -86,15 +87,19 @@
                         </a>
                     </li> -->
                     <li>
-                        <a [routerLink]="['/adverts']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                        <a [routerLink]="['/adverts']" [routerLinkActive]="['router-link-active']" class="list-group-item" (click)="hideSidenav()">
                             <i class="fa fa-file-o"></i>&nbsp;{{ 'job adverts'  }}
                         </a>                        
                     </li>
                     <li>
-                        <a [routerLink]="['/bs']" [routerLinkActive]="['router-link-active']"><span>{{ 'bootstrappa'  }}</span></a>
+                        <a [routerLink]="['/bs']" [routerLinkActive]="['router-link-active']" (click)="hideSidenav()">
+                            <span>{{ 'bootstrappa'  }}</span>
+                        </a>
                     </li>
                     <li>
-                        <a [routerLink]="['/cv']" [routerLinkActive]="['router-link-active']"><span>{{ 'cv'  }}</span></a>
+                        <a [routerLink]="['/cv']" [routerLinkActive]="['router-link-active']" (click)="hideSidenav()">
+                            <span>{{ 'cv'  }}</span>
+                        </a>
                     </li>
                 </ul>
             </li>

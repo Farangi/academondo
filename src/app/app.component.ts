@@ -5,9 +5,4 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  isActive: boolean;
-  handleSideBar(event) {
-    this.isActive = event;
-  }
-}
+export class AppComponent { }

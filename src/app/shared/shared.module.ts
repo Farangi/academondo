@@ -102,6 +102,7 @@ import { MultiselectDropdownModule } from 'angular-2-dropdown-multiselect';
 
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { UniversityComponent } from './university/university.component';
+import { NavService } from './nav.service';
 
 
 
@@ -280,6 +281,7 @@ const firebaseUiAuthConfig: FirebaseUIAuthConfig = {
     UniversityGuard,
     UserSettingsService,
     SearchAlgoliaService,
+    NavService,
   ],
 })
 export class SharedModule { }
