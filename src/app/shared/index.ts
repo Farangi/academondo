@@ -5,7 +5,6 @@ export { AuthenticationService } from './authentication.service';
 export { AuthGuard } from './auth.guard';
 export { FieldOfInterestService } from './field-of-interest.service';
 export { ValidationService } from './validation.service';
-export { LabService } from './lab.service';
 export { PubmedService } from './pubmed.service';
 export { LaboratoryTechniqueService } from './laboratory-technique.service';
 export { CountryService } from './country.service';

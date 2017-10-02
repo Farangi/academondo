@@ -13,7 +13,6 @@ export const environment = {
    apiKey: '5989ec39df7d54608e857b170a0cb7d2',
    indexName: 'getstarted_actors',
    urlSync: false
-
  }, 
 };
 

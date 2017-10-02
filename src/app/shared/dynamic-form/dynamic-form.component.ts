@@ -18,6 +18,7 @@ import { QuestionBase } from '../models';
           <button md-raised-button color="primary" mdStepperNext>Begin</button>
         </div>
       </md-step>    
+
       <div *ngFor="let question of questions">
       <md-step [label]="question.label">
         <df-question [question]="question" [form]="form"></df-question>
@@ -27,6 +28,7 @@ import { QuestionBase } from '../models';
         </div>
       </md-step>
       </div>
+      
       <md-step label="Confirm your information">
         Everything seems correct, feel free to edit anytime :-)
         <div>

@@ -25,17 +25,17 @@
             <ul class="submenu">
                 <li>
                     <a [routerLink]="['/lab']" [routerLinkActive]="['router-link-active']" class="list-group-item" (click)="hideSidenav()">
-                        <i class="fa fa-fw fa-edit"></i>&nbsp;{{ 'create laboratory'  }}
+                        <i class="fa fa-edit"></i>&nbsp;{{ 'create laboratory' }}
                     </a>
                 </li>
                 <li>
-                    <a [routerLink]="['/viewLab']" [routerLinkActive]="['router-link-active']" class="list-group-item" (click)="hideSidenav()">
-                        <i class="fa fa-search"></i>&nbsp;{{ 'view laboratory'  }}
+                    <a [routerLink]="['/manageLab']" [routerLinkActive]="['router-link-active']" class="list-group-item" (click)="hideSidenav()">
+                        <i class="fa fa-search"></i>&nbsp;{{ 'manage laboratory' }}
                     </a>
                 </li>
                 <li>
                     <a [routerLink]="['/labs']" [routerLinkActive]="['router-link-active']" class="list-group-item" (click)="hideSidenav()">
-                        <i class="fa fa-list"></i>&nbsp;{{ 'laboratories'  }}
+                        <i class="fa fa-list"></i>&nbsp;{{ 'laboratories' }}
                     </a>
                 </li>
             </ul>

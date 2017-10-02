@@ -12,10 +12,20 @@ export class QuestionControlService {
     this.userId = this.authenticationService.getUserId();
    }
 
+  private creationHandler(path, data) {
+    let result = data;
+    if (path === '/labs') {      
+      result.members = { [this.userId]: true }
+    }
+    return result;
+  }
   private create(path, data) {
+    
     if (this.userId){
-      data.userId = this.userId;
-      this.db.list(path).push(data);
+      let result = this.creationHandler(path, data);
+      result.userId = this.userId;
+      console.log(result)
+      this.db.list(path).push(result);
     }
   }
 

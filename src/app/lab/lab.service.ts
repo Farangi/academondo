@@ -26,8 +26,13 @@ export class LabService {
   private userId: string;
 
   private path = '/labs';  
+  haveApplied$: Observable<any>;
 
-  constructor(private countryService: CountryService, private laboratoryTechniqueService: LaboratoryTechniqueService, private fieldOfInterestService: FieldOfInterestService, private db: AngularFireDatabase, private authenticationService: AuthenticationService) { 
+  constructor(
+    private countryService: CountryService, private laboratoryTechniqueService: LaboratoryTechniqueService,
+    private fieldOfInterestService: FieldOfInterestService, private db: AngularFireDatabase,
+    private authenticationService: AuthenticationService
+  ) { 
     this.userId = this.authenticationService.getUserId() //rework!
 
     authenticationService.user.map(user => {
@@ -51,7 +56,91 @@ export class LabService {
       .flatMap(list => list)
       .subscribe((data: any) => {
         this.fieldOfInterestOptions.push(data)
+      })    
+  }
+
+  delete(labKey) {
+    this.db.object(`${this.path}/${labKey}`).remove();    
+  }
+  
+  apply(labKey) {    
+    const data = { [this.userId]: true }
+    const applicants = this.db.object(`${this.path}/${labKey}/applicants`)
+    applicants.update(data);
+  }
+  applylist(labKey) {
+    const data = { ['applied']: true }
+    const lab = this.db.list(`${this.path}/${labKey}/`)
+    lab.update(`/applicants/${this.userId}`, data)
+  }
+
+  acceptApplicant(labKey, uid) {
+    const data = { [uid]: true }
+    const members = this.db.object(`${this.path}/${labKey}/members`)
+    members.update(data);
+    this.removeApplicant(labKey, uid);
+  }
+
+  acceptApplicantlist(labKey, uid) {
+    const data = { [uid]: true }
+    const members = this.db.list(`${this.path}/${labKey}/members`)
+    members.push(data);
+    this.removeApplicant(labKey, uid);
+
+  }
+
+  isMember(labKey) {
+    return this.isPartOf('members', labKey);
+  }
+
+  isApplicant(labKey): Observable<boolean> {
+    return this.isPartOf('applicants', labKey);
+  }
+
+  isOwnLab(lab): boolean {    
+    return this.userId === lab.userId;
+  }  
+
+  private isPartOf(path, labKey): Observable<boolean> {
+    return this.db.object(`${this.path}/${labKey}/${path}/${this.userId}`)
+      .map(obj => {
+        if (obj.$exists()) {
+          return true
+        } else {
+          return false
+        }
       })
+  }  
+
+  leave(labKey) {
+    const member = this.db.object(`${this.path}/${labKey}/members/${this.userId}`)
+    member.remove();
+  }
+
+  private remove(path, labKey, uid?) {    
+    let applicant;
+    if (uid) {
+      applicant = this.db.object(`${this.path}/${labKey}/${path}/${uid}`)
+    } else {
+      applicant = this.db.object(`${this.path}/${labKey}/${path}/${this.userId}`)
+    }
+    applicant.remove();
+  }
+  private removelist(path, labKey, uid?) {    
+    let applicant = this.db.list(`${this.path}/${labKey}/${path}`)
+    if (uid) {
+      applicant.remove(uid)
+    } else {
+      applicant.remove(this.userId)
+    }    
+  }
+
+  removeApplicant(labKey, uid?) {
+    this.remove('applicants', labKey, uid);
+  }
+
+  removeMember(labKey, uid?) {
+    this.remove('members', labKey, uid);
   }
 
   getPath(): string {
@@ -66,7 +155,7 @@ export class LabService {
         orderByChild: 'userId',
         equalTo: this.userId,
       })
-        .map((entities) => {          
+        .map((entities) => {  
           let [entity] = entities;
           return entity;
         })

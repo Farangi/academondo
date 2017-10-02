@@ -44,9 +44,29 @@
         </md-chip>
       </md-chip-list>
     </md-card-content>
-    <md-card-actions>
-      <button md-button>LIKE</button>
-    </md-card-actions>
+    <md-card-footer>
+      <md-progress-bar mode="determinate"></md-progress-bar>
+    </md-card-footer>
+  </md-card>
+  <md-card>
+    <md-card-title>
+      Members
+    </md-card-title>
+    <md-card-content *ngFor="let member of objectKeys(lab.members)">
+      <div>
+        <app-view-username [userKey]="member" [owner]="isOwner"></app-view-username>
+        <!-- <a target="_blank" href="https://academondo.com">link to account</a> -->
+      </div>
+    </md-card-content>    
+    <md-card-content *ngIf="!haveApplied && !isMember && !isOwner">
+      <button md-raised-button color="primary" (click)="apply(lab.$key)">Apply for membership</button>
+    </md-card-content>
+    <md-card-content *ngIf="haveApplied">      
+      <button md-raised-button color="accent" (click)="unApply(lab.$key)">Remove application</button>
+    </md-card-content>
+    <md-card-content *ngIf="isMember && !isOwner">
+      <button md-raised-button color="accent" (click)="leave(lab.$key)">Leave lab</button>
+    </md-card-content>
     <md-card-footer>
       <md-progress-bar mode="determinate"></md-progress-bar>
     </md-card-footer>

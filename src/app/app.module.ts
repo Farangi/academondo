@@ -8,7 +8,7 @@ import { LabModule } from './lab/lab.module';
 
 @NgModule({
   declarations: [
-    AppComponent,    
+    AppComponent,
   ],
   imports: [
     BrowserModule,

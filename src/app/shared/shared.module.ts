@@ -38,7 +38,6 @@ import {
   AlertService,
   AuthenticationService,
   AuthGuard,
-  LabService,
   PubmedService,
   LaboratoryTechniqueService,
   UrlSizeLimiterPipe,
@@ -103,8 +102,6 @@ import { MultiselectDropdownModule } from 'angular-2-dropdown-multiselect';
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { UniversityComponent } from './university/university.component';
 import { NavService } from './nav.service';
-
-
 
 // const facebookCustomConfig: AuthProviderWithCustomConfig = {
 //   provider: AuthProvider.Facebook,
@@ -273,7 +270,6 @@ const firebaseUiAuthConfig: FirebaseUIAuthConfig = {
     AlertService,
     AuthenticationService,
     AuthGuard,
-    LabService,
     PubmedService,
     LaboratoryTechniqueService,
     CountryService,

@@ -1,5 +1,6 @@
+import { AuthenticationService } from './../shared/authentication.service';
 import { LabService } from './lab.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-view-lab',
@@ -7,16 +8,57 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./view-lab.component.css']
 })
 export class ViewLabComponent implements OnInit {
+  objectKeys(items) {
+    if (items) {
+      return Object.keys(items);
+    }
+  }  
 
-  lab
+  @Input() lab: any;
 
-  constructor(private labService: LabService) { }
+  haveApplied: boolean;
+  isMember: boolean;
+  isOwner: boolean;
+
+  constructor(private labService: LabService, private authenticationService: AuthenticationService) { }
 
   ngOnInit() {
-    this.labService.getOwnEntity()
-      .subscribe(data => {
-        this.lab = data
-      });
+    this.isApplicant(this.lab);
+    this.isMemberOf(this.lab);
+    this.isOwnLab(this.lab);
   }
+
+  apply(key) {    
+    this.labService.apply(key);
+  }
+
+  unApply(key) {
+    this.labService.removeApplicant(key);
+  }
+
+  leave(key) {
+    this.labService.leave(key);
+  }
+
+  isApplicant(lab) {
+    this.labService.isApplicant(lab.$key)    
+    .subscribe(value => {
+      this.haveApplied = value;
+    })
+  }
+
+  isMemberOf(lab) {
+    this.labService.isMember(lab.$key)
+      .subscribe(value => {        
+        this.isMember = value;
+      })
+  }
+
+  isOwnLab(lab) {
+    this.isOwner =  this.labService.isOwnLab(lab);
+  }
+  
+
+
 
 }
