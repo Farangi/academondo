@@ -10,6 +10,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./manage-lab.component.css']
 })
 export class ManageLabComponent implements OnInit {
+
   objectKeys(items) {
     if (items) {
       return Object.keys(items);       

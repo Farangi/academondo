@@ -1,15 +1,17 @@
 import { LabService } from './lab.service';
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-lab',
   templateUrl: './lab.component.html',
-  styleUrls: ['./lab.component.css']
+  styleUrls: ['./lab.component.css'],
 })
 export class LabComponent implements OnInit {
   questions: any[];
   path: string;
   lab;
+  viewLab = false;  
 
   constructor(private labService: LabService) { }
 
@@ -17,6 +19,10 @@ export class LabComponent implements OnInit {
     this.questions = this.labService.getQuestions();
     this.path = this.labService.getPath();
     this.lab = this.labService.getOwnEntity();
-  }
 
+    this.lab
+    .subscribe(lab => {
+      this.viewLab = lab
+    })
+  }
 }

@@ -1,8 +1,11 @@
-<div>
-  <p>
-    This is where you as a laboratory leader can <b>create your laboratory</b>
-  </p>
-</div>
-<div>
-  <dynamic-form [questions]="questions" [path]="path" [entity]="lab"></dynamic-form>
+<div class=" container-fluid">
+  <div class="row">
+    <div class="col-sm-6 col-md-6 col-lg-5">
+      <h2>Lab form</h2>
+      <dynamic-form [questions]="questions" [path]="path" [entity]="lab"></dynamic-form>
+    </div>
+    <div class="col-sm-6 col-md-6 col-lg-7">
+      <app-view-lab [lab]="viewLab" [view]="true" ></app-view-lab>
+    </div>
+  </div>
 </div>

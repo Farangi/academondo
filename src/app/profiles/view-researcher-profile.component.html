@@ -23,7 +23,7 @@
       Technniques
     </md-card-title>
     <md-card-content>
-      <md-chip-list>
+      <md-chip-list class="mat-chip-list-stacked">
         <md-chip *ngFor="let technique of profile.techniques" selected>
           {{technique}}
         </md-chip>
@@ -38,7 +38,7 @@
       Field of interests
     </md-card-title>
     <md-card-content>
-      <md-chip-list>
+      <md-chip-list class="mat-chip-list-stacked">
         <md-chip *ngFor="let fieldOfInterest of profile.fieldOfInterests" selected>
           {{fieldOfInterest}}
         </md-chip>

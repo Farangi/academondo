@@ -2,17 +2,17 @@
 
 
 
-/*@import '~@angular/material/prebuilt-themes/indigo-pink.css';*/
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
 /*@import '~@angular/material/prebuilt-themes/pink-bluegrey.css';*/
-/*@import '~@angular/material/prebuilt-themes/purple-green.css';*/
-@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+/* @import '~@angular/material/prebuilt-themes/purple-green.css'; */
+/* @import '~@angular/material/prebuilt-themes/deeppurple-amber.css'; */
 
 /* @import '~@angular/material/theming';
 @import '~@covalent/core/theming/all-theme'; */
 
 body {
     /*padding: 2em 23em;*/
-    background:lightgray;
+    /* background:lightgray; */
 }
 
 .baseComponent {    

@@ -1,3 +1,4 @@
+import { slideOpen } from './../_animations/slideOpen';
 import { NavService } from './../shared/nav.service';
 import { Roles } from './../shared/models/user';
 import { AuthenticationService } from './../shared';
@@ -6,7 +7,8 @@ import { Component, OnInit, Input } from '@angular/core';
 @Component({
   selector: 'app-sidenav',
   templateUrl: './sidenav.component.html',
-  styleUrls: ['./sidenav.component.scss']
+  styleUrls: ['./sidenav.component.scss'],
+  animations: [slideOpen]
 })
 export class SidenavComponent implements OnInit {
   
@@ -14,6 +16,7 @@ export class SidenavComponent implements OnInit {
   showMenu = '';
   user;
   pinned:boolean;
+//   pinned = true;
 
   isAdmin: any = this.authenticationService.getRoles;
   isUniversity: any = this.authenticationService.getRoles;    

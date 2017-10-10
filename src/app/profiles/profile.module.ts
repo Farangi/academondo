@@ -14,12 +14,14 @@ import { RouterModule } from '@angular/router';
       {
         path: 'profile',
         component: ResearcherProfileComponent,
-        canActivate: [AuthGuard]
+        canActivate: [AuthGuard],
+        data: { animation: 'profile' }
       },
       {
         path: 'profiles',
         component: ProfilesComponent,
-        canActivate: [AuthGuard]
+        canActivate: [AuthGuard],
+        data: { animation: 'profiles' }
       }, 
     ]),    
     SharedModule    

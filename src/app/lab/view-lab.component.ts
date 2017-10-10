@@ -15,6 +15,7 @@ export class ViewLabComponent implements OnInit {
   }  
 
   @Input() lab: any;
+  @Input() view: boolean;
 
   haveApplied: boolean;
   isMember: boolean;

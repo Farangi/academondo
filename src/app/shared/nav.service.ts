@@ -9,7 +9,7 @@ export class NavService {
   pinState: boolean;
   constructor() {
     this.sidenavState$ = new BehaviorSubject(true);
-    this.pinState$ = new BehaviorSubject(true);
+    this.pinState$ = new BehaviorSubject(false);
 
     this.pinState$
     .subscribe(state => {

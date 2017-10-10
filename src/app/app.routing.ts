@@ -1,3 +1,4 @@
+import { animation } from '@angular/core/src/animation/dsl';
 import { UniversityComponent } from './shared/university/university.component';
 import { ProfilesComponent } from './profiles/profiles.component';
 import { SearchComponent } from './search/search/search.component';
@@ -26,61 +27,73 @@ const routes: Routes = [
         path: 'dashboard',
         component: DashboardComponent,
         canActivate: [AuthGuard],
+        data: { animation: 'dashboard'}
         // canDeactivate: [LeaveComponentGuard]
     },
     {
         path: 'my-academondo',
         component: MyAcademondoComponent,
-        canActivate: [AuthGuard]
+        canActivate: [AuthGuard],
+        data: { animation: 'my-academondo' }
     },    
     {
         path: 'PubMed',
         component: PubmedComponent,
-        canActivate: [AuthGuard]
+        canActivate: [AuthGuard],
+        data: { animation: 'PubMed' }        
     },
     {
         path: 'search',
         component: SearchComponent,
-        canActivate: [AuthGuard]
+        canActivate: [AuthGuard],
+        data: { animation: 'search' }
     },    
     {
         path: 'adverts',
         component:  AdvertComponent,
-        canActivate: [AuthGuard]
+        canActivate: [AuthGuard],
+        data: { animation: 'adverts' }
     },
     {
         path: 'cv',
         component: CvComponent,
-        canActivate: [AuthGuard]
+        canActivate: [AuthGuard],
+        data: { animation: 'cv' }
     },   
     {
         path: 'bs',
         component: BootstrapTestComponent,
-        canActivate: [AuthGuard]
+        canActivate: [AuthGuard],
+        data: { animation: 'bs' }
     },    
     {
         path: 'admin',
         component: AdminPageComponent,
-        canActivate: [AdminGuard]
+        canActivate: [AdminGuard],
+        data: { animation: 'admin' }
     },
     {
         path: 'university',
         component: UniversityComponent,
-        canActivate: [UniversityGuard]
+        canActivate: [UniversityGuard],
+        data: { animation: 'university' }
     },    
     {
         path: 'login',
-        component: LoginComponent
+        component: LoginComponent,
+        data: { animation: 'login' }
     },
     {
         path: '',
         redirectTo: '/dashboard',
-        pathMatch: 'full'
+        pathMatch: 'full',
+        data: { animation: ' '}
     },    
     {
         path: '**',
         pathMatch: 'full',
-        component: PageNotFoundComponent
+        component: PageNotFoundComponent,
+        data: { animation: '**' }
     }
 ];
 

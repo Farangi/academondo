@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { ProfileModule } from './profiles/profile.module';
 import { routing } from './app.routing';
 import { LabModule } from './lab/lab.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -12,10 +13,11 @@ import { LabModule } from './lab/lab.module';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     SharedModule,
     ProfileModule,
     LabModule,
-    routing,    
+    routing,
   ],
 
   bootstrap: [AppComponent]

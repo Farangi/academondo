@@ -16,17 +16,20 @@ import { ManageLabComponent } from './manage-lab.component';
       {
         path: 'lab',
         component: LabComponent,
-        canActivate: [AuthGuard]
+        canActivate: [AuthGuard],
+        data: { animation: 'lab' }
       },
       {
         path: 'manageLab',
         component: ManageLabComponent,
-        canActivate: [AuthGuard]
+        canActivate: [AuthGuard],
+        data: { animation: 'manageLab' }
       },
       {
         path: 'labs',
         component: LabsComponent,
-        canActivate: [AuthGuard]
+        canActivate: [AuthGuard],
+        data: { animation: 'labs' }
       },      
     ]),
     SharedModule    
