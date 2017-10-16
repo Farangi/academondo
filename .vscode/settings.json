@@ -1,2 +1,9 @@
 {
+    "editor.quickSuggestions": false,
+    "editor.parameterHints": false,
+    "editor.suggestOnTriggerCharacters": false,
+    "editor.wordBasedSuggestions": false,
+    "editor.fontSize": 16,
+    "window.zoomLevel": 0,
+    "css.validate": false
 }

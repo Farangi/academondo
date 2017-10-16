@@ -6,19 +6,29 @@
   </div>
 </div> -->
 
-<app-navbar></app-navbar>
+<!-- <app-navbar></app-navbar>
 <app-sidenav></app-sidenav>
 
 <section class="main-container">
     <div [@routerAnimation]="getRouteAnimation(route)">
         <router-outlet #route="outlet"></router-outlet>
     </div>
-</section>
+</section> -->
 
-<!-- <md-sidenav-container class="demo-root" fullscreen>
+<md-sidenav-container class="demo-root" fullscreen>
     <md-sidenav #start>
         <md-nav-list>
-            <a *ngFor="let navItem of navItems" md-list-item (click)="start.close()" routerLinkActive #routerLinkActiveInstance="routerLinkActive"
+            <!-- <a [routerLink]="['/lab']" [routerLinkActive]="['router-link-active']" md-list-item (click)="start.close()">
+                <i class="fa fa-edit"></i>&nbsp;{{ 'create laboratory' }}
+            </a>                    
+            <a [routerLink]="['/manageLab']" [routerLinkActive]="['router-link-active']" md-list-item (click)="start.close()">
+                <i class="fa fa-search"></i>&nbsp;{{ 'manage laboratory' }}
+            </a>
+
+            <a [routerLink]="['/labs']" [routerLinkActive]="['router-link-active']" md-list-item (click)="start.close()" >
+                <i class="fa fa-list"></i>&nbsp;{{ 'laboratories' }}
+            </a> -->
+        <a *ngFor="let navItem of navItems" md-list-item (click)="start.close()" routerLinkActive #routerLinkActiveInstance="routerLinkActive"
                 [attr.tabindex]="routerLinkActiveInstance.isActive ? 0 : -1" [routerLink]="[navItem.route]">
         {{navItem.name}}
       </a>
@@ -28,8 +38,7 @@
             <a md-list-item tabindex="-1" (click)="start.close()" [routerLink]="['/baseline']">
         Baseline
       </a>
-        </md-nav-list>
-        <button md-button tabindex="-1" (click)="start.close()">CLOSE</button>
+        </md-nav-list>        
     </md-sidenav>
     <div>
         <md-toolbar color="primary">
@@ -37,17 +46,16 @@
         <md-icon>menu</md-icon>
       </button>
             <div class="demo-toolbar">
-                <h1>Angular mderial Demos</h1>
+                <h1>AcadeMondo IVS</h1>
                 <div>
                     <button md-icon-button (click)="toggleFullscreen()" title="Toggle fullscreen">
             <md-icon>fullscreen</md-icon>
           </button>
                 </div>
             </div>
-        </md-toolbar>
-
-        <div #root="dir" dir="ltr" class="demo-content">
-            <router-outlet></router-outlet>
-        </div>
+        </md-toolbar>        
+        <div [@routerAnimation]="getRouteAnimation(route)" class="demo-content">
+            <router-outlet #route="outlet"></router-outlet>
+        </div>        
     </div>
-</md-sidenav-container> -->
+</md-sidenav-container>

@@ -1,14 +1,9 @@
 <div *ngIf="lab">
-  <!-- <md-card>
-    <a [routerLink]="['/lab']">
-      <i class="fa fa-edit"></i>&nbsp;{{ 'edit laboratory' }}
-    </a>
-  </md-card> -->
   <md-card>
     <md-card-title>
       {{lab.labName}}
-      <a [routerLink]="['/lab']">
-        <i class="fa fa-edit"></i>
+      <a color="warn" [routerLink]="['/lab']">
+        <i color="warn" class="fa fa-edit"></i>
       </a>
       <md-card-subtitle>
         {{lab.labLeader}}

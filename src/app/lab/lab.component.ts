@@ -22,7 +22,9 @@ export class LabComponent implements OnInit {
 
     this.lab
     .subscribe(lab => {
-      this.viewLab = lab
+      if(lab) {
+        this.viewLab = lab
+      }      
     })
   }
 }
