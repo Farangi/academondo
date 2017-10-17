@@ -5,5 +5,13 @@
     "editor.wordBasedSuggestions": false,
     "editor.fontSize": 16,
     "window.zoomLevel": 0,
-    "css.validate": false
+    "css.validate": false,
+
+    "editor.detectIndentation": false,
+    "editor.tabSize": 2,
+
+    "git.confirmSync": false,
+    "terminal.integrated.shell.windows": "C:\\WINDOWS\\Sysnative\\WindowsPowerShell\\v1.0\\powershell.exe",
+    "editor.minimap.enabled": false,
+    "editor.formatOnPaste": true    
 }

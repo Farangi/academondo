@@ -1,0 +1,29 @@
+<div>
+  <form [formGroup]="form">
+    <md-vertical-stepper>
+      <md-step>
+        Everything gets saved on the fly, enjoy!
+        <div>
+          <button md-raised-button color="primary" mdStepperNext>Begin</button>
+        </div>
+      </md-step>
+
+      <div *ngFor="let question of questions">
+        <md-step [label]="question.label">
+          <df-question [question]="question" [form]="form"></df-question>
+          <div>
+            <button md-raised-button color="primary" mdStepperPrevious>Back</button>
+            <button md-raised-button color="primary" mdStepperNext>Next</button>
+          </div>
+        </md-step>
+      </div>
+
+      <md-step label="Confirm your information">
+        Everything seems correct, feel free to edit anytime :-)
+        <div>
+          <button md-raised-button color="primary" mdStepperPrevious>Back</button>
+        </div>
+      </md-step>
+    </md-vertical-stepper>
+  </form>
+</div>
