@@ -1,10 +1,17 @@
-// @import '~@angular/material/theming';
+@import '~@angular/material/theming';
 
-// @include mat-core();
+@include mat-core();
 
-// $dark-primary: mat-palette($mat-blue-grey);
-// $dark-accent:  mat-palette($mat-amber, A200, A100, A400);
-// $dark-warn:    mat-palette($mat-deep-orange);
-// $dark-theme:   mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
+$dark-primary: mat-palette($mat-blue-grey);
+$dark-accent:  mat-palette($mat-amber, A200, A100, A400);
+$dark-warn:    mat-palette($mat-deep-orange);
+$dark-theme:   mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
+$light-theme:   mat-light-theme($dark-primary, $dark-accent, $dark-warn);
 
-// @include angular-material-theme($dark-theme);
+$vff-primary: mat-palette($mat-teal, 700);
+$vff-accent:  mat-palette($mat-amber, A200, A100, A400);
+$vff-warn:    mat-palette($mat-deep-orange);
+
+$vff-theme: mat-light-theme($vff-primary, $vff-accent, $vff-warn);
+
+@include angular-material-theme($vff-theme);

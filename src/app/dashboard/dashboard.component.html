@@ -1,5 +1,9 @@
-<div class="col-lg-12 col-md-8 col-offset-md-3 col-sm-12">    
-    <app-pubmed (articlesUpdated)="handleArticlesUpdated($event)" ></app-pubmed>
-    <app-pubmed-viewer [articles]="articles"></app-pubmed-viewer>
+<div class=" container-fluid">
+  <div class="row">
+    <div class="col-sm-12 col-md-10 col-lg-7 mx-auto">
+      <app-pubmed (articlesUpdated)="handleArticlesUpdated($event)"></app-pubmed>
+      <app-pubmed-viewer [articles]="articles"></app-pubmed-viewer>
+    </div>
+  </div>
 </div>
 

@@ -69,6 +69,7 @@ import {
   MdChipsModule,
   MdDatepickerModule,
   MdDialogModule,
+  MdDialog,
   MdExpansionModule,
   MdFormFieldModule,
   MdGridListModule,

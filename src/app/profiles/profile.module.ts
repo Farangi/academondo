@@ -1,3 +1,4 @@
+import { ViewProfileDialogComponent } from './view-profile-dialog.component';
 import { AuthGuard } from './../shared/auth.guard';
 import { ResearcherProfileService } from './researcher-profile.service';
 import { ResearcherProfileComponent } from './researcher-profile.component';
@@ -30,9 +31,13 @@ import { RouterModule } from '@angular/router';
     ResearcherProfileComponent,
     ViewResearcherProfileComponent,
     ProfilesComponent,
+    ViewProfileDialogComponent
   ],
   providers : [
     ResearcherProfileService,    
+  ],
+  entryComponents: [
+    ViewProfileDialogComponent
   ]
 })
 export class ProfileModule { }

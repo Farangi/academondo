@@ -26,3 +26,13 @@ body {
   height: 100%;
   box-sizing: border-box;
 }
+
+.am-background {
+  max-width: 100%;
+  height: auto;
+}
+
+.am-backg {
+  background-size: cover;
+  background-image: url('./../assets/background.png');
+}

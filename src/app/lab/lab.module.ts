@@ -9,7 +9,6 @@ import { LabService } from './lab.service';
 import { ViewLabComponent } from './view-lab.component';
 import { ManageLabComponent } from './manage-lab.component';
 
-
 @NgModule({
   imports: [
     RouterModule.forChild([

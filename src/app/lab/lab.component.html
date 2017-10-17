@@ -1,10 +1,16 @@
 <div class=" container-fluid">
   <div class="row">
-    <div class="col-sm-6 col-md-6 col-lg-5">
-      <h2>Lab form</h2>
-      <dynamic-form [questions]="questions" [path]="path" [entity]="lab"></dynamic-form>
+    <div class="col-sm-6 col-md-6 col-lg-6 mx-auto am-margin">
+      <md-card>
+        <md-card-title>
+          Lab form
+        </md-card-title>
+        <md-card-content>
+          <dynamic-form [questions]="questions" [path]="path" [entity]="lab"></dynamic-form>
+        </md-card-content>
+      </md-card>
     </div>
-    <div class="col-sm-6 col-md-6 col-lg-7">
+    <div class="col-sm-6 col-md-6 col-lg-6">
       <app-view-lab [lab]="viewLab" [view]="true" ></app-view-lab>
     </div>
   </div>

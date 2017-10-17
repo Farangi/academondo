@@ -1,6 +1,7 @@
 import { AuthenticationService } from './shared/authentication.service';
 import { OnInit } from '@angular/core';
 import { routerAnimation } from './_animations/routerAnimation';
+import { DomSanitizer, SafeStyle } from '@angular/platform-browser';
 // import { Component } from '@angular/core';
 
 // @Component({
@@ -33,35 +34,54 @@ import { Component, ElementRef, Renderer2, ViewEncapsulation } from '@angular/co
 export class AppComponent implements OnInit {
   dark = false;
   navItems = [
-    { name: 'dashboard', route: '/dashboard' },
-    { name: 'my academondo', route: '/my-academondo' },
+    { name: 'Dashboard', route: '/dashboard' },
+    // { name: 'My academondo', route: '/my-academondo' },
     { name: 'Create laboratory', route: '/lab' },
     { name: 'Manage laboratory', route: '/manageLab' },        
-    { name: 'laboratories', route: '/labs' },
-    { name: 'job adverts', route: '/adverts' },
-    { name: 'create profile', route: '/profile' },
-    { name: 'profiles', route: '/profiles' }
+    { name: 'Laboratories', route: '/labs' },    
+    { name: 'Create profile', route: '/profile' },
+    { name: 'Profiles', route: '/profiles' },
+    { name: 'Job adverts', route: '/adverts' },
   ];
 
   user: any;
+  backgroundImageStyle: SafeStyle;
 
   constructor(
     private authenticationService: AuthenticationService,    
     private _element: ElementRef,
     private _renderer: Renderer2,
-    private _overlayContainer: OverlayContainer) { }
+    private _overlayContainer: OverlayContainer,
+    private authService: AuthenticationService,
+    private sanitizer: DomSanitizer ) { }
 
-  ngOnInit() {   
+  ngOnInit() {
+    this.backgroundImageStyle = this.getBackgroundImageStyle();
 
     this.authenticationService.getUser$()
       .subscribe(user => {
         this.user = user
       })
-  }    
+  }
+
+  private getBackgroundImageStyle() {
+    let backgroundImage = '../../assets/background.png';
+
+    // sanitize the style expression
+    const style = `
+      background-image: url(${backgroundImage})
+      background-size: cover;
+    `;
+    return this.sanitizer.bypassSecurityTrustStyle(style)
+  } 
 
   getRouteAnimation(outlet) {
     return outlet.activatedRouteData.animation
   }
+
+  signOut() {
+    this.authService.signOut();
+  }      
     
   toggleFullscreen() {
     let elem = this._element.nativeElement.querySelector('.demo-content');
