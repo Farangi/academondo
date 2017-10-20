@@ -1,5 +1,5 @@
 import { AuthenticationService } from './../shared/authentication.service';
-import { FirebaseListObservable, AngularFireDatabase } from 'angularfire2/database';
+import { AngularFireDatabase } from 'angularfire2/database';
 import { FieldOfInterestService } from '../shared/field-of-interest.service';
 import { Injectable, OnInit } from '@angular/core';
 import * as _ from 'lodash';
@@ -62,26 +62,37 @@ export class ResearcherProfileService {
         return this.path;
     }
 
-    getOwnProfile() {        
-        if (!this.userId) {
-            return Observable.of(null)
-        } else {        
-            return this.getEntities({
-                orderByChild: 'userId',
-                equalTo: this.userId,
-            })
-                .map((entities) => {                    
-                    let [entity] = entities;
-                    return entity;
-                })
-            // .do(data => console.log('server data:', data))  // debug - fixme why do i get so many responses?
-        }
+    getOwnProfile() {      
+      return this.getProfile(this.userId);
     }
 
-    getEntities(query = {}): FirebaseListObservable<any> {
-        return this.db.list(this.path, {
-            query: query
-        });
+    getProfile(userId: string) {
+      if (!this.userId) {
+        return Observable.of(null)
+      } else {
+        return this.db.list(this.path, ref => ref.orderByChild('userId').equalTo(userId))
+          .snapshotChanges().map(actions => {            
+            return actions.map(action => {
+              const $key = action.payload.key;
+              return { $key, ...action.payload.val() };
+            })
+          })
+          .map(entities => {            
+            let [entity] = entities;
+            return entity;
+          })
+        .do(data => console.log('server data:', data))  // debug - fixme why do i get so many responses?
+      }
+    }
+
+    getEntities() {
+        return this.db.list(this.path)
+          .snapshotChanges().map(actions => {
+            return actions.map(action => {
+              const $key = action.payload.key;
+              return { $key, ...action.payload.val() };
+            })
+          })
     }
 
     getQuestions() {

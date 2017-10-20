@@ -1,7 +1,8 @@
 import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
-import { AngularFireDatabase } from 'angularfire2/database';
+import { AngularFireDatabase, AngularFireObject } from 'angularfire2/database';
 import { AngularFireAuth } from 'angularfire2/auth';
+import * as firebase from 'firebase/app';
 import { Injectable } from '@angular/core';
 
 import { Observable } from 'rxjs/Observable';
@@ -22,16 +23,17 @@ export class AuthenticationService {
 
   userId;
 
-  user: BehaviorSubject<User> = new BehaviorSubject(null);
+  user: BehaviorSubject<User> = new BehaviorSubject(null); 
+
 
   constructor(private afAuth: AngularFireAuth, private db: AngularFireDatabase, private router: Router) {
 
     this.afAuth.authState
-    .switchMap(auth => {
-      if(auth) {
-        this.userId = auth.uid;        
-        this.createUserInFirebase(auth);
-        return this.db.object('users/' + auth.uid);
+    .switchMap(user => {
+      if(user) {
+        this.userId = user.uid;        
+        this.createUserInFirebase(user);
+        return this.db.object('users/' + user.uid).valueChanges();
       } else {
         return Observable.of(null);
       }
@@ -60,7 +62,7 @@ export class AuthenticationService {
       if (!user) {
         return Observable.of(false)
       } else {
-        return this.db.object('/admin/' + user.uid)
+        return this.db.object('/admin/' + user.uid).valueChanges()
       }  
     })
     .catch(() => Observable.throw('Unable to fetch admin state!'))
@@ -70,7 +72,7 @@ export class AuthenticationService {
       if (!user) {
         return Observable.of(false)
       } else {
-        return this.db.object('/university/' + user.uid)
+        return this.db.object('/university/' + user.uid).valueChanges()
       }  
     })
     .catch(() => Observable.throw('Unable to fetch university state!'))
@@ -82,7 +84,7 @@ export class AuthenticationService {
       if (!user) {
         return Observable.of(false)
       } else {
-        return this.db.object('users/' + user.uid + '/roles')
+        return this.db.object('users/' + user.uid + '/roles').valueChanges()
       }
     })
     .catch(() => Observable.throw('Unable to fetch admin state!'))
@@ -110,7 +112,8 @@ export class AuthenticationService {
   private createUserInFirebase(authData) {
     const userData = new User(authData);
     const ref = this.db.object('users/' + authData.uid)
-    ref.take(1)
+    const ref$: Observable<any> = ref.valueChanges()
+    ref$.take(1)
       .subscribe(user => {
         if (!user.roles) {          
           ref.update(userData);

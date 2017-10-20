@@ -1,5 +1,6 @@
+import { Observable } from 'rxjs/Rx';
 import { Component, OnInit } from '@angular/core';
-import {AngularFireDatabase, FirebaseObjectObservable, FirebaseListObservable } from 'angularfire2/database';
+import { AngularFireDatabase } from 'angularfire2/database';
 
 
 @Component({
@@ -9,23 +10,18 @@ import {AngularFireDatabase, FirebaseObjectObservable, FirebaseListObservable } 
 })
 export class CvComponent implements OnInit {
 
-  item: FirebaseObjectObservable<any>;
-  items: FirebaseListObservable<any[]>;
-  messages: FirebaseListObservable<any>;
-  cv$: FirebaseListObservable<any>;
+  item;
+  items;
+  messages;
+  cv$: Observable<any>;
   constructor(private db: AngularFireDatabase) {
-    this.cv$ = db.list('/profiles');
+    this.cv$ = db.list('/profiles').valueChanges();
 
 
     this.messages = db.list('/messages');
-    const message$: FirebaseListObservable<any> = db.list('/messages');
+    const message$ = this.messages.valueChanges();
     this.item = db.object('/item');
-    this.items = db.list('items', {
-      query: {
-        limitToLast: 4,
-        orderByKey: true
-      }
-    });
+    this.items = this.db.list('items').valueChanges() //, ref => ref.limitToLast(4).orderByKey(true)
     // this.items.push({ name: 'newName' });
 
     message$.subscribe(console.log);

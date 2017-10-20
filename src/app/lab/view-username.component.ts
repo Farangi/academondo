@@ -1,6 +1,5 @@
 import { ViewProfileDialogComponent } from './../profiles/view-profile-dialog.component';
 import { MdDialog, MdDialogConfig} from '@angular/material'
-import { query } from '@angular/core/src/animation/dsl';
 import { ResearcherProfileService } from './../profiles/researcher-profile.service';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { AuthenticationService } from '../shared/authentication.service';
@@ -24,21 +23,19 @@ export class ViewUsernameComponent implements OnInit {
 
   ngOnInit() {
     this.db.object(`users/${this.userKey}/email`)
-    .subscribe(name => {
-      this.name = name.$value;
+    .snapshotChanges()
+    .map(action => {
+      const data = action.payload.val();
+      return data;
+    })
+    .subscribe(name => {      
+      this.name = name;
     })
   }
 
   viewProfile() {
 
-    let profile = this.ResearcherProfileService.getEntities({
-      orderByChild: 'userId',
-      equalTo: this.userKey,
-    })
-    .map((entities) => {
-      let [entity] = entities;
-      return entity;
-    })    
+    let profile = this.ResearcherProfileService.getProfile(this.userKey);
 
     // let conf = new MdDialogConfig();
     // conf.data = profile;

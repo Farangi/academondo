@@ -1,6 +1,6 @@
 import { AuthenticationService } from './authentication.service';
 // import { AuthService } from './auth.service';
-import { FirebaseListObservable, AngularFireDatabase } from 'angularfire2/database';
+import { AngularFireDatabase } from 'angularfire2/database';
 import { AutocompleteComponent } from './../autocomplete/autocomplete.component';
 import { FieldOfInterestService } from './field-of-interest.service';
 import { Injectable }       from '@angular/core';
@@ -65,23 +65,27 @@ getPath(): string {
   return this.path;
 }
 
-getOwnEntity() {
-  return this.getEntities({
-    orderByChild: 'userId',
-    equalTo: this.userId,
-  })
-    .map((entities) => {
-      let [entity] = entities;
-      this.entity = entity;
-      return entity;
-    })
-  // .do(data => console.log('server data:', data))  // debug - fixme why do i get so many responses?
+  getOwnEntity() {
+    return this.getEntity(this.userId);
 }
 
-getEntities(query = {}): FirebaseListObservable<any> {
-  return this.db.list(this.path, {
-    query: query
-  });
+  getEntity(userId: string) {
+  if (!this.userId) {
+    return Observable.of(null)
+  } else {
+    return this.db.list(this.path, ref => ref.orderByChild('userId').equalTo(userId))
+      .snapshotChanges().map(actions => {
+        return actions.map(action => {
+          const $key = action.payload.key;
+          return { $key, ...action.payload.val() };
+        })
+      })
+      .map(entities => {
+        let [entity] = entities;
+        return entity;
+      })
+      .do(data => console.log('server data:', data))  // debug - fixme why do i get so many responses?
+  }
 }
 
   getQuestions() {

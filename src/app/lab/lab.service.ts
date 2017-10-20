@@ -1,5 +1,5 @@
 import { AuthenticationService } from './../shared/authentication.service';
-import { FirebaseListObservable, AngularFireDatabase } from 'angularfire2/database';
+import { AngularFireDatabase } from 'angularfire2/database';
 import { FieldOfInterestService } from '../shared/field-of-interest.service';
 import { Injectable, OnInit } from '@angular/core';
 import * as _ from 'lodash';
@@ -89,11 +89,12 @@ export class LabService {
 
   }
 
-  isMember(labKey) {
+  isMember(labKey) {    
     return this.isPartOf('members', labKey);
   }
 
   isApplicant(labKey): Observable<boolean> {
+    
     return this.isPartOf('applicants', labKey);
   }
 
@@ -103,8 +104,9 @@ export class LabService {
 
   private isPartOf(path, labKey): Observable<boolean> {
     return this.db.object(`${this.path}/${labKey}/${path}/${this.userId}`)
+      .valueChanges()
       .map(obj => {
-        if (obj.$exists()) {
+        if (obj) {
           return true
         } else {
           return false
@@ -151,10 +153,8 @@ export class LabService {
     if (!this.userId) {
       return Observable.of(null)
     } else {
-      return this.getEntities({
-        orderByChild: 'userId',
-        equalTo: this.userId,
-      })
+      return this.db.list(this.path , ref => ref.orderByChild('userId').equalTo(this.userId))
+        .valueChanges()
         .map((entities) => {  
           let [entity] = entities;
           return entity;
@@ -163,10 +163,14 @@ export class LabService {
     }
   }
 
-  getEntities(query = {}): FirebaseListObservable<any> {
-    return this.db.list(this.path, {
-      query: query
-    });
+  getEntities(): Observable<any> {
+    return this.db.list(this.path)
+    .snapshotChanges().map(actions => {
+      return actions.map(action => {
+        const $key = action.payload.key;                
+        return { $key, ...action.payload.val()};
+      })
+    }) 
   }
 
   getQuestions() {

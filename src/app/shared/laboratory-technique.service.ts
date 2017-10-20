@@ -2,7 +2,7 @@ import { query } from '@angular/core/src/animation/dsl';
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
-import { AngularFireDatabase, FirebaseObjectObservable, FirebaseListObservable } from 'angularfire2/database';
+import { AngularFireDatabase, AngularFireObject, AngularFireList } from 'angularfire2/database';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw';
@@ -28,7 +28,8 @@ export class LaboratoryTechniqueService {
   // }  
 
   public getlabTechnique$() {    
-    return  this.db.list('/techniques',{query: {orderByChild: 'name'} })
+    return  this.db.list('/techniques', ref => ref.orderByChild('name') )
+      .valueChanges()
       .take(1)
       .catch(() => Observable.throw('Unable to fetch Techniques!'))
   }   
