@@ -1,0 +1,9 @@
+  <ckeditor
+    [(ngModel)]='ckeditorContent'
+    [config]='ckeditorConfig'
+    [readonly]='false'
+    (change)='onChange($event)'
+    debounce='500'>
+  </ckeditor>
+
+   <!-- (ready)='onReady($event)' (focus)='onFocus($event)' (blur)='onBlur($event)' -->

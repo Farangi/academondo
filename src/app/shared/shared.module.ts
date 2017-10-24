@@ -51,6 +51,7 @@ import {
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule, AngularFireAuthProvider } from 'angularfire2/auth';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
 
 import {
   AuthMethods,
@@ -103,7 +104,8 @@ import { MultiselectDropdownModule } from 'angular-2-dropdown-multiselect';
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { UniversityComponent } from './university/university.component';
 import { NavService } from './nav.service';
-
+import { CKEditorComponent } from './ckeditor/ckeditor.component';
+import { CKEditorModule } from 'ng2-ckeditor';
 // const facebookCustomConfig: AuthProviderWithCustomConfig = {
 //   provider: AuthProvider.Facebook,
 //   customConfig: {
@@ -145,9 +147,12 @@ const firebaseUiAuthConfig: FirebaseUIAuthConfig = {
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
+    AngularFirestoreModule,
     BrowserAnimationsModule,
     FirebaseUIModule.forRoot(firebaseUiAuthConfig),    
     LeafletModule.forRoot(),
+
+    CKEditorModule,
 
     MdAutocompleteModule,
     MdButtonModule,
@@ -263,6 +268,7 @@ const firebaseUiAuthConfig: FirebaseUIAuthConfig = {
     PubmedViewerComponent,
     SearchComponent,
     UniversityComponent,
+    CKEditorComponent,
   ],
   providers: [
     FieldOfInterestService,

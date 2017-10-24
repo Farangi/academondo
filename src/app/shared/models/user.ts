@@ -1,17 +1,20 @@
-export interface Roles {
-    reader: boolean;
-    university?: boolean;
-    admin?: boolean;
-    biotek?: boolean;
-    reagens?: boolean;
+interface Roles {
+  reader: boolean;
+  admin?: boolean;
+  paidCustomer?: boolean;
+  paidUser?: boolean;
 }
 
 export class User {
-    email: string;
-    roles: Roles;
+  uid: string;
+  email: string;
+  photoURL?: string;
+  displayName?: string;
+  roles: Roles[] = [];
 
-    constructor(authData) {
-        this.email = authData.email;
-        this.roles = { reader: true };
-    }
+  constructor(user) {
+      this.email = user.email;
+      this.uid = user.uid;
+      this.roles.push({reader: true});
+  }
 }

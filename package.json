@@ -48,6 +48,7 @@
     "instantsearch.js": "^2.1.4",
     "jquery": "^3.2.1",
     "leaflet": "^1.2.0",
+    "ng2-ckeditor": "^1.1.9",
     "popper.js": "^1.12.5",
     "primeng": "^4.1.0-rc.2",
     "react": "^15.6.1",

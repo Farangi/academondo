@@ -154,8 +154,13 @@ export class LabService {
       return Observable.of(null)
     } else {
       return this.db.list(this.path , ref => ref.orderByChild('userId').equalTo(this.userId))
-        .valueChanges()
-        .map((entities) => {  
+        .snapshotChanges().map(actions => {
+          return actions.map(action => {
+            const $key = action.payload.key;
+            return { $key, ...action.payload.val() };
+          })
+        })
+        .map((entities) => {
           let [entity] = entities;
           return entity;
         })

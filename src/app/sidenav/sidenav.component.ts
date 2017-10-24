@@ -1,6 +1,5 @@
 import { slideOpen } from './../_animations/slideOpen';
 import { NavService } from './../shared/nav.service';
-import { Roles } from './../shared/models/user';
 import { AuthenticationService } from './../shared';
 import { Component, OnInit, Input } from '@angular/core';
 

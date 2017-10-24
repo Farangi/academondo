@@ -3,6 +3,10 @@
     <div class="col-sm-12 col-md-10 col-lg-7 mx-auto">
       <app-pubmed (articlesUpdated)="handleArticlesUpdated($event)"></app-pubmed>
       <app-pubmed-viewer [articles]="articles"></app-pubmed-viewer>
+      
+      <div>
+        <app-ckeditor></app-ckeditor>
+      </div>
     </div>
   </div>
 </div>
