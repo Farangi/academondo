@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-ckeditor',
@@ -8,7 +8,7 @@ import { Component, OnInit, Input, Output } from '@angular/core';
 export class CKEditorComponent implements OnInit {
 
   @Input() content: string;
-  @Output() output: string;
+  @Output() textUpdated = new EventEmitter();
   ckeditorContent: any;
 
   ckeditorConfig =  {
@@ -16,7 +16,11 @@ export class CKEditorComponent implements OnInit {
     // uiColor: '#F7B42C',
     height: 300,
     toolbarCanCollapse: true,
-    removeButtons: 'Source,NewPage,Preview,Print,Form,Checkbox,Radio,TextField,Textarea,Select,Button,ImageButton,HiddenField,Language,BidiRtl,BidiLtr,Image,Flash,Table,Smiley,PageBreak,Iframe,SpecialChar,ShowBlocks,About,Save,Templates,Anchor,Link,Unlink,CreateDiv,Blockquote,Maximize,Find,Replace,SelectAll,Scayt,CopyFormatting,RemoveFormat,BGColor,TextColor',
+    extraPlugins: 'autogrow',
+    autoGrow_onStartup: true,
+    autoGrow_bottomSpace: 1,
+    resize_enabled: false,
+    removeButtons: 'Source,Save,NewPage,Preview,Print,Templates,Cut,Copy,Paste,PasteText,PasteFromWord,Undo,Redo,Find,Replace,SelectAll,Scayt,Form,Checkbox,Radio,TextField,Textarea,Select,Button,ImageButton,HiddenField,CopyFormatting,RemoveFormat,Indent,Outdent,Blockquote,CreateDiv,BidiLtr,BidiRtl,Anchor,Unlink,Link,Image,Flash,Table,Smiley,SpecialChar,PageBreak,Iframe,Maximize,ShowBlocks,About',
     toolbarGroups:[
       { name: 'document', groups: ['mode', 'document', 'doctools'] },
       { name: 'clipboard', groups: ['clipboard', 'undo'] },
@@ -24,7 +28,6 @@ export class CKEditorComponent implements OnInit {
       { name: 'forms', groups: ['forms'] },
       '/',
       { name: 'basicstyles', groups: ['basicstyles', 'cleanup'] },
-      '/',
       { name: 'paragraph', groups: ['list', 'indent', 'blocks', 'align', 'bidi', 'paragraph'] },
       { name: 'links', groups: ['links'] },
       { name: 'insert', groups: ['insert'] },
@@ -40,12 +43,12 @@ export class CKEditorComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.ckeditorContent = this.content
+    this.ckeditorContent = this.content    
 
   }
 
   onChange(e) {
-    this.output = e
+    this.textUpdated.emit(e)    
   }
 
 }

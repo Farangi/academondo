@@ -5,8 +5,11 @@
       <app-pubmed-viewer [articles]="articles"></app-pubmed-viewer>
       
       <div>
-        <app-ckeditor></app-ckeditor>
+        <h2> Text editor</h2>
+        <app-ckeditor (textUpdated)="handleTextUpdated($event)"></app-ckeditor>
       </div>
+      <h2> readonly </h2>
+      <div ><ckeditor [config]="readonlyConfig" [readonly]="true" [(ngModel)]="text"></ckeditor></div>      
     </div>
   </div>
 </div>
