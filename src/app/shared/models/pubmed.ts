@@ -7,7 +7,8 @@ export interface PubMedArticleResponse {
 export interface PubmedArticle {
   MedlineCitation: {
     Article: Article,
-    PMID: any
+    PMID: any,
+    KeywordList: any
   },
   PubmedData: PubmedData
 }

@@ -106,6 +106,7 @@ import { UniversityComponent } from './university/university.component';
 import { NavService } from './nav.service';
 import { CKEditorComponent } from './ckeditor/ckeditor.component';
 import { CKEditorModule } from 'ng2-ckeditor';
+import { SimpleTinyMCEComponent } from './simple-tiny-mce/simple-tiny-mce.component';
 // const facebookCustomConfig: AuthProviderWithCustomConfig = {
 //   provider: AuthProvider.Facebook,
 //   customConfig: {
@@ -269,6 +270,7 @@ const firebaseUiAuthConfig: FirebaseUIAuthConfig = {
     SearchComponent,
     UniversityComponent,
     CKEditorComponent,
+    SimpleTinyMCEComponent,
   ],
   providers: [
     FieldOfInterestService,

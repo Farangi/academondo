@@ -13,6 +13,16 @@
           {{author.ForeName}} {{author.LastName}}
       </md-chip>
     </md-chip-list>
+     
+    <div *ngIf="article.MedlineCitation.KeywordList">
+      <br>
+      <p>Keywords</p>
+      <md-chip-list>
+        <md-chip *ngFor="let keyword of hack(article.MedlineCitation.KeywordList?.Keyword)" selected>
+          {{keyword['#text']}}
+        </md-chip>
+      </md-chip-list>
+    </div>
   </md-card-content>
   <md-card-footer>
     <md-progress-bar mode="determinate"></md-progress-bar>

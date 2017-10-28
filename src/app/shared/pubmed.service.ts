@@ -41,6 +41,7 @@ export class PubmedService {
     // console.log('get articles from ids, url: ', url);
     let articleStream = this.http.get(url)
       .map((response: any) => {
+        debugger;
         const responseAsJson: PubMedArticleResponse = JSON.parse(xml2json(response.text(), ''));
         return responseAsJson.PubmedArticleSet.PubmedArticle
       })

@@ -5,11 +5,19 @@
       <app-pubmed-viewer [articles]="articles"></app-pubmed-viewer>
       
       <div>
-        <h2> Text editor</h2>
+        <h2> Text editor - CKEditor </h2>
         <app-ckeditor (textUpdated)="handleTextUpdated($event)"></app-ckeditor>
       </div>
       <h2> readonly </h2>
       <div ><ckeditor [config]="readonlyConfig" [readonly]="true" [(ngModel)]="text"></ckeditor></div>      
+
+      <div>
+        <h2> Text editor - TinyMCE</h2>
+        <app-simple-tiny-mce
+          [elementId]="'my-editor-id'"
+          (onEditorKeyup)="handleTextUpdated($event)">
+        </app-simple-tiny-mce>        
+      </div>
     </div>
   </div>
 </div>
