@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-ckeditor',
@@ -9,6 +9,7 @@ export class CKEditorComponent implements OnInit {
 
   @Input() content: string;
   @Output() textUpdated = new EventEmitter();
+  @ViewChild('ckeditor') ckeditor: any;
   ckeditorContent: any;
 
   ckeditorConfig =  {
@@ -48,7 +49,9 @@ export class CKEditorComponent implements OnInit {
   }
 
   onChange(e) {
-    this.textUpdated.emit(e)    
+    let source = this.ckeditor.instance.getData()
+    // console.log(source)
+    this.textUpdated.emit(source)
   }
 
 }

@@ -1,4 +1,4 @@
-<div class=" container-fluid">
+<div class="container-fluid" >
   <div class="row">
     <div class="col-sm-12 col-md-10 col-lg-7 mx-auto">
       <app-pubmed (articlesUpdated)="handleArticlesUpdated($event)"></app-pubmed>
@@ -9,16 +9,48 @@
         <app-ckeditor (textUpdated)="handleTextUpdated($event)"></app-ckeditor>
       </div>
       <h2> readonly </h2>
-      <div ><ckeditor [config]="readonlyConfig" [readonly]="true" [(ngModel)]="text"></ckeditor></div>      
-
       <div>
+        <ckeditor [config]="readonlyConfig" [readonly]="true" [(ngModel)]="text"></ckeditor>
+      </div>
+
+      <!-- <div>
         <h2> Text editor - TinyMCE</h2>
         <app-simple-tiny-mce
           [elementId]="'my-editor-id'"
           (onEditorKeyup)="handleTextUpdated($event)">
         </app-simple-tiny-mce>        
-      </div>
+      </div> -->
     </div>
   </div>
 </div>
 
+
+      <!-- <div class="content" scrollable (scrollPosition)="scrollHandler($event)">
+      
+        <div style="height: 2000px;"></div>
+      
+      </div> -->
+
+<div class="page" data-size="A4">
+  <h1>Academondo CV</h1>
+  <p>
+     Our website is a jobplatform for people working in life science, that is people working in science trying to understand
+    the human body. The site will be a platform where scientists can sign up and find jobs from universities, hospitals and industry.
+    similarly, companies and academia, universities and hospitals, can sign up, post jobs, and directly dive into the database
+    of scientists that created a resume on the site. We have sent you pictures of how the site looks when you reach the intro-site,
+    and a picture of how to sign up. The site should therefore have an expression of professionalism, opportunities and science.
+    Simon Mølgaard Jensen Simon
+
+  </p>
+</div>
+
+<div class="page" data-size="A4" [innerHTML]="text">
+  
+
+</div>
+<div class="page" data-size="A4"></div>
+<div class="page" data-size="A4" layout="portrait"></div>
+<div class="page" data-size="A5"></div>
+<div class="page" data-size="A5" layout="portrait"></div>
+<div class="page" data-size="A3"></div>
+<div class="page" data-size="A3" layout="portrait"></div>

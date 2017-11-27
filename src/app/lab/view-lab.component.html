@@ -11,7 +11,10 @@
     </md-card-title>
     <md-card-content>
       <p>About</p>
-      <p>{{lab.about}}</p>
+      <!-- <ckeditor [config]="readonlyConfig" [readonly]="true" [(ngModel)]="lab.about"></ckeditor> -->
+      <div>
+        <ckeditor [config]="readonlyConfig" [readonly]="true" [(ngModel)]="lab.about"></ckeditor>
+      </div>
     </md-card-content>
     <md-card-footer>
       <md-progress-bar mode="determinate"></md-progress-bar>

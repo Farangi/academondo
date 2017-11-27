@@ -69,6 +69,8 @@ import {
   MdCheckboxModule,
   MdChipsModule,
   MdDatepickerModule,
+  MdNativeDateModule,
+  MdFormFieldControl,
   MdDialogModule,
   MdDialog,
   MdExpansionModule,
@@ -107,6 +109,7 @@ import { NavService } from './nav.service';
 import { CKEditorComponent } from './ckeditor/ckeditor.component';
 import { CKEditorModule } from 'ng2-ckeditor';
 import { SimpleTinyMCEComponent } from './simple-tiny-mce/simple-tiny-mce.component';
+import { ScrollableDirective } from './scrollable.directive';
 // const facebookCustomConfig: AuthProviderWithCustomConfig = {
 //   provider: AuthProvider.Facebook,
 //   customConfig: {
@@ -162,9 +165,10 @@ const firebaseUiAuthConfig: FirebaseUIAuthConfig = {
     MdCheckboxModule,
     MdChipsModule,
     MdDatepickerModule,
+    MdNativeDateModule,
     MdDialogModule,
     MdExpansionModule,
-    MdFormFieldModule,
+    MdFormFieldModule,    
     MdGridListModule,
     MdIconModule,
     MdInputModule,
@@ -214,6 +218,10 @@ const firebaseUiAuthConfig: FirebaseUIAuthConfig = {
     MyAcademondoComponent,
     PubmedViewerComponent,
     SearchComponent,
+
+    CKEditorModule,
+
+    ScrollableDirective,
 
     MdAutocompleteModule,
     MdButtonModule,
@@ -271,6 +279,7 @@ const firebaseUiAuthConfig: FirebaseUIAuthConfig = {
     UniversityComponent,
     CKEditorComponent,
     SimpleTinyMCEComponent,
+    ScrollableDirective,
   ],
   providers: [
     FieldOfInterestService,

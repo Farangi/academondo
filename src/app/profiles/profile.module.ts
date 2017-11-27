@@ -7,6 +7,7 @@ import { ProfilesComponent } from './profiles.component';
 import { NgModule } from '@angular/core';
 import { SharedModule } from './../shared/shared.module';
 import { RouterModule } from '@angular/router';
+import { ProfileComponent } from './profile.component';
 
 
 @NgModule({
@@ -14,6 +15,12 @@ import { RouterModule } from '@angular/router';
     RouterModule.forChild([
       {
         path: 'profile',
+        component: ProfileComponent,
+        canActivate: [AuthGuard],
+        data: { animation: 'profile' }
+      },      
+      {
+        path: 'profile1',
         component: ResearcherProfileComponent,
         canActivate: [AuthGuard],
         data: { animation: 'profile' }
@@ -31,7 +38,8 @@ import { RouterModule } from '@angular/router';
     ResearcherProfileComponent,
     ViewResearcherProfileComponent,
     ProfilesComponent,
-    ViewProfileDialogComponent
+    ViewProfileDialogComponent,
+    ProfileComponent
   ],
   providers : [
     ResearcherProfileService,    

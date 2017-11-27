@@ -29,10 +29,22 @@ body {
 
 .am-background {
   max-width: 100%;
-  height: auto;
+  // height: auto;
 }
 
 .am-backg {
-  background-size: cover;
+  // width: 100%;
+  // height: 100%;
+  background-size: 100% 500px;  
+  background-repeat: no-repeat;
   background-image: url('./../assets/background.png');
+  // background: url('./../assets/background.png') center center no-repeat;
+  // background-image: linear-gradient(to bottom right,#002f4b,#dc4225);
+  // opacity: 0.6;
+  background-color: rgba(17, 72, 102, 1);
+}
+
+.mat-drawer-transition .mat-drawer-backdrop.mat-drawer-shown {
+    // background: skyblue;  /* replace skyblue with any color */ 
+    // background-color: rgba(53, 121, 113, 0.74);
 }

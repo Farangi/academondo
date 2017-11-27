@@ -16,14 +16,15 @@
 </section> -->
 
 <md-sidenav-container class="demo-root" fullscreen>
-    <md-sidenav #sidenav>
+    <md-sidenav #sidenav color="primary">
         <md-nav-list>
             <a *ngFor="let navItem of navItems" 
                 md-list-item (click)="sidenav.close()"
                 routerLinkActive #routerLinkActiveInstance="routerLinkActive"
                 [attr.tabindex]="routerLinkActiveInstance.isActive ? 0 : -1" 
                 [routerLink]="[navItem.route]">
-                    {{navItem.name}}
+                <md-icon>{{navItem.icon}}</md-icon>
+                 &nbsp;{{navItem.name}}
             </a>
             <!-- <hr> -->
             <!-- <a md-list-item tabindex="-1" (click)="sidenav.close()" [routerLink]="['/baseline']">Baseline</a> -->

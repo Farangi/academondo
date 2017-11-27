@@ -34,14 +34,15 @@ import { Component, ElementRef, Renderer2, ViewEncapsulation } from '@angular/co
 export class AppComponent implements OnInit {
   dark = false;
   navItems = [
-    { name: 'Dashboard', route: '/dashboard' },
-    // { name: 'My academondo', route: '/my-academondo' },
-    { name: 'Create laboratory', route: '/lab' },
-    { name: 'Manage laboratory', route: '/manageLab' },        
-    { name: 'Laboratories', route: '/labs' },    
-    { name: 'Create profile', route: '/profile' },
-    { name: 'Profiles', route: '/profiles' },
-    { name: 'Job adverts', route: '/adverts' },
+    { name: 'Dashboard', route: '/dashboard', icon: 'dashboard' },
+    // { name: 'My academondo', route: '/my-academondo', icon: 'menu' },
+    { name: 'Create laboratory', route: '/lab', icon: 'create' },
+    { name: 'Manage laboratory', route: '/manageLab', icon: 'settings' },
+    { name: 'Laboratories', route: '/labs', icon: 'search' },
+    { name: 'Your profile', route: '/profile', icon: 'create' },
+    { name: 'profile1', route: '/profile1', icon: 'create' },
+    { name: 'Profiles', route: '/profiles', icon: 'settings' },
+    { name: 'Create job adverts', route: '/adverts', icon: 'create' },
   ];
 
   user: any;

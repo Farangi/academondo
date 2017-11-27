@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
     selector: 'app-dashboard',
     templateUrl: './dashboard.component.html',
-    styleUrls: ['./dashboard.component.css']
+    styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
     articles;
@@ -47,8 +47,18 @@ export class DashboardComponent implements OnInit {
     ngOnInit() {
     }
 
+    scrollHandler(e) {
+      if (e === 'bottom') {
+        // show next X elements
+        console.log(e)
+      }
+      if (e === 'top') {
+        // show previous X elements
+        console.log(e);
+      }
+    }
+
     handleTextUpdated(text) {
-      debugger;
       this.text = text
     }
 }

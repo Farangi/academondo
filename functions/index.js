@@ -4,6 +4,24 @@ const admin = require("firebase-admin");
 admin.initializeApp(functions.config().firebase);
 
 
+// exports.aggregatePublications = functions.firestore
+//   .document('profiles/{profileId}/publications/{publicationId}')
+//   .onWrite(event => {
+
+//     const publicationId = event.params.publicationId;
+//     const profileId = event.params.profileId;
+
+//     const labRef = admin.firestore().collection('profiles').doc(profileId)
+
+//     return labRef.collection('publications').orderBy('createdAt', 'desc')
+//       .get()
+//       .then(querySnapshot => {
+        
+//       })
+
+//   })
+
+
 
 // // need to pay for blaze or flame at firebase
 // const algoliasearch = require('algoliasearch');
