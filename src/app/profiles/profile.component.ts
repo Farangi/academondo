@@ -14,6 +14,7 @@ export class ProfileComponent implements OnInit {
   profile$: Observable<any>;
 
   profile;
+  text;
   step = 0;
   constructor(private profileService: ResearcherProfileService, private afs: AngularFirestore) { }
 
@@ -23,7 +24,9 @@ export class ProfileComponent implements OnInit {
     this.profile = this.profileService.getOwnProfile();
   }
 
-  
+  handleTextUpdated(text) {
+    this.text = text
+  }
 
   setStep(index: number) {
     this.step = index;

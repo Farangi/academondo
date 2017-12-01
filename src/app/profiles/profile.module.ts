@@ -8,6 +8,7 @@ import { NgModule } from '@angular/core';
 import { SharedModule } from './../shared/shared.module';
 import { RouterModule } from '@angular/router';
 import { ProfileComponent } from './profile.component';
+import { StepperProfileComponent } from './stepper-profile.component';
 
 
 @NgModule({
@@ -23,7 +24,7 @@ import { ProfileComponent } from './profile.component';
         path: 'profile1',
         component: ResearcherProfileComponent,
         canActivate: [AuthGuard],
-        data: { animation: 'profile' }
+        data: { animation: 'profile1' }
       },
       {
         path: 'profiles',
@@ -31,6 +32,12 @@ import { ProfileComponent } from './profile.component';
         canActivate: [AuthGuard],
         data: { animation: 'profiles' }
       }, 
+      {
+        path: 'stepperProfile',
+        component: StepperProfileComponent,
+        canActivate: [AuthGuard],
+        data: { animation: 'stepperProfile' }
+      },       
     ]),    
     SharedModule    
   ],
@@ -39,7 +46,8 @@ import { ProfileComponent } from './profile.component';
     ViewResearcherProfileComponent,
     ProfilesComponent,
     ViewProfileDialogComponent,
-    ProfileComponent
+    ProfileComponent,
+    StepperProfileComponent
   ],
   providers : [
     ResearcherProfileService,    

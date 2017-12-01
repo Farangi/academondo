@@ -1,70 +1,361 @@
-<md-accordion class="example-headers-align">
-  <md-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle="true">
-    <md-expansion-panel-header>
-      <md-panel-title>
-        Personal data
-      </md-panel-title>
-      <md-panel-description>
-        Type your name and age
-        <md-icon>account_circle</md-icon>
-      </md-panel-description>
-    </md-expansion-panel-header>
+<h1>CV builder</h1>
+<div class="row">
 
-    <md-form-field>
-      <input mdInput placeholder="First name">
-    </md-form-field>
+<div class="col-sm-12 col-md-12 col-lg-6">
+  <md-accordion class="example-headers-align">
+    <md-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle="true">
+      <md-expansion-panel-header>
+        
+        <md-panel-title>
+          <md-icon>account_circle</md-icon>
+            Personal details
+        </md-panel-title>
+        <md-panel-description>          
+          
+        </md-panel-description>
+      </md-expansion-panel-header>
+  
+      <md-form-field>
+        <input mdInput placeholder="First name">
+      </md-form-field>
+      <md-form-field>
+        <input mdInput placeholder="Surname">
+      </md-form-field>
+      <md-form-field>
+        <input mdInput placeholder="Academic title">
+      </md-form-field>
+      <br>
+      <!-- <md-form-field class="date-of-birth">
+        <input mdInput type="number" min="1" max="31" placeholder="Day">
+      </md-form-field>
+      <md-form-field class="date-of-birth">
+        <input mdInput type="number" min="1" max="12" placeholder="Month">
+      </md-form-field>
+      <md-form-field class="date-of-birth">
+        <input mdInput type="number" min="1900" placeholder="Year">
+      </md-form-field> -->
+      <md-form-field>
+        <input mdInput [mdDatepicker]="birthDate" placeholder="Date of birth">
+        <md-datepicker-toggle mdSuffix [for]="birthDate"></md-datepicker-toggle>
+        <md-datepicker #birthDate></md-datepicker>
+      </md-form-field>  
+      <br>
+      <md-form-field>
+        <input mdInput type="email" placeholder="Email adress">
+      </md-form-field>
+      <md-action-row>
+        <button md-button color="primary" (click)="nextStep()">Next</button>
+      </md-action-row>
+    </md-expansion-panel>
+  
+    <md-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle="true">
+      <md-expansion-panel-header>
+        <md-panel-title>
+          <md-icon>map</md-icon>
+          Introductory text
+        </md-panel-title>
+        <md-panel-description>
+          
+          
+        </md-panel-description>
+      </md-expansion-panel-header>
 
-    <md-form-field>
-      <input mdInput type="number" min="1" placeholder="Age">
-    </md-form-field>
+      <app-ckeditor (textUpdated)="handleTextUpdated($event)"></app-ckeditor>
+  
+      <md-action-row>
+        <button md-button color="warn" (click)="prevStep()">Previous</button>
+        <button md-button color="primary" (click)="nextStep()">Next</button>
+      </md-action-row>
+    </md-expansion-panel>
+  
+    <md-expansion-panel [expanded]="step === 2" (opened)="setStep(2)" hideToggle="true">
+      <md-expansion-panel-header>
+        <md-panel-title>
+          <md-icon>bookmark</md-icon>
+          Work experience
+        </md-panel-title>
+        <md-panel-description>
+        </md-panel-description>
+      </md-expansion-panel-header>
+      <button md-button md-raised-button color="primary">
+        Add work experience
+      </button>
+      <br>
+      <md-form-field>
+        <input mdInput placeholder="Job title">
+      </md-form-field>
+      <br>
+      <md-form-field>
+        <input mdInput placeholder="Name of company or institution">
+      </md-form-field>
+      <md-form-field>
+        <input mdInput placeholder="Country">
+      </md-form-field>
+      <br>
+      <label>Was the employment in an academic or industrial institution</label>
+      <br>
+      <md-radio-group>
+        <md-radio-button value="academia">Academia</md-radio-button>
+        <md-radio-button value="industry">Industry</md-radio-button>
+      </md-radio-group>
+      <!-- <md-checkbox>Academia</md-checkbox>
+      <md-checkbox>Industry</md-checkbox> -->
+      <br>
+      <md-form-field>
+        <input mdInput [mdDatepicker]="workStart" placeholder="Start date">
+        <md-datepicker-toggle mdSuffix [for]="workStart"></md-datepicker-toggle>
+        <md-datepicker #workStart></md-datepicker>
+      </md-form-field>
+      <md-form-field>
+        <input mdInput [mdDatepicker]="workEnd" placeholder="End date">
+        <md-datepicker-toggle mdSuffix [for]="workEnd"></md-datepicker-toggle>
+        <md-datepicker #workEnd></md-datepicker>
+      </md-form-field>
+      <br>
+      <md-checkbox>Present</md-checkbox>
+      <br>
+      <label>Write about the position and qualifications required in the position</label>
+      <app-ckeditor (textUpdated)="handleTextUpdated($event)"></app-ckeditor>
+      <br>
+      <button md-button md-raised-button color="primary" style="float: right">
+        Delete experience
+      </button>
+      <br>
+      <br>
+      <md-action-row>
+        <button md-button color="warn" (click)="prevStep()">Previous</button>
+        <button md-button color="primary" (click)="nextStep()">Next</button>
+      </md-action-row>
+    </md-expansion-panel>
 
-    <md-action-row>
-      <button md-button color="primary" (click)="nextStep()">Next</button>
-    </md-action-row>
-  </md-expansion-panel>
+    <md-expansion-panel [expanded]="step === 3" (opened)="setStep(3)" hideToggle="true">
+      <md-expansion-panel-header>
+        <md-panel-title>
+          <md-icon>bookmark</md-icon>
+          Education
+        </md-panel-title>
+        <md-panel-description>
+        </md-panel-description>
+      </md-expansion-panel-header>      
+      <button md-button md-raised-button color="primary">
+        Add education
+      </button>      
+      <br>
+      <md-form-field>
+        <input mdInput placeholder="Education level">
+      </md-form-field>
+      <md-form-field>
+        <input mdInput placeholder="Line of education">
+      </md-form-field>
+      <br>
+      <md-form-field>
+        <input mdInput placeholder="Name of university">
+      </md-form-field>
+      <md-form-field>
+        <input mdInput placeholder="Name of department">
+      </md-form-field>      
+      <br>
+      <md-form-field>
+        <input mdInput placeholder="Country">
+      </md-form-field>
+      <br>
+      <md-form-field>
+        <input mdInput [mdDatepicker]="eduStart" placeholder="Start date">
+        <md-datepicker-toggle mdSuffix [for]="eduStart"></md-datepicker-toggle>
+        <md-datepicker #eduStart></md-datepicker>
+      </md-form-field>
+      <md-form-field>
+        <input mdInput [mdDatepicker]="eduEnd" placeholder="End date">
+        <md-datepicker-toggle mdSuffix [for]="eduEnd"></md-datepicker-toggle>
+        <md-datepicker #eduEnd></md-datepicker>
+      </md-form-field>
+      <br>
+      <md-checkbox>Present</md-checkbox>
+      <br>
+      <label>Write about the projects and qualifications gained during the studies</label>
+      <app-ckeditor (textUpdated)="handleTextUpdated($event)"></app-ckeditor>
+      <br>
+      <button md-button md-raised-button color="primary" style="float: right">
+        Delete education
+      </button>
+      <br>
+      <br>
+      <md-action-row>
+        <button md-button color="warn" (click)="prevStep()">Previous</button>
+        <button md-button color="primary" (click)="nextStep()">Next</button>
+      </md-action-row>
+    </md-expansion-panel>
 
-  <md-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle="true">
-    <md-expansion-panel-header>
-      <md-panel-title>
-        Destination
-      </md-panel-title>
-      <md-panel-description>
-        Type the country name
-        <md-icon>map</md-icon>
-      </md-panel-description>
-    </md-expansion-panel-header>
+    <md-expansion-panel [expanded]="step === 4" (opened)="setStep(4)" hideToggle="true">
+      <md-expansion-panel-header>
+        <md-panel-title>
+          <md-icon>bookmark</md-icon>
+          Research stay
+        </md-panel-title>
+        <md-panel-description>
+        </md-panel-description>
+      </md-expansion-panel-header>
+      <button md-button md-raised-button color="primary">
+        Add research stay
+      </button>
+      <br>
+      <md-form-field>
+        <input mdInput placeholder="Project title">
+      </md-form-field>
+      <br>
+      <md-form-field>
+        <input mdInput placeholder="Name of university">
+      </md-form-field>
+      <md-form-field>
+        <input mdInput placeholder="Name of department">
+      </md-form-field>
+      <br>
+      <md-form-field>
+        <input mdInput placeholder="Name of lab or group leader">
+      </md-form-field>
+      <md-form-field>
+        <input mdInput placeholder="Country">
+      </md-form-field>
+      <br>
+      <md-form-field>
+        <input mdInput [mdDatepicker]="researchStart" placeholder="Start date">
+        <md-datepicker-toggle mdSuffix [for]="researchStart"></md-datepicker-toggle>
+        <md-datepicker #researchStart></md-datepicker>
+      </md-form-field>
+      <md-form-field>
+        <input mdInput [mdDatepicker]="researchEnd" placeholder="End date">
+        <md-datepicker-toggle mdSuffix [for]="researchEnd"></md-datepicker-toggle>
+        <md-datepicker #researchEnd></md-datepicker>
+      </md-form-field>      
+      <br>
+      <label>Write about the projects and qualifications gained during the studies</label>
+      <app-ckeditor (textUpdated)="handleTextUpdated($event)"></app-ckeditor>
+      <br>
+      <button md-button md-raised-button color="primary" style="float: right">
+        Delete research stay
+      </button>
+      <br>
+      <br>
+      <md-action-row>
+        <button md-button color="warn" (click)="prevStep()">Previous</button>
+        <button md-button color="primary" (click)="nextStep()">Next</button>
+      </md-action-row>
+    </md-expansion-panel>
 
-    <md-form-field>
-      <input mdInput placeholder="Country">
-    </md-form-field>
+    <md-expansion-panel [expanded]="step === 5" (opened)="setStep(5)" hideToggle="true">
+      <md-expansion-panel-header>
+        <md-panel-title>
+          <md-icon>bookmark</md-icon>
+          Conference/workshop
+        </md-panel-title>
+        <md-panel-description>
+        </md-panel-description>
+      </md-expansion-panel-header>
+      <button md-button md-raised-button color="primary">
+        Add conference/workshop
+      </button>
+      <br>
+      <md-form-field>
+        <input mdInput placeholder="Conference/workshop title">
+      </md-form-field>
+      <br>
+      <md-form-field>
+        <input mdInput placeholder="Country">
+      </md-form-field>
+      <md-form-field>
+        <input mdInput placeholder="City">
+      </md-form-field>
+      <br>
+      <md-form-field>
+        <input mdInput [mdDatepicker]="confStart" placeholder="Start date">
+        <md-datepicker-toggle mdSuffix [for]="confStart"></md-datepicker-toggle>
+        <md-datepicker #confStart></md-datepicker>
+      </md-form-field>
+      <md-form-field>
+        <input mdInput [mdDatepicker]="confEnd" placeholder="End date">
+        <md-datepicker-toggle mdSuffix [for]="confEnd"></md-datepicker-toggle>
+        <md-datepicker #confEnd></md-datepicker>
+      </md-form-field>
+      <br>
+      <md-form-field>
+        <input mdInput placeholder="Contribution">
+      </md-form-field>
+      <br>
+      <label>Write about the conference and your contribution</label>
+      <app-ckeditor (textUpdated)="handleTextUpdated($event)"></app-ckeditor>
+      <br>
+      <button md-button md-raised-button color="primary" style="float: right">
+        Delete conference/workshop
+      </button>
+      <br>
+      <br>
+      <md-action-row>
+        <button md-button color="warn" (click)="prevStep()">Previous</button>
+        <button md-button color="primary" (click)="nextStep()">Next</button>
+      </md-action-row>
+    </md-expansion-panel>
 
-    <md-action-row>
-      <button md-button color="warn" (click)="prevStep()">Previous</button>
-      <button md-button color="primary" (click)="nextStep()">Next</button>
-    </md-action-row>
-  </md-expansion-panel>
+    <md-expansion-panel [expanded]="step === 6" (opened)="setStep(6)" hideToggle="true">
+      <md-expansion-panel-header>
+        <md-panel-title>
+          <md-icon>bookmark</md-icon>
+          Teaching experience
+        </md-panel-title>
+        <md-panel-description>
+        </md-panel-description>
+      </md-expansion-panel-header>
+      <button md-button md-raised-button color="primary">
+        Add teaching experience
+      </button>
+      <br>
+      <md-form-field>
+        <input mdInput placeholder="Title of teaching experience">
+      </md-form-field>
+      <br>
+      <md-form-field>
+        <input mdInput placeholder="Name of university">
+      </md-form-field>
+      <md-form-field>
+        <input mdInput placeholder="Name of department">
+      </md-form-field>
+      <br>
+      <md-form-field>
+        <input mdInput placeholder="Country">
+      </md-form-field>
+      <br>
+      <md-form-field>
+        <input mdInput [mdDatepicker]="teachingStart" placeholder="Start date">
+        <md-datepicker-toggle mdSuffix [for]="teachingStart"></md-datepicker-toggle>
+        <md-datepicker #teachingStart></md-datepicker>
+      </md-form-field>
+      <md-form-field>
+        <input mdInput [mdDatepicker]="teachingEnd" placeholder="End date">
+        <md-datepicker-toggle mdSuffix [for]="teachingEnd"></md-datepicker-toggle>
+        <md-datepicker #teachingEnd></md-datepicker>
+      </md-form-field>
+      <br>
+      <label>Write about your teaching experience</label>
+      <app-ckeditor (textUpdated)="handleTextUpdated($event)"></app-ckeditor>
+      <br>
+      <button md-button md-raised-button color="primary" style="float: right">
+        Delete teaching experience
+      </button>
+      <br>
+      <br>
+      <md-action-row>
+        <button md-button color="warn" (click)="prevStep()">Previous</button>
+        <button md-button color="primary" (click)="nextStep()">Next</button>
+      </md-action-row>
+    </md-expansion-panel>
+  
+  </md-accordion>
+</div>
+<div class="col-sm-12 col-md-12 col-lg-6">
 
-  <md-expansion-panel [expanded]="step === 2" (opened)="setStep(2)" hideToggle="true">
-    <md-expansion-panel-header>
-      <md-panel-title>
-        Day of the trip
-      </md-panel-title>
-      <md-panel-description>
-        Inform the date you wish to travel
-        <md-icon>date_range</md-icon>
-      </md-panel-description>
-    </md-expansion-panel-header>
- 
+            this is where we show the profile view
+</div>
 
-    <md-action-row>
-      <button md-button color="warn" (click)="prevStep()">Previous</button>
-      <button md-button color="primary" (click)="nextStep()">End</button>
-    </md-action-row>
-  </md-expansion-panel>
-
-</md-accordion>
-
-
+</div>
 
 
 

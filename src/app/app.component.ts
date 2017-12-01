@@ -40,6 +40,7 @@ export class AppComponent implements OnInit {
     { name: 'Manage laboratory', route: '/manageLab', icon: 'settings' },
     { name: 'Laboratories', route: '/labs', icon: 'search' },
     { name: 'Your profile', route: '/profile', icon: 'create' },
+    { name: 'stepper profile', route: '/stepperProfile', icon: 'create' },
     { name: 'profile1', route: '/profile1', icon: 'create' },
     { name: 'Profiles', route: '/profiles', icon: 'settings' },
     { name: 'Create job adverts', route: '/adverts', icon: 'create' },

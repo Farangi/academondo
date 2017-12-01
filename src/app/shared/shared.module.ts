@@ -220,6 +220,7 @@ const firebaseUiAuthConfig: FirebaseUIAuthConfig = {
     SearchComponent,
 
     CKEditorModule,
+    CKEditorComponent,
 
     ScrollableDirective,
 
