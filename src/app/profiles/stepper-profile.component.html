@@ -1,302 +1,302 @@
 <h1>CV builder</h1>
 <div class="row">
-<md-card>
+<mat-card>
   <div class="col-sm-12 col-md-12 col-lg-6">
-    <md-vertical-stepper>
-      <md-step label="Personal details">
-        <md-form-field>
-          <input mdInput placeholder="First name">
-        </md-form-field>
-        <md-form-field>
-          <input mdInput placeholder="Surname">
-        </md-form-field>
-        <md-form-field>
-          <input mdInput placeholder="Academic title">
-        </md-form-field>
+    <mat-vertical-stepper>
+      <mat-step label="Personal details">
+        <mat-form-field>
+          <input matInput placeholder="First name">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Surname">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Academic title">
+        </mat-form-field>
         <br>
-        <md-form-field>
-          <input mdInput [mdDatepicker]="birthDate" placeholder="Date of birth">
-          <md-datepicker-toggle mdSuffix [for]="birthDate"></md-datepicker-toggle>
-          <md-datepicker #birthDate></md-datepicker>
-        </md-form-field>
+        <mat-form-field>
+          <input matInput [matDatepicker]="birthDate" placeholder="Date of birth">
+          <mat-datepicker-toggle matSuffix [for]="birthDate"></mat-datepicker-toggle>
+          <mat-datepicker #birthDate></mat-datepicker>
+        </mat-form-field>
         <br>
-        <md-form-field>
-          <input mdInput type="email" placeholder="Email adress">
-        </md-form-field>
+        <mat-form-field>
+          <input matInput type="email" placeholder="Email adress">
+        </mat-form-field>
         <br>
         <div class="actionButtons">
-          <button md-raised-button color="primary" mdStepperNext>Next</button>
+          <button mat-raised-button color="primary" matStepperNext>Next</button>
         </div>
-      </md-step>
+      </mat-step>
 
-      <md-step label="Introductory text">
+      <mat-step label="Introductory text">
         <app-ckeditor (textUpdated)="handleTextUpdated($event)"></app-ckeditor>
 
         <div class="actionButtons"> 
-          <button md-raised-button color="primary" mdStepperPrevious>Back</button>
-          <button md-raised-button color="primary" mdStepperNext>Next</button>
+          <button mat-raised-button color="primary" matStepperPrevious>Back</button>
+          <button mat-raised-button color="primary" matStepperNext>Next</button>
         </div>
-      </md-step>
+      </mat-step>
 
-      <md-step label="Work experience">
-        <button md-button md-raised-button color="primary">
+      <mat-step label="Work experience">
+        <button mat-button mat-raised-button color="primary">
           Add work experience
         </button>
         <br>
-        <md-form-field>
-          <input mdInput placeholder="Job title">
-        </md-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Job title">
+        </mat-form-field>
         <br>
-        <md-form-field>
-          <input mdInput placeholder="Name of company or institution">
-        </md-form-field>
-        <md-form-field>
-          <input mdInput placeholder="Country">
-        </md-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Name of company or institution">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Country">
+        </mat-form-field>
         <br>
         <label>Was the employment in an academic or industrial institution</label>
         <br>
-        <md-radio-group>
-          <md-radio-button value="academia">Academia</md-radio-button>
-          <md-radio-button value="industry">Industry</md-radio-button>
-        </md-radio-group>
-        <!-- <md-checkbox>Academia</md-checkbox>
-      <md-checkbox>Industry</md-checkbox> -->
+        <mat-radio-group>
+          <mat-radio-button value="academia">Academia</mat-radio-button>
+          <mat-radio-button value="industry">Industry</mat-radio-button>
+        </mat-radio-group>
+        <!-- <mat-checkbox>Academia</mat-checkbox>
+      <mat-checkbox>Industry</mat-checkbox> -->
         <br>
-        <md-form-field>
-          <input mdInput [mdDatepicker]="workStart" placeholder="Start date">
-          <md-datepicker-toggle mdSuffix [for]="workStart"></md-datepicker-toggle>
-          <md-datepicker #workStart></md-datepicker>
-        </md-form-field>
-        <md-form-field>
-          <input mdInput [mdDatepicker]="workEnd" placeholder="End date">
-          <md-datepicker-toggle mdSuffix [for]="workEnd"></md-datepicker-toggle>
-          <md-datepicker #workEnd></md-datepicker>
-        </md-form-field>
+        <mat-form-field>
+          <input matInput [matDatepicker]="workStart" placeholder="Start date">
+          <mat-datepicker-toggle matSuffix [for]="workStart"></mat-datepicker-toggle>
+          <mat-datepicker #workStart></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput [matDatepicker]="workEnd" placeholder="End date">
+          <mat-datepicker-toggle matSuffix [for]="workEnd"></mat-datepicker-toggle>
+          <mat-datepicker #workEnd></mat-datepicker>
+        </mat-form-field>
         <br>
-        <md-checkbox>Present</md-checkbox>
+        <mat-checkbox>Present</mat-checkbox>
         <br>
         <label>Write about the position and qualifications required in the position</label>
         <app-ckeditor (textUpdated)="handleTextUpdated($event)"></app-ckeditor>
         <br>
-        <button md-button md-raised-button color="primary" style="float: right">
+        <button mat-button mat-raised-button color="primary" style="float: right">
           Delete experience
         </button>
         <br>
         <br>
         <div class="actionButtons">
-          <button md-raised-button color="primary" mdStepperPrevious>Back</button>
-          <button md-raised-button color="primary" mdStepperNext>Next</button>
+          <button mat-raised-button color="primary" matStepperPrevious>Back</button>
+          <button mat-raised-button color="primary" matStepperNext>Next</button>
         </div>
-      </md-step>
+      </mat-step>
 
-      <md-step label="Education">
-        <button md-button md-raised-button color="primary">
+      <mat-step label="Education">
+        <button mat-button mat-raised-button color="primary">
           Add education
         </button>
         <br>
-        <md-form-field>
-          <input mdInput placeholder="Education level">
-        </md-form-field>
-        <md-form-field>
-          <input mdInput placeholder="Line of education">
-        </md-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Education level">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Line of education">
+        </mat-form-field>
         <br>
-        <md-form-field>
-          <input mdInput placeholder="Name of university">
-        </md-form-field>
-        <md-form-field>
-          <input mdInput placeholder="Name of department">
-        </md-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Name of university">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Name of department">
+        </mat-form-field>
         <br>
-        <md-form-field>
-          <input mdInput placeholder="Country">
-        </md-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Country">
+        </mat-form-field>
         <br>
-        <md-form-field>
-          <input mdInput [mdDatepicker]="eduStart" placeholder="Start date">
-          <md-datepicker-toggle mdSuffix [for]="eduStart"></md-datepicker-toggle>
-          <md-datepicker #eduStart></md-datepicker>
-        </md-form-field>
-        <md-form-field>
-          <input mdInput [mdDatepicker]="eduEnd" placeholder="End date">
-          <md-datepicker-toggle mdSuffix [for]="eduEnd"></md-datepicker-toggle>
-          <md-datepicker #eduEnd></md-datepicker>
-        </md-form-field>
+        <mat-form-field>
+          <input matInput [matDatepicker]="eduStart" placeholder="Start date">
+          <mat-datepicker-toggle matSuffix [for]="eduStart"></mat-datepicker-toggle>
+          <mat-datepicker #eduStart></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput [matDatepicker]="eduEnd" placeholder="End date">
+          <mat-datepicker-toggle matSuffix [for]="eduEnd"></mat-datepicker-toggle>
+          <mat-datepicker #eduEnd></mat-datepicker>
+        </mat-form-field>
         <br>
-        <md-checkbox>Present</md-checkbox>
+        <mat-checkbox>Present</mat-checkbox>
         <br>
         <label>Write about the projects and qualifications gained during the studies</label>
         <app-ckeditor (textUpdated)="handleTextUpdated($event)"></app-ckeditor>
         <br>
-        <button md-button md-raised-button color="primary" style="float: right">
+        <button mat-button mat-raised-button color="primary" style="float: right">
           Delete education
         </button>
         <br>
         <br>
         <div class="actionButtons">
-          <button md-raised-button color="primary" mdStepperPrevious>Back</button>
-          <button md-raised-button color="primary" mdStepperNext>Next</button>
+          <button mat-raised-button color="primary" matStepperPrevious>Back</button>
+          <button mat-raised-button color="primary" matStepperNext>Next</button>
         </div>
-      </md-step>
+      </mat-step>
 
-       <md-step label="Research stay">        
-        <button md-button md-raised-button color="primary">
+       <mat-step label="Research stay">        
+        <button mat-button mat-raised-button color="primary">
           Add research stay
         </button>
         <br>
-        <md-form-field>
-          <input mdInput placeholder="Project title">
-        </md-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Project title">
+        </mat-form-field>
         <br>
-        <md-form-field>
-          <input mdInput placeholder="Name of university">
-        </md-form-field>
-        <md-form-field>
-          <input mdInput placeholder="Name of department">
-        </md-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Name of university">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Name of department">
+        </mat-form-field>
         <br>
-        <md-form-field>
-          <input mdInput placeholder="Name of lab or group leader">
-        </md-form-field>
-        <md-form-field>
-          <input mdInput placeholder="Country">
-        </md-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Name of lab or group leader">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Country">
+        </mat-form-field>
         <br>
-        <md-form-field>
-          <input mdInput [mdDatepicker]="researchStart" placeholder="Start date">
-          <md-datepicker-toggle mdSuffix [for]="researchStart"></md-datepicker-toggle>
-          <md-datepicker #researchStart></md-datepicker>
-        </md-form-field>
-        <md-form-field>
-          <input mdInput [mdDatepicker]="researchEnd" placeholder="End date">
-          <md-datepicker-toggle mdSuffix [for]="researchEnd"></md-datepicker-toggle>
-          <md-datepicker #researchEnd></md-datepicker>
-        </md-form-field>
+        <mat-form-field>
+          <input matInput [matDatepicker]="researchStart" placeholder="Start date">
+          <mat-datepicker-toggle matSuffix [for]="researchStart"></mat-datepicker-toggle>
+          <mat-datepicker #researchStart></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput [matDatepicker]="researchEnd" placeholder="End date">
+          <mat-datepicker-toggle matSuffix [for]="researchEnd"></mat-datepicker-toggle>
+          <mat-datepicker #researchEnd></mat-datepicker>
+        </mat-form-field>
         <br>
         <label>Write about the projects and qualifications gained during the studies</label>
         <app-ckeditor (textUpdated)="handleTextUpdated($event)"></app-ckeditor>
         <br>
-        <button md-button md-raised-button color="primary" style="float: right">
+        <button mat-button mat-raised-button color="primary" style="float: right">
           Delete research stay
         </button>
         <br>
         <br>
         <div class="actionButtons">
-          <button md-raised-button color="primary" mdStepperPrevious>Back</button>
-          <button md-raised-button color="primary" mdStepperNext>Next</button>
+          <button mat-raised-button color="primary" matStepperPrevious>Back</button>
+          <button mat-raised-button color="primary" matStepperNext>Next</button>
         </div>
-      </md-step>
+      </mat-step>
 
-       <md-step label="Conference/workshop">
-        <button md-button md-raised-button color="primary">
+       <mat-step label="Conference/workshop">
+        <button mat-button mat-raised-button color="primary">
           Add conference/workshop
         </button>
         <br>
-        <md-form-field>
-          <input mdInput placeholder="Conference/workshop title">
-        </md-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Conference/workshop title">
+        </mat-form-field>
         <br>
-        <md-form-field>
-          <input mdInput placeholder="Country">
-        </md-form-field>
-        <md-form-field>
-          <input mdInput placeholder="City">
-        </md-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Country">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="City">
+        </mat-form-field>
         <br>
-        <md-form-field>
-          <input mdInput [mdDatepicker]="confStart" placeholder="Start date">
-          <md-datepicker-toggle mdSuffix [for]="confStart"></md-datepicker-toggle>
-          <md-datepicker #confStart></md-datepicker>
-        </md-form-field>
-        <md-form-field>
-          <input mdInput [mdDatepicker]="confEnd" placeholder="End date">
-          <md-datepicker-toggle mdSuffix [for]="confEnd"></md-datepicker-toggle>
-          <md-datepicker #confEnd></md-datepicker>
-        </md-form-field>
+        <mat-form-field>
+          <input matInput [matDatepicker]="confStart" placeholder="Start date">
+          <mat-datepicker-toggle matSuffix [for]="confStart"></mat-datepicker-toggle>
+          <mat-datepicker #confStart></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput [matDatepicker]="confEnd" placeholder="End date">
+          <mat-datepicker-toggle matSuffix [for]="confEnd"></mat-datepicker-toggle>
+          <mat-datepicker #confEnd></mat-datepicker>
+        </mat-form-field>
         <br>
-        <md-form-field>
-          <input mdInput placeholder="Contribution">
-        </md-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Contribution">
+        </mat-form-field>
         <br>
         <label>Write about the conference and your contribution</label>
         <app-ckeditor (textUpdated)="handleTextUpdated($event)"></app-ckeditor>
         <br>
-        <button md-button md-raised-button color="primary" style="float: right">
+        <button mat-button mat-raised-button color="primary" style="float: right">
           Delete conference/workshop
         </button>
         <br>
         <br>
         <div class="actionButtons">
-          <button md-raised-button color="primary" mdStepperPrevious>Back</button>
-          <button md-raised-button color="primary" mdStepperNext>Next</button>
+          <button mat-raised-button color="primary" matStepperPrevious>Back</button>
+          <button mat-raised-button color="primary" matStepperNext>Next</button>
         </div>
-      </md-step>
+      </mat-step>
 
-       <md-step label="Teaching experience">
-        <button md-button md-raised-button color="primary">
+       <mat-step label="Teaching experience">
+        <button mat-button mat-raised-button color="primary">
           Add teaching experience
         </button>
         <br>
-        <md-form-field>
-          <input mdInput placeholder="Title of teaching experience">
-        </md-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Title of teaching experience">
+        </mat-form-field>
         <br>
-        <md-form-field>
-          <input mdInput placeholder="Name of university">
-        </md-form-field>
-        <md-form-field>
-          <input mdInput placeholder="Name of department">
-        </md-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Name of university">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Name of department">
+        </mat-form-field>
         <br>
-        <md-form-field>
-          <input mdInput placeholder="Country">
-        </md-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Country">
+        </mat-form-field>
         <br>
-        <md-form-field>
-          <input mdInput [mdDatepicker]="teachingStart" placeholder="Start date">
-          <md-datepicker-toggle mdSuffix [for]="teachingStart"></md-datepicker-toggle>
-          <md-datepicker #teachingStart></md-datepicker>
-        </md-form-field>
-        <md-form-field>
-          <input mdInput [mdDatepicker]="teachingEnd" placeholder="End date">
-          <md-datepicker-toggle mdSuffix [for]="teachingEnd"></md-datepicker-toggle>
-          <md-datepicker #teachingEnd></md-datepicker>
-        </md-form-field>
+        <mat-form-field>
+          <input matInput [matDatepicker]="teachingStart" placeholder="Start date">
+          <mat-datepicker-toggle matSuffix [for]="teachingStart"></mat-datepicker-toggle>
+          <mat-datepicker #teachingStart></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput [matDatepicker]="teachingEnd" placeholder="End date">
+          <mat-datepicker-toggle matSuffix [for]="teachingEnd"></mat-datepicker-toggle>
+          <mat-datepicker #teachingEnd></mat-datepicker>
+        </mat-form-field>
         <br>
         <label>Write about your teaching experience</label>
         <app-ckeditor (textUpdated)="handleTextUpdated($event)"></app-ckeditor>
         <br>
-        <button md-button md-raised-button color="primary" style="float: right">
+        <button mat-button mat-raised-button color="primary" style="float: right">
           Delete teaching experience
         </button>
         <br>
         <br>
         <div class="actionButtons">
-          <button md-raised-button color="primary" mdStepperPrevious>Back</button>
-          <button md-raised-button color="primary" mdStepperNext>Next</button>
+          <button mat-raised-button color="primary" matStepperPrevious>Back</button>
+          <button mat-raised-button color="primary" matStepperNext>Next</button>
         </div>
-      </md-step>
-      <md-step label="Publish you CV">
+      </mat-step>
+      <mat-step label="Publish you CV">
         <br>
         Everything seems correct, feel free to edit anytime.
         <br>
         Remember to publish CV everytime you update it :)
         <br>
-        <button md-button md-raised-button color="primary" style="float: right">
+        <button mat-button mat-raised-button color="primary" style="float: right">
           Publish
         </button>
         <br>
         <br>
         <div>
-          <button md-raised-button color="primary" mdStepperPrevious>Back</button>
+          <button mat-raised-button color="primary" matStepperPrevious>Back</button>
         </div>
-      </md-step>
-    </md-vertical-stepper>
+      </mat-step>
+    </mat-vertical-stepper>
     </div>
-  </md-card>
+  </mat-card>
   
-  <div class="col-sm-12 col-md-12 col-lg-6">
+  <div class="col-sm-12 col-mat-12 col-lg-6">
 
     this is where we show the profile view
   </div>

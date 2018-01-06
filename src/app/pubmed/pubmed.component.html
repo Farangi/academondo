@@ -1,6 +1,6 @@
-<md-form-field>
-	<input mdInput type="text" placeholder="Find your articles" #searchTerm>	
-</md-form-field>
-<button md-button md-raised-button [disabled]="loading" color="primary" (click)="performSearch(searchTerm.value)">PubMed Search</button>
-<button md-button md-raised-button color="primary" (click)="clearPubmedOptions()">Clear Results</button>
+<mat-form-field>
+	<input matInput type="text" placeholder="Find your articles" #searchTerm>	
+</mat-form-field>
+<button mat-button mat-raised-button [disabled]="loading" color="primary" (click)="performSearch(searchTerm.value)">PubMed Search</button>
+<button mat-button mat-raised-button color="primary" (click)="clearPubmedOptions()">Clear Results</button>
 <i *ngIf="loading" class="fa fa-spinner fa-pulse fa-2x fa-fw"></i><span class="sr-only">Loading...</span>

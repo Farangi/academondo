@@ -1,14 +1,14 @@
 <div class=" container-fluid">
   <div class="row">
     <div class="col-sm-6 col-md-6 col-lg-6 mx-auto am-margin">
-      <md-card>
-        <md-card-title>
+      <mat-card>
+        <mat-card-title>
           Lab form
-        </md-card-title>
-        <md-card-content>
+        </mat-card-title>
+        <mat-card-content>
           <dynamic-form [questions]="questions" [path]="path" [entity]="lab"></dynamic-form>
-        </md-card-content>
-      </md-card>
+        </mat-card-content>
+      </mat-card>
     </div>
     <div class="col-sm-6 col-md-6 col-lg-6">
       <app-view-lab [lab]="viewLab" [view]="true" ></app-view-lab>

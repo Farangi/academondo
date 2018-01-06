@@ -1,5 +1,5 @@
 import { ViewProfileDialogComponent } from './../profiles/view-profile-dialog.component';
-import { MdDialog, MdDialogConfig} from '@angular/material'
+import { MatDialog, MatDialogConfig} from '@angular/material'
 import { ResearcherProfileService } from './../profiles/researcher-profile.service';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { AuthenticationService } from '../shared/authentication.service';
@@ -19,7 +19,7 @@ export class ViewUsernameComponent implements OnInit {
   @Input() owner;
   name: string;
 
-  constructor(private db: AngularFireDatabase, private ResearcherProfileService: ResearcherProfileService, public dialog: MdDialog) { }
+  constructor(private db: AngularFireDatabase, private ResearcherProfileService: ResearcherProfileService, public dialog: MatDialog) { }
 
   ngOnInit() {
     this.db.object(`users/${this.userKey}/email`)

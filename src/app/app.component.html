@@ -15,54 +15,54 @@
     </div>
 </section> -->
 
-<md-sidenav-container class="demo-root" fullscreen>
-    <md-sidenav #sidenav color="primary">
-        <md-nav-list>
+<mat-sidenav-container class="demo-root" fullscreen>
+    <mat-sidenav #sidenav color="primary">
+        <mat-nav-list>
             <a *ngFor="let navItem of navItems" 
-                md-list-item (click)="sidenav.close()"
+                mat-list-item (click)="sidenav.close()"
                 routerLinkActive #routerLinkActiveInstance="routerLinkActive"
                 [attr.tabindex]="routerLinkActiveInstance.isActive ? 0 : -1" 
                 [routerLink]="[navItem.route]">
-                <md-icon>{{navItem.icon}}</md-icon>
+                <mat-icon>{{navItem.icon}}</mat-icon>
                  &nbsp;{{navItem.name}}
             </a>
             <!-- <hr> -->
-            <!-- <a md-list-item tabindex="-1" (click)="sidenav.close()" [routerLink]="['/baseline']">Baseline</a> -->
-        </md-nav-list>        
-    </md-sidenav>
+            <!-- <a mat-list-item tabindex="-1" (click)="sidenav.close()" [routerLink]="['/baseline']">Baseline</a> -->
+        </mat-nav-list>        
+    </mat-sidenav>
     <div>
-        <md-toolbar color="primary">
-            <button md-icon-button (click)="sidenav.open()">
-                <md-icon>menu</md-icon>
+        <mat-toolbar color="primary">
+            <button mat-icon-button (click)="sidenav.open()">
+                <mat-icon>menu</mat-icon>
             </button>
             <div class="demo-toolbar">                
                 <img width="250px" src="../../assets/header.png" class="mx-auto">
                 <div>                    
-                    <button md-icon-button [mdMenuTriggerFor]="menu">
-                        <md-icon>more_vert</md-icon>
+                    <button mat-icon-button [matMenuTriggerFor]="menu">
+                        <mat-icon>more_vert</mat-icon>
                     </button>
-                    <md-menu #menu="mdMenu" style="padding-top: 2rem" >
+                    <mat-menu #menu="matMenu" style="padding-top: 2rem" >
                         <div *ngIf="user">
-                            <button md-menu-item [routerLink]="['/login']">
-                                <!-- <md-icon>person</md-icon> -->
-                                <img md-card-avatar style="height: 30px; width: 30px; margin-right: 10px" [src]="user.avatar || '../../assets/default-user.png'">
+                            <button mat-menu-item [routerLink]="['/login']">
+                                <!-- <mat-icon>person</mat-icon> -->
+                                <img mat-card-avatar style="height: 30px; width: 30px; margin-right: 10px" [src]="user.avatar || '../../assets/default-user.png'">
                                 <span>{{user?.name}}</span>
                             </button>
-                            <button md-menu-item [routerLink]="['/login']" (click)="signOut()">
-                                <md-icon>power_settings_new</md-icon>
+                            <button mat-menu-item [routerLink]="['/login']" (click)="signOut()">
+                                <mat-icon>power_settings_new</mat-icon>
                                 <span>Log out</span>
                             </button>
                         </div>
-                    </md-menu>
-                    <!-- <button md-icon-button (click)="toggleFullscreen()" title="Toggle fullscreen">
-                        <md-icon>fullscreen</md-icon>
+                    </mat-menu>
+                    <!-- <button mat-icon-button (click)="toggleFullscreen()" title="Toggle fullscreen">
+                        <mat-icon>fullscreen</mat-icon>
                     </button> -->
                 </div>
             </div>
-        </md-toolbar>        
+        </mat-toolbar>        
         <!-- <div [@routerAnimation]="getRouteAnimation(route)" class="demo-content am-background am-backg" [style]="backgroundImageStyle"> -->
         <div [@routerAnimation]="getRouteAnimation(route)" class="demo-content">            
             <router-outlet #route="outlet"></router-outlet>
         </div>        
     </div>
-</md-sidenav-container>
+</mat-sidenav-container>

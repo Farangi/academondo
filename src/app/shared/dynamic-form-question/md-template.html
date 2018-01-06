@@ -5,62 +5,62 @@
 
         
         
-        <md-form-field *ngSwitchCase="'textbox'">
-            <input mdInput [formControlName]="question.key" [id]="question.key" [type]="question.type" placeholder="{{question.label}}">
-        </md-form-field>
+        <mat-form-field *ngSwitchCase="'textbox'">
+            <input matInput [formControlName]="question.key" [id]="question.key" [type]="question.type" placeholder="{{question.label}}">
+        </mat-form-field>
 
 
-        <md-form-field *ngSwitchCase="'textarea'">
-            <textarea #message mdInput md-autosize 
+        <mat-form-field *ngSwitchCase="'textarea'">
+            <textarea #message matInput mat-autosize 
                 [formControlName]="question.key" [id]="question.key" [type]="question.type" placeholder="{{question.label}}">
             </textarea>
-            <md-hint align="start"><strong> {{ question.hint }} </strong> </md-hint>
-            <md-hint *ngIf="question.maxLength" align="end">{{message.value?.length}} / {{question.maxLength}}</md-hint>
-        </md-form-field>
+            <mat-hint align="start"><strong> {{ question.hint }} </strong> </mat-hint>
+            <mat-hint *ngIf="question.maxLength" align="end">{{message.value?.length}} / {{question.maxLength}}</mat-hint>
+        </mat-form-field>
 
         <div *ngSwitchCase="'multiold'">
-            <md-form-field>
-                <input mdInput placeholder="{{question.label}}" [mdAutocomplete]="auto" [formControlName]="question.key">
-            </md-form-field>            
-            <md-autocomplete #auto="mdAutocomplete">
-                <md-option *ngFor="let opt of question.options " [value]="opt.name">
+            <mat-form-field>
+                <input matInput placeholder="{{question.label}}" [matAutocomplete]="auto" [formControlName]="question.key">
+            </mat-form-field>            
+            <mat-autocomplete #auto="matAutocomplete">
+                <mat-option *ngFor="let opt of question.options " [value]="opt.name">
                     {{ opt.name }}
-                </md-option>
+                </mat-option>
 
-            </md-autocomplete>
+            </mat-autocomplete>
         </div>
 
         <div *ngSwitchCase="'autocomplete'">
-            <md-form-field>
-                <input mdInput placeholder="{{question.label}}" [mdAutocomplete]="auto" [formControlName]="question.key">
-            </md-form-field>
-            <md-autocomplete #auto="mdAutocomplete">
-                <md-option *ngFor="let opt of question.options" [value]="opt.name">
+            <mat-form-field>
+                <input matInput placeholder="{{question.label}}" [matAutocomplete]="auto" [formControlName]="question.key">
+            </mat-form-field>
+            <mat-autocomplete #auto="matAutocomplete">
+                <mat-option *ngFor="let opt of question.options" [value]="opt.name">
                     {{ opt.name }}
-                </md-option>
+                </mat-option>
 
-            </md-autocomplete>
+            </mat-autocomplete>
         </div>
 
         <!-- check for updates, since you cant save the object([value]="foi")  only [value]="foi.name" works -->
         <div *ngSwitchCase="'dropdown'">
-            <md-select style="width: 12.5rem; padding: 1rem 0;" placeholder="{{question.label}}" [formControlName]="question.key">
-                <md-option *ngFor="let opt of question.options" [value]="opt.name">
+            <mat-select style="width: 12.5rem; padding: 1rem 0;" placeholder="{{question.label}}" [formControlName]="question.key">
+                <mat-option *ngFor="let opt of question.options" [value]="opt.name">
                     <span>{{ opt.name }}</span>
                     <small>{{opt.desc}}</small>
-                </md-option>
-            </md-select>
+                </mat-option>
+            </mat-select>
         </div>
 
 
         <!-- check for updates, since you cant save the object([value]="foi")  only [value]="foi.name" works -->
         <div *ngSwitchCase="'multi-select'">
-            <md-select style="width: 12.5rem; padding: 1rem 0;" multiple placeholder="{{question.label}}" [formControlName]="question.key">
-                <md-option *ngFor="let opt of question.options" [value]="opt.name">
+            <mat-select style="width: 12.5rem; padding: 1rem 0;" multiple placeholder="{{question.label}}" [formControlName]="question.key">
+                <mat-option *ngFor="let opt of question.options" [value]="opt.name">
                     <span>{{ opt.name }}</span>
                     <small>{{opt.desc}}</small>
-                </md-option>
-            </md-select>
+                </mat-option>
+            </mat-select>
         </div>
         
         <div *ngSwitchCase="'pubmed'">

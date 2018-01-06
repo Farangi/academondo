@@ -29,19 +29,19 @@
             <section [ngSwitch]="isAuthenticated">
                 <firebase-ui *ngSwitchCase="false"></firebase-ui>
 
-                <md-card *ngSwitchCase="true">
-                    <md-card-header>
-                        <img md-card-avatar style="height: 50px; width: 50px" [src]="user.avatar || '../../assets/default-user.png'">
-                        <md-card-title>{{ user.name }}</md-card-title>
-                        <md-card-subtitle>{{ user.email || '(no email)' }}</md-card-subtitle>
-                    </md-card-header>     
-                    <md-card-content>
+                <mat-card *ngSwitchCase="true">
+                    <mat-card-header>
+                        <img mat-card-avatar style="height: 50px; width: 50px" [src]="user.avatar || '../../assets/default-user.png'">
+                        <mat-card-title>{{ user.name }}</mat-card-title>
+                        <mat-card-subtitle>{{ user.email || '(no email)' }}</mat-card-subtitle>
+                    </mat-card-header>     
+                    <mat-card-content>
                         <p><strong>Welcome to Academondo!</strong></p>
-                        <button md-raised-button (click)="signOut()">
+                        <button mat-raised-button (click)="signOut()">
                             Log out
                         </button>        
-                    </md-card-content>                
-                </md-card>
+                    </mat-card-content>                
+                </mat-card>
             </section>
         </div>
     </div>

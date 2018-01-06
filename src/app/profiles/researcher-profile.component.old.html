@@ -8,82 +8,82 @@
       <form [formGroup]="profileForm" novalidate>
         <h1>Your Profile</h1>
         <div>
-          <md-form-field class="">
+          <mat-form-field class="">
             <input formControlName="name" mdInput placeholder="Name" [ngClass]="{
                'is-success' :  profileForm.get('name').valid && profileForm.get('name').dirty, 
                'is-danger'  :  !profileForm.get('name').valid }">
-            <md-hint [hidden]="profileForm.get('name').valid">
+            <mat-hint [hidden]="profileForm.get('name').valid">
               <strong>name is required</strong>
-            </md-hint>
-          </md-form-field>
+            </mat-hint>
+          </mat-form-field>
         </div>
         <div>
-          <md-form-field class="">
+          <mat-form-field class="">
             <input mdInput placeholder="Country" [mdAutocomplete]="reactiveAutoCountry" [formControl]="countryCtrl">
-            <md-autocomplete #reactiveAutoCountry="mdAutocomplete" [displayWith]="displayFn">
-              <md-option *ngFor="let country of reactiveCountries | async" [value]="country">
+            <mat-autocomplete #reactiveAutoCountry="mdAutocomplete" [displayWith]="displayFn">
+              <mat-option *ngFor="let country of reactiveCountries | async" [value]="country">
                 <span>{{ country.name }}</span>                
-              </md-option>
-            </md-autocomplete>
-          </md-form-field>
+              </mat-option>
+            </mat-autocomplete>
+          </mat-form-field>
         </div>
     
         <div>
-          <md-form-field class="">
+          <mat-form-field class="">
             <input formControlName="about" mdInput #message maxlength="aboutLength" placeholder="About" [ngClass]="{ 
               'is-success' :  profileForm.get('about').valid && profileForm.get('about').dirty,
               'is-danger'  :  !profileForm.get('about').valid }">
-            <md-hint align="start" [hidden]="profileForm.get('about').valid">
+            <mat-hint align="start" [hidden]="profileForm.get('about').valid">
               <strong>least 10 characters</strong>
-            </md-hint>
-            <md-hint align="end">{{message.value.length}} / {{aboutLength}}</md-hint>
-          </md-form-field>
+            </mat-hint>
+            <mat-hint align="end">{{message.value.length}} / {{aboutLength}}</mat-hint>
+          </mat-form-field>
         </div>
 
         <div>
-          <md-form-field class="">
+          <mat-form-field class="">
             <input mdInput placeholder="Techniques" [mdAutocomplete]="reactiveAutoTechnique" [formControl]="techniqueCtrl">
-            <md-autocomplete #reactiveAutoTechnique="mdAutocomplete" [displayWith]="displayFn">
-              <md-option *ngFor="let technique of reactiveTechniques | async" [value]="technique">
+            <mat-autocomplete #reactiveAutoTechnique="mdAutocomplete" [displayWith]="displayFn">
+              <mat-option *ngFor="let technique of reactiveTechniques | async" [value]="technique">
                 <span>{{ technique.name}}</span>
-              </md-option>
-            </md-autocomplete>
-          </md-form-field>
+              </mat-option>
+            </mat-autocomplete>
+          </mat-form-field>
         </div>
 
         <div>
-          <md-select multiple placeholder="Field Of Interests" [formControl]="fieldOfInterestCtrl">
-            <md-option *ngFor="let foi of fieldOfInterests" [value]="foi.name">
+          <mat-select multiple placeholder="Field Of Interests" [formControl]="fieldOfInterestCtrl">
+            <mat-option *ngFor="let foi of fieldOfInterests" [value]="foi.name">
               <span>{{ foi.name }}</span>
               <small>{{foi.desc}}</small>
-            </md-option>
-          </md-select>
+            </mat-option>
+          </mat-select>
 
           
         </div>
 
         <!-- <div>
-          <md-form-field class="">
+          <mat-form-field class="">
             <input mdInput placeholder="Field Of Interests" [mdAutocomplete]="reactiveAutoFieldOfInterest" formControlName="fieldOfInterests" [formControl]="fieldOfInterestCtrl">
-            <md-autocomplete #reactiveAutoFieldOfInterest="mdAutocomplete" [displayWith]="displayFn">
-              <md-option *ngFor="let fieldOfInterest of reactiveFieldOfInterests | async" [value]="fieldOfInterest">
+            <mat-autocomplete #reactiveAutoFieldOfInterest="mdAutocomplete" [displayWith]="displayFn">
+              <mat-option *ngFor="let fieldOfInterest of reactiveFieldOfInterests | async" [value]="fieldOfInterest">
                 <span>{{ fieldOfInterest.name}}</span>
-              </md-option>
-            </md-autocomplete>
-          </md-form-field>
+              </mat-option>
+            </mat-autocomplete>
+          </mat-form-field>
         </div> -->
 
         <!-- <div>
-          <md-chip-list #fieldOfInterestsChips>
-            <md-chip *ngFor="let foi of selectedFieldOfInterests" [color]="color"  [selectable]="selectable" [removable]="removable" (remove)="remove(person)">
+          <mat-chip-list #fieldOfInterestsChips>
+            <mat-chip *ngFor="let foi of selectedFieldOfInterests" [color]="color"  [selectable]="selectable" [removable]="removable" (remove)="remove(person)">
               {{foi.name}}
-              <md-icon mdChipRemove *ngIf="removable">cancel</md-icon>
-            </md-chip>
-          </md-chip-list>
+              <mat-icon mdChipRemove *ngIf="removable">cancel</mat-icon>
+            </mat-chip>
+          </mat-chip-list>
           
             <!-- <input mdInput formControlName="country" placeholder="New Contributor..." [mdChipInputFor]="chipList2" [mdChipInputSeparatorKeyCodes]="separatorKeysCodes"
               [mdChipInputAddOnBlur]="addOnBlur" (mdChipInputTokenEnd)="add($event)" /> -->
-          <!--md-form-field class="">
+          <!--mat-form-field class="">
             
             <input mdInput placeholder="Field Of Interests"
               [mdAutocomplete]="reactiveAutoFieldOfInterest"
@@ -92,24 +92,24 @@
               [mdChipInputSeparatorKeyCodes]="separatorKeysCodes"
               (mdChipInputTokenEnd)="add($event)"
               >
-            <md-autocomplete #reactiveAutoFieldOfInterest="mdAutocomplete" [displayWith]="displayFn">
-              <md-option *ngFor="let fieldOfInterest of reactiveFieldOfInterests | async" [value]="fieldOfInterest">
+            <mat-autocomplete #reactiveAutoFieldOfInterest="mdAutocomplete" [displayWith]="displayFn">
+              <mat-option *ngFor="let fieldOfInterest of reactiveFieldOfInterests | async" [value]="fieldOfInterest">
                 <span>{{ fieldOfInterest.name}}</span>
-              </md-option>
-            </md-autocomplete>
-          </md-form-field>
+              </mat-option>
+            </mat-autocomplete>
+          </mat-form-field>
         </div> -->
 
 
 
 
         <!-- <div>
-          <md-form-field class="">
+          <mat-form-field class="">
             <input formControlName="groupLeader" mdInput placeholder="Group leader" 
             [ngClass]="{ 
               'is-success' :  profileForm.get('groupLeader').valid && profileForm.get('groupLeader').dirty,
               'is-danger'  :  !profileForm.get('groupLeader').valid }">
-          </md-form-field>
+          </mat-form-field>
         </div> -->
 <!-- {{profileForm.status === 'VALID' ? 'Your profile has been saved': 'form is not valid'}} -->
       </form>

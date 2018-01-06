@@ -1,34 +1,34 @@
-<md-toolbar color="primary" class="dark">
-  <div class="md-toolbar-tools" fxLayout="row nowrap" fxFlex fxLayoutAlign="end center">
+<mat-toolbar color="primary" class="dark">
+  <div class="mat-toolbar-tools" fxLayout="row nowrap" fxFlex fxLayoutAlign="end center">
     <!--<a class="ng-title-icon" href="http://angular.io" target="_blank"><i></i></a>
     <a class="azfunc-title-icon" href="http://azure.com/functions" target="_blank"><i></i></a>-->
 
     <span fxFlex class="title">Academondo</span>
 
     <span fxFlex="grow"></span>
-    <a fxFlex md-button [routerLink]="['/dashboard']"
+    <a fxFlex mat-button [routerLink]="['/dashboard']"
       routerLinkActive="router-link-active"><span>Dashboard</span></a>
-    <a fxFlex md-button [routerLink]="['/bs']"
+    <a fxFlex mat-button [routerLink]="['/bs']"
       routerLinkActive="router-link-active"><span>Bootstrappa</span></a>      
-    <a fxFlex md-button [routerLink]="['/profile']"
+    <a fxFlex mat-button [routerLink]="['/profile']"
       routerLinkActive="router-link-active"><span>Profile</span></a>      
-    <a fxFlex md-button [routerLink]="['/labsignup']"
+    <a fxFlex mat-button [routerLink]="['/labsignup']"
       routerLinkActive="router-link-active"><span>Lab signup</span></a>
-    <a fxFlex md-button [routerLink]="['/labs']"
+    <a fxFlex mat-button [routerLink]="['/labs']"
       routerLinkActive="router-link-active"><span>Labs</span></a>
-    <a fxFlex md-button [routerLink]="['/cv']"
+    <a fxFlex mat-button [routerLink]="['/cv']"
       routerLinkActive="router-link-active"><span>CV</span></a>
-    <a *ngIf="(isAdmin | async)?.admin" fxFlex md-button [routerLink]="['/admin']"
+    <a *ngIf="(isAdmin | async)?.admin" fxFlex mat-button [routerLink]="['/admin']"
       routerLinkActive="router-link-active"><span>Admin</span></a>
-    <a *ngIf="(isUniversity | async)?.university" fxFlex md-button [routerLink]="['/university']"
+    <a *ngIf="(isUniversity | async)?.university" fxFlex mat-button [routerLink]="['/university']"
       routerLinkActive="router-link-active"><span>University</span></a>      
-    <a fxFlex md-button [routerLink]="['/adverts']"
+    <a fxFlex mat-button [routerLink]="['/adverts']"
       routerLinkActive="router-link-active"><span>Job adverts</span></a>
-    <!--<a fxFlex md-button [routerLink]="['/planets']"
+    <!--<a fxFlex mat-button [routerLink]="['/planets']"
       routerLinkActive="router-link-active"><span>Planets</span></a>-->
 
     <!--<li *ngIf="currentUser()" style="float:right">-->
-      <a fxFlex md-button [routerLink]="['/login']"
+      <a fxFlex mat-button [routerLink]="['/login']"
       routerLinkActive="router-link-active"><span>Account</span></a>      
   </div>
-</md-toolbar>
+</mat-toolbar>

@@ -1,31 +1,31 @@
 <div>
   <form [formGroup]="form">
-    <md-vertical-stepper>
-      <md-step>
+    <mat-vertical-stepper>
+      <mat-step>
         Everything gets saved on the fly, enjoy!
         <div>
-          <button md-raised-button color="primary" mdStepperNext>Begin</button>
+          <button mat-raised-button color="primary" matStepperNext>Begin</button>
         </div>
-      </md-step>
+      </mat-step>
 
       <div *ngFor="let group of gq">
-        <md-step label="fix me!">
+        <mat-step label="fix me!">
           <div *ngFor="let question of group">
             <df-question [question]="question" [form]="form"></df-question>
           </div>
           <div>
-            <button md-raised-button color="primary" mdStepperPrevious>Back</button>
-            <button md-raised-button color="primary" mdStepperNext>Next</button>
+            <button mat-raised-button color="primary" matStepperPrevious>Back</button>
+            <button mat-raised-button color="primary" matStepperNext>Next</button>
           </div>
-        </md-step>
+        </mat-step>
       </div>
 
-      <md-step label="Confirm your information">
+      <mat-step label="Confirm your information">
         Everything seems correct, feel free to edit anytime :-)
         <div>
-          <button md-raised-button color="primary" mdStepperPrevious>Back</button>
+          <button mat-raised-button color="primary" matStepperPrevious>Back</button>
         </div>
-      </md-step>
-    </md-vertical-stepper>
+      </mat-step>
+    </mat-vertical-stepper>
   </form>
 </div>
