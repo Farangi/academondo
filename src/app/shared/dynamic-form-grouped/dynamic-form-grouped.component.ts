@@ -1,47 +1,44 @@
+import { GroupedQuestionControlService } from './../grouped-question-control.service';
 import { Observable } from 'rxjs/Observable';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { QuestionService } from './../question.service';
-import { Component, Input, OnInit }  from '@angular/core';
-import { FormGroup }                 from '@angular/forms';
+import { Component, Input, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 import { QuestionControlService } from '../';
-import { QuestionBase } from '../models';
+import { QuestionBase, GroupedQuestions } from '../models';
 
 @Component({
-  selector: 'dynamic-form',
-  templateUrl: './stepper-template.html',
-  // templateUrl: './md-template.html',
-  providers: [ QuestionControlService ]
+  selector: 'app-dynamic-form-grouped',
+  templateUrl: './dynamic-form-grouped.component.html',
+  styleUrls: ['./dynamic-form-grouped.component.css']
 })
-export class DynamicFormComponent implements OnInit {
-  @Input() questions: QuestionBase<any>[] = [];
+export class DynamicFormGroupedComponent implements OnInit {
+  @Input() groupedQuestions: GroupedQuestions<any>[] = [];
   @Input() path: string;
   @Input() entity;
 
   form: FormGroup;
   payLoad = '';
   hotEntity;
-  gq;
 
   constructor(private qcs: QuestionControlService) { }
 
   ngOnInit() {
-    this.form = this.qcs.toFormGroup(this.questions);
-    this.gq = this.qcs.getQuestionsInGroups(this.questions);
-    console.log(this.gq);
+    // this.form = this.qcs.toFormGroups(this.groupedQuestions);
 
-    this.entity.subscribe(entity => {      
+    this.entity.subscribe(entity => {
       if (entity) {
         this.hotEntity = entity;
         this.form.patchValue(entity);
       }
-    });    
+    });
 
     this.form.valueChanges
       .debounceTime(500)
       .subscribe(value => {
         if (this.form.status !== 'VALID') {
           return;
-        }        
+        }
         this.qcs.upsert(this.path, value, this.hotEntity);
       });
   }

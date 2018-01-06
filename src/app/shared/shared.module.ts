@@ -110,6 +110,8 @@ import { CKEditorComponent } from './ckeditor/ckeditor.component';
 import { CKEditorModule } from 'ng2-ckeditor';
 import { SimpleTinyMCEComponent } from './simple-tiny-mce/simple-tiny-mce.component';
 import { ScrollableDirective } from './scrollable.directive';
+import { DynamicFormGroupedComponent } from './dynamic-form-grouped/dynamic-form-grouped.component';
+import { GroupedQuestionControlService } from './grouped-question-control.service';
 // const facebookCustomConfig: AuthProviderWithCustomConfig = {
 //   provider: AuthProvider.Facebook,
 //   customConfig: {
@@ -281,6 +283,7 @@ const firebaseUiAuthConfig: FirebaseUIAuthConfig = {
     CKEditorComponent,
     SimpleTinyMCEComponent,
     ScrollableDirective,
+    DynamicFormGroupedComponent,
   ],
   providers: [
     FieldOfInterestService,
@@ -297,6 +300,7 @@ const firebaseUiAuthConfig: FirebaseUIAuthConfig = {
     UserSettingsService,
     SearchAlgoliaService,
     NavService,
+    GroupedQuestionControlService,
   ],
 })
 export class SharedModule { }

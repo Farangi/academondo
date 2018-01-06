@@ -2,7 +2,7 @@ import { AuthenticationService } from './authentication.service';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { Injectable }   from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { QuestionBase } from './models/question-base';
+import { QuestionBase, GroupedQuestions } from './models';
 
 @Injectable()
 export class QuestionControlService {
@@ -47,6 +47,30 @@ export class QuestionControlService {
     questions.forEach(question => {
       group[question.key] = question.required ? new FormControl(question.value || '', Validators.required)
                                               : new FormControl(question.value || '');
+    });
+    return new FormGroup(group);
+  }
+
+  getQuestionsInGroups(questions: QuestionBase<any>[]) {
+    let questionGroups = [];
+    questions.forEach(question => {      
+      if(questionGroups[question.group]) {
+        questionGroups[question.group].push(question);
+      } else {
+        questionGroups[question.group] = [question];
+      }      
+    })
+
+    return questionGroups;
+  }
+  toFormGroup1(questions: QuestionBase<any>[]) {
+    let group: any = {};
+
+    let test;
+
+    questions.forEach(question => {
+      group[question.key] = question.required ? new FormControl(question.value || '', Validators.required)
+        : new FormControl(question.value || '');
     });
     return new FormGroup(group);
   }

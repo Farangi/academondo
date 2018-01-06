@@ -119,7 +119,7 @@ export class AuthenticationService {
 
   private createUserInFirebase(authData) {    
     const ref = this.db.object('users/' + authData.uid)
-    const ref$: Observable<User> = ref.valueChanges()
+    const ref$: Observable<any> = ref.valueChanges()
     ref$.take(1)
       .subscribe(user => {
         if (!user.roles) {          

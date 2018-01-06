@@ -8,11 +8,9 @@
         </div>
       </md-step>
 
-      <div *ngFor="let group of gq">
-        <md-step label="fix me!">
-          <div *ngFor="let question of group">
-            <df-question [question]="question" [form]="form"></df-question>
-          </div>
+      <div *ngFor="let question of questions">
+        <md-step [label]="question.label">
+          <df-question [question]="question" [form]="form"></df-question>
           <div>
             <button md-raised-button color="primary" mdStepperPrevious>Back</button>
             <button md-raised-button color="primary" mdStepperNext>Next</button>

@@ -1,3 +1,4 @@
+import { GroupedQuestions } from './grouped-questions';
 export {newsUpdate} from './update';
 export {Lab} from './lab';
 export {FieldOfInterest} from './fieldOfInterest';
@@ -10,3 +11,4 @@ export {TextareaQuestion} from './question-textarea';
 export {DropdownQuestion} from './question-dropdown';
 export {MultiselectQuestion} from './question-multiselect';
 export {AutocompleteQuestion} from './question-autocomplete';
+export {GroupedQuestions} from './grouped-questions';

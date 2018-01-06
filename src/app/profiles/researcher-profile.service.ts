@@ -103,19 +103,22 @@ export class ResearcherProfileService {
                 key: 'firstName',
                 label: 'First name',
                 required: true,                
-                order: 1
+                order: 1,
+                group: 0
             }),
 
             new TextboxQuestion({
                 key: 'lastName',
                 label: 'Last name',
-                order: 2
+                order: 2,
+                group: 0
             }),
 
             new TextboxQuestion({
                 key: 'title',
                 label: 'Title',                
-                order: 3
+                order: 3,
+                group: 0
             }),            
 
             // new TextboxQuestion({
@@ -136,35 +139,40 @@ export class ResearcherProfileService {
                 key: 'country',
                 label: 'Country',
                 options: this.countryOptions,
-                order: 4
+                order: 4,
+                group: 0
             }),            
 
             new TextareaQuestion({
                 key: 'about',
                 maxLength: '500',
                 label: 'About',
-                order: 5
+                order: 5,
+                group: 1
             }),
 
             new MultiselectQuestion({
                 key: 'techniques',
                 label: 'Techniques',
                 options: this.techniquesOptions,
-                order: 6
+                order: 6,
+                group: 2
             }),
 
-            // new DropdownQuestion({
-            //   key: 'fieldOfInterests',
-            //   label: 'Field of interests',
-            //   options: this.fieldOfInterestOptions,
-            //   order: 6
-            // }),      
+            new DropdownQuestion({
+              key: 'fieldOfInterests',
+              label: 'Field of interests',
+              options: this.fieldOfInterestOptions,
+              order: 6,
+              group: 2
+            }),      
 
             new MultiselectQuestion({
                 key: 'fieldOfInterests',
                 label: 'Field of interests',
                 options: this.fieldOfInterestOptions,
-                order: 7
+                order: 1,
+                group: 2
             }),
         ];
 
